@@ -138,3 +138,7 @@ Sudah pernah nonton film seri [Silicon
 Valley](https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series))? Ada kemiripan
 dengan kasus ini. Serial tersebut bercerita tentang anak muda yang membuat
 aplikasi Pied Piper yang memiliki algoritma kompresi data yang revolusioner.
+
+Daftar Klien Kecilin diketahui menggunakan pencarian Google
+[site:kecilin.id](https://www.google.com/search?q=site%3Akecilin.id). Beberapa
+sudah tidak bisa diakses, tetapi masih ada di hasil pencarian.
