@@ -1,6 +1,7 @@
 ---
 title: Christopher Farrel & Kecilin
 authors: priyadi
+image: ./image.jpeg
 ---
 
 Dari berita diketahui bahwa Christopher Farrel, pendiri *startup*
