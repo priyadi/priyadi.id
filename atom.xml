@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://priyadi.id/</id>
+    <title>priyadi.id Blog</title>
+    <updated>2025-02-17T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://priyadi.id/"/>
+    <subtitle>priyadi.id Blog</subtitle>
+    <icon>https://priyadi.id/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Hello World]]></title>
+        <id>https://priyadi.id/2025/02/17/hello-world</id>
+        <link href="https://priyadi.id/2025/02/17/hello-world"/>
+        <updated>2025-02-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[My first blog post]]></summary>
+        <content type="html"><![CDATA[<p>Hello world! This is my first blog post.</p>]]></content>
+        <author>
+            <name>Priyadi Iman Nurcahyo</name>
+            <uri>https://priyadi.id</uri>
+        </author>
+    </entry>
+</feed>
