@@ -41,7 +41,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/priyadi/priyadi.id/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/priyadi/priyadi.id/edit/main/',
         },
         blog: {
           routeBasePath: '/',
@@ -53,7 +53,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/priyadi/priyadi.id/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/priyadi/priyadi.id/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -68,7 +68,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'priyadi.id',
       logo: {
