@@ -20,7 +20,7 @@ export default function Comments(): JSX.Element {
         inputPosition="top"
         theme={colorMode}
         lang="id"
-        loading="lazy"
+        loading="eager"
         crossorigin="anonymous"
         async
       />
