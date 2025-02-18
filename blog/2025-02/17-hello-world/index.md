@@ -1,7 +1,7 @@
 ---
 title: Hello World
-description: My first blog post
 authors: priyadi
+image: ./image.jpeg
 ---
 
 Hello world! This is my first blog post.
