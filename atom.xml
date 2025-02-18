@@ -2,11 +2,146 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://priyadi.id/</id>
     <title>priyadi.id Blog</title>
-    <updated>2025-02-17T00:00:00.000Z</updated>
+    <updated>2025-02-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://priyadi.id/"/>
     <subtitle>priyadi.id Blog</subtitle>
     <icon>https://priyadi.id/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Christopher Farrel & Kecilin]]></title>
+        <id>https://priyadi.id/2025/02/18/christopher-farrel-kecilin</id>
+        <link href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin"/>
+        <updated>2025-02-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Dari berita diketahui bahwa Christopher Farrel, pendiri startup]]></summary>
+        <content type="html"><![CDATA[<p>Dari berita diketahui bahwa Christopher Farrel, pendiri <em>startup</em>
+<a href="https://kecilin.id/" target="_blank" rel="noopener noreferrer">Kecilin</a>, menghilang di laut lepas pantai Bantul,
+Yogyakarta. Berikut catatan saya setelah melakukan sedikit investigasi.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="masalah-teknologi-yang-diklaim-kecilin">Masalah Teknologi yang Diklaim Kecilin<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin#masalah-teknologi-yang-diklaim-kecilin" class="hash-link" aria-label="Taut langsung ke Masalah Teknologi yang Diklaim Kecilin" title="Taut langsung ke Masalah Teknologi yang Diklaim Kecilin">​</a></h2>
+<p>Kecilin adalah <em>startup</em> yang mengklaim memiliki teknologi kompresi data. Saat
+saya cek, situsnya tidak bisa diakses, tetapi ada subdomain
+<a href="https://demo.kecilin.id/" target="_blank" rel="noopener noreferrer">demo.kecilin.id</a> yang isinya seperti ini:</p>
+<p><img decoding="async" loading="lazy" alt="Kecilin" src="https://priyadi.id/assets/images/kecilin-demo-acc6f79fb3e75c43b8e74788211ec438.jpeg" width="1109" height="766" class="img_ev3q"></p>
+<p>Saya coba mengunggah satu file JPEG, dan situsnya memberikan file hasilnya yang
+lebih kecil sampai sekitar seperempatnya. Namun tidak ada yang istimewa mengenai
+hal ini. Hal yang sama bisa dengan mudah dilakukan misalnya dengan perintah
+seperti:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">magick input.jpg -quality 20 output.jpg</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Salin kode ke papan klip" title="Salin" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Bagian mana yang melibatkan <em>"advanced compression engine"</em> yang mereka klaim?
+Dari demo, tidak ada yang bisa saya lihat. Seandainya ada <em>compression engine</em>
+yang <em>proprietary</em>, seharusnya saya perlu melakukan instalasi aplikasi <em>viewer</em>
+khusus di komputer saya, tetapi tidak perlu. Demo tersebut memperkecil gambar
+hanya dengan cara mengurangi kualitas JPEG, tidak ada yang istimewa.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pendanaan">Pendanaan<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin#pendanaan" class="hash-link" aria-label="Taut langsung ke Pendanaan" title="Taut langsung ke Pendanaan">​</a></h2>
+<p>Walaupun tidak ada kejelasan mengenai teknologinya, Kecilin bisa sampai
+mendapatkan pendanaan dari <a href="https://web.archive.org/web/20230924093808/https://mandiri-capital.co.id/kecilin-raih-pendanaan-rp60-miliar-dipimpin-mandiri-capital-indonesia-kembangkan-solusi-kompresi-data/" target="_blank" rel="noopener noreferrer">Mandiri Capital
+Indonesia</a>
+dan <a href="https://www.bniventures.co.id/id/portofolio/kecilinid" target="_blank" rel="noopener noreferrer">BNI Ventures</a>
+sebesar Rp 60 milyar.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="awal-mula">Awal Mula<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin#awal-mula" class="hash-link" aria-label="Taut langsung ke Awal Mula" title="Taut langsung ke Awal Mula">​</a></h2>
+<p>Berikut <a href="https://www.antaranews.com/berita/1595918/kisah-christopher-farrel-usia-18-tahun-jadi-ceo-dan-kerja-di-google?page=all" target="_blank" rel="noopener noreferrer">kutipan berita dari ANTARA</a>:</p>
+<blockquote>
+<p>Karena susah dalam menerangkan apa sih ini dan apa sih impact-nya, dan
+akhirnya muncul juga ide untuk open source, aku taruh di GitHub, akhirnya ada
+undangan dari Google," ujar dia.</p>
+<p>Farrel akhirnya bertolak ke markas Google di Mountain View, California,
+Amerika Serikat, pada 14 Februari 2017. Dalam sebuah summit, Farrel diminta
+untuk mempresentasikan algoritma core temuannya.</p>
+</blockquote>
+<p>Akun GitHubnya adalah <a href="https://github.com/ChFarrelMK" target="_blank" rel="noopener noreferrer">ChFarrelMK</a>, dibuat pada
+bulan Agustus 2015. Sebelum tanggal 14 Februari 2017 tidak ada aktivitas yang
+signifikan di sana. Walaupun bisa saja dihapus.</p>
+<p>Repository yang berhubungan dengan kompresi data baru mulai ada di akhir 2017:</p>
+<ul>
+<li><a href="https://github.com/ChFarrelMK/python-zstd" target="_blank" rel="noopener noreferrer">ChFarrelMK/python-zstd</a></li>
+<li><a href="https://github.com/ChFarrelMK/SqueezeNet-Deep-Compression" target="_blank" rel="noopener noreferrer">SqueezeNet-Deep-Compression</a></li>
+<li><a href="https://github.com/ChFarrelMK/fractal-image-compression" target="_blank" rel="noopener noreferrer">ChFarrelMK/fractal-image-compression</a></li>
+<li><a href="https://github.com/ChFarrelMK/NN_compression" target="_blank" rel="noopener noreferrer">ChFarrelMK/NN_compression</a></li>
+</ul>
+<p>Tetapi semuanya adalah fork dari proyek lain, tidak ada yang buatan dia sendiri,
+dan tidak ada <em>pull request</em> dari dia.</p>
+<p>Hanya ada dua repo non-fork:</p>
+<ul>
+<li><a href="https://github.com/ChFarrelMK/chfarrelmk" target="_blank" rel="noopener noreferrer">ChFarrelMK/chfarrelmk</a>, ini hanya
+GitHub Pages yang tidak ada isinya.</li>
+<li><a href="https://github.com/ChFarrelMK/optimizevideo" target="_blank" rel="noopener noreferrer">ChFarrelMK/optimizevideo</a>, ini
+juga fork, yang di-fork bukan melalui fitur fork GitHub.</li>
+</ul>
+<p>Di repository lain yang terkait Kecilin juga tidak ada commit yang berasal dari
+dia.</p>
+<ul>
+<li><a href="https://github.com/Kecilin" target="_blank" rel="noopener noreferrer">Kecilin</a></li>
+<li><a href="https://github.com/Kecilin-Team" target="_blank" rel="noopener noreferrer">Kecilin-Team</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="kesimpulan-saya">Kesimpulan Saya<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin#kesimpulan-saya" class="hash-link" aria-label="Taut langsung ke Kesimpulan Saya" title="Taut langsung ke Kesimpulan Saya">​</a></h2>
+<p>Kesimpulan saya, kejadian ini mirip dengan <a href="https://news.detik.com/berita/d-3955322/dulu-bikin-heboh-listrik-pohon-kedondong-kini-tinggal-cerita" target="_blank" rel="noopener noreferrer">kasus pembangkit listrik
+kedondong</a> dulu itu.</p>
+<ul>
+<li>
+<p>Christopher Farrel dulu adalah anak muda berbakat, punya percaya diri sangat
+tinggi, tapi sama sekali tidak memiliki pengalaman</p>
+</li>
+<li>
+<p>Dia punya karya sangat bagus untuk tingkat <em>science project</em>, tetapi keliru
+dia nilai jauh di atas itu. Dia pikir karyanya kelas dunia.</p>
+</li>
+<li>
+<p>Orang-orang dewasa di sekitarnya tidak memahami apa yang dia kerjakan, hanya
+tahu itu bagus. Jadi bukannya mengarahkan sesuai dengan proporsinya ke arah
+yang positif, tapi malah memupuk <em><a href="https://en.wikipedia.org/wiki/Illusory_superiority" target="_blank" rel="noopener noreferrer">illusory
+superiority</a></em>-nya.</p>
+</li>
+<li>
+<p>Lalu ada media massa yang bahas, dan dikutip media massa lainnya, lalu dikutip
+media massa lainnya, dan seterusnya sampai menjadi <em>hype</em>. Sayangnya tak ada
+satu pun yang melakukan verifikasi, misalnya mencari project GitHub mana yang
+menjadikan dia dilirik Google. Harusnya tidak sulit. Akun GitHub-nya pun tak
+memiliki banyak <em>cendol</em> untuk orang dengan reputasi seperti yang diberitakan.</p>
+</li>
+<li>
+<p>(Mungkin) kemudian ada petinggi negara ini yang juga tak memahami apa yang dia
+kerjakan, tapi terpengaruh dengan <em>hype</em>-nya. Kemudian dia beri referensi ke
+Mandiri &amp; BNI untuk mendapatkan pendanaan sampai 60 milyar.</p>
+</li>
+<li>
+<p>(Mungkin) dari koneksi yang sama mereka juga mendapatkan klien dari lembaga
+pemerintah, militer, BUMN, dan PSSI.</p>
+</li>
+<li>
+<p>(Mungkin) suatu saat ada dari mereka yang menyadari bahwa tak mungkin dia
+bisa <em>deliver</em>, atau tidak sesuai ekspektasi. Lalu kemudian memberi ultimatum.</p>
+</li>
+<li>
+<p>(Mungkin) lalu dia dikeluarkan oleh <em>board</em>-nya sendiri.</p>
+</li>
+<li>
+<p>Lalu dia <a href="https://www.detik.com/jogja/berita/d-7776026/farrel-yang-hilang-dilaporkan-penipuan-rp-150-juta-korbannya-orang-sleman" target="_blank" rel="noopener noreferrer">pinjam
+uang</a>
+untuk menyelesaikan proyeknya, tapi karena ekspektasinya terlalu tinggi dan
+tidak realistis, dia tetap tidak mampu.</p>
+</li>
+<li>
+<p>Kemudian dia menghilang. Entah karena bunuh diri, atau kabur.</p>
+</li>
+</ul>
+<p>Jadi itulah cerita bagaimana negara ini bisa kehilangan anak muda berbakat yang
+sebenarnya memiliki potensi besar untuk berkontribusi positif.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lain-lain">Lain-lain<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin#lain-lain" class="hash-link" aria-label="Taut langsung ke Lain-lain" title="Taut langsung ke Lain-lain">​</a></h2>
+<p>Dari pencarian, judul makalah yang dia sampaikan ke Google adalah <em>"Data
+Compression using EG and Neural Network Algorithm for Lossless Data"</em>, tetapi
+yang ada di Internet hanyalah media massa yang saling kutip.</p>
+<p>Kasus ini sering terjadi. Masalahnya jika kita yang ahli dan berpengalaman
+mengatakan pendapat kita dengan jujur pada tahun 2017 dulu, maka kita akan
+dianggap "tidak nasionalis", "tidak mendukung karya anak bangsa", dan
+sebagainya.</p>
+<p>Sudah pernah nonton film seri <a href="https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)" target="_blank" rel="noopener noreferrer">Silicon
+Valley</a>? Ada kemiripan
+dengan kasus ini. Serial tersebut bercerita tentang anak muda yang membuat
+aplikasi Pied Piper yang memiliki algoritma kompresi data yang revolusioner.</p>]]></content>
+        <author>
+            <name>Priyadi Iman Nurcahyo</name>
+            <uri>https://priyadi.id</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello World]]></title>
         <id>https://priyadi.id/2025/02/17/hello-world</id>
