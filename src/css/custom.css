@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@500&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Domine:wght@400..700&family=JetBrains+Mono:wght@500&display=swap');
 
 :root {
   --ifm-color-primary: #a51d2d;
@@ -21,13 +21,17 @@
 
   --ifm-font-family-base: 'Atkinson Hyperlegible', sans-serif;
   --ifm-font-family-monospace: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --ifm-heading-font-family: 'Noto Serif', serif;
+  --ifm-heading-font-family: 'Domine', serif;
 
   --ifm-font-size-base: 1.1rem;
   --ifm-font-weight-base: 400;
   --ifm-code-font-size: 88%;
-  --ifm-heading-font-weight: 300;
+  --ifm-heading-font-weight: 500;
   --ifm-heading-line-height: 1.1;
+  --ifm-h2-font-size: 1.75rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -42,14 +46,30 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.markdown > h2 {
+  --ifm-h2-font-size: 1.75rem;
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1.5rem;
+}
+
+.markdown > h4 {
+  --ifm-h4-font-size: 1.25rem;
+}
+
+.markdown > h5 {
+  --ifm-h5-font-size: 1rem;
+}
+
 /* Reduce title size in blog list */
 .blog-list-page h2[class*="title"]
 {
-  font-size: 2.5em;
+  font-size: 2rem;
 }
 
 /* Reduce title size in blog page */
 .blog-post-page h1[class*="title"]
 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
