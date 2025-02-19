@@ -59,6 +59,7 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          blogSidebarTitle: 'Pos',
         },
         theme: {
           customCss: './src/css/custom.css',
