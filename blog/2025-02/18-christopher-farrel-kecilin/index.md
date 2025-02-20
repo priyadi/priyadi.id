@@ -79,6 +79,28 @@ dia.
 - [Kecilin](https://github.com/Kecilin)
 - [Kecilin-Team](https://github.com/Kecilin-Team)
 
+## Klaim Mengenai Teknologi Kompresi
+
+Salah satu klaim:
+
+> Bisnis utama Kecilin.id adalah membuat aplikasi pengompresan data. Misalnya,
+> dari yang awalnya data berukuran 3 Tera menjadi 6 MB tanpa mengubah kualitas.
+> Padahal ZIP baru bisa mengubah 50%-nya. Untuk kualitasnya sendiri pernah
+> dibuktikan oleh Oracle, sebuah perusahaan developer IT yang berada di RedWood
+> City, California.
+
+&mdash; [Mengecilkan Ruang - Sharing Session #2 bersama Christopher Farrel](https://medium.com/life-at-shirvano/mengecilkan-ruang-715530c0d3c0).
+
+Dari 3 TB menjadi 6 MB artinya ratio kompresinya sebesar 0.0002% yang sangat
+tidak realistis. Seandainya itu salah ketik dan seharusnya 3 GB, maka ratio-nya
+menjadi 0.2%, dan masih sangat tidak realistis.
+
+Untuk perbandingan dengan algoritma kompresi yang ada saat ini, bisa dilihat
+misalnya di [Comparison of Compression Algorithms
+(LinuxReviews)](https://linuxreviews.org/Comparison_of_Compression_Algorithms).
+Dengan target file source code kernel Linux, algoritma kompresi terbaik adalah
+XZ dengan ratio kompresi 110 MB / 939 MB = 11.7%.
+
 ## Kesimpulan Saya
 
 Kesimpulan saya, kejadian ini mirip dengan [kasus pembangkit listrik
