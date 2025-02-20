@@ -72,6 +72,24 @@ dia.</p>
 <li><a href="https://github.com/Kecilin" target="_blank" rel="noopener noreferrer">Kecilin</a></li>
 <li><a href="https://github.com/Kecilin-Team" target="_blank" rel="noopener noreferrer">Kecilin-Team</a></li>
 </ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="klaim-mengenai-teknologi-kompresi">Klaim Mengenai Teknologi Kompresi<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin/#klaim-mengenai-teknologi-kompresi" class="hash-link" aria-label="Taut langsung ke Klaim Mengenai Teknologi Kompresi" title="Taut langsung ke Klaim Mengenai Teknologi Kompresi">​</a></h2>
+<p>Salah satu klaim:</p>
+<blockquote>
+<p>Bisnis utama Kecilin.id adalah membuat aplikasi pengompresan data. Misalnya,
+dari yang awalnya data berukuran 3 Tera menjadi 6 MB tanpa mengubah kualitas.
+Padahal ZIP baru bisa mengubah 50%-nya. Untuk kualitasnya sendiri pernah
+dibuktikan oleh Oracle, sebuah perusahaan developer IT yang berada di RedWood
+City, California.</p>
+</blockquote>
+<p>— <a href="https://medium.com/life-at-shirvano/mengecilkan-ruang-715530c0d3c0" target="_blank" rel="noopener noreferrer">Mengecilkan Ruang - Sharing Session #2 bersama Christopher Farrel</a>.</p>
+<p>Dari 3 TB menjadi 6 MB artinya ratio kompresinya sebesar 0.0002% yang sangat
+tidak realistis. Seandainya itu salah ketik dan seharusnya 3 GB, maka ratio-nya
+menjadi 0.2%, dan masih sangat tidak realistis.</p>
+<p>Untuk perbandingan dengan algoritma kompresi yang ada saat ini, bisa dilihat
+misalnya di <a href="https://linuxreviews.org/Comparison_of_Compression_Algorithms" target="_blank" rel="noopener noreferrer">Comparison of Compression Algorithms
+(LinuxReviews)</a>.
+Dengan target file source code kernel Linux, algoritma kompresi terbaik adalah
+XZ dengan ratio kompresi 110 MB / 939 MB = 11.7%.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="kesimpulan-saya">Kesimpulan Saya<a href="https://priyadi.id/2025/02/18/christopher-farrel-kecilin/#kesimpulan-saya" class="hash-link" aria-label="Taut langsung ke Kesimpulan Saya" title="Taut langsung ke Kesimpulan Saya">​</a></h2>
 <p>Kesimpulan saya, kejadian ini mirip dengan <a href="https://news.detik.com/berita/d-3955322/dulu-bikin-heboh-listrik-pohon-kedondong-kini-tinggal-cerita" target="_blank" rel="noopener noreferrer">kasus pembangkit listrik
 kedondong</a> dulu itu.</p>
