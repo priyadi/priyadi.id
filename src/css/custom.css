@@ -63,12 +63,14 @@
 }
 
 /* Reduce title size in blog list */
+article h2[class*="title"],
 .blog-list-page h2[class*="title"]
 {
   font-size: 2rem;
 }
 
 /* Reduce title size in blog page */
+article h1[class*="title"],
 .blog-post-page h1[class*="title"]
 {
   font-size: 2rem;
