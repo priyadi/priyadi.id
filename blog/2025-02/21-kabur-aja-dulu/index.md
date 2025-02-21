@@ -155,7 +155,8 @@ melihat sisi positifnya:
   berguna apabila nantinya di Indonesia terjadi skenario buruk di atas.
 
 Dari sudut pandang perubahan iklim, dapat dikatakan masa depan kita sebagai
-bangsa tergantung dari keberhasilan kita dalam melakukan `#KaburAjaDulu`.
+bangsa yang tinggal di garis Khatulistiwa tergantung dari keberhasilan kita
+dalam melakukan `#KaburAjaDulu`.
 
 ## Leluhur Kita Juga Melakukan `#KaburAjaDulu`
 
