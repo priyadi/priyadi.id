@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" font-family="Liberation Sans,sans-serif" font-size="37" font-weight="400" overflow="hidden" viewBox="0 0 960 720">
+ <g fill="#fff">
+  <path d="m0 0h960v720h-960z"/>
+  <g fill-rule="evenodd">
+   <path d="m138.1 632.34h108.98v19.2h-108.98zm108.98 0h108.98v19.2h-108.98zm108.98 0h108.98v19.2h-108.98zm108.98 0h108.98v19.2h-108.98zm108.98 0h108.98v19.2h-108.98z"/>
+   <path d="m683.02 632.34h108.98v19.2h-108.98z"/>
+  </g>
+ </g>
+ <path d="m247.08 632.34v19.2m108.98-19.2v19.2m108.98-19.2v19.2m108.98-19.2v19.2m108.98-19.2v19.2" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.33"/>
+ <g stroke-miterlimit="8">
+  <path d="m885 271v96.409" fill="none" stroke="#f7b12e" stroke-width="4"/>
+  <g stroke="#000">
+   <path d="m938.1 300.5h-145.6m140.03-209h-139.03" fill="none" stroke-dasharray="3,3" stroke-width="3"/>
+   <path d="m874.5 367.5h22v118h-22z" fill="#f7b12e"/>
+   <path d="m919.5 299.5h22v156h-22z" fill="#ee2b2a"/>
+  </g>
+  <g fill="none">
+   <path d="m930 90v209.33" stroke="#ee2b2a" stroke-width="4"/>
+   <path d="m841 366v18.12" stroke="#6fbe44" stroke-width="4"/>
+   <path d="m849.47 500.5h-55.969" stroke="#000" stroke-dasharray="3,3" stroke-width="3"/>
+  </g>
+ </g>
+ <path d="m603.32 543.04c9.733-4.925 24.799-17.705 35.182-30.313 10.382-12.608 29.053-44.22 43.834-75.608 14.782-31.388 26.599-54.869 44.855-112.72s48.485-169.28 64.682-234.4c.715 45.012.872 317.84 1.126 374.76-63.706 6.569-144.12 75.455-206 85.245z" fill="#bfbfbf" fill-rule="evenodd"/>
+ <path d="m509 375h139v82h-139z" fill="#fff"/>
+ <path d="m173 92h585v82h-585z" fill="#fff"/>
+ <path d="m591 551c9.807-4.793 29.405-13.084 45.806-26.706 16.4-13.623 35.118-32.776 52.598-55.03 17.479-22.254 37.541-54.655 52.279-78.494 14.737-23.839 27.593-48.746 36.146-64.541 8.552-15.795 9.001-19.006 15.171-30.229 0 0-.57 140.04-.71 205.37z" fill="#7f7f7f" fill-rule="evenodd"/>
+ <path d="m629.41 283.31 112.02 85.273-1.817 2.388-112.02-85.274zm111.11 86.467-.232-9.602 7.393 15.053-16.478-3.117z" fill="#7f7f7f"/>
+ <path d="m715.36 159.27 43.563 30.524-1.722 2.457-43.563-30.525zm42.702 31.753-.61-9.586 7.981 14.75-16.588-2.465z" fill="#bfbfbf"/>
+ <path d="m175 466h279v82h-279z" fill="#fff"/>
+ <g fill="none">
+  <path d="m561.5 529.5c0-6.351 3.455-11.5 7.717-11.5h9.066c4.262 0 7.717-5.149 7.717-11.5 0 6.351 3.455 11.5 7.717 11.5h9.066c4.262 0 7.717 5.149 7.717 11.5" stroke="#000" stroke-linecap="round" stroke-miterlimit="8" stroke-width="3"/>
+  <path d="m140 579.878c16.733 1.03 32.141 1.602 53.839 2.288l76.344 1.83c19.271.077 27.876-1.067 39.276-1.372s21.109 0 29.126-.458 18.976-2.288 18.976-2.288l22.506-2.745c5.811-.839 8.091-1.983 12.357-2.288 4.265-.305 8.973.381 13.238.458 4.266.076 8.164.533 12.357 0 4.192-.534 8.605-2.288 12.798-3.203 4.192-.915 12.356-2.288 12.356-2.288 4.633-.915 10.003-2.288 15.445-3.203 5.443-.915 10.812-1.83 17.211-2.288 6.399-.457 14.784-.305 21.182-.457 6.399-.153 11.474-.153 17.211-.458s11.989-.61 17.211-1.373c5.222-.762 9.194-2.364 14.121-3.203 4.928-.839 10.298-1.22 15.446-1.83" stroke="#7f7f7f" stroke-miterlimit="8" stroke-width="4"/>
+  <g stroke="#000">
+   <path d="m561 556.946c2.364.197 3.904-.168 6.216-.778 2.312-.611 4.143-1.667 7.656-2.882s10.481-3.715 13.423-4.408c2.941-.693 2.635.553 4.226.248 1.59-.304 4.072-1.825 5.315-2.077s1.177.932 2.142.566 2.571-2.14 3.648-2.762 1.753-.329 2.816-.971c1.062-.642 2.207-2.173 3.558-2.882" stroke-miterlimit="8" stroke-width="4"/>
+   <path d="m585.5 506.09v-35.592" stroke-linecap="round" stroke-miterlimit="8" stroke-width="3"/>
+   <path d="m138.08 165.18h21.866m-21.866 97.271h21.866m-21.866 97.272h21.866m-21.866 97.271h21.866m-21.866 97.271h21.866" stroke-linejoin="round" stroke-width="1.33"/>
+   <path d="m138.5 68.5h654v583h-654z" stroke-miterlimit="8"/>
+  </g>
+ </g>
+ <path d="m830.5 384.5h23v117h-23z" fill="#6fbe44" stroke="#000" stroke-miterlimit="8"/>
+ <switch><text transform="translate(74.22 85)" id="trsvg27"><tspan id="trsvg1">2.5</tspan><tspan x="0" y="96" id="trsvg2">2.0</tspan><tspan x="0" y="192" id="trsvg3">1.5</tspan><tspan x="0" y="288" id="trsvg4">1.0</tspan><tspan x="0" y="384" id="trsvg5">0.5</tspan><tspan x="31.17" y="480" id="trsvg6">0</tspan></text></switch>
+ <switch><text transform="matrix(0 -1 1 0 48.64 583)" id="trsvg28-tl" systemLanguage="tl"><tspan id="trsvg7-tl">Pagtaas ng dagat mula 2000 (m)</tspan></text><text transform="matrix(0 -1 1 0 48.64 583)" id="trsvg28"><tspan id="trsvg7">Sea level rise from 2000 (m)</tspan></text></switch>
+ <switch><text transform="translate(93.09 700)" id="trsvg29-tl" systemLanguage="tl"><tspan id="trsvg8-tl">1800</tspan><tspan x="108.67" y="0" id="trsvg9-tl">1850</tspan><tspan x="217.33" y="0" id="trsvg10-tl">1900</tspan><tspan x="326" y="0" id="trsvg11-tl">1950</tspan><tspan x="434.67" y="0" id="trsvg12-tl">2000</tspan><tspan x="543.33" y="0" id="trsvg13-tl">2050</tspan><tspan x="652" y="0" id="trsvg14-tl">2100</tspan><tspan x="46.62" y="-648" font-size="41" id="trsvg15-tl">Taas ng dagat noon at sa hinaharap</tspan></text><text transform="translate(93.09 700)" id="trsvg29"><tspan id="trsvg8">1800</tspan><tspan x="108.67" y="0" id="trsvg9">1850</tspan><tspan x="217.33" y="0" id="trsvg10">1900</tspan><tspan x="326" y="0" id="trsvg11">1950</tspan><tspan x="434.67" y="0" id="trsvg12">2000</tspan><tspan x="543.33" y="0" id="trsvg13">2050</tspan><tspan x="652" y="0" id="trsvg14">2100</tspan><tspan x="46.62" y="-648" font-size="41" id="trsvg15">Global sea level history and projections</tspan></text></switch>
+ <switch><text transform="matrix(0 -1 1 0 854.19 654)" id="trsvg30"><tspan id="trsvg16">RCP 2.6</tspan><tspan x="0" y="45" id="trsvg17">RCP 4.5</tspan><tspan x="0" y="90" id="trsvg18">RCP 8.5</tspan></text></switch>
+ <switch><text transform="translate(506.95 407)" id="trsvg31-tl" systemLanguage="tl"><tspan id="trsvg19-tl">Datos mula</tspan><tspan x="32.16" y="45" id="trsvg20-tl">satelayt</tspan></text><text transform="translate(506.95 407)" id="trsvg31"><tspan id="trsvg19">Satellite </tspan><tspan x="32.16" y="45" id="trsvg20">data</tspan></text></switch>
+ <switch><text transform="translate(182.54 124)" id="trsvg32-tl" systemLanguage="tl"><tspan id="trsvg21-tl">Posibleng taas dahil sa pagtunaw</tspan><tspan x="0" y="45" id="trsvg22-tl">ng yelo sa Antartika (—2.4 m)</tspan></text><text transform="translate(182.54 124)" id="trsvg32"><tspan id="trsvg21">Possible increase from Antarctic </tspan><tspan x="0" y="45" id="trsvg22">ice melt (up to 2.4 meters total)</tspan></text></switch>
+ <switch><text transform="translate(184.56 498)" id="trsvg33-tl" systemLanguage="tl"><tspan id="trsvg23-tl">Datos sa pagsukat</tspan><tspan x="1" y="45" id="trsvg24-tl">ng heolohiya at aluyo</tspan></text><text transform="translate(184.56 498)" id="trsvg33"><tspan id="trsvg23">Geological and </tspan><tspan x="1" y="45" id="trsvg24">tide gauge data</tspan></text></switch>
+ <switch><text transform="translate(182.54 246)" id="trsvg34-tl" systemLanguage="tl"><tspan id="trsvg25-tl">Sakop ng pagtataya ngayon</tspan><tspan x="0" y="45" id="trsvg26-tl">(0.3 m—1.2 m)</tspan></text><text transform="translate(182.54 246)" id="trsvg34"><tspan id="trsvg25">Currently projected range</tspan><tspan x="0" y="45" id="trsvg26">(0.3 meters to 1.2 meters)</tspan></text></switch>
+</svg>
