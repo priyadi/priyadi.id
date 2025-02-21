@@ -69,8 +69,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/priyadi.id.png',
+    defaultMode: 'dark',
+    respectPrefersColorScheme: true,
     navbar: {
       title: 'priyadi.id',
       logo: {
