@@ -135,11 +135,27 @@ melumerkan lahan yang tertutup es, dan membuka lahan pekerjaan baru. Perubahan
 iklim juga membuka lokasi-lokasi pinggir pantai yang sebelumnya tertutup es,
 sehingga bisa dijadikan pelabuhan dan lokasi industri.
 
-Jadi: Skandinavia, Kanada, Eropa Timur, Amerika Serikat, Rusia, Selandia Baru,
-Argentina, Chile.
+Jadi: Skandinavia, Kanada, Eropa Timur, Amerika Serikat, Rusia, China, Selandia
+Baru, Argentina, Chile.
 
 Tentunya bukan hanya faktor perubahan iklim saja yang harus diperhatikan, tapi
 hal tersebut di luar cakupan tulisan ini.
+
+:::note
+
+Beberapa negara di daftar tersebut adalah polutan CO<sub>2</sub> terbesar di
+dunia, terutama China, Amerika Serikat dan Rusia; negara-negara yang akan selalu
+masuk daftar negara-negara dengan pencapaian terburuk dalam hal perubahan iklim.
+
+Di sini kita tidak memikirkan prestasi negara tujuan dalam **mencegah perubahan
+iklim**, tapi hanya kemampuannya untuk **beradaptasi terhadap dampak perubahan
+iklim**, berdasarkan lokasi geografisnya.
+
+Molekul CO<sub>2</sub> tidak memiliki kewarganegaraan. Molekul CO<sub>2</sub>
+yang berasal dari hasil pembakaran bahan bakar fosil di China, misalnya, akan
+memiliki efek yang sama kepada anda, dimana pun anda berada.
+
+:::
 
 ## Dampak `#KaburAjaDulu` Terhadap Negara Yang Ditinggalkan
 
