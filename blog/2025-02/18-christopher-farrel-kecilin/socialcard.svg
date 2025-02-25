@@ -46,7 +46,7 @@
          offset="0"
          id="stop1" />
       <stop
-         style="stop-color:#a30000;stop-opacity:1;"
+         style="stop-color:#910000;stop-opacity:1;"
          offset="1"
          id="stop2" />
     </linearGradient>
