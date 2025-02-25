@@ -168,3 +168,13 @@ adalah: Pegadaian, BTN, Telkomsel, Telin, Antam, BNI, Mandiri, Polda, Pelni,
 KPP, Adhikarya, PSSI. Semua adalah lembaga yang berhubungan dengan pemerintah,
 tidak ada yang dari luar pemerintah. Beberapa hari setelah kasus ini, hampir
 semua sudah tidak lagi bisa diakses.
+
+## Update 2025-02-25
+
+Hanya beberapa hari setelah kasus ini, dua investor pelat merah yang mendanai
+Kecilin, yaitu Mandiri Capital Indonesia dan BNI Ventures, kini disimpan di
+bawah manajemen Danantara. Tulisan ini tidak membahas lebih lanjut mengenai hal
+tersebut, namun dapat kita katakan yang menyebabkan masalah ini adalah kegagalan
+Mandiri Capital dan BNI Ventures dalam melakukan *due diligence*. Sedangkan
+Danantara akan mengelola dana yang jauh lebih besar daripada yang diinvestasikan
+ke Kecilin.
