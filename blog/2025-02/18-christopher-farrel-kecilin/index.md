@@ -117,7 +117,7 @@ kedondong](https://news.detik.com/berita/d-3955322/dulu-bikin-heboh-listrik-poho
 * Orang-orang dewasa di sekitarnya tidak memahami apa yang dia kerjakan, hanya
   tahu itu bagus. Jadi bukannya mengarahkan sesuai dengan proporsinya ke arah
   yang positif, tapi malah memupuk *[illusory
-  superiority](https://en.wikipedia.org/wiki/Illusory_superiority)*-nya.
+  superiority](https://en.wikipedia.org/wiki/Illusory_superiority)*-nya.  
 
 * Lalu ada media massa yang bahas, dan dikutip media massa lainnya, lalu dikutip
   media massa lainnya, dan seterusnya sampai menjadi *hype*. Sayangnya tak ada
@@ -146,6 +146,20 @@ kedondong](https://news.detik.com/berita/d-3955322/dulu-bikin-heboh-listrik-poho
   
 Jadi itulah cerita bagaimana negara ini bisa kehilangan anak muda berbakat yang
 sebenarnya memiliki potensi besar untuk berkontribusi positif.
+
+## Dilema
+
+Mungkin saja bukan tidak ada orang dewasa yang paham dan menyadari bahwa apa
+yang diklaim tidak layak mendapatkan pendanaan sampai 60 milyar. Tapi orang-orang
+tersebut akan berada di posisi yang dilematis:
+
+* Jika jujur dan 'tega', maka akan dianggap tidak nasionalis, tidak mendukung
+  karya anak bangsa, dan hal-hal semacamnya.
+* Yang diklaim selama ini hanya samar-samar, tidak ada konkretnya. Jadi ada
+  risiko kecil bahwa mungkin saja klaim tersebut benar, dan kita yang salah.
+* Semua orang 'mendukung' dia, hanya kita yang tidak.
+
+Akibatnya, banyak yang memilih untuk cari aman dan diam.
 
 ## Lain-lain
 
