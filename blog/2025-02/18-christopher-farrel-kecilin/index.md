@@ -1,5 +1,6 @@
 ---
 title: Christopher Farrel & Kecilin
+description: Investigasi di balik kisah tragis Christopher Farrel & Kecilin
 authors: priyadi
 image: ./socialcard.png
 ---
