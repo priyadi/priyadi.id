@@ -1,6 +1,7 @@
 ---
 title: '#KaburAjaDulu dan Perubahan Iklim'
 authors: priyadi
+description: '#KaburAjaDulu dari sudut pandang perubahan iklim'
 image: ./socialcard.png
 ---
 
