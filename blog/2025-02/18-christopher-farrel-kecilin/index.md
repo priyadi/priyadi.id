@@ -166,4 +166,5 @@ Daftar Klien Kecilin diketahui menggunakan pencarian Google
 sudah tidak bisa diakses, tetapi masih ada di hasil pencarian. Yang saya lihat
 adalah: Pegadaian, BTN, Telkomsel, Telin, Antam, BNI, Mandiri, Polda, Pelni,
 KPP, Adhikarya, PSSI. Semua adalah lembaga yang berhubungan dengan pemerintah,
-tidak ada yang dari luar pemerintah.
+tidak ada yang dari luar pemerintah. Beberapa hari setelah kasus ini, hampir
+semua sudah tidak lagi bisa diakses.
