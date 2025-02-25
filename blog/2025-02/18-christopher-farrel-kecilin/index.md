@@ -163,4 +163,7 @@ aplikasi Pied Piper yang memiliki algoritma kompresi data yang revolusioner.
 
 Daftar Klien Kecilin diketahui menggunakan pencarian Google
 [site:kecilin.id](https://www.google.com/search?q=site%3Akecilin.id). Beberapa
-sudah tidak bisa diakses, tetapi masih ada di hasil pencarian.
+sudah tidak bisa diakses, tetapi masih ada di hasil pencarian. Yang saya lihat
+adalah: Pegadaian, BTN, Telkomsel, Telin, Antam, BNI, Mandiri, Polda, Pelni,
+KPP, Adhikarya, PSSI. Semua adalah lembaga yang berhubungan dengan pemerintah,
+tidak ada yang dari luar pemerintah.
