@@ -175,7 +175,7 @@ semua sudah tidak lagi bisa diakses.
 Hanya beberapa hari setelah kasus ini, dua investor pelat merah yang mendanai
 Kecilin, yaitu Mandiri Capital Indonesia dan BNI Ventures, kini disimpan di
 bawah manajemen Danantara. Tulisan ini tidak membahas lebih lanjut mengenai hal
-tersebut, namun dapat kita katakan yang menyebabkan masalah ini adalah kegagalan
-Mandiri Capital dan BNI Ventures dalam melakukan *due diligence*. Sedangkan
-Danantara akan mengelola dana yang jauh lebih besar daripada yang diinvestasikan
-ke Kecilin.
+tersebut, namun dapat kita katakan salah satu penyebab masalah ini adalah
+kegagalan Mandiri Capital dan BNI Ventures dalam melakukan *due diligence*.
+Sedangkan Danantara akan mengelola dana yang jauh lebih besar daripada yang
+diinvestasikan ke Kecilin.
