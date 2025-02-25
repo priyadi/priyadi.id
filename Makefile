@@ -3,8 +3,10 @@ PLANTUML=docker run -i --rm plantuml/plantuml
 PUML=$(wildcard *.puml */*.puml */*/*.puml */*/*/*.puml */*/*/*/*.puml)
 PUML_LIGHT_SVG=$(patsubst %.puml, %.light.svg, $(PUML))
 PUML_DARK_SVG=$(patsubst %.puml, %.dark.svg, $(PUML))
+SOCIALCARD_SVG=$(wildcard blog/*/*/socialcard.svg)
+SOCIALCARD_PNG=$(patsubst blog/%/socialcard.svg, blog/%/socialcard.png, $(SOCIALCARD_SVG))
 
-all: diagrams
+all: diagrams socialcards
 
 .PHONY: start
 start:
@@ -36,10 +38,14 @@ static/rekapager/%.png: static-src/rekapager/%.png
 .PHONY: diagrams
 diagrams: $(PUML_LIGHT_SVG) $(PUML_DARK_SVG)
 
-.PHONY: %.light.svg
 %.light.svg: %.puml
 	$(PLANTUML) -pipe -tsvg -SbackgroundColor=transparent < $< > $@
 
-.PHONY: %.dark.svg
 %.dark.svg: %.puml
 	$(PLANTUML) -pipe -tsvg -darkmode -SbackgroundColor=transparent < $< > $@
+
+.PHONY: socialcards
+socialcards: $(SOCIALCARD_PNG)
+
+%/socialcard.png: %/socialcard.svg
+	inkscape -o $@ $<
