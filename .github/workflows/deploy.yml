@@ -13,28 +13,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache build
-        id: cache-build
-        uses: actions/cache@v4
-        with:
-          path: build
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
+      # - name: Cache build
+      #   id: cache-build
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: build
+      #     key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Cache diagrams
-        id: cache-diagrams
-        uses: actions/cache@v4
-        with:
-          path: |
-            **/*.dark.svg
-            **/*.light.svg
-          key: ${{ runner.os }}-diagrams
+      # - name: Cache diagrams
+      #   id: cache-diagrams
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       **/*.dark.svg
+      #       **/*.light.svg
+      #     key: ${{ runner.os }}-diagrams
 
-      - name: Cache social cards
-        id: cache-socialcards
-        uses: actions/cache@v4
-        with:
-          path: '**/socialcard.png'
-          key: ${{ runner.os }}-socialcards
+      # - name: Cache social cards
+      #   id: cache-socialcards
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: '**/socialcard.png'
+      #     key: ${{ runner.os }}-socialcards
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
