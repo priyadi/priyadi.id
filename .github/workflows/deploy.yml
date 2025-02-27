@@ -19,7 +19,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: build
-          key: build-${{ hashFiles('**/package-lock.json') }}-{{ github.run_id }}
+          key: build-${{ hashFiles('**/package-lock.json') }}-${{ github.run_id }}
           restore-keys: build-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Cache diagrams
@@ -29,7 +29,7 @@ jobs:
           path: |
             **/*.dark.svg
             **/*.light.svg
-          key: diagrams-{{ github.run_id }}
+          key: diagrams-${{ github.run_id }}
           restore-keys: diagrams-
 
       - name: Cache social cards
@@ -37,7 +37,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: '**/socialcard.png'
-          key: socialcards-{{ github.run_id }}
+          key: socialcards-${{ github.run_id }}
           restore-keys: socialcards-
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
