@@ -13,6 +13,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: fontist/setup-fontist@v2
+        with:
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Cache build
+        id: cache-build
+        uses: actions/cache@v4
+        with:
+          path: build
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Cache diagrams
+        id: cache-diagrams
+        uses: actions/cache@v4
+        with:
+          path: '**/*.dark.svg **/*.light.svg'
+          key: ${{ runner.os }}-diagrams
+
+      - name: Cache social cards
+        id: cache-socialcards
+        uses: actions/cache@v4
+        with:
+          path: '**/socialcard.png'
+          key: ${{ runner.os }}-socialcards
 
       - name: Add Inkscape repository
         run: sudo add-apt-repository ppa:inkscape.dev/stable
@@ -21,9 +44,6 @@ jobs:
         with:
           packages: graphviz inkscape python3-lxml python3-pytest python3-pil python3-pytest-cov
           version: 1.0
-
-      # - name: Install grapviz
-      #   run: sudo apt-get install graphviz
 
       - uses: actions/setup-node@v4
         with:
@@ -38,11 +58,6 @@ jobs:
       - name: Install PlantUML
         run: |
           curl -sSLf -o plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar 
-
-      # - name: Install Inkscape
-      #   run: |
-      #     sudo apt update
-      #     sudo apt install -y 
 
       - name: Install Inter font
         run: fontist install "Inter"
@@ -59,18 +74,10 @@ jobs:
       - name: Build website
         run: npm run build
 
-      # Popular action to deploy to GitHub Pages:
-      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
-          # The following lines assign commit authorship to the official
-          # GH-Actions bot for deploys to `gh-pages` branch:
-          # https://github.com/actions/checkout/issues/13#issuecomment-724415212
-          # The GH actions bot is used by default if you didn't specify the two fields.
-          # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
