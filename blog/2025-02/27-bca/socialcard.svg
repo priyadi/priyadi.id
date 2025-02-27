@@ -28,8 +28,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.93005051"
-     inkscape:cx="397.29025"
-     inkscape:cy="390.30138"
+     inkscape:cx="526.3155"
+     inkscape:cy="132.25088"
      inkscape:window-width="2327"
      inkscape:window-height="1273"
      inkscape:window-x="0"
@@ -76,13 +76,18 @@
     <text
        xml:space="preserve"
        style="font-size:19.3636px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#f9f9f9;stroke-width:0.484092"
-       x="159.3362"
-       y="84.674461"
+       x="159.25111"
+       y="72.075386"
        id="text1"><tspan
          sodipodi:role="line"
          id="tspan1"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;fill:#f9f9f9;stroke-width:0.484092"
-         x="159.3362"
-         y="84.674461">#KaburAjaDulu</tspan></text>
+         x="159.25111"
+         y="72.075386">Ada Berapa Kredensial yang</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;fill:#f9f9f9;stroke-width:0.484092"
+         x="159.25111"
+         y="97.046616"
+         id="tspan2">Perlu Diingat Nasabah BCA?</tspan></text>
   </g>
 </svg>

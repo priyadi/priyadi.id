@@ -1,0 +1,72 @@
+
+@startuml
+!pragma layout smetana
+left to right direction
+
+rectangle Layanan {
+    rectangle klikBCA as "KlikBCA"
+    rectangle myBCA as "myBCA"
+    rectangle oneKlik as "OneKlik"
+    rectangle mBCA as "mBCA"
+    rectangle ccBCA as "Kartu kredit"
+    rectangle atm as "ATM"
+    rectangle flazz as "Flazz"
+}
+
+rectangle whatYouKnow as "<i>What you know</i>" {
+    storage klikbcaUsername as "User ID KlikBCA"
+    storage klikbcaPassword as "PIN KlikBCA"
+    storage pinKeyBca as "PIN KeyBCA"
+    storage BCAid as "BCA ID"
+    storage myBCAPassword as "Password myBCA"
+    storage pinKartuKredit as "PIN Kartu kredit"
+    storage pinATM as "PIN ATM"
+    storage kodemBCA as "Kode akses mBCA"
+}
+
+rectangle whatYouHave as "<i>What you have</i>" {
+    storage keyBCA as "KeyBCA"
+    storage ponsel as "Ponsel"
+    storage kartuKredit as "Kartu kredit"
+    storage kartuFlazz as "Kartu Flazz"
+    storage kartuATM as "Kartu ATM"
+}
+
+rectangle whatYouAre as "<i>What you are</i>" {
+    storage biometric as "Biometrik"
+}
+
+' klikBCA
+klikBCA -- klikbcaUsername
+klikBCA -- klikbcaPassword
+keyBCA -- klikBCA
+keyBCA ---- pinKeyBca
+
+' myBCA
+myBCA -- BCAid
+myBCA -- myBCAPassword
+ponsel -- myBCA
+biometric --- myBCA
+
+' ccBCA
+ccBCA -- pinKartuKredit
+kartuKredit -- ccBCA
+ponsel -- ccBCA
+
+' flazz
+kartuFlazz -- flazz
+
+' atm
+kartuATM -- atm
+atm --- pinATM
+myBCA - atm
+
+' mBCA
+ponsel --- mBCA
+mBCA -- kodemBCA
+
+' oneklik
+ponsel -- oneKlik
+
+
+@enduml

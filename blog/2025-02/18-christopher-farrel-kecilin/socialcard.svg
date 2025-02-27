@@ -28,10 +28,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.93005051"
-     inkscape:cx="397.82786"
-     inkscape:cy="260.73853"
-     inkscape:window-width="2021"
-     inkscape:window-height="1226"
+     inkscape:cx="398.36546"
+     inkscape:cy="261.27613"
+     inkscape:window-width="2327"
+     inkscape:window-height="1273"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -76,18 +76,27 @@
     <text
        xml:space="preserve"
        style="font-size:19.3636px;line-height:1;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#f9f9f9;stroke-width:0.484092"
-       x="158.56604"
-       y="76.450325"
+       x="158.9202"
+       y="76.462456"
        id="text1"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:'Atkinson Hyperlegible';-inkscape-font-specification:'Atkinson Hyperlegible';fill:#f9f9f9;stroke-width:0.484092"
-         x="158.56604"
-         y="76.450325">Christopher Farrel</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:Inter;-inkscape-font-specification:Inter;fill:#f9f9f9;stroke-width:0.484092"
+         x="158.9202"
+         y="76.462456">Christopher Farrel</tspan><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:'Atkinson Hyperlegible';-inkscape-font-specification:'Atkinson Hyperlegible';fill:#f9f9f9;stroke-width:0.484092"
-         x="158.56604"
-         y="95.912292"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1;font-family:Inter;-inkscape-font-specification:Inter;fill:#f9f9f9;stroke-width:0.484092"
+         x="158.9202"
+         y="96.592789"
          id="tspan2">dan Kecilin</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="164.14655"
+       y="-21.90517"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:0.264583"></tspan></text>
   </g>
 </svg>

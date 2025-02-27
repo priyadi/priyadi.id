@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: fontist/setup-fontist@v2
 
       # - uses: awalsh128/cache-apt-pkgs-action@latest
       #   with:
@@ -31,10 +32,24 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: PlantUML
+      - name: Install PlantUML
         run: |
           curl -sSLf -o plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar 
-          make diagrams PLANTUML="java -jar plantuml.jar"
+
+      - name: Install Inkscape
+        run: |
+          sudo add-apt-repository ppa:inkscape.dev/stable
+          sudo apt update
+          sudo apt install -y inkscape python3-lxml python3-pytest python3-pil python3-pytest-cov
+
+      - name: Install Inter font
+        run: fontist install "Inter"
+
+      - name: Generate diagrams
+        run: make diagrams PLANTUML="java -jar plantuml.jar"
+
+      - name: Generate social cards
+        run: make socialcards
 
       - name: Install dependencies
         run: npm ci
