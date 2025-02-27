@@ -13,9 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Fontist
-        uses: fontist/setup-fontist@v2
-
       - name: Cache build
         id: cache-build
         uses: actions/cache@v4
@@ -39,17 +36,11 @@ jobs:
           path: '**/socialcard.png'
           key: ${{ runner.os }}-socialcards
 
-      - name: Add Inkscape repository
-        run: sudo add-apt-repository ppa:inkscape.dev/stable
-    
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: graphviz inkscape python3-lxml python3-pytest python3-pil python3-pytest-cov
+          packages: graphviz inkscape python3-lxml python3-pytest python3-pil python3-pytest-cov fonts-inter
           version: 1.0
           execute_install_scripts: true
-
-      - name: Reinstall inkscape
-        run: sudo apt-get install inkscape
 
       - uses: actions/setup-node@v4
         with:
@@ -64,9 +55,6 @@ jobs:
       - name: Install PlantUML
         run: |
           curl -sSLf -o plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar 
-
-      - name: Install Inter font
-        run: fontist install "Inter"
 
       - name: Generate diagrams
         run: make diagrams PLANTUML="java -jar plantuml.jar"
