@@ -44,6 +44,7 @@ jobs:
         with:
           packages: graphviz inkscape python3-lxml python3-pytest python3-pil python3-pytest-cov
           version: 1.0
+          execute_install_scripts: true
 
       - uses: actions/setup-node@v4
         with:
