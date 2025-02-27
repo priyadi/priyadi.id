@@ -11,9 +11,14 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # https://github.com/actions/toolkit/issues/505
+      - name: Restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+
       - name: Cache build
         id: cache-build
         uses: actions/cache@v4
