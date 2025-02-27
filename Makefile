@@ -1,4 +1,5 @@
 PLANTUML=docker run -i --rm plantuml/plantuml
+INKSCAPE=inkscape
 
 PUML=$(wildcard *.puml */*.puml */*/*.puml */*/*/*.puml */*/*/*/*.puml)
 PUML_LIGHT_SVG=$(patsubst %.puml, %.light.svg, $(PUML))
@@ -48,4 +49,4 @@ diagrams: $(PUML_LIGHT_SVG) $(PUML_DARK_SVG)
 socialcards: $(SOCIALCARD_PNG)
 
 %/socialcard.png: %/socialcard.svg
-	inkscape -o $@ $<
+	$(INKSCAPE) -o $@ $<
