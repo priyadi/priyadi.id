@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: fontist/setup-fontist@v2
-        with:
-          cache-dependency-path: 'package-lock.json'
+
+      - name: Install Fontist
+        uses: fontist/setup-fontist@v2
 
       - name: Cache build
         id: cache-build
