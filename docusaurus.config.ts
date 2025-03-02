@@ -66,7 +66,7 @@ const config: Config = {
       title: 'priyadi.id',
       logo: {
         alt: 'priyadi',
-        src: 'https://github.com/priyadi.png',
+        src: 'img/priyadi.png',
       },
       items: [
         // {to: '/blog', label: 'Blog', position: 'left'},
