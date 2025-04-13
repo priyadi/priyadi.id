@@ -2,7 +2,7 @@
 title: '#KaburAjaDulu dan Perubahan Iklim'
 authors: priyadi
 description: '#KaburAjaDulu dari sudut pandang perubahan iklim'
-image: ./socialcard.png
+image: ./socialcard.jpeg
 ---
 
 `#KaburAjaDulu` adalah tagar yang populer, berisi ajakan bagi anak muda untuk
@@ -13,7 +13,7 @@ sudut pandang perubahan iklim.
 
 <!-- truncate -->
 
-![#KaburAjaDulu](./socialcard.png)
+![#KaburAjaDulu](./socialcard.jpeg)
 
 ## Yang Akan Terjadi di Masa Depan Akibat Perubahan Iklim
 

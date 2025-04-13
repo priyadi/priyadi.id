@@ -15,14 +15,6 @@ all: diagrams socialcards
 start:
 	npx docusaurus start
 
-.PHONY: build
-build:
-	npx docusaurus build
-
-.PHONY: serve
-serve:
-	npx docusaurus serve
-
 .PHONY: clean
 clean: clean-diagrams
 	npx docusaurus clear

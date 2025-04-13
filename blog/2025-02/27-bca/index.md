@@ -2,7 +2,7 @@
 title: Ada Berapa Kredensial Yang Perlu Diingat Nasabah BCA?
 authors: priyadi
 description: Yang harus diingat oleh nasabah BCA
-image: ./socialcard.png
+image: ./socialcard.jpeg
 ---
 
 Diagram faktor otentikasi layanan BCA.
