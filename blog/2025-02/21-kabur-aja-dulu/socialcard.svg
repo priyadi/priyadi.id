@@ -40,26 +40,26 @@
      id="defs1">
     <radialGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient1-5"
-       id="radialGradient2-7"
+       xlink:href="#linearGradient1"
+       id="radialGradient2"
        cx="158.75"
        cy="79.375"
        fx="158.75"
        fy="79.375"
        r="158.75"
-       gradientTransform="matrix(1,0,0,0.5,1.7529297e-7,39.6875)"
+       gradientTransform="matrix(1.6746337,0,0,0.89780495,-107.0981,8.1117334)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       id="linearGradient1-5"
+       id="linearGradient1"
        inkscape:collect="always">
       <stop
          style="stop-color:#d40000;stop-opacity:1;"
          offset="0"
-         id="stop1-3" />
+         id="stop1" />
       <stop
-         style="stop-color:#910000;stop-opacity:1;"
+         style="stop-color:#560000;stop-opacity:1;"
          offset="1"
-         id="stop2-5" />
+         id="stop2" />
     </linearGradient>
   </defs>
   <g
@@ -67,8 +67,8 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:url(#radialGradient2-7);stroke-width:1.5875;paint-order:markers stroke fill"
-       id="rect1-2"
+       style="fill:url(#radialGradient2);stroke-width:1.5875;paint-order:markers stroke fill"
+       id="rect1"
        width="317.5"
        height="158.75"
        x="0"

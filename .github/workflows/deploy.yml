@@ -27,33 +27,6 @@ jobs:
           key: build-${{ hashFiles('**/package-lock.json') }}-${{ github.run_id }}
           restore-keys: build-${{ hashFiles('**/package-lock.json') }}-
 
-      - name: Cache diagrams
-        id: cache-diagrams
-        uses: actions/cache@v4
-        with:
-          path: |
-            **/*.dark.svg
-            **/*.light.svg
-          key: diagrams-${{ github.run_id }}
-          restore-keys: diagrams-
-
-      - name: Cache social cards
-        id: cache-socialcards
-        uses: actions/cache@v4
-        with:
-          path: '**/socialcard.png'
-          key: socialcards-${{ github.run_id }}
-          restore-keys: socialcards-
-
-      - uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: graphviz inkscape python3-lxml python3-pytest python3-pil python3-pytest-cov fonts-inter
-          version: 1.0
-          execute_install_scripts: true
-
-      - name: Reinstall inkscape
-        run: sudo apt-get install inkscape
-
       - uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -63,16 +36,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-
-      - name: Install PlantUML
-        run: |
-          curl -sSLf -o plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar 
-
-      - name: Generate diagrams
-        run: make diagrams PLANTUML="java -jar plantuml.jar"
-
-      - name: Generate social cards
-        run: make socialcards INKSCAPE=/usr/bin/inkscape
 
       - name: Install dependencies
         run: npm ci
