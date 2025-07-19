@@ -1,1 +1,0 @@
-(self.webpackChunkpriyadi_id=self.webpackChunkpriyadi_id||[]).push([[918],{5741:()=>{},8974:(i,s,a)=>{"use strict";a.d(s,{A:()=>e});var d=a(8291);const e=d}}]);
