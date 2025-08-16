@@ -50,6 +50,7 @@ const config: Config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
           blogSidebarTitle: 'Pos',
+          blogSidebarCount: 20,
         },
         theme: {
           customCss: './src/css/custom.css',
