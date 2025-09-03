@@ -23,8 +23,8 @@ politik, kita perlu menggunakan istilah lain, misalnya "political influencer",
 "paid political promoter", atau bahkan "political shill" yang berkonotasi
 negatif.
 
-Saat ini tidak ada kamus Bahasa Inggris yang memuat penjelasan tentang istilah
-'buzzer' dalam konteks politik.
+Saat tulisan ini dibuat, sama sekali tidak ada kamus Bahasa Inggris yang memuat
+penjelasan tentang istilah 'buzzer' dalam konteks politik.
 
 Media berbahasa Inggris di Indonesia juga sudah paham hal ini. Media Jakarta
 Post selalu [menggunakan tanda
