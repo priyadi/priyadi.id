@@ -12,6 +12,8 @@ Walaupun 'buzzer' adalah kata yang diambil dari bahasa Inggris, penggunaannya
 dalam konteks politik di Indonesia adalah hasil adaptasi lokal dan bukan istilah
 yang umum digunakan dalam bahasa Inggris.
 
+![Buzzer](./buzzer.jpg)
+
 <!-- truncate -->
 
 Bahasa adalah sesuatu yang dinamis dan selalu berkembang. Kata-kata baru selalu
