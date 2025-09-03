@@ -1,5 +1,5 @@
 ---
-title: Istilah 'Buzzer' di Politik Adalah Buatan Lokal, Bukan Istilah Bahasa Inggris
+title: Istilah 'Buzzer' di Politik Adalah Asli Lokal, Bukan Istilah Bahasa Inggris
 authors: priyadi
 image: ./socialcard.jpeg
 ---
