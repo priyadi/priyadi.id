@@ -23,13 +23,6 @@ clean: clean-diagrams
 clean-diagrams:
 	rm -f $(PUML_LIGHT_SVG) $(PUML_DARK_SVG)
 
-.PHONY: rekapager
-rekapager: $(REKAPAGER_DST)
-
-.PHONY: static/rekapager/%.png
-static/rekapager/%.png: static-src/rekapager/%.png
-	convert $< -alpha set -fuzz 3% -transparent '#ffffff' -shave 60x60 -resize 25% $@
-
 .PHONY: diagrams
 diagrams: $(PUML_LIGHT_SVG) $(PUML_DARK_SVG)
 
