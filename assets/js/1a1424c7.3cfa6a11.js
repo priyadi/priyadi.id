@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkpriyadi_id=globalThis.webpackChunkpriyadi_id||[]).push([[5434],{6119:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/","page":1,"postsPerPage":10,"totalPages":2,"totalCount":12,"nextPage":"/page/2","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
