@@ -94,9 +94,9 @@ Keberhasilan pengembangan perangkat lunak berbasis AI tidak hanya ditentukan
 oleh kemampuan teknis model AI, tetapi juga oleh kemampuan kita mengelola dan
 meminimalkan dampak sifat penjilat dari model AI. Prompt yang sama dapat
 menghasilkan hasil yang sangat berbeda tergantung dari hal-hal yang dilakukan
-sebelumnya. Jika agen AI melakukan pelanggaran hukum, maka perlu dipertanyakan
-mengapa bisa sampai begitu. Kemungkinan besar karena agen AI mendapatkan
-pendidikan yang salah dari kita sebagai atasan.
+sebelumnya. Jika agen AI melanggar aturan, maka perlu dipertanyakan mengapa bisa
+sampai begitu. Kemungkinan besar karena agen AI mendapatkan pendidikan yang
+salah dari kita sebagai atasan.
 
 Jika kita tahu Mode Penjilat™ dalam AI memiliki banyak dampak negatif, lalu
 mengapa praktis semua produsen model AI menggunakan Mode Penjilat™ secara
