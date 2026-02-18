@@ -73,7 +73,7 @@ sama dengan penentuan awal bulan Hijriah yang dilakukan pada awal-awal Islam.
 Bedanya saat ini kita memiliki iptek, jaman dahulu hanya bisa mengandalkan
 pengamatan langsung dengan mata telanjang.
 
-Baik kriteria pemerintah maupun Muhammadiyah keduanya memiliki deviasi dari
+Baik kriteria pemerintah maupun Muhammadiyah, keduanya memiliki deviasi dari
 kriteria lokal. Akan terdapat kasus-kasus daerah dimana hasil dari kriteria
 pemerintah atau Muhammadiyah berbeda dengan kriteria lokal. Karena itu, menurut
 saya tidak pantas jika penganut salah satu kriteria menganggap kriteria lainnya
