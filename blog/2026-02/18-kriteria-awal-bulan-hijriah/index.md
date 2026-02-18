@@ -65,6 +65,34 @@ kalender Hijriah untuk keperluan komersil bukan karena konspirasi Elit Global™
 tapi karena tidak mungkin setiap bulan mengalami keributan seperti ini, dan
 sulit untuk mendapatkan kepastian waktu jauh-jauh hari sebelumnya.
 
+## Ringkasan
+
+Satu-satunya kriteria yang sudah pasti benar hanya satu, yaitu kriteria lokal
+yang praktis tidak dilakukan oleh siapa pun saat ini. Ini adalah kriteria yang
+sama dengan penentuan awal bulan Hijriah yang dilakukan pada awal-awal Islam.
+Bedanya saat ini kita memiliki iptek, jaman dahulu hanya bisa mengandalkan
+pengamatan langsung dengan mata telanjang.
+
+Baik kriteria pemerintah maupun Muhammadiyah keduanya memiliki deviasi dari
+kriteria lokal. Akan terdapat kasus-kasus daerah dimana hasil dari kriteria
+pemerintah atau Muhammadiyah berbeda dengan kriteria lokal. Karena itu, menurut
+saya tidak pantas jika penganut salah satu kriteria menganggap kriteria lainnya
+salah.
+
+Konsekuensi kriteria lokal adalah tidak ada jaminan seluruh daerah di Indonesia
+akan mulai puasa pada hari yang sama, dan masuk Hari Raya Idul Fitri pada hari
+yang sama.
+
+Ingin menggunakan kriteria lokal, tapi juga ingin awal puasa dan Idul Fitri
+jatuh pada hari yang sama untuk seluruh Indonesia? Tidak mungkin, karena
+bertentangan dengan hukum alam.
+
+Ingin awal puasa dan Idul Fitri berbarengan? Tidak bisa menggunakan kriteria
+lokal, harus menggunakan kriteria pemerintah (berbarengan untuk seluruh
+Indonesia) atau kriteria Muhammadiyah (berbarengan untuk seluruh dunia).
+Konsekuensinya, kembali lagi ke awal, akan ada kasus daerah yang hasilnya
+berbeda dengan kriteria lokal.
+
 ## Saya Pribadi
 
 Saya *gak ribet*, dan tulisan ini bukan untuk membuat orang lain menjadi
