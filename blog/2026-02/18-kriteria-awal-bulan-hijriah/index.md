@@ -25,7 +25,7 @@ menggunakan batas wilayah negara sebagai bagian dari kriteria? Dari sudut
 pandang ibadah dan agama, tidak ada bedanya saya dan manusia lain yang berada di
 seberang batas negara.
 
-Selain itu, sebenarnya bisa saja hilal sudah terlihat di Papua dan pemerintah
+Selain itu, sebenarnya bisa saja hilal sudah terlihat di Aceh dan pemerintah
 menetapkan sudah masuk Ramadan, padahal belum terlihat di Jawa. Jadi sebenarnya
 keberatan yang sama juga bisa dialamatkan ke pemerintah dalam kondisi yang
 berbeda. Perbedaan pemerintah dan Muhammadiyah hanya dalam hal kriteria cakupan
@@ -67,9 +67,10 @@ sulit untuk mendapatkan kepastian waktu jauh-jauh hari sebelumnya.
 
 ## Saya Pribadi
 
-Saya *gak ribet*. Walaupun menurut saya Muhammadiyah lebih benar, saya tetap
-ikut puasa sesuai keluarga dan orang-orang di sekitar saya, seperti yang saya
-lakukan sejak dulu, yaitu menggunakan keputusan pemerintah.
+Saya *gak ribet*, dan tulisan ini bukan untuk membuat orang lain menjadi
+*ribet*. Walaupun menurut saya Muhammadiyah lebih benar, saya tetap ikut puasa
+sesuai keluarga dan orang-orang di sekitar saya, seperti yang saya lakukan sejak
+dulu, yaitu menggunakan keputusan pemerintah.
 
 Gunakan akal sehat dan hati nurani kita untuk memutuskan apa yang benar, dan
 tidak perlu tergantung dengan Ulama. Ulama bisa keliru, bisa jahat, dan belum
