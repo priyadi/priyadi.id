@@ -4,10 +4,80 @@
         <title>priyadi.id Blog</title>
         <link>https://priyadi.id/</link>
         <description>priyadi.id Blog</description>
-        <lastBuildDate>Wed, 18 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Apr 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>id</language>
+        <item>
+            <title><![CDATA[Strategi Menggunakan Mobil Listrik Untuk Penghuni Apartemen atau Kosan di Kota Kecil]]></title>
+            <link>https://priyadi.id/2026/04/12/mobil-listrik-apartemen/</link>
+            <guid>https://priyadi.id/2026/04/12/mobil-listrik-apartemen/</guid>
+            <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[EV]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="EV" src="https://priyadi.id/assets/images/ev-1a73d761746584bb96e3b847bbfdb3e0.jpeg" width="1536" height="1024" class="img_ev3q"></p>
+<p>Saat ini, terdapat tiga cara utama untuk mengisi daya mobil listrik:</p>
+<ol>
+<li class="">
+<p>Menggunakan unit dinding, yang memerlukan pemasangan unit khusus yang
+dipasang di garasi atau tempat parkir, dan sambungan PLN khusus, biasanya
+sebesar 7700 watt.</p>
+</li>
+<li class="">
+<p>Menggunakan unit portabel untuk mengisi daya menggunakan stopkontak biasa,
+yang menggunakan sambungan PLN yang sama dengan yang digunakan oleh lokasi
+tersebut. Untuk rumah tangga, biasanya memiliki daya listrik sebesar 2200-3500
+watt, sehingga pengisian daya akan lebih lambat dibandingkan dengan unit
+dinding.</p>
+</li>
+<li class="">
+<p>Menggunakan stasiun pengisian daya umum (SPKLU) yang tersedia di berbagai
+lokasi, seperti apartemen, pusat perbelanjaan, tempat kerja, dan jalan raya.</p>
+</li>
+</ol>
+<!-- -->
+<p>Untuk penghuni rumah, mengoperasikan mobil listrik bukan masalah. Pengguna hanya
+perlu mengisi daya mobil ketika mobil sedang tidak digunakan. Jika mobil parkir
+di garasi selama 8 jam, maka itu sudah cukup untuk mengisi daya untuk keperluan
+sehari-hari.</p>
+<ul>
+<li class="">Dengan unit dinding: 8 jam × 7700 watt = 61 kWh, cukup untuk mengisi penuh
+baterai untuk sebagian besar mobil listrik.</li>
+<li class="">Dengan unit portabel: 8 jam × 2200 watt = 17.6 kWh, hanya cukup untuk mengisi
+sebagian, tetapi sudah cukup untuk jarak tempuh sampai 100 km.</li>
+</ul>
+<p>Namun, bagi penghuni apartemen, situasinya berbeda. Opsi yang tersedia biasanya
+hanya SPKLU. Di Indonesia, SPKLU terbagi menjadi dua jenis utama:</p>
+<ol>
+<li class="">SPKLU Type-2, menggunakan arus AC dengan daya 22 kW.</li>
+<li class="">SPKLU CCS-2 <em>fast charging</em>, menggunakan arus DC dengan daya antara 50 kW
+hingga 350 kW.</li>
+</ol>
+<p>Masalahnya adalah:</p>
+<ul>
+<li class="">Yang banyak tersedia di berbagai lokasi adalah SPKLU Type-2 22 kW. Sedangkan
+unit CCS-2 tidak sebanyak itu, terutama di kota kecil.</li>
+<li class="">Yang tertera di brosur kendaraan hanyalah waktu pengisian dengan SPKLU CCS-2
+<em>fast charging</em>, yang jauh lebih cepat daripada SPKLU Type-2.</li>
+<li class="">Unit SPKLU Type-2-nya sendiri mampu mengisi daya dengan kecepatan 22 kW,
+tetapi rata-rata unit kendaraan hanya dapat menerima daya sekitar 7 kW.</li>
+</ul>
+<p>Untuk poin terakhir, hal ini seringkali tidak disebutkan di spesifikasi
+kendaraan. Yang bisa menerima daya 22 kW melalui Type-2 biasanya hanya kendaraan
+buatan Eropa yang lebih mahal.</p>
+<p>Bagi penghuni apartemen di kota kecil, seringkali yang tersedia hanya SPKLU
+Type-2 22 kW. Untuk mengisi daya dari kosong sampai penuh dengan daya 7 kW
+membutuhkan waktu minimal enam jam. Jadi dibutuhkan pengelolaan ekspektasi dan
+strategi khusus untuk mengisi daya, misalnya dibarengi dengan kegiatan lain.</p>
+<p>Pikirkan pula pengguna lain yang mungkin juga perlu menggunakan SPKLU tersebut.
+Jika kita menggunakan SPKLU selama enam jam, maka tidak ada pengguna lain yang
+bisa menggunakannya selama waktu tersebut. Dan di kota kecil, SPKLU lain mungkin
+tidak tersedia dalam jarak yang wajar.</p>
+<p>Sisi baiknya, satu jam pengisian bisa menambah daya sekitar 7 kWh. Untuk mobil
+kecil, ini sudah cukup untuk menambah jarak tempuh sekitar 50 km. Dan untuk
+penghuni kota kecil, mungkin sudah lebih dari cukup untuk keperluan dua tiga
+hari. Jika kebetulan bepergian ke kota besar, maka gunakan kesempatan tersebut
+untuk mengisi daya dengan SPKLU CCS-2 <em>fast charging</em> sampai penuh.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Kriteria Awal Bulan Hijriah]]></title>
             <link>https://priyadi.id/2026/02/18/kriteria-awal-bulan-hijriah/</link>
@@ -1020,7 +1090,7 @@ saya cek, situsnya tidak bisa diakses, tetapi ada subdomain
 lebih kecil sampai sekitar seperempatnya. Namun tidak ada yang istimewa mengenai
 hal ini. Hal yang sama bisa dengan mudah dilakukan misalnya dengan perintah
 seperti:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">magick input.jpg -quality 20 output.jpg</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">magick input.jpg -quality 20 output.jpg</span><br></div></code></pre></div></div>
 <p>Bagian mana yang melibatkan <em>"advanced compression engine"</em> yang mereka klaim?
 Dari demo, tidak ada yang bisa saya lihat. Seandainya ada <em>compression engine</em>
 yang <em>proprietary</em>, seharusnya saya perlu melakukan instalasi aplikasi <em>viewer</em>
