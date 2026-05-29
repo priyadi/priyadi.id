@@ -63,6 +63,12 @@ sekarang sudah mencapai 8 miliar jiwa. Jumlah hewan ternak yang ada pun ikut
 meningkat secara signifikan. Jadi tidak bisa disamakan dengan kondisi zaman
 dulu saat agama Islam pertama kali muncul.
 
+Untuk berkurban, saat ini kita perlu merogoh uang sekitar Rp 30 juta untuk
+seekor sapi. Harga tersebut hanya untuk harga sapinya saja, tetapi ada harga
+yang tidak kita bayarkan secara langsung, yang biasanya tidak terpikirkan, yaitu
+biaya dampak negatif terhadap lingkungan. Biaya ini nantinya harus dibayarkan
+oleh anak cucu kita.
+
 ## Kesimpulan Pribadi
 
 Berdasarkan data-data tersebut, saya menyimpulkan bahwa ibadah kurban memiliki
@@ -73,7 +79,9 @@ ibadah kurban bukanlah kewajiban.
 Hal ini kurang lebih sama saja dengan hal-hal seperti rokok. Dahulu dianggap
 mubah, lalu setelah diketahui dampak negatifnya, banyak yang menyimpulkan bahwa
 rokok itu makruh, atau bahkan haram. Namun di sini saya tidak mengharamkan, dan
-ini hanyalah keputusan pribadi saya.
+ini hanyalah keputusan pribadi saya. Ini adalah gambaran bahwa posisi agama
+terhadap suatu hal bisa berubah seiring dengan perkembangan zaman dan
+pengetahuan baru yang kita dapatkan.
 
 Walaupun demikian, saya merasa agama seharusnya menjadi yang pertama menjadi
 agen perubahan ke arah yang lebih baik, dan bisa beradaptasi berdasarkan
