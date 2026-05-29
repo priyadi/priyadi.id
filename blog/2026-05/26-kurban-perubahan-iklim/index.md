@@ -78,12 +78,12 @@ ibadah kurban bukanlah kewajiban.
 
 Hal ini kurang lebih sama saja dengan hal-hal seperti rokok. Dahulu dianggap
 mubah, lalu setelah diketahui dampak negatifnya, banyak yang menyimpulkan bahwa
-rokok itu makruh, atau bahkan haram. Namun di sini saya tidak mengharamkan, dan
-ini hanyalah keputusan pribadi saya. Ini adalah gambaran bahwa posisi agama
+rokok itu makruh, atau bahkan haram. Ini adalah gambaran bahwa posisi agama
 terhadap suatu hal bisa berubah seiring dengan perkembangan zaman dan
-pengetahuan baru yang kita dapatkan.
+pengetahuan baru yang kita dapatkan. Bedanya, di sini saya tidak mengharamkan,
+dan ini hanyalah keputusan pribadi saya
 
 Walaupun demikian, saya merasa agama seharusnya menjadi yang pertama menjadi
 agen perubahan ke arah yang lebih baik, dan bisa beradaptasi berdasarkan
-perubahan kondisi di lapangan dan pengetahuan baru yang sebelumnya belum kita
-ketahui.
+perubahan kondisi di lapangan dan terhadap pengetahuan baru yang sebelumnya
+belum kita ketahui.
