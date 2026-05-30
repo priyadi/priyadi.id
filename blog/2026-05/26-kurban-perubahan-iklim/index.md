@@ -76,14 +76,59 @@ jauh lebih banyak dampak negatif, dan memutuskan untuk tidak melakukan ibadah
 kurban di masa depan. Posisi ini tetap sejalan dengan ajaran Islam, karena
 ibadah kurban bukanlah kewajiban.
 
-Hal ini kurang lebih sama saja dengan hal-hal seperti rokok. Dahulu dianggap
-mubah, lalu setelah diketahui dampak negatifnya, banyak yang menyimpulkan bahwa
-rokok itu makruh, atau bahkan haram. Ini adalah gambaran bahwa posisi agama
-terhadap suatu hal bisa berubah seiring dengan perkembangan zaman dan
-pengetahuan baru yang kita dapatkan. Bedanya, di sini saya tidak mengharamkan,
-dan ini hanyalah keputusan pribadi saya
+Saya berpendapat agama seharusnya menjadi yang pertama menjadi agen perubahan ke
+arah yang lebih baik, dan bisa beradaptasi berdasarkan perubahan kondisi di
+lapangan dan terhadap pengetahuan baru yang sebelumnya belum kita ketahui.
 
-Walaupun demikian, saya merasa agama seharusnya menjadi yang pertama menjadi
-agen perubahan ke arah yang lebih baik, dan bisa beradaptasi berdasarkan
-perubahan kondisi di lapangan dan terhadap pengetahuan baru yang sebelumnya
-belum kita ketahui.
+## Reaksi dan Tanggapan
+
+Karena berbagai macam alasan, terdapat banyak reaksi yang muncul, dan sebagian
+besar memiliki pola yang sama. Untuk itu berikut adalah rangkumannya.
+
+> Negara X memiliki produksi atau konsumsi sapi yang lebih tinggi, kenapa kita yang harus berubah?
+
+Argumen dengan pola seperti ini dinamakan [whataboutism](https://en.wikipedia.org/wiki/Whataboutism). Ini adalah jenis argumen yang mencoba untuk mengalihkan perhatian dari isu yang sedang dibahas dengan menunjuk pada isu lain yang dianggap lebih buruk.
+
+Soal lingkungan, jurus argumentasi seperti ini sudah ada sejak tahun 1990-an.
+Praktis semua negara pernah menggunakan jurus ini untuk tidak melakukan
+perubahan, termasuk negara-negara dengan emisi tinggi seperti Amerika Serikat,
+China, dan India. Itu sebabnya masalah iklim tidak pernah terselesaikan.
+
+Dari pada menuntut pihak lain untuk berubah, jauh lebih mudah dimulai dari diri
+sendiri.
+
+> Kamu juga masih makan daging, menggunakan AC, dan menggunakan kendaraan bermotor, jadi kamu juga tidak konsisten.
+
+Ini adalah argumen yang dinamakan [tu quoque](https://en.wikipedia.org/wiki/Tu_quoque). Ini adalah jenis argumen yang mencoba untuk membela diri dengan menunjuk pada perilaku atau tindakan yang dianggap sama dari pembuat argumen.
+
+Justru sebenarnya di sini saya tidak menuntut apa-apa dari orang lain. Dan
+yang saya lakukan adalah usaha untuk mengurangi emisi karbon dari diri saya
+sendiri, karena saya sadar saya masih makan daging, menggunakan AC, dan menggunakan kendaraan bermotor.
+
+Ini juga bentuk argumen yang dinamakan [nirvana
+fallacy](https://en.wikipedia.org/wiki/Nirvana_fallacy). Ini adalah jenis
+argumen yang mencoba untuk menolak solusi atau tindakan tertentu dengan
+menunjukkan bahwa solusi tersebut tidak sempurna atau tidak akan menyelesaikan
+masalah sepenuhnya.
+
+Jika seseorang memiliki emisi GHG sebesar 4 ton CO<sub>2</sub>eq per tahun, lalu
+mengurangi emisi tersebut menjadi 3,5 ton CO<sub>2</sub>eq per tahun, itu sudah
+menjadi langkah yang positif. Seseorang yang menggunakan argumentasi nirvana
+fallacy akan menuntut pengurangan emisi menjadi 0 ton CO<sub>2</sub>eq per
+tahun, yang tentu saja tidak realistis.
+
+> Konsumsi daging sapi di Indonesia masih kecil, belum saatnya untuk mengurangi
+> konsumsi daging sapi.
+
+Kuncinya adalah kata "belum saatnya". Artinya suatu saat akan menjadi "sudah
+saatnya". Dan *threshold* antara "belum saatnya" dan "sudah saatnya" itu
+berbeda-beda untuk setiap orang. Bagi saya, "sudah saatnya" itu sudah terjadi,
+untuk orang lain mungkin belum, baik karena belum tahu, atau karena merasa belum
+saatnya.
+
+> Kamu hanya menghalangi orang lain untuk beribadah...
+
+Menurut saya, memperbaiki lingkungan juga merupakan bagian dari ibadah. Maka,
+baik melakukan kurban dan tidak melakukan kurban dengan alasan lingkungan,
+keduanya adalah bentuk dari ibadah. Jadi bukan menjadi masalah kalau memang
+niatnya adalah untuk ibadah.
