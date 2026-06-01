@@ -131,7 +131,9 @@ saatnya.
 > Kamu hanya menghalangi orang lain untuk beribadah...
 
 Pos ini adalah pendapat saya. Saya tidak berniat menghalangi orang lain untuk
-beribadah, dan tidak mungkin untuk melakukan hal tersebut.
+beribadah, dan tidak mungkin untuk melakukan hal tersebut. Setiap orang memiliki
+pengalaman yang berbeda-beda, dan bereaksi sesuai dengan pengalaman
+masing-masing.
 
 Menurut saya, memperbaiki lingkungan juga merupakan bagian dari ibadah. Maka,
 baik melakukan kurban dan tidak melakukan kurban dengan alasan lingkungan,
