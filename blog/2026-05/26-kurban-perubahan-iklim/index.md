@@ -99,7 +99,9 @@ sendiri.
 
 > Kamu juga masih makan daging, menggunakan AC, dan menggunakan kendaraan bermotor, jadi kamu juga tidak konsisten.
 
-Ini adalah argumen yang dinamakan [tu quoque](https://en.wikipedia.org/wiki/Tu_quoque). Ini adalah jenis argumen yang mencoba untuk membela diri dengan menunjuk pada perilaku atau tindakan yang dianggap sama dari pembuat argumen.
+Ini adalah gabungan dari beberapa sesat logika sebagai berikut.
+
+Argumen [tu quoque](https://en.wikipedia.org/wiki/Tu_quoque). Ini adalah jenis argumen yang mencoba untuk membela diri dengan menunjuk pada perilaku atau tindakan yang dianggap sama dari pembuat argumen.
 
 Justru sebenarnya di sini saya tidak menuntut apa-apa dari orang lain. Dan
 yang saya lakukan adalah usaha untuk mengurangi emisi karbon dari diri saya
@@ -127,6 +129,9 @@ untuk orang lain mungkin belum, baik karena belum tahu, atau karena merasa belum
 saatnya.
 
 > Kamu hanya menghalangi orang lain untuk beribadah...
+
+Pos ini adalah pendapat saya. Saya tidak berniat menghalangi orang lain untuk
+beribadah, dan tidak mungkin untuk melakukan hal tersebut.
 
 Menurut saya, memperbaiki lingkungan juga merupakan bagian dari ibadah. Maka,
 baik melakukan kurban dan tidak melakukan kurban dengan alasan lingkungan,
