@@ -2,11 +2,88 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://priyadi.id/</id>
     <title>priyadi.id Blog</title>
-    <updated>2026-05-26T00:00:00.000Z</updated>
+    <updated>2026-08-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://priyadi.id/"/>
     <subtitle>priyadi.id Blog</subtitle>
     <icon>https://priyadi.id/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Mendapatkan Data BI-Checking/SLIK Pihak Ketiga Melalui idebku]]></title>
+        <id>https://priyadi.id/2026/08/14/bi-checking-idebku-slik/</id>
+        <link href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/"/>
+        <updated>2026-08-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Untuk mendapatkan data BI-checking/SLIK untuk diri kita pribadi, kita dapat]]></summary>
+        <content type="html"><![CDATA[<p>Untuk mendapatkan data BI-checking/SLIK untuk diri kita pribadi, kita dapat
+melakukannya melalui situs <a href="https://idebku.ojk.go.id/" target="_blank" rel="noopener noreferrer" class="">idebku</a>. Yang dibutuhkan
+adalah KTP dan beberapa foto <em>selfie</em>.</p>
+<p><img decoding="async" loading="lazy" alt="Kredit Macet" src="https://priyadi.id/assets/images/kredit-macet-33bdfeb7de305b8eb14f695d0c820f55.jpeg" width="2048" height="1143" class="img_ev3q"></p>
+<p>Terkadang kita membutuhkan BI-checking bukan untuk diri kita, tetapi untuk pihak
+ketiga. Misalnya untuk calon rekanan atau karyawan yang akan diberikan akses
+data sensitif. Kita akan menginginkan rekanan atau karyawan yang tidak memiliki
+masalah dengan hutang. Semakin banyak masalah dengan hutang, maka akan semakin
+besar risiko yang kita hadapi.</p>
+<p>Untuk kebutuhan seperti ini, prosedur resminya adalah dengan menggunakan surat
+kuasa dan datang langsung ke kantor OJK. Tetapi ini merepotkan dan memakan
+waktu. Selain itu belum tentu ada kantor OJK yang lokasinya dekat dengan kita.</p>
+<p>Alternatif yang lebih mudah adalah kita minta pihak ketiga untuk melakukan
+BI-checking sendiri melalui idebku, lalu kita cek keasliannya melalui
+kriptografi.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="melakukan-bi-checking-seperti-biasa">Melakukan <em>BI-checking</em> seperti biasa<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#melakukan-bi-checking-seperti-biasa" class="hash-link" aria-label="Taut langsung ke melakukan-bi-checking-seperti-biasa" title="Taut langsung ke melakukan-bi-checking-seperti-biasa" translate="no">​</a></h2>
+<p>Untuk melakukannya, kita minta pihak ketiga tersebut untuk melakukan checking
+secara mandiri melalui idebku seperti biasa. Biasanya, dalam satu hari kerja,
+OJK mengirimkan hasilnya melalui email ke email milik pihak ketiga tersebut.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Mengapa tidak dikirim langsung kepada kita saja?</div><div class="admonitionContent_BuS1"><p>Secara hukum, seharusnya OJK menghendaki data hanya dikirim ke pemohon. Jika
+email bukan milik pemohon bisa dianggap sebagai pengambilan data secara tidak
+sah.</p><p>Selain itu bisa saja datanya diperlukan untuk kepentingan lain, atau ada
+beberapa pihak yang membutuhkan datanya. Dan pihak OJK tidak akan suka
+berkali-kali dimintai pengecekan untuk orang yang sama.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="teruskan-hasilnya-sebagai-lampiran">Teruskan hasilnya sebagai lampiran<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#teruskan-hasilnya-sebagai-lampiran" class="hash-link" aria-label="Taut langsung ke Teruskan hasilnya sebagai lampiran" title="Taut langsung ke Teruskan hasilnya sebagai lampiran" translate="no">​</a></h2>
+<p>Setelah itu, kita minta yang bersangkutan untuk meneruskan email ke kita sebagai
+lampiran (<em>forward as attachment</em>), bukan <em>forward</em> seperti biasa. Hal ini
+penting agar email yang kita terima mempertahankan <em>header-header</em> yang
+diperlukan untuk menilai keasliannya. Jika email di-<em>forward</em> seperti biasa,
+maka tidak akan menyertakan informasi yang kita butuhkan.</p>
+<ul>
+<li class="">Mozilla Thunderbird: klik kanan di email, 'Forward and Redirect', 'As attachment'.</li>
+<li class="">Microsoft Outlook: Respond, more, Forward as Attachment</li>
+<li class="">Apple Mail: Message, Forward as Attachment</li>
+<li class="">Gmail: Download Message, lalu lampirkan berkasnya di email baru.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verifikasi-keaslian-melalui-dkim">Verifikasi keaslian melalui DKIM<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#verifikasi-keaslian-melalui-dkim" class="hash-link" aria-label="Taut langsung ke Verifikasi keaslian melalui DKIM" title="Taut langsung ke Verifikasi keaslian melalui DKIM" translate="no">​</a></h2>
+<p>Saat ini mayoritas email yang beredar ditandatangani menggunakan
+<a href="https://datatracker.ietf.org/doc/html/rfc6376" target="_blank" rel="noopener noreferrer" class="">DKIM</a> (<em>DomainKeys Identified
+Mail</em>). Sebelum email dikirim, server pengirim menghitung <em>hash</em> dari isi email
+beserta sejumlah <em>header</em> penting seperti <code>From</code>, <code>Subject</code>, dan <code>Date</code>, lalu
+menandatanganinya dengan kunci privat milik domain tersebut. Hasil tanda
+tangannya diletakkan pada <em>header</em> <code>DKIM-Signature</code>.</p>
+<p>Kunci publik pasangannya diterbitkan oleh pemilik domain di DNS. Untuk email
+dari OJK, kuncinya dapat dilihat siapa saja dengan mengambil <em>record</em> TXT pada
+<code>&lt;selektor&gt;._domainkey.ojk.go.id</code>. Karena kunci privatnya hanya dipegang OJK,
+tanda tangan yang sah membuktikan dua hal sekaligus:</p>
+<ol>
+<li class="">Email itu memang dikirim oleh server yang menguasai domain <code>ojk.go.id</code>.</li>
+<li class="">Isi dan <em>header</em> yang ditandatangani tidak berubah sedikit pun sejak
+dikirim. Satu karakter saja diubah, verifikasinya akan gagal.</li>
+</ol>
+<p>Alat di bawah ini memverifikasi tanda tangan DKIM sebuah berkas <code>.eml</code>. Unggah
+email yang Anda terima; jika di dalamnya terdapat email yang dilampirkan, email
+tersebut ikut diperiksa secara terpisah.</p>
+<div class="verifier_R6wa"><div class="dropzone_JRqI" role="button" tabindex="0"><input type="file" accept=".eml,message/rfc822,text/plain" class="fileInput_aq17"><strong>Letakkan berkas .eml di sini</strong><span class="hint_ICuh">atau klik untuk memilih berkas</span></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>catatan</div><div class="admonitionContent_BuS1"><p>Verifikasi berjalan sepenuhnya di peramban yang anda gunakan. Isi email tidak
+pernah dikirim ke server mana pun, termasuk ke situs ini.</p></div></div>
+<p>Yang perlu Anda perhatikan pada hasilnya adalah hasilnya harus berstatus sah,
+dan <strong>domain penanda tangan</strong> (<code>d=</code>) harus <code>ojk.go.id</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verifikasi-data-bi-checking">Verifikasi data BI-checking<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#verifikasi-data-bi-checking" class="hash-link" aria-label="Taut langsung ke Verifikasi data BI-checking" title="Taut langsung ke Verifikasi data BI-checking" translate="no">​</a></h2>
+<p>Email yang dikirimkan oleh OJK akan berisi taut ke satu atau lebih dokumen SLIK.
+Yang harus dipastikan di dokumen tersebut adalah pihak yang memang ingin anda
+ketahui. Pastikan NIK-nya sama dengan NIK yang tertera di KTP.</p>
+<p>Mengenai bagaimana cara membaca dokumen iDeb, silakan cek di <a href="https://idebku.ojk.go.id/Public/Informasi" target="_blank" rel="noopener noreferrer" class="">halaman informasi
+iDebku</a>.</p>]]></content>
+        <author>
+            <name>Priyadi Iman Nurcahyo</name>
+            <uri>https://priyadi.id</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Ibadah Kurban dan Perubahan Iklim]]></title>
         <id>https://priyadi.id/2026/05/26/kurban-perubahan-iklim/</id>
@@ -152,7 +229,7 @@ dinding.</p>
 lokasi, seperti apartemen, pusat perbelanjaan, tempat kerja, dan jalan raya.</p>
 </li>
 </ol>
-<!-- -->
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Informasi Mungkin Sudah Tidak Akurat</div><div class="admonitionContent_BuS1">Artikel ini ditulis pada <strong>12 April 2026</strong> (<!-- -->4 bulan<!-- --> yang lalu). Situasi saat ini mungkin sudah berbeda dari saat artikel ini ditulis.</div></div>
 <p>Untuk penghuni rumah, mengoperasikan mobil listrik bukan masalah. Pengguna hanya
 perlu mengisi daya mobil ketika mobil sedang tidak digunakan. Jika mobil parkir
 di garasi selama 8 jam, maka itu sudah cukup untuk mengisi daya untuk keperluan
