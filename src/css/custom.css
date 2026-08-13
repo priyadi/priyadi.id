@@ -80,3 +80,19 @@ article h1[class*="title"],
 [data-theme='dark'] img[src$='#gh-light-mode-only'] {
   display: none;
 }
+
+/* Numbered headings in blog posts */
+.blog-post-page .markdown {
+  counter-reset: h2counter;
+}
+.blog-post-page .markdown > h2 {
+  counter-reset: h3counter;
+}
+.blog-post-page .markdown > h2::before {
+  counter-increment: h2counter;
+  content: counter(h2counter) ". ";
+}
+.blog-post-page .markdown > h3::before {
+  counter-increment: h3counter;
+  content: counter(h2counter) "." counter(h3counter) " ";
+}
