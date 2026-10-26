@@ -4,10 +4,231 @@
         <title>priyadi.id Blog</title>
         <link>https://priyadi.id/</link>
         <description>priyadi.id Blog</description>
-        <lastBuildDate>Fri, 14 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Oct 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>id</language>
+        <item>
+            <title><![CDATA[Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell]]></title>
+            <link>https://priyadi.id/2026/10/23/php2shell/</link>
+            <guid>https://priyadi.id/2026/10/23/php2shell/</guid>
+            <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Pada tanggal 21 Oktober 2026, grup PHP mengumumkan adanya celah keamanan kritis]]></description>
+            <content:encoded><![CDATA[<p>Pada tanggal 21 Oktober 2026, grup PHP mengumumkan adanya celah keamanan kritis
+yang dikenal dengan sebutan PHP2Shell. Celah ini memungkinkan penyerang
+menjalankan kode pada situs web yang menggunakan bahasa pemrograman PHP.</p>
+<p>Saya banyak berurusan dengan PHP. Kadang saya menjadi arsitek, kadang saya
+<em>programmer</em>, kadang saya <em>system administrator</em>, kadang <em>security auditor</em>. Jadi saya
+terlibat dengan sangat banyak aplikasi PHP, baik dari sisi pengembangan maupun
+pengelolaannya. Berikut adalah cerita di balik layar penanganan celah keamanan
+PHP2Shell pada tanggal 21 Oktober 2026 yang lalu.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-0233-wib">Tanggal 21 Oktober 2026, 02:33 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-0233-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, 02:33 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, 02:33 WIB" translate="no">​</a></h2>
+<p>Grup PHP mengumumkan ditemukannya celah keamanan kritis yang dikenal dengan
+sebutan PHP2Shell. Mereka menjadwalkan bahwa rilis akan dilakukan pada pukul
+21.00 WIB, pada hari itu juga (zona waktu WIB). Dengan kata lain, hanya ada
+waktu kurang lebih 18 jam untuk melakukan persiapan sebelum mereka melakukan
+rilis tersebut.</p>
+<p><img decoding="async" loading="lazy" alt="Upcoming Critical PHP Security Release" src="https://priyadi.id/assets/images/upcoming-6de8fa80765e5e345ef9f7b1c9e0c1d7.png" width="707" height="501" class="img_ev3q"></p>
+<p>Dalam dunia perangkat lunak, prosedur tersebut dinamakan "pengumuman keamanan
+terkoordinasi", atau <a href="https://en.wikipedia.org/wiki/Coordinated_vulnerability_disclosure" target="_blank" rel="noopener noreferrer" class=""><em>coordinated vulnerability
+disclosure</em></a>
+(CVD). Tujuannya adalah memberikan waktu bagi pengembang, vendor, distributor,
+dan pihak terkait lainnya untuk menyiapkan perbaikan sebelum celah keamanan
+tersebut diumumkan secara publik.</p>
+<p>Biasanya CVD dijadwalkan dengan rentang waktu cukup lama, misalnya dua minggu
+atau lebih, untuk memberikan cukup waktu bagi semua pihak terkait menyiapkan
+perbaikan dan mitigasi sebelum celah keamanan diumumkan secara publik. Namun,
+untuk kasus ini, mereka hanya memberi waktu kurang dari satu hari, mungkin
+karena sifat celah keamanan ini sangat kritis dan ada potensi ada pihak yang
+akan membocorkan celah keamanan ini sebelum perbaikan tersedia.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1100-wib">Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1100-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB" translate="no">​</a></h2>
+<p>Saya baru mendapatkan kabar tentang celah keamanan PHP2Shell ini. Waktu yang
+tersisa sebelum rilis resmi hanya sekitar 10 jam. Dari spekulasi yang beredar di
+Internet, celah keamanan ini terkait dengan fitur <em>upload progress</em>, dan
+mitigasi dapat dilakukan dengan menonaktifkan fitur <em>upload progress</em> sementara
+hingga perbaikan resmi tersedia.</p>
+<p>Dengan demikian, saya menetapkan langkah mitigasi adalah dengan menonaktifkan fitur <em>upload progress</em>
+dengan menggunakan konfigurasi sebagai berikut.</p>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockTitle_OeMC">php.ini</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">session.upload_progress.enabled = 0</span><br></div></code></pre></div></div>
+<p>Saya buat <em>script</em> untuk secara otomatis menerapkan perubahan konfigurasi tersebut
+pada semua file <code>php.ini</code> yang ada di server.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1400-wib">Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1400-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB" translate="no">​</a></h2>
+<p>Rekan memberikan informasi bahwa rencana mitigasi yang saya rencanakan tidaklah
+cukup untuk melindungi server dari potensi eksploitasi celah keamanan PHP2Shell.</p>
+<p><img decoding="async" loading="lazy" alt="Pernyataan @Girgias@phpc.social" src="https://priyadi.id/assets/images/girgias-2c02714309b28b49cb16a801f25fec87.png" width="628" height="237" class="img_ev3q"></p>
+<p>Baiklah, artinya ini sangat serius. Jika satu-satunya jalan adalah <em>update</em>,
+maka untuk memastikan tidak ada masalah, akan ada <em>downtime</em> antara beberapa
+menit sampai dengan beberapa jam setelah pukul 21.00 WIB nanti.</p>
+<p>Dua jam ke depan dihabiskan untuk menghubungi <em>stakeholder</em> dan pihak terkait
+lainnya, membuat pengumuman, membuat daftar sistem yang akan ditangani, dan
+memastikan semua sistem tersebut dapat diakses.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Kenapa kok mendadak? Kenapa kami tidak diberi tahu dari beberapa hari lalu?</strong></em></p><p>A: Bukan saya yang membuat jadwal ini. Keputusan ini diambil oleh Grup PHP. Saya
+hanya melakukan eksekusi sesuai jadwal tersebut. Bersyukurlah bahwa jadwal yang
+diberikan sangat menyenangkan untuk orang Indonesia. Di negara lain, jadwal
+bersinggungan dengan jam sibuk mereka, dan akan terjadi gangguan yang jauh lebih
+besar.</p><p>Jika anda tidak bersedia untuk melakukan <em>update</em> sesuai jadwal yang ditentukan,
+maka saya tidak bertanggung jawab atas konsekuensi yang mungkin timbul.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1530-wib">Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1530-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB" translate="no">​</a></h2>
+<p>Rekan mengabarkan bahwa ada eksploit yang sudah bocor ke publik. Saya coba
+eksploitnya ke beberapa sistem yang saya tangani, dan tidak berhasil. Saya
+putuskan untuk tetap melanjutkan rencana <em>update</em> sesuai jadwal yang telah
+ditentukan.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1600-wib">Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1600-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB" translate="no">​</a></h2>
+<p>Merumuskan rencana eksekusi, garis besarnya adalah:</p>
+<ol>
+<li class="">Pada pukul 21:00 WIB, matikan semua layanan PHP.</li>
+<li class="">Lakukan <em>update</em>.</li>
+<li class="">Nyalakan kembali semua layanan PHP setelah <em>update</em> selesai.</li>
+<li class="">Verifikasi layanan sudah normal.</li>
+<li class="">Lakukan <em>scan</em> untuk memastikan celah keamanan telah diperbaiki.</li>
+</ol>
+<p>Garis besarnya sederhana, tetapi di lapangan menjadi sangat rumit, terutama
+<em>point</em> nomor 2. Untuk kasus saya:</p>
+<ul>
+<li class="">Ada beberapa arsitektur: <em>distro-native</em>, <em>shared hosting</em>, <em>container</em>.</li>
+<li class="">Ada banyak versi <em>distro</em>: EL6, EL7, EL8, EL9, EL10.</li>
+<li class="">Ada beberapa sumber paket: <em>distro</em>, pihak ketiga, dan buatan sendiri.</li>
+<li class="">Ada banyak versi PHP, mulai dari 5.2 sampai 8.6.</li>
+<li class="">PHP hanya memberi <em>update</em> untuk versi 8.2 ke atas, ada banyak kasus saya harus
+melakukan <em>backport</em> sendiri.</li>
+</ul>
+<p>Untuk RPM, saya melakukan gladi resik untuk rekompilasi dari SRPMS menjadi RPMS
+untuk memastikan semua paket dapat dikompilasi dengan sukses dan siap digunakan
+setelah <em>update</em>. Proses rekompilasi untuk satu paket membutuhkan waktu sekitar
+40 menit.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1700-wib">Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1700-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB" translate="no">​</a></h2>
+<p>Mendapat kabar bahwa Remi Collet ternyata sedang libur sejak tanggal 16 Oktober.
+Remi adalah pengelola <a href="https://rpms.remirepo.net/" target="_blank" rel="noopener noreferrer" class="">paket RPM untuk PHP</a> yang
+sangat populer di kalangan pengguna distribusi Linux berbasis Red Hat. Paket RPM
+dari Remi saya gunakan untuk mengelola instalasi PHP di berbagai sistem yang
+saya tangani.</p>
+<p><img decoding="async" loading="lazy" alt="Remi Collet" src="https://priyadi.id/assets/images/remi-96d4eca63454ed09f0d63ec972a39e19.png" width="646" height="276" class="img_ev3q"></p>
+<p>Dengan demikian kita harus pindah ke <em>plan B</em>. Agar sistem yang menggunakan
+Remirepo tetap mendapat <em>update</em>, saya akan buat RPMnya sendiri dari SRPMS-nya.
+Semua SRPMS terkait langsung saya unduh. Lalu saya buat beberapa <em>instance</em> untuk
+untuk versi <em>distro</em> yang diperlukan, dan memastikan semua bisa melakukan
+kompilasi dari <code>src.rpm</code> menjadi RPM dengan sukses.</p>
+<p><img decoding="async" loading="lazy" alt="Infrastructure" src="https://priyadi.id/assets/images/infrastructure-61336fc8d4e30a95901ecdd65babb52e.png" width="770" height="978" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1800-wib">Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1800-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB" translate="no">​</a></h2>
+<p>Tidur.</p>
+<p>Ada banyak masalah terjadi karena programmer atau sistem admistrator kurang
+tidur. Dan banyak teman-teman yang meremehkan hal ini. Sebelum melakukan
+pekerjaan yang kompleks dan kritis, pastikan tubuh dan pikiran dalam kondisi
+prima.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-pukul-2100-wib">Tanggal 21 Oktober 2026, pukul 21:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-pukul-2100-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, pukul 21:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, pukul 21:00 WIB" translate="no">​</a></h2>
+<p>Eksekusi rencana dimulai. Semua layanan PHP dimatikan. Semua <em>container</em> yang
+menjalankan PHP dimatikan. Untuk <em>host deployment</em>, strateginya adalah mematikan
+semua <em>binary</em> PHP dengan <code>chmod 0</code>. Jika sudah ada <em>update</em>, maka <em>binary</em> akan
+otomatis memiliki izin yang sesuai setelah <em>update</em> selesai.</p>
+<p>Saya tugaskan AI untuk melakukan hal-hal berikut ini:</p>
+<ol>
+<li class="">Memantau <a href="https://hub.docker.com/_/php" target="_blank" rel="noopener noreferrer" class=""><em>image</em> resmi Docker</a>, dan melaporkan
+jika sudah ada rilis versi baru dari <em>image</em> PHP.</li>
+<li class="">Melakukan <em>backport</em> <em>patch</em> untuk semua versi PHP di bawah 8.2, mulai dari 5.2
+hingga 8.1.</li>
+<li class="">Memantau apakah RedHat sudah merilis <em>update</em> untuk PHP. Walaupun saya jarang
+menggunakan paket resmi RHEL, <em>patch</em> yang mereka rilis mungkin akan
+bermanfaat untuk tugas nomor 2.</li>
+<li class="">Melakukan kompilasi semua SRPMS yang sudah ada <em>update</em>-nya, baik yang resmi,
+dari pemaket pihak ketiga (RedHat), atau hasil <em>backport</em> oleh AI di langkah
+nomor 2. Yang disukai tentunya adalah <em>update</em> resmi, lalu <em>patch</em> dari vendor
+terkemuka seperti RedHat, <em>patch</em> pihak ketiga dari komunitas, setelah itu baru
+<em>patch</em> hasil <em>backport</em> oleh AI.</li>
+</ol>
+<p>Untuk RPM, setiap kali kompilasi berhasil, hasilnya dapat langsung di-<em>push</em> ke
+repositori, bisa langsung diterapkan untuk <em>update</em> sistem yang membutuhkan, dan
+akan langsung otomatis kembali berfungsi.</p>
+<p>Untuk <em>image container</em>, saya memutuskan untuk menunggu <em>update</em> resmi dari Docker
+Hub. Sementara itu sistem tetap <em>offline</em> sampai <em>update</em> dirilis.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-2200-wib">Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-2200-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB" translate="no">​</a></h2>
+<p>Mendapat kabar bahwa Remi ternyata berhasil melakukan <em>update</em> di tengah
+liburannya. Saat ini sedang dalam proses <em>signing</em> yang memakan waktu yang lama
+karena jumlah paket yang sangat banyak.</p>
+<p><img decoding="async" loading="lazy" alt="Remi Update" src="https://priyadi.id/assets/images/phpfremi-2ce0861e76e18fafb05c8a48be78c989.png" width="641" height="262" class="img_ev3q"></p>
+<p>Saya langsung instruksikan agen AI untuk berhenti melakukan rekompilasi untuk
+paket-paket Remi, dan beralih fokus ke paket-paket non-Remi atau paket Remi yang
+tidak lagi mendapatkan <em>update</em>.</p>
+<p>Setelah paket-paket baru dipublikasikan, masalah belum selesai. Saya masih harus
+menunggu paket selesai di-<em>push</em> ke <em>mirror</em>. Saya tugaskan AI untuk mencari <em>mirror</em>
+yang sudah mendapatkan paket-paket terbaru, lalu saya unduh manual, dan
+melakukan instalasi ke semua server secara manual, tanpa bantuan <code>dnf</code> atau
+<code>yum</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-2300-wib">Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-2300-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB" translate="no">​</a></h2>
+<p>Docker Hub baru mempublikasikan <em>update</em> untuk <em>image</em> PHP dua jam setelah
+pengumuman resmi PHP. Sekarang waktunya untuk menangani proyek dengan arsitektur
+<em>container</em>.</p>
+<p>Bagi proyek yang menggunakan <em>image</em> resmi apa adanya, yang perlu dilakukan
+hanyalah <code>docker pull</code> dan kembali menjalankan <em>container</em> dengan <em>image</em> yang sudah
+diperbarui. Tapi yang bisa begini mungkin hanya proyek yang hanya membutuhkan
+MySQL/MariaDB.</p>
+<p>Masalah terjadi untuk <em>image custom</em>: infrastruktur PECL mati, kemungkinan karena
+ada banyak orang lain di luar sana yang melakukan hal yang sama. Umumnya terjadi
+karena <em>image</em> membutuhkan ekstensi yang bukan bagian dari PHP resmi. Untuk kasus
+saya, extensi yang terkait di antaranya adalah <code>redis</code>, <code>imagick</code>, dan <code>amqp</code>.</p>
+<p>Karena PECL mati, proses pembuatan <em>image</em> tidak bisa diselesaikan. Solusi yang
+saya lakukan adalah mengambil <em>source code</em> ekstensi yang dibutuhkan secara
+langsung dari GitHub.</p>
+<p>Yang merepotkan adalah proyek yang memiliki <code>Dockerfile</code> untuk melakukan
+instalasi ekstensi, apalagi jika posisi saya hanya <em>sysadmin</em>, bukan pengembang.
+Untuk memperbaiki celah keamanan, mau tidak mau harus memodifikasi <code>Dockerfile</code>,
+yang sebenarnya adalah tanggung jawab pengembang proyek, bukan <em>sysadmin</em>.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Pengembang proyek? Jangan gunakan <code>Dockerfile</code> atau <code>Containerfile</code> untuk
+melakukan kustomisasi PHP. Buat proyek terpisah untuk membuat <em>image</em>-nya, lalu
+simpan hasilnya di <em>container registry</em>. Kemudian baru gunakan <em>image</em> tersebut di
+<code>Dockerfile</code>/<code>Containerfile</code> atau <code>compose.yaml</code>.</p><p>Jaman sekarang yang paling mudah (dan gratis) adalah menggunakan GitHub, dengan
+<em>container registry</em> di <code>ghcr.io</code>.</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Konsekuensi dari metode pengembangan DevOps adalah bahwa tanggung jawab untuk
+<em>update</em> kini berada di tangan pengembang, bukan tim infrastruktur. Ini yang
+tidak dipahami oleh banyak <em>stakeholders</em>.</p><p>Seorang <em>sysadmin</em> bisa saja melakukan <em>update</em>, tetapi akan menyentuh kode yang
+dibuat pengembang, dan belum tentu sesuai dengan prosedur yang seharusnya
+diikuti.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-0000-wib">Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-22-oktober-2026-sekitar-pukul-0000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB" translate="no">​</a></h2>
+<p>Semua proyek berbasis <em>container</em> yang saya termasuk pengembangnya sudah
+menggunakan <em>image</em> yang diperbaharui dan sudah kembali berjalan normal. Lama
+<em>downtime</em> akibat masalah ini adalah 2-3 jam.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-0100-wib">Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-22-oktober-2026-sekitar-pukul-0100-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB" translate="no">​</a></h2>
+<p>Semua server <em>shared hosting</em> dan proyek dengan arsitektur <em>distro-native</em>
+di-<em>update</em> secara bertahap sejak awal pengumuman resmi PHP. Dan semua selesai
+pada pukul 01:00 WIB.</p>
+<p>Yang tidak dapat di-<em>update</em> adalah versi PHP sangat lama yaitu 5.2 dan 5.3.
+Penggunanya saya pindahkan ke versi 5.6 atau 7.4. Jika ada hal yang tidak
+kompatibel, saya tawarkan untuk diperbaiki dengan AI. Jika mustahil untuk
+<em>upgrade</em>, misalnya karena <em>source code</em> yang dienkripsi, maka saya tawarkan untuk
+pindah ke arsitektur <em>container</em>.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Kenapa kok masih menggunakan versi PHP lama?</strong></em></p><p>A:</p><ul>
+<li class="">Untuk proyek yang saat ini aktif saya tangani semuanya sudah menggunakan versi
+PHP 8.5.</li>
+<li class="">Untuk proyek orang lain yang saya hanya <em>sysadmin</em>-nya, hal tersebut bukan
+wewenang saya. Saya hanya bisa memberikan rekomendasi, tetapi keputusan ada di
+tangan <em>stakeholder</em>.</li>
+<li class="">Ada banyak proyek PHP yang kontraknya tidak menyertakan <em>source code</em>, dan
+<em>deliverable</em>-nya adalah kode yang dienkripsi, misalnya menggunakan ionCube
+atau Zend Guard.</li>
+</ul></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-1000-wib">Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-22-oktober-2026-sekitar-pukul-1000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB" translate="no">​</a></h2>
+<p>Mulai ada reaksi dari berbagai pihak. Yang paling bising adalah <em>pentester</em>.
+Biasanya mereka melakukan <em>scanning</em> terhadap situs web yang diuji. Lalu jika
+<em>output</em>-nya memiliki <em>header</em> <code>X-Powered-By: PHP/8.1.34</code>, maka mereka keliru
+menyimpulkan bahwa situs web tersebut rentan terhadap celah keamanan PHP2Shell.</p>
+<p>Grup PHP merilis PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 untuk menutup celah
+keamanan PHP2Shell. Lalu mereka simpulkan bahwa versi di bawah itu pasti rentan
+terhadap celah keamanan tersebut. Benarkah? Keliru, karena kita telah melakukan
+<a href="https://en.wikipedia.org/wiki/Backporting" target="_blank" rel="noopener noreferrer" class=""><em>backport</em></a> <em>patch</em> untuk menutup
+celah keamanan tersebut pada versi PHP yang lebih lama.</p>
+<p>Solusi saya adalah hanya dengan mematikan <em>header</em> <code>X-Powered-By</code> dengan
+menggunakan konfigurasi:</p>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">expose_php = Off</span><br></div></code></pre></div></div>
+<p>Hal ini tidak akan mengubah apapun dari sisi keamanan. Tetapi jika sang "ahli
+keamanan digital" mengklik tombol "Scan" pada <em>software scanner</em> yang mereka
+gunakan, <em>software</em> tidak akan menandai situs kita sebagai rentan terhadap celah
+keamanan PHP2Shell.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Mengapa melakukan backport, mengapa tidak gunakan versi lebih baru saja?</strong></em></p><p>A: Menggunakan versi lebih baru tidak selalu memungkinkan. Aplikasi belum tentu
+kompatibel dengan versi terbaru, dan membutuhkan pengujian untuk memastikan
+aplikasi kompatibel sebelum kita dapat melakukan <em>upgrade</em> ke versi PHP yang lebih
+baru.</p><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-2000-wib">Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-22-oktober-2026-sekitar-pukul-2000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" translate="no">​</a></h2><p>Melakukan scanning terhadap situs web yang saya tangani dengan
+<a href="https://github.com/assetnote/php2shell-scanner" target="_blank" rel="noopener noreferrer" class="">php2shell-scanner</a>. Hal ini
+untuk memastikan bahwa celah keamanan PHP2Shell telah berhasil ditutup.</p></div></div>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Mendapatkan Data BI-Checking/SLIK Pihak Ketiga Melalui idebku]]></title>
             <link>https://priyadi.id/2026/08/14/bi-checking-idebku-slik/</link>
@@ -222,7 +443,7 @@ dinding.</p>
 lokasi, seperti apartemen, pusat perbelanjaan, tempat kerja, dan jalan raya.</p>
 </li>
 </ol>
-<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Informasi Mungkin Sudah Tidak Akurat</div><div class="admonitionContent_BuS1">Artikel ini ditulis pada <strong>12 April 2026</strong> (<!-- -->4 bulan<!-- --> yang lalu). Situasi saat ini mungkin sudah berbeda dari saat artikel ini ditulis.</div></div>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Informasi Mungkin Sudah Tidak Akurat</div><div class="admonitionContent_BuS1">Artikel ini ditulis pada <strong>12 April 2026</strong> (<!-- -->6 bulan<!-- --> yang lalu). Situasi saat ini mungkin sudah berbeda dari saat artikel ini ditulis.</div></div>
 <p>Untuk penghuni rumah, mengoperasikan mobil listrik bukan masalah. Pengguna hanya
 perlu mengisi daya mobil ketika mobil sedang tidak digunakan. Jika mobil parkir
 di garasi selama 8 jam, maka itu sudah cukup untuk mengisi daya untuk keperluan
