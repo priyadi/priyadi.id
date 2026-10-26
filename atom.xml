@@ -21,6 +21,7 @@ menjalankan kode pada situs web yang menggunakan bahasa pemrograman PHP.</p>
 terlibat dengan sangat banyak aplikasi PHP, baik dari sisi pengembangan maupun
 pengelolaannya. Berikut adalah cerita di balik layar penanganan celah keamanan
 PHP2Shell pada tanggal 21 Oktober 2026 yang lalu.</p>
+<p><img decoding="async" loading="lazy" alt="Ilustrasi" src="https://priyadi.id/assets/images/ilustrasi-07600de182932281d413540259a0f3ea.jpg" width="1920" height="1072" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-0233-wib">Tanggal 21 Oktober 2026, 02:33 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-0233-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, 02:33 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, 02:33 WIB" translate="no">​</a></h2>
 <p>Grup PHP mengumumkan ditemukannya celah keamanan kritis yang dikenal dengan
 sebutan PHP2Shell. Mereka menjadwalkan bahwa rilis akan dilakukan pada pukul
@@ -224,9 +225,11 @@ keamanan PHP2Shell.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Mengapa melakukan backport, mengapa tidak gunakan versi lebih baru saja?</strong></em></p><p>A: Menggunakan versi lebih baru tidak selalu memungkinkan. Aplikasi belum tentu
 kompatibel dengan versi terbaru, dan membutuhkan pengujian untuk memastikan
 aplikasi kompatibel sebelum kita dapat melakukan <em>upgrade</em> ke versi PHP yang lebih
-baru.</p><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-2000-wib">Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-22-oktober-2026-sekitar-pukul-2000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" translate="no">​</a></h2><p>Melakukan scanning terhadap situs web yang saya tangani dengan
+baru.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-2000-wib">Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-22-oktober-2026-sekitar-pukul-2000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" translate="no">​</a></h2>
+<p>Melakukan scanning terhadap situs web yang saya tangani dengan
 <a href="https://github.com/assetnote/php2shell-scanner" target="_blank" rel="noopener noreferrer" class="">php2shell-scanner</a>. Hal ini
-untuk memastikan bahwa celah keamanan PHP2Shell telah berhasil ditutup.</p></div></div>]]></content>
+untuk memastikan bahwa celah keamanan PHP2Shell telah berhasil ditutup.</p>]]></content>
         <author>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
