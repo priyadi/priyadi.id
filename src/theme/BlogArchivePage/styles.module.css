@@ -1,0 +1,60 @@
+.title {
+  margin: 0.5rem 0 2rem;
+  font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.year {
+  display: grid;
+  gap: 0.5rem 2rem;
+  padding-block: 1.5rem 2rem;
+  border-top: 1px solid var(--c-ink);
+}
+
+.year h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-variant-numeric: lining-nums;
+}
+
+.year ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.year li {
+  display: grid;
+  gap: 0.1rem 1.5rem;
+  padding-block: 0.7rem;
+}
+
+.year li + li {
+  border-top: 1px solid var(--c-rule);
+}
+
+.year time {
+  font-size: 0.875rem;
+  color: var(--c-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.year a {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--c-ink);
+}
+
+@media (min-width: 48rem) {
+  .year {
+    grid-template-columns: 10rem minmax(0, 1fr);
+  }
+
+  .year li {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    align-items: baseline;
+  }
+}

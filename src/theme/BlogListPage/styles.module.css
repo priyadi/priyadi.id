@@ -1,0 +1,86 @@
+.top {
+  display: grid;
+  gap: 2rem;
+}
+
+.side {
+  display: grid;
+  align-content: start;
+  gap: 1.5rem;
+}
+
+.side > * + * {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--c-rule);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--c-ink);
+}
+
+.river {
+  margin-top: 2.5rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  padding-block: 0.7rem;
+  border-top: 1px solid var(--c-ink);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+/* The page with only the running list starts at the top of the frame. */
+.river:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 61.9375rem) {
+  .side {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-rule);
+  }
+}
+
+@media (min-width: 62rem) {
+  .top {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .side {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    border-left: 1px solid var(--c-rule);
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .top.stacked {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .stacked .side {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin-left: 0;
+    padding: 2rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--c-rule);
+  }
+
+  .stacked .side > * + * {
+    padding-top: 0;
+    border-top: 0;
+  }
+}

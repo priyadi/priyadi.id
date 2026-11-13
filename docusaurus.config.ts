@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import postCard from './src/remark/postCard';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -54,11 +55,23 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          blogSidebarTitle: 'Pos',
-          blogSidebarCount: 20,
+          // The front page lays out 1 lead + 3 side stories + 4 cards, then
+          // lists the rest.
+          postsPerPage: 14,
+          blogSidebarCount: 0,
+          beforeDefaultRemarkPlugins: [postCard],
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            require.resolve('@fontsource-variable/newsreader/opsz.css'),
+            require.resolve('@fontsource-variable/newsreader/opsz-italic.css'),
+            require.resolve('@fontsource-variable/schibsted-grotesk/wght.css'),
+            require.resolve(
+              '@fontsource-variable/schibsted-grotesk/wght-italic.css',
+            ),
+            require.resolve('@fontsource-variable/jetbrains-mono/wght.css'),
+            './src/css/custom.css',
+          ],
         },
       } satisfies Preset.Options,
     ],
@@ -66,25 +79,21 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/priyadi.id.png',
-    defaultMode: 'dark',
-    respectPrefersColorScheme: true,
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: true,
+    },
+    // The masthead and footer are custom components: see src/theme/Navbar
+    // and src/theme/Footer.
     navbar: {
       title: 'priyadi.id',
       logo: {
-        alt: 'priyadi',
-        src: 'img/priyadi.png',
+        alt: 'priyadi.id',
+        src: 'img/logo.svg',
       },
-      items: [
-        // {to: '/blog', label: 'Blog', position: 'left'},
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
-      ],
+      items: [],
     },
     footer: {
-      style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} Priyadi Iman Nurcahyo`,
     },
     prism: {

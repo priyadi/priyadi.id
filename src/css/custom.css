@@ -1,84 +1,345 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * priyadi.id: global styles.
+ *
+ * The palette comes from the logo: a sunset sky that runs from warm orange
+ * down to dusk plum. Light mode is white paper with plum-black ink; dark mode
+ * is the dusk end of the same sky.
+ *
+ * Charts and other embeds can read the --c-* and --font-* tokens to follow
+ * the current colour mode.
  */
 
-/* You can override the default Infima variables here. */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@500&family=Roboto+Slab:wght@100..900&display=swap');
-
 :root {
-  --ifm-color-primary: #a51d2d;
-  --ifm-color-primary-dark: #951a28;
-  --ifm-color-primary-darker: #8c1926;
-  --ifm-color-primary-darkest: #74141f;
-  --ifm-color-primary-light: #b62031;
-  --ifm-color-primary-lighter: #be2134;
-  --ifm-color-primary-lightest: #d7263a;
-  --ifm-code-font-size: 95%;
+  /* Palette */
+  --c-paper: #ffffff;
+  --c-surface: #f6f3f5;
+  --c-ink: #201a1f;
+  --c-ink-soft: #625a63;
+  --c-rule: #e2dce0;
+  --c-accent: #b3261a;
+  --sunset: linear-gradient(
+    90deg,
+    #f7994e,
+    #f3674a 30%,
+    #d94a4c 58%,
+    #93405c 82%,
+    #4b3052
+  );
+
+  /* Type */
+  --font-serif: 'Newsreader Variable', 'Iowan Old Style', 'Palatino Linotype',
+    Georgia, serif;
+  --font-sans: 'Schibsted Grotesk Variable', system-ui, -apple-system,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', SFMono-Regular, Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  /* Measures: reading column, wide breakout, page frame */
+  --w-text: 42.5rem;
+  --w-wide: 67.5rem;
+  --w-page: 77.5rem;
+  --gutter: clamp(1.125rem, 4vw, 2.5rem);
+
+  /* Infima */
+  --ifm-color-primary: #b3261a;
+  --ifm-color-primary-dark: #a12217;
+  --ifm-color-primary-darker: #982016;
+  --ifm-color-primary-darkest: #7d1a12;
+  --ifm-color-primary-light: #c52a1d;
+  --ifm-color-primary-lighter: #ce2c1e;
+  --ifm-color-primary-lightest: #e0402f;
+
+  --ifm-background-color: var(--c-paper);
+  --ifm-background-surface-color: var(--c-paper);
+  --ifm-font-color-base: var(--c-ink);
+  --ifm-heading-color: var(--c-ink);
+  --ifm-hr-background-color: var(--c-rule);
+  --ifm-toc-border-color: var(--c-rule);
+  --ifm-table-border-color: var(--c-rule);
+
+  --ifm-font-family-base: var(--font-sans);
+  --ifm-font-family-monospace: var(--font-mono);
+  --ifm-heading-font-family: var(--font-serif);
+  --ifm-font-size-base: 1rem;
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-line-height: 1.15;
+  --ifm-code-font-size: 0.85em;
+  --ifm-code-border-radius: 3px;
+  --ifm-pre-border-radius: 4px;
+  --ifm-global-radius: 4px;
+
+  /* The masthead scrolls with the page, so anchors need no offset. */
+  --ifm-navbar-height: 0rem;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --ifm-font-family-monospace: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --ifm-heading-font-family: 'Roboto Slab', serif;
-
-  --ifm-font-size-base: 1.1rem;
-  --ifm-font-weight-base: 400;
-  --ifm-code-font-size: 88%;
-  --ifm-heading-font-weight: 500;
-  --ifm-heading-line-height: 1.1;
-  --ifm-h2-font-size: 1.75rem;
-  --ifm-h3-font-size: 1.5rem;
-  --ifm-h4-font-size: 1.25rem;
-  --ifm-h5-font-size: 1rem;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #f66151;
-  --ifm-color-primary-dark: #f44532;
-  --ifm-color-primary-darker: #f43722;
-  --ifm-color-primary-darkest: #f32913;
-  --ifm-color-primary-light: #f87d70;
-  --ifm-color-primary-lighter: #f88b80;
-  --ifm-color-primary-lightest: #fbb6ae;
+html[data-theme='dark'] {
+  --c-paper: #17121a;
+  --c-surface: #211a25;
+  --c-ink: #efe9ea;
+  --c-ink-soft: #aba1ab;
+  --c-rule: #382e3c;
+  --c-accent: #ff9068;
+
+  --ifm-color-primary: #ff9068;
+  --ifm-color-primary-dark: #ff7a4a;
+  --ifm-color-primary-darker: #ff6f3b;
+  --ifm-color-primary-darkest: #ff4e0e;
+  --ifm-color-primary-light: #ffa686;
+  --ifm-color-primary-lighter: #ffb195;
+  --ifm-color-primary-lightest: #ffd2c2;
+
+  --ifm-background-color: var(--c-paper);
+  --ifm-background-surface-color: var(--c-surface);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.markdown > h2 {
-  --ifm-h2-font-size: 1.75rem;
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-.markdown > h3 {
-  --ifm-h3-font-size: 1.5rem;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.markdown > h4 {
-  --ifm-h4-font-size: 1.25rem;
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
 }
 
-.markdown > h5 {
-  --ifm-h5-font-size: 1rem;
+::selection {
+  background: color-mix(in srgb, var(--c-accent) 22%, transparent);
 }
 
-/* Reduce title size in blog list */
-article h2[class*="title"],
-.blog-list-page h2[class*="title"]
-{
-  font-size: 2rem;
-}
-
-/* Reduce title size in blog page */
-article h1[class*="title"],
-.blog-post-page h1[class*="title"]
-{
-  font-size: 2rem;
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.012em;
+  text-wrap: balance;
 }
 
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
 [data-theme='dark'] img[src$='#gh-light-mode-only'] {
   display: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * Page frame, used by listing pages
+ * ------------------------------------------------------------------------ */
+
+.page {
+  /* Its parent is a flex column; without a width, auto margins shrink it. */
+  width: 100%;
+  max-width: calc(var(--w-page) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding: 2rem var(--gutter) 5rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Column grid, used by articles
+ *
+ * Everything sits in the reading column by default. A direct child can break
+ * out with .bleed-wide (up to --w-wide) or .bleed-full (edge to edge).
+ * ------------------------------------------------------------------------ */
+
+.columns {
+  --side: calc((var(--w-wide) - var(--w-text)) / 2);
+
+  /*
+   * Five tracks: margin, wide, text, wide, margin. Placement uses line
+   * numbers because the production CSS minifier renames grid line names.
+   */
+  display: grid;
+  grid-template-columns:
+    minmax(var(--gutter), 1fr)
+    minmax(0, var(--side))
+    min(var(--w-text), 100% - 2 * var(--gutter))
+    minmax(0, var(--side))
+    minmax(var(--gutter), 1fr);
+}
+
+.columns > * {
+  grid-column: 3 / 4;
+  min-width: 0;
+}
+
+.columns > .bleed-wide,
+.columns > p:has(> img[src$='#wide']) {
+  grid-column: 2 / 5;
+}
+
+.columns > .bleed-full,
+.columns > p:has(> img[src$='#full']) {
+  grid-column: 1 / -1;
+}
+
+.columns > p:has(> img[src$='#wide']) > img,
+.columns > p:has(> img[src$='#full']) > img {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+ * Article prose
+ * ------------------------------------------------------------------------ */
+
+.prose {
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 48rem) {
+  .prose {
+    font-size: 1.25rem;
+  }
+}
+
+/* Grid items do not collapse margins, so spacing is set from above only. */
+.prose.markdown > * {
+  margin-block: 0;
+}
+
+.prose.markdown > * + * {
+  margin-top: 1.4em;
+}
+
+.prose.markdown > h2 {
+  margin-top: 2.25em;
+  font-size: 1.5em;
+}
+
+.prose.markdown > h3 {
+  margin-top: 1.9em;
+  font-size: 1.25em;
+}
+
+.prose.markdown > h4,
+.prose.markdown > h5 {
+  margin-top: 1.75em;
+  font-size: 1.05em;
+}
+
+.prose.markdown > :is(h2, h3, h4, h5) + * {
+  margin-top: 0.7em;
+}
+
+.prose.markdown > :first-child {
+  margin-top: 0;
+}
+
+.prose a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--c-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.prose a:hover {
+  color: var(--c-accent);
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6) a {
+  text-decoration: none;
+}
+
+.prose li + li {
+  margin-top: 0.35em;
+}
+
+.prose img {
+  display: block;
+  margin-inline: auto;
+}
+
+.prose iframe {
+  max-width: 100%;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--c-ink);
+  color: var(--c-ink-soft);
+  font-size: inherit;
+  padding: 0.1em 0 0.1em 1.25em;
+}
+
+.prose sup {
+  font-family: var(--font-sans);
+  font-size: 0.7em;
+}
+
+.prose hr {
+  height: 1px;
+  width: 6rem;
+  margin-inline: auto;
+}
+
+.prose.markdown > hr {
+  margin-block: 2.5em 1em;
+}
+
+.prose :is(pre, .theme-code-block) {
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.prose :is(table, .theme-admonition, details, .tabs-container) {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* Tables read as data: no cell boxes, numbers line up. */
+.prose table {
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: transparent;
+  --ifm-table-cell-padding: 0.6rem 0.9rem;
+}
+
+.prose table :is(th, td) {
+  border-width: 0 0 1px;
+}
+
+.prose table thead tr {
+  border-bottom: 1.5px solid var(--c-ink);
+}
+
+.prose table th {
+  font-weight: 600;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.prose table :is(th, td):first-child {
+  padding-left: 0;
+}
+
+/* Note boxes: sentence-case sans titles, and a dusk surface in dark mode. */
+.theme-admonition {
+  --ifm-heading-font-family: var(--font-sans);
+}
+
+.theme-admonition [class*='admonitionHeading'] {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+html[data-theme='dark'] .theme-admonition.alert--secondary {
+  --ifm-alert-background-color: var(--c-surface);
+  --ifm-alert-foreground-color: var(--c-ink);
+  --ifm-alert-border-color: var(--c-ink-soft);
+}
+
+.prose .footnotes {
+  font-size: 0.85em;
+  color: var(--c-ink-soft);
+  border-top: 1px solid var(--c-rule);
+  padding-top: 1.25em;
 }
 
 /* Numbered headings in blog posts */
@@ -90,9 +351,119 @@ article h1[class*="title"],
 }
 .blog-post-page .markdown > h2::before {
   counter-increment: h2counter;
-  content: counter(h2counter) ". ";
+  content: counter(h2counter) '. ';
 }
 .blog-post-page .markdown > h3::before {
   counter-increment: h3counter;
-  content: counter(h2counter) "." counter(h3counter) " ";
+  content: counter(h2counter) '.' counter(h3counter) ' ';
+}
+
+/* ---------------------------------------------------------------------------
+ * Figures: charts, maps, photos with a caption
+ * ------------------------------------------------------------------------ */
+
+.figure {
+  margin-inline: 0;
+  font-family: var(--font-sans);
+}
+
+.figure__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.figure__content > :is(img, svg, canvas, video, iframe) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.figure__content > :last-child {
+  margin-bottom: 0;
+}
+
+.figure__caption {
+  margin-top: 0.7rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+}
+
+.figure__source {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8125rem;
+}
+
+/* Edge-to-edge content keeps its title and caption inside the page frame. */
+.bleed-full > :is(.figure__title, .figure__caption) {
+  max-width: calc(var(--w-wide) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------------------------------------------------------------------------
+ * Search box (docusaurus-lunr-search), placed in the masthead
+ * ------------------------------------------------------------------------ */
+
+.navbar__search {
+  margin: 0;
+}
+
+.navbar__search-input {
+  width: 11rem;
+  height: 2.125rem;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  background-color: transparent;
+  color: var(--c-ink);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+.navbar__search-input:focus {
+  border-color: var(--c-ink);
+  outline: none;
+}
+
+.navbar__search-input::placeholder {
+  color: var(--c-ink-soft);
+}
+
+@media (max-width: 40rem) {
+  .navbar__search-input {
+    width: 2.125rem;
+    padding-right: 0;
+    border-color: transparent;
+    cursor: pointer;
+  }
+
+  .navbar__search-input::placeholder {
+    color: transparent;
+  }
+
+  .navbar__search-input:focus {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+    z-index: 2;
+    width: min(18rem, 100vw - 2 * var(--gutter));
+    padding-right: 0.5rem;
+    background-color: var(--c-paper);
+    cursor: text;
+  }
+}
+
+/* Present for assistive technology and search engines, not on screen. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

@@ -1,0 +1,104 @@
+.masthead {
+  background: var(--c-paper);
+  border-bottom: 1px solid var(--c-ink);
+}
+
+/* The logo's sunset, laid flat as a horizon line across the top of the page. */
+.horizon {
+  height: 4px;
+  background: var(--sunset);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  max-width: calc(var(--w-page) + 2 * var(--gutter));
+  min-height: 4.25rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: auto;
+  color: var(--c-ink);
+}
+
+.brand:hover {
+  color: var(--c-ink);
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  /* Newsreader sits high on its line; nudge it to centre on the mark. */
+  padding-top: 0.12em;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.nav a {
+  color: var(--c-ink);
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav a.current {
+  text-decoration: none;
+  border-bottom-color: var(--c-accent);
+}
+
+.tools {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 40rem) {
+  .inner {
+    gap: 1rem;
+    min-height: 3.5rem;
+  }
+
+  .brand img {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .wordmark {
+    font-size: 1.375rem;
+  }
+
+  .optional {
+    display: none;
+  }
+
+  .tools {
+    position: static;
+    gap: 0.25rem;
+  }
+
+  .inner {
+    position: relative;
+  }
+}

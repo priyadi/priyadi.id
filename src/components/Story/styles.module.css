@@ -1,0 +1,151 @@
+.story {
+  position: relative;
+  display: grid;
+  gap: 0.9rem 1.25rem;
+  align-content: start;
+}
+
+.text {
+  min-width: 0;
+}
+
+.media {
+  overflow: hidden;
+  background: var(--c-surface);
+  aspect-ratio: 16 / 9;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.16;
+}
+
+.headline a {
+  color: var(--c-ink);
+}
+
+/* The whole story is the link target, image included. */
+.headline a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.story:hover .headline a,
+.headline a:hover {
+  color: var(--c-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  margin: 0.5rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+}
+
+.date {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.8125rem;
+  color: var(--c-ink-soft);
+}
+
+/* Lead: the newest post, opening the front page. */
+.lead .headline {
+  font-size: clamp(1.875rem, 1.2rem + 2.4vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.lead .summary {
+  margin-top: 0.8rem;
+  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.lead.textOnly .text {
+  max-width: 52rem;
+}
+
+.lead.textOnly .summary {
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+}
+
+/* Side: beside the lead. Row: the running list. Both put a thumbnail right. */
+.side,
+.row {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.side .text,
+.row .text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.side .media {
+  width: 7rem;
+  aspect-ratio: 4 / 3;
+}
+
+.side .summary {
+  font-size: 1rem;
+}
+
+.row {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--c-rule);
+}
+
+.row .headline {
+  font-size: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem);
+}
+
+.row .media {
+  width: clamp(6.5rem, 22vw, 13rem);
+  aspect-ratio: 3 / 2;
+}
+
+.row .summary {
+  max-width: 38rem;
+}
+
+/* Card: image on top, in a grid. Without an image the summary runs longer. */
+.card.textOnly .summary {
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+}
+
+@media (max-width: 40rem) {
+  .side .summary,
+  .row .summary {
+    display: none;
+  }
+
+  .side .media,
+  .row .media {
+    width: 6.5rem;
+    aspect-ratio: 4 / 3;
+  }
+}
