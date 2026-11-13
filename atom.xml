@@ -86,7 +86,7 @@ mitigasi dapat dilakukan dengan menonaktifkan fitur <em>upload progress</em> sem
 hingga perbaikan resmi tersedia.</p>
 <p>Dengan demikian, saya menetapkan langkah mitigasi adalah dengan menonaktifkan fitur <em>upload progress</em>
 dengan menggunakan konfigurasi sebagai berikut.</p>
-<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockTitle_OeMC">php.ini</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">session.upload_progress.enabled = 0</span><br></div></code></pre></div></div>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockTitle_OeMC">php.ini</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">session.upload_progress.enabled = 0</span><br></div></code></pre></div></div>
 <p>Saya buat <em>script</em> untuk secara otomatis menerapkan perubahan konfigurasi tersebut
 pada semua file <code>php.ini</code> yang ada di server.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1400-wib">Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB<a href="https://priyadi.id/2026/10/23/php2shell/#tanggal-21-oktober-2026-sekitar-pukul-1400-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB" translate="no">​</a></h2>
@@ -254,7 +254,7 @@ terhadap celah keamanan tersebut. Benarkah? Keliru, karena kita telah melakukan
 celah keamanan tersebut pada versi PHP yang lebih lama.</p>
 <p>Solusi saya adalah hanya dengan mematikan <em>header</em> <code>X-Powered-By</code> dengan
 menggunakan konfigurasi:</p>
-<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">expose_php = Off</span><br></div></code></pre></div></div>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">expose_php = Off</span><br></div></code></pre></div></div>
 <p>Hal ini tidak akan mengubah apapun dari sisi keamanan. Tetapi jika sang "ahli
 keamanan digital" mengklik tombol "Scan" pada <em>software scanner</em> yang mereka
 gunakan, <em>software</em> tidak akan menandai situs kita sebagai rentan terhadap celah
@@ -1564,6 +1564,7 @@ mencapai Madagaskar dan sukses menetap di sana.</p>
 teknologi tidak lagi menjadi penghalang. Yang menjadi penghalang utama di jaman
 sekarang adalah batas negara.</p>
 <!-- -->
+<!-- -->
 <section data-footnotes="true" class="footnotes"><h2 class="anchor anchorTargetStickyNavbar_Vzrq sr-only" id="footnote-label">Footnotes<a href="https://priyadi.id/2025/02/21/kabur-aja-dulu/#footnote-label" class="hash-link" aria-label="Taut langsung ke Footnotes" title="Taut langsung ke Footnotes" translate="no">​</a></h2>
 <ol>
 <li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-1-846a46">
@@ -1606,7 +1607,7 @@ saya cek, situsnya tidak bisa diakses, tetapi ada subdomain
 lebih kecil sampai sekitar seperempatnya. Namun tidak ada yang istimewa mengenai
 hal ini. Hal yang sama bisa dengan mudah dilakukan misalnya dengan perintah
 seperti:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">magick input.jpg -quality 20 output.jpg</span><br></div></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">magick input.jpg -quality 20 output.jpg</span><br></div></code></pre></div></div>
 <p>Bagian mana yang melibatkan <em>"advanced compression engine"</em> yang mereka klaim?
 Dari demo, tidak ada yang bisa saya lihat. Seandainya ada <em>compression engine</em>
 yang <em>proprietary</em>, seharusnya saya perlu melakukan instalasi aplikasi <em>viewer</em>
