@@ -21,6 +21,7 @@ import TagsListInline from '@theme/TagsListInline';
 import type {Props} from '@theme/BlogPostPage';
 import Comments from '@site/src/components/Comments';
 import Disclosure from '@site/src/components/Disclosure';
+import InlineMarkdown, {PostTitle} from '@site/src/components/InlineMarkdown';
 import {usePostDate} from '@site/src/components/Story';
 import styles from './styles.module.css';
 
@@ -112,13 +113,13 @@ function AdjacentPosts(): ReactNode {
       {older && (
         <Link to={older.permalink} className={styles.older}>
           <span>Tulisan sebelumnya</span>
-          {older.title}
+          <PostTitle {...older} />
         </Link>
       )}
       {newer && (
         <Link to={newer.permalink} className={styles.newer}>
           <span>Tulisan berikutnya</span>
-          {newer.title}
+          <PostTitle {...newer} />
         </Link>
       )}
     </nav>
@@ -127,7 +128,7 @@ function AdjacentPosts(): ReactNode {
 
 function Article({children}: {children: ReactNode}): ReactNode {
   const {metadata, frontMatter} = useBlogPost();
-  const {title, tags, editUrl} = metadata;
+  const {title, permalink, tags, editUrl} = metadata;
   const {description} = frontMatter;
   const {comments = true} = frontMatter as {comments?: boolean};
 
@@ -139,8 +140,14 @@ function Article({children}: {children: ReactNode}): ReactNode {
         </div>
         <article>
           <header className={clsx('columns', styles.header)}>
-            <h1 className={styles.headline}>{title}</h1>
-            {description && <p className={styles.dek}>{description}</p>}
+            <h1 className={styles.headline}>
+              <PostTitle permalink={permalink} title={title} />
+            </h1>
+            {description && (
+              <p className={styles.dek}>
+                <InlineMarkdown>{description}</InlineMarkdown>
+              </p>
+            )}
             <Byline />
             <TableOfContents />
           </header>

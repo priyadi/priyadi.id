@@ -2,6 +2,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import postCard from './src/remark/postCard';
+import inlineMarkdownPlugin, {
+  processBlogPosts,
+} from './src/plugins/inlineMarkdown';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -60,6 +63,9 @@ const config: Config = {
           postsPerPage: 14,
           blogSidebarCount: 0,
           beforeDefaultRemarkPlugins: [postCard],
+          // Strips inline markdown from titles and descriptions in metadata;
+          // see src/plugins/inlineMarkdown.ts.
+          processBlogPosts,
         },
         theme: {
           customCss: [
@@ -100,7 +106,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: [require.resolve('docusaurus-lunr-search')]
+  plugins: [require.resolve('docusaurus-lunr-search'), inlineMarkdownPlugin]
 };
 
 export default config;

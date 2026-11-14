@@ -21,6 +21,20 @@ in:
   image there is listed as text only. `description` in the front matter
   replaces the paragraph, and is also shown under the headline of the post.
 
+### Image of a post on listing pages
+
+Listing pages crop the image to the frame it sits in, keeping the centre. For
+an image that must not lose its edges, such as a screenshot, add this to the
+front matter:
+
+```yaml
+cover:
+  fit: contain
+```
+
+The image is then shown whole in the centre of the frame, and a blurred copy
+of it fills the rest.
+
 ### Width of content in a post
 
 Text stays in a narrow reading column. Charts, maps and large images can break
@@ -109,3 +123,29 @@ such as one drawn by hand.
 The fonts in `scripts/socialcard-fonts/` are fixed instances of the site's
 variable fonts, made by `scripts/socialcard-fonts.py`. Run it again only when
 the card needs another weight.
+
+### Orbital AI Datacenter article
+
+`src/components/OrbitalDatacenter` holds the components of the article built
+on the
+[Orbital AI Datacenter Calculator](https://github.com/priyadi/orbital-ai-datacenter):
+live prose, the scenario bar, the charts with their sliders, and the list of
+all assumptions. They share one scenario, which is mirrored in the address bar
+in the calculator's own link format, so a link opens the same scenario in
+either place.
+
+The article computes with the calculator's own code and uses its Indonesian
+wording. Three files there are copies, made by a script:
+
+- `model.generated.ts`: the model, inputs, presets, number formatters and
+  orbit geometry
+- `id.generated.ts`: the translator and the part of the dictionary in use
+- `land.generated.ts`: the outline of the continents for the orbit animation
+
+After the calculator changes, refresh them (the argument defaults to
+`../orbital-ai-datacenter`; the script reads the last commit there, not
+uncommitted edits):
+
+```
+node scripts/sync-orbital-calculator.mjs [path/to/orbital-ai-datacenter]
+```

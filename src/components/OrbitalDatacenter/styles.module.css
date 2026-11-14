@@ -1,0 +1,691 @@
+/*
+ * Two colours with one meaning each, in every chart of the article: orbit and
+ * ground. Checked for colour-vision separation and contrast against the
+ * site's light and dark paper.
+ */
+:global(:root) {
+  --c-orbit: #d4502a;
+  --c-ground: #6f4a8e;
+}
+
+:global(html[data-theme='dark']) {
+  --c-orbit: #e06d42;
+  --c-ground: #8e75c0;
+}
+
+.orbit {
+  background: var(--c-orbit);
+}
+
+.ground {
+  background: var(--c-ground);
+}
+
+/* ---------------------------------------------------------------------------
+ * Scenario bar
+ * ------------------------------------------------------------------------ */
+
+.bar {
+  background: var(--c-paper);
+  border-block: 1px solid var(--c-rule);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.barPinned {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  border-top: 0;
+  border-bottom-color: var(--c-ink);
+}
+
+.barInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.75rem;
+  max-width: calc(var(--w-wide) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding: 0.6rem var(--gutter);
+}
+
+.scenario {
+  display: flex;
+  flex: 1 1 16rem;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.scenario select {
+  flex: 1;
+  min-width: 0;
+  max-width: 26rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.verdicts {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.verdicts div {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+
+.verdicts dt {
+  color: var(--c-ink-soft);
+  font-weight: 400;
+}
+
+.verdicts dd {
+  margin: 0;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.reset {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  background: none;
+  color: var(--c-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.reset:hover {
+  border-color: var(--c-ink);
+}
+
+@media (max-width: 36rem) {
+  .barInner {
+    gap: 0.4rem 1.25rem;
+    padding-block: 0.5rem;
+  }
+
+  .scenario span {
+    display: none;
+  }
+
+  /* First row: the scenario and its reset. Second row: the verdicts. */
+  .scenario {
+    flex: 1 1 0;
+  }
+
+  .scenario select {
+    max-width: none;
+  }
+
+  .verdicts {
+    order: 1;
+    flex-basis: 100%;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Sliders
+ * ------------------------------------------------------------------------ */
+
+.slider {
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+/* The value sits beside the label when both fit, and under it when not. */
+.sliderHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 0.75rem;
+}
+
+.sliderHead label {
+  flex: 1 1 55%;
+}
+
+.sliderHead output {
+  margin-left: auto;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.slider input {
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--c-ink);
+}
+
+.sliderNote {
+  margin: 0.1rem 0 0;
+  font-size: 0.75rem;
+  color: var(--c-ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * Cost chart
+ * ------------------------------------------------------------------------ */
+
+.besideLayout {
+  display: grid;
+  gap: 1.75rem 2.5rem;
+}
+
+/* Sliders set above a chart, not beside it. */
+.plotFrame {
+  margin-top: 1.25rem;
+}
+
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.1rem 1.5rem;
+  align-content: start;
+}
+
+/* The sliders' notes are long, so their column is wide: a narrow one runs far
+   below a chart of a few bars and leaves a hole under it. */
+@media (min-width: 62rem) {
+  .besideLayout {
+    grid-template-columns: clamp(17rem, 36%, 24rem) minmax(0, 1fr);
+  }
+
+  /* For a chart taller than its sliders, where the hole would be on their side. */
+  .besideLayout.narrowControls {
+    grid-template-columns: 15.5rem minmax(0, 1fr);
+  }
+
+  .besideLayout > .controls {
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: 2.5rem;
+    border-right: 1px solid var(--c-rule);
+  }
+}
+
+.chart,
+.plotFrame {
+  position: relative;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+}
+
+.legend li {
+  white-space: nowrap;
+}
+
+.legend i,
+.key {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.4rem;
+  border-radius: 2px;
+  vertical-align: -0.08em;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  align-items: center;
+  padding-block: 0.5rem;
+  border-top: 1px solid var(--c-rule);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.rowActive {
+  background: var(--c-surface);
+}
+
+.totalRow {
+  border-top-color: var(--c-ink);
+  font-weight: 650;
+}
+
+.totalRow + .row {
+  border-top-color: var(--c-ink);
+}
+
+.rowLabel {
+  text-wrap: balance;
+}
+
+.barLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 0.875rem;
+}
+
+/* Bars grow from the left edge: square there, rounded at the data end. */
+.mark {
+  flex: none;
+  height: 0.625rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.value {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-soft);
+}
+
+.totalRow .value {
+  font-weight: 650;
+  color: var(--c-ink);
+}
+
+@media (max-width: 36rem) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Line chart
+ * ------------------------------------------------------------------------ */
+
+.plot {
+  display: block;
+  cursor: crosshair;
+  overflow: visible;
+}
+
+.grid {
+  stroke: var(--c-rule);
+  stroke-width: 1;
+}
+
+.parity {
+  stroke: var(--c-ink-soft);
+  stroke-width: 1;
+}
+
+.crosshair {
+  stroke: var(--c-ink-soft);
+  stroke-width: 1;
+}
+
+.tick,
+.axisTitle,
+.pointLabel {
+  fill: var(--c-ink-soft);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pointLabel {
+  fill: var(--c-ink);
+  font-weight: 650;
+}
+
+/* Text that sits over a line gets a paper-coloured outline to stay legible. */
+.pointLabel,
+.haloed {
+  paint-order: stroke;
+  stroke: var(--c-paper);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.line {
+  fill: none;
+  stroke: var(--c-orbit);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.dot {
+  fill: var(--c-orbit);
+  stroke: var(--c-paper);
+  stroke-width: 2;
+}
+
+/* ---------------------------------------------------------------------------
+ * Shared: tooltip, table view and notes under a chart
+ * ------------------------------------------------------------------------ */
+
+.tooltip {
+  position: absolute;
+  z-index: 5;
+  translate: 0.75rem 0.75rem;
+  max-width: 17rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--c-rule);
+  border-radius: 3px;
+  background: var(--c-paper);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.14);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.tooltip p {
+  margin: 0;
+}
+
+.tooltipTitle {
+  margin-bottom: 0.2rem !important;
+  color: var(--c-ink-soft);
+}
+
+.more {
+  margin-top: 0.9rem;
+  font-size: 0.875rem;
+}
+
+
+.more table {
+  width: auto;
+  margin: 0.75rem 0 0;
+}
+
+.more td {
+  text-align: right;
+}
+
+.more p {
+  max-width: 40rem;
+  margin: 0.6rem 0 0;
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * One orbit: sunlight and shadow
+ * ------------------------------------------------------------------------ */
+
+/* One pair for sunlight and shadow, legible on white paper, on dark paper
+   and on the globe's space background alike. */
+:global(:root) {
+  --c-sunlit: #c08716;
+  --c-eclipse: #5068cc;
+  /* Text in the shadow colour needs a lighter step on the globe. */
+  --c-eclipse-on-dark: #9aa9ee;
+  --c-track: #3aa893;
+}
+
+.sunlit {
+  background: var(--c-sunlit);
+}
+
+.eclipse {
+  background: var(--c-eclipse);
+}
+
+.track {
+  background: var(--c-track);
+}
+
+.segments {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2px;
+  height: 1.75rem;
+}
+
+.segments > div {
+  display: flex;
+  flex: 0 1 0;
+  align-items: center;
+  min-width: 2px;
+  padding-inline: 0.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.segments .sunlit {
+  color: #201a1f;
+}
+
+.segments .eclipse {
+  color: #ffffff;
+}
+
+.segmentAxis {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--c-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+ * Footprint to scale
+ * ------------------------------------------------------------------------ */
+
+.footprint {
+  display: grid;
+  gap: 1.5rem 1.5rem;
+}
+
+/* Shapes stand on a common baseline. */
+.shapeArea {
+  display: flex;
+  align-items: flex-end;
+}
+
+.ownShape {
+  background: var(--c-orbit);
+}
+
+.referenceShape {
+  border: 1.5px solid var(--c-ink-soft);
+}
+
+.shapeName,
+.shapeSize {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.shapeName {
+  margin-top: 0.5rem;
+}
+
+.shapeSize {
+  color: var(--c-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+ * All assumptions
+ * ------------------------------------------------------------------------ */
+
+.assumptions {
+  font-family: var(--font-sans);
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.assumptions details {
+  --disclosure-pad: 0.75rem;
+
+  border-top: 1px solid var(--c-rule);
+}
+
+.assumptions summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: var(--disclosure-pad);
+  font-size: 1rem;
+}
+
+.assumptions summary span {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--c-ink-soft);
+}
+
+.assumptionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 1.5rem 2.5rem;
+  padding-block: 0.5rem 1.75rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Orbit view: the globe
+ * ------------------------------------------------------------------------ */
+
+.globeFrame {
+  position: relative;
+}
+
+/* Space is dark in both colour modes. */
+.globe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 420;
+  max-height: 30rem;
+  border-radius: 4px;
+  background: radial-gradient(ellipse at 50% 50%, #121420, #0a0b10);
+  cursor: grab;
+  /* Sideways drags turn the globe; vertical ones still scroll the page. */
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.globe:active {
+  cursor: grabbing;
+}
+
+.globeLand {
+  fill: #3fae5a;
+  fill-opacity: 0.9;
+  stroke: #1d5c2e;
+  stroke-width: 0.5;
+}
+
+.globeGrid {
+  fill: none;
+  stroke: #fff;
+  stroke-opacity: 0.08;
+}
+
+.arcLit,
+.arcDark,
+.arcLitBack,
+.arcDarkBack {
+  fill: none;
+  stroke: var(--c-sunlit);
+  stroke-width: 2;
+}
+
+.arcDark,
+.arcDarkBack {
+  stroke: var(--c-eclipse-on-dark);
+}
+
+/* The far side of the orbit, seen through the globe. */
+.arcLitBack,
+.arcDarkBack {
+  stroke-width: 1.5;
+  stroke-opacity: 0.3;
+  stroke-dasharray: 3 3;
+}
+
+.globeTrack {
+  fill: none;
+  stroke: var(--c-track);
+  stroke-width: 1.5;
+  stroke-opacity: 0.95;
+}
+
+.globeBelow {
+  fill: var(--c-track);
+}
+
+.globePanel {
+  stroke: #cfd8ff;
+  stroke-width: 3;
+}
+
+.globeStation {
+  fill: var(--c-orbit);
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.globeSun,
+.globeFoot,
+.globeStatus {
+  font-size: 11px;
+  fill: #ffd66b;
+}
+
+.globeFoot {
+  font-size: 10px;
+  fill: #8d8c95;
+  font-variant-numeric: tabular-nums;
+}
+
+.globeStatus {
+  font-weight: 600;
+}
+
+/* The picture is scaled to the screen, and its text with it: on a phone,
+   use larger type and drop the running clock. */
+@media (max-width: 36rem) {
+  .globeSun,
+  .globeStatus {
+    font-size: 17px;
+  }
+
+  .globeFoot {
+    display: none;
+  }
+}
+
+.globeToggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 2px;
+  background: rgb(10 11 16 / 0.6);
+  color: #f0efec;
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.globeToggle:hover {
+  border-color: #fff;
+}

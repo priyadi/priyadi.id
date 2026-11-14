@@ -30,6 +30,8 @@
  *
  * `title` and `description` in the block override those of the post, and
  * `description: false` leaves it out. `kicker` adds a label before the date.
+ * The title and description may use the inline markdown of
+ * src/lib/inlineMarkdown.ts.
  *
  * An SVG figure is drawn by resvg, which ignores CSS variables: a chart that
  * takes its colours from `var(--…)` loses them, so use a PNG export of it.
@@ -44,6 +46,7 @@ import {Resvg} from '@resvg/resvg-js';
 import {imageSize} from 'image-size';
 import {load as parseYaml} from 'js-yaml';
 import satori from 'satori';
+import {parseInline} from '../src/lib/inlineMarkdown.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const FONT_DIR = path.join(ROOT, 'scripts/socialcard-fonts');
@@ -71,16 +74,19 @@ const SUNSET_CSS = `linear-gradient(90deg, ${SUNSET.map(
   (c, i) => `${c} ${SUNSET_AT[i] * 100}%`,
 ).join(', ')})`;
 
-const font = (file, name, weight) => ({
+const font = (file, name, weight, style = 'normal') => ({
   name,
   weight,
-  style: 'normal',
+  style,
   data: fs.readFileSync(path.join(FONT_DIR, file)),
 });
 const FONTS = [
   font('Newsreader-Display-SemiBold.ttf', 'Newsreader', 600),
+  font('Newsreader-Display-SemiBoldItalic.ttf', 'Newsreader', 600, 'italic'),
   font('Inter-Regular.ttf', 'Inter', 400),
   font('Inter-SemiBold.ttf', 'Inter', 600),
+  font('Inter-Italic.ttf', 'Inter', 400, 'italic'),
+  font('Inter-SemiBoldItalic.ttf', 'Inter', 600, 'italic'),
   font('JetBrainsMono-Medium.ttf', 'JetBrains Mono', 500),
 ];
 
@@ -165,6 +171,78 @@ function sunset(t) {
       .padStart(2, '0');
   };
   return `#${mix(1)}${mix(3)}${mix(5)}`;
+}
+
+/**
+ * Inline markdown (see src/lib/inlineMarkdown.ts) as a list of words, each
+ * with the style of its marks and its trailing space, so that it can be cut
+ * between any two words.
+ */
+function richWords(text) {
+  const MARKS = {
+    em: {fontStyle: 'italic'},
+    strong: {fontWeight: 600},
+    code: {fontFamily: 'JetBrains Mono', fontWeight: 500},
+  };
+  const words = [];
+  const walk = (nodes, style) => {
+    for (const node of nodes) {
+      const inner = {...style, ...MARKS[node.type]};
+      if (node.children) walk(node.children, inner);
+      else {
+        const value = node.type === 'code' ? node.value : typeset(node.value);
+        for (const word of value.split(/(?<=\s)/)) words.push({text: word, style: inner});
+      }
+    }
+  };
+  walk(parseInline(text), {});
+  return words;
+}
+
+/**
+ * Words as satori spans, one span per run of the same style; text without
+ * marks stays a plain string.
+ */
+function spans(words) {
+  const runs = [];
+  for (const {text, style} of words) {
+    const last = runs.at(-1);
+    if (last && JSON.stringify(last.style) === JSON.stringify(style)) last.text += text;
+    else runs.push({text, style});
+  }
+  if (runs.length === 1 && Object.keys(runs[0].style).length === 0) {
+    return runs[0].text;
+  }
+  return runs.map(({text, style}) => ({type: 'span', props: {style, children: text}}));
+}
+
+/**
+ * Text in at most `lines` lines, ending in an ellipsis when it had to be cut.
+ * satori's lineClamp only works on a single string, so text with marks is
+ * cut by hand: the most words that still fit, found by bisection.
+ */
+async function clampText(words, style, width, lines) {
+  if (words.every((word) => Object.keys(word.style).length === 0)) {
+    return box({...style, lineClamp: lines}, words.map((word) => word.text).join(''));
+  }
+  const maxH = lines * style.fontSize * style.lineHeight + 1;
+  const draw = (n) => {
+    const cut = words.slice(0, n);
+    if (n < words.length) {
+      const last = cut.at(-1);
+      cut[cut.length - 1] = {...last, text: `${last.text.trimEnd()}…`};
+    }
+    return box(style, spans(cut));
+  };
+  if ((await heightOf(draw(words.length), width)) <= maxH) return draw(words.length);
+  let lo = 1;
+  let hi = words.length - 1;
+  while (lo < hi) {
+    const mid = Math.ceil((lo + hi) / 2);
+    if ((await heightOf(draw(mid), width)) <= maxH) lo = mid;
+    else hi = mid - 1;
+  }
+  return draw(lo);
 }
 
 /** Typographic quotes, for titles written with straight ones. */
@@ -314,23 +392,35 @@ function figureSide(card, postDir) {
   let data = fs.readFileSync(file);
   let mime = MIME[path.extname(file).toLowerCase()];
   if (!mime) throw new Error(`unsupported image type: ${card.image}`);
+  // The figure goes on white, which a transparent one needs. It is flattened
+  // here rather than given a white background on the card: under the rounded
+  // corners, a background shows through as a light fringe.
   if (mime === 'image/svg+xml') {
     // Drawn here rather than embedded: resvg leaves out the text of an SVG
     // that sits inside another one.
     data = new Resvg(data, {
       fitTo: {mode: 'width', value: 1200},
       font: RESVG_FONTS,
+      background: '#ffffff',
     })
       .render()
       .asPng();
-    mime = 'image/png';
+  } else {
+    const {width, height} = imageSize(data);
+    const href = `data:${mime};base64,${data.toString('base64')}`;
+    data = new Resvg(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        `<image width="${width}" height="${height}" href="${href}"/></svg>`,
+      {font: RESVG_FONTS, background: '#ffffff'},
+    )
+      .render()
+      .asPng();
   }
+  mime = 'image/png';
   const src = `data:${mime};base64,${data.toString('base64')}`;
-  const frame = {
-    borderRadius: 10,
-    border: `1px solid ${C.rule}`,
-    backgroundColor: '#ffffff',
-  };
+  // No border: around a dark image, a hairline lighter than both it and the
+  // card reads as a stray outline. The figure's own edge is enough.
+  const frame = {borderRadius: 10};
 
   if ((card.fit ?? 'contain') === 'cover') {
     const side = SIDE_H;
@@ -371,9 +461,12 @@ async function drawCard(post) {
 
   // Headline: the largest size that leaves it within its share of the column.
   const LINE = 1.08; // line height of the headline
+  const title = spans(post.title);
   const headline = (fontSize) =>
     box(
       {
+        // Spans in a flex box would each be laid out as a column.
+        ...(Array.isArray(title) && {display: 'block'}),
         fontFamily: 'Newsreader',
         fontWeight: 600,
         fontSize,
@@ -382,7 +475,7 @@ async function drawCard(post) {
         textWrap: 'balance',
         color: C.ink,
       },
-      post.title,
+      title,
     );
   // Large type gets three lines at most: four short lines of it look ragged.
   const sizes = [84, 76, 68, 62, 56, 50, 46, 42, 38];
@@ -404,18 +497,15 @@ async function drawCard(post) {
     const room = SIDE_H - headlineH - marginTop;
     const lines = Math.min(3, Math.floor(room / (fontSize * lineHeight)));
     if (lines >= 1) {
-      description = box(
-        {
-          marginTop,
-          fontFamily: 'Inter',
-          fontSize,
-          lineHeight,
-          color: C.soft,
-          display: 'block',
-          lineClamp: lines,
-        },
-        post.description,
-      );
+      const style = {
+        fontFamily: 'Inter',
+        fontSize,
+        lineHeight,
+        color: C.soft,
+        display: 'block',
+      };
+      description = await clampText(post.description, style, columnW, lines);
+      description.props.style.marginTop = marginTop;
     }
   }
 
@@ -527,8 +617,8 @@ function readPost(dir) {
   return {
     dir,
     slug: `${month}-${day}`,
-    title: typeset(String(card.title ?? meta.title ?? '')),
-    description: description ? typeset(String(description)) : null,
+    title: richWords(String(card.title ?? meta.title ?? '')),
+    description: description ? richWords(String(description)) : null,
     date: date ? MONTHS.format(date) : null,
     card,
   };

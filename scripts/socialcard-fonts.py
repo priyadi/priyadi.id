@@ -29,8 +29,22 @@ INSTANCES = {
         'newsreader/Newsreader[opsz,wght].ttf',
         {'opsz': 72, 'wght': 600},
     ),
+    # *Emphasis* in headlines.
+    'Newsreader-Display-SemiBoldItalic': (
+        'newsreader/Newsreader-Italic[opsz,wght].ttf',
+        {'opsz': 72, 'wght': 600},
+    ),
     'Inter-Regular': ('inter/Inter[opsz,wght].ttf', {'opsz': 24, 'wght': 400}),
     'Inter-SemiBold': ('inter/Inter[opsz,wght].ttf', {'opsz': 24, 'wght': 600}),
+    # *Emphasis* in descriptions, and emphasis inside **strong**.
+    'Inter-Italic': (
+        'inter/Inter-Italic[opsz,wght].ttf',
+        {'opsz': 24, 'wght': 400},
+    ),
+    'Inter-SemiBoldItalic': (
+        'inter/Inter-Italic[opsz,wght].ttf',
+        {'opsz': 24, 'wght': 600},
+    ),
     'JetBrainsMono-Medium': (
         'jetbrainsmono/JetBrainsMono[wght].ttf',
         {'wght': 500},

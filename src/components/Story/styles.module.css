@@ -22,6 +22,27 @@
   object-fit: cover;
 }
 
+/* `cover: {fit: contain}` in the front matter: the image is shown whole and
+   centred, and a blurred copy of it fills what is left of the frame. */
+.contain {
+  position: relative;
+}
+
+.contain img {
+  position: relative;
+  object-fit: contain;
+}
+
+/* Larger than the frame, so that the blur does not fade out at its edges. */
+.contain .backdrop {
+  position: absolute;
+  inset: -3rem;
+  width: calc(100% + 6rem);
+  height: calc(100% + 6rem);
+  object-fit: cover;
+  filter: blur(1.5rem);
+}
+
 .headline {
   margin: 0;
   font-family: var(--font-serif);
@@ -70,6 +91,10 @@
 }
 
 /* Lead: the newest post, opening the front page. */
+.lead {
+  row-gap: 1.5rem;
+}
+
 .lead .headline {
   font-size: clamp(1.875rem, 1.2rem + 2.4vw, 3rem);
   line-height: 1.06;

@@ -4,6 +4,7 @@ import {PageMetadata} from '@docusaurus/theme-common';
 import {useDateTimeFormat} from '@docusaurus/theme-common/internal';
 import Layout from '@theme/Layout';
 import type {Props} from '@theme/BlogArchivePage';
+import {PostTitle} from '@site/src/components/InlineMarkdown';
 
 type ArchiveBlogPost = Props['archive']['blogPosts'][number];
 import styles from './styles.module.css';
@@ -46,7 +47,12 @@ export default function BlogArchivePage({archive}: Props): ReactNode {
                     <time dateTime={metadata.date}>
                       {dayFormat.format(new Date(metadata.date))}
                     </time>
-                    <Link to={metadata.permalink}>{metadata.title}</Link>
+                    <Link to={metadata.permalink}>
+                      <PostTitle
+                        permalink={metadata.permalink}
+                        title={metadata.title}
+                      />
+                    </Link>
                   </li>
                 ))}
               </ul>

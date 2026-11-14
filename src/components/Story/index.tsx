@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {useDateTimeFormat} from '@docusaurus/theme-common/internal';
 import type {PropBlogPostContent} from '@docusaurus/plugin-content-blog';
+import InlineMarkdown, {PostTitle} from '@site/src/components/InlineMarkdown';
 import styles from './styles.module.css';
 
 /** Added to each post module by src/remark/postCard.ts. */
@@ -10,6 +11,12 @@ type PostCard = {
   excerpt?: string;
   cover?: string;
   coverAlt?: string;
+};
+
+/** `cover` in the front matter of a post. */
+type CoverOptions = {
+  /** `contain` shows the image whole instead of cropping it to the frame. */
+  fit?: 'cover' | 'contain';
 };
 
 export type StoryVariant = 'lead' | 'side' | 'card' | 'row';
@@ -44,7 +51,14 @@ export default function Story({
   const {metadata, frontMatter} = content;
   const card = getPostCard(content);
   const formatDate = usePostDate();
-  const summary = frontMatter.description ?? card.excerpt;
+  const {cover: coverOptions} = frontMatter as {cover?: CoverOptions};
+  const whole = coverOptions?.fit === 'contain';
+  // The description may carry inline markdown; the excerpt is plain text.
+  const summary = frontMatter.description ? (
+    <InlineMarkdown>{frontMatter.description}</InlineMarkdown>
+  ) : (
+    card.excerpt
+  );
 
   return (
     <article
@@ -54,7 +68,10 @@ export default function Story({
         !card.cover && styles.textOnly,
       )}>
       {card.cover && (
-        <div className={styles.media}>
+        <div className={clsx(styles.media, whole && styles.contain)}>
+          {whole && (
+            <img className={styles.backdrop} src={card.cover} alt="" aria-hidden />
+          )}
           <img
             src={card.cover}
             alt=""
@@ -65,7 +82,9 @@ export default function Story({
       )}
       <div className={styles.text}>
         <Heading className={styles.headline}>
-          <Link to={metadata.permalink}>{metadata.title}</Link>
+          <Link to={metadata.permalink}>
+            <PostTitle permalink={metadata.permalink} title={metadata.title} />
+          </Link>
         </Heading>
         {summary && <p className={styles.summary}>{summary}</p>}
         <time className={styles.date} dateTime={metadata.date}>
