@@ -1,7 +1,9 @@
 ---
 title: Bahan Bakar Ajaib dan Produk Sejenisnya
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Setiap beberapa tahun ada saja produk-produk ajaib berupa bahan bakar murah,

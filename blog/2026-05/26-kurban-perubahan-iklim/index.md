@@ -1,7 +1,11 @@
 ---
 title: Ibadah Kurban dan Perubahan Iklim
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: stat
+  value: 14,5%
+  label: dari emisi gas rumah kaca global berasal dari sektor peternakan
 ---
 
 Mari kita bahas dampak dari ibadah kurban terhadap perubahan iklim, dan mengapa

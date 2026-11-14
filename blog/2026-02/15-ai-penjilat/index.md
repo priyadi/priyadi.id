@@ -1,7 +1,9 @@
 ---
 title: Berkat AI, Semua Orang Juga Bisa Merasakan Punya Bawahan Penjilat
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Model AI dibuat untuk melayani pengguna. Dia akan berusaha melakukan apa pun

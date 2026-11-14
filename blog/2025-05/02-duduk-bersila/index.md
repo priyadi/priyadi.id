@@ -1,7 +1,9 @@
 ---
 title: Duduk Bersila
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Saya memiliki masalah dengan posisi duduk bersila, apalagi dalam waktu lama.

@@ -1,7 +1,9 @@
 ---
 title: Istilah 'Buzzer' di Politik Adalah Buatan Lokal, Bukan Istilah Bahasa Inggris
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Dalam konteks politik Indonesia, istilah 'buzzer' digunakan untuk merujuk pada

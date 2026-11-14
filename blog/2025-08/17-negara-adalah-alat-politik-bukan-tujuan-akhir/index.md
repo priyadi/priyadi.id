@@ -1,7 +1,9 @@
 ---
 title: Negara Adalah Alat Politik, Bukan Tujuan Akhir Itu Sendiri
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Saat perang kemerdekaan, kita perang memperjuangkan kebebasan dan keadilan

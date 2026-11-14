@@ -5,9 +5,6 @@ MAGICK=magick
 PUML=$(wildcard *.puml */*.puml */*/*.puml */*/*/*.puml */*/*/*/*.puml)
 PUML_LIGHT_SVG=$(patsubst %.puml, %.light.svg, $(PUML))
 PUML_DARK_SVG=$(patsubst %.puml, %.dark.svg, $(PUML))
-SOCIALCARD_SVG=$(wildcard blog/*/*/socialcard.svg)
-SOCIALCARD_PNG=$(patsubst blog/%/socialcard.svg, blog/%/socialcard.png, $(SOCIALCARD_SVG))
-SOCIALCARD_JPEG=$(patsubst blog/%/socialcard.svg, blog/%/socialcard.jpeg, $(SOCIALCARD_SVG))
 
 all: diagrams socialcards
 
@@ -32,9 +29,15 @@ diagrams: $(PUML_LIGHT_SVG) $(PUML_DARK_SVG)
 %.dark.svg: %.puml
 	$(PLANTUML) -pipe -tsvg -darkmode -SbackgroundColor=transparent < $< > $@
 
+# Draws socialcard.png for every post with a `socialcard` block in its front
+# matter (see README).
 .PHONY: socialcards
-socialcards: $(SOCIALCARD_JPEG)
+socialcards:
+	node scripts/socialcards.mjs
 
+# A card drawn by hand in Inkscape, for a post without that block. Not part of
+# `make`; ask for the file:
+#   make blog/2026-01/01-some-post/socialcard.jpeg
 %/socialcard.png: %/socialcard.svg
 	# $(INKSCAPE) -o - $< | $(MAGICK) - -dither FloydSteinberg -colors 10 $@
 	$(INKSCAPE) -o $@ $<

@@ -1,7 +1,9 @@
 ---
 title: Penyebutan Inggris di Bahasa Indonesia
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Teori saya mengapa Indonesia menggunakan istilah 'Inggris' untuk menyebut

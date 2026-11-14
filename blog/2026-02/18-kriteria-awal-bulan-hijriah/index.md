@@ -1,7 +1,9 @@
 ---
 title: Kriteria Awal Bulan Hijriah
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Muhammadiyah mulai puasa pada tanggal 18 Februari 2026 karena menurut mereka

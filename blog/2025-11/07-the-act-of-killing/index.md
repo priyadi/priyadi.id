@@ -1,7 +1,9 @@
 ---
 title: "The Act of Killing"
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Selama lebih dari satu dekade, antara tahun 1984 sampai 1998, menonton film

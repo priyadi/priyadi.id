@@ -1,7 +1,9 @@
 ---
 title: Menilai Pemuka Agama Melalui Teori Evolusi
 authors: priyadi
-image: ./socialcard.jpeg
+image: ./socialcard.png
+socialcard:
+  variant: pattern
 ---
 
 Pemuka agama itu bermacam-macam. Ada yang mengajarkan kebaikan, namun tak
