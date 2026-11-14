@@ -364,22 +364,6 @@ html[data-theme='dark'] .theme-admonition.alert--secondary {
   padding-top: 1.25em;
 }
 
-/* Numbered headings in blog posts */
-.blog-post-page .markdown {
-  counter-reset: h2counter;
-}
-.blog-post-page .markdown > h2 {
-  counter-reset: h3counter;
-}
-.blog-post-page .markdown > h2::before {
-  counter-increment: h2counter;
-  content: counter(h2counter) '. ';
-}
-.blog-post-page .markdown > h3::before {
-  counter-increment: h3counter;
-  content: counter(h2counter) '.' counter(h3counter) ' ';
-}
-
 /* ---------------------------------------------------------------------------
  * Figures: charts, maps, photos with a caption
  * ------------------------------------------------------------------------ */
