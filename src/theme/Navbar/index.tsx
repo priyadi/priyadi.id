@@ -4,6 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import SearchBar from '@theme/SearchBar';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
+import Wordmark from './Wordmark';
 import styles from './styles.module.css';
 
 export default function Navbar(): ReactNode {
@@ -17,7 +18,7 @@ export default function Navbar(): ReactNode {
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
           <img src={logoSrc} alt="" width={36} height={36} />
-          <span className={styles.wordmark}>{navbar.title}</span>
+          <Wordmark className={styles.wordmark} title={navbar.title ?? ''} />
         </Link>
         <nav className={styles.nav} aria-label="Navigasi utama">
           <Link to="/archive" activeClassName={styles.current}>

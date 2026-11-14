@@ -1,0 +1,24 @@
+.disclosure {
+  --docusaurus-details-decoration-color: var(--c-ink);
+  --docusaurus-details-summary-arrow-size: 0.3rem;
+}
+
+.disclosure > summary {
+  font-weight: 650;
+}
+
+/* Centre the arrow on the first line of the summary; a summary with its
+   own vertical padding says how much through --disclosure-pad. */
+.disclosure.disclosure > summary::before {
+  top: calc(
+    var(--disclosure-pad, 0px) + 0.5lh -
+      var(--docusaurus-details-summary-arrow-size)
+  );
+}
+
+/* The stock component rules off its content; here the summary is enough. */
+.disclosure > div > div {
+  margin-top: 0.6rem;
+  padding-top: 0;
+  border-top: 0;
+}

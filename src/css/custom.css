@@ -29,7 +29,7 @@
   /* Type */
   --font-serif: 'Newsreader Variable', 'Iowan Old Style', 'Palatino Linotype',
     Georgia, serif;
-  --font-sans: 'Schibsted Grotesk Variable', system-ui, -apple-system,
+  --font-sans: 'Inter Variable', system-ui, -apple-system,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono Variable', SFMono-Regular, Menlo, Consolas,
     'Liberation Mono', monospace;
@@ -228,6 +228,26 @@ h4 {
   margin-top: 0.7em;
 }
 
+/* Figures get room to breathe, and the ones that break out of the reading
+   column get more: they interrupt the text and should read as a pause. In
+   rem, so that the space does not depend on the font size of what follows. */
+.prose.markdown > .figure,
+.prose.markdown > .figure + :not(h2, h3, h4, h5) {
+  margin-top: 2.5rem;
+}
+
+.prose.markdown > :is(.bleed-wide, .bleed-full),
+.prose.markdown > :is(.bleed-wide, .bleed-full) + :not(h2, h3, h4, h5) {
+  margin-top: 4rem;
+}
+
+@media (max-width: 48rem) {
+  .prose.markdown > :is(.bleed-wide, .bleed-full),
+  .prose.markdown > :is(.bleed-wide, .bleed-full) + :not(h2, h3, h4, h5) {
+    margin-top: 3rem;
+  }
+}
+
 .prose.markdown > :first-child {
   margin-top: 0;
 }
@@ -299,6 +319,8 @@ h4 {
   --ifm-table-stripe-background: transparent;
   --ifm-table-head-background: transparent;
   --ifm-table-cell-padding: 0.6rem 0.9rem;
+
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .prose table :is(th, td) {
@@ -399,7 +421,11 @@ html[data-theme='dark'] .theme-admonition.alert--secondary {
 }
 
 /* Edge-to-edge content keeps its title and caption inside the page frame. */
-.bleed-full > :is(.figure__title, .figure__caption) {
+.figure__footer {
+  margin-top: 0.75rem;
+}
+
+.bleed-full > :is(.figure__title, .figure__caption, .figure__footer) {
   max-width: calc(var(--w-wide) + 2 * var(--gutter));
   margin-inline: auto;
   padding-inline: var(--gutter);

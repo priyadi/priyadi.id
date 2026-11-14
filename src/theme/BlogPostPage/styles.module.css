@@ -71,15 +71,6 @@
   font-size: 0.9375rem;
 }
 
-.toc summary {
-  cursor: pointer;
-  font-weight: 650;
-}
-
-.toc[open] summary {
-  margin-bottom: 0.6rem;
-}
-
 .toc ul {
   margin: 0;
   padding: 0;

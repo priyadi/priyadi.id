@@ -65,10 +65,8 @@ const config: Config = {
           customCss: [
             require.resolve('@fontsource-variable/newsreader/opsz.css'),
             require.resolve('@fontsource-variable/newsreader/opsz-italic.css'),
-            require.resolve('@fontsource-variable/schibsted-grotesk/wght.css'),
-            require.resolve(
-              '@fontsource-variable/schibsted-grotesk/wght-italic.css',
-            ),
+            require.resolve('@fontsource-variable/inter/wght.css'),
+            require.resolve('@fontsource-variable/inter/wght-italic.css'),
             require.resolve('@fontsource-variable/jetbrains-mono/wght.css'),
             './src/css/custom.css',
           ],

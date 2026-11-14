@@ -20,6 +20,7 @@ import EditThisPage from '@theme/EditThisPage';
 import TagsListInline from '@theme/TagsListInline';
 import type {Props} from '@theme/BlogPostPage';
 import Comments from '@site/src/components/Comments';
+import Disclosure from '@site/src/components/Disclosure';
 import {usePostDate} from '@site/src/components/Story';
 import styles from './styles.module.css';
 
@@ -84,8 +85,7 @@ function TableOfContents(): ReactNode {
   // The stock TOC component measures the stock navbar, which this site
   // replaces, so the list is rendered here.
   return (
-    <details className={styles.toc}>
-      <summary>Daftar isi</summary>
+    <Disclosure className={styles.toc} summary="Daftar isi">
       <ul>
         {headings.map(({id, level, value}) => (
           <li key={id} style={{paddingLeft: `${(level - minLevel) * 1.25}rem`}}>
@@ -94,7 +94,7 @@ function TableOfContents(): ReactNode {
           </li>
         ))}
       </ul>
-    </details>
+    </Disclosure>
   );
 }
 

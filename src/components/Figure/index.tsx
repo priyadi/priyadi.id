@@ -15,6 +15,8 @@ type FigureProps = {
   title?: ReactNode;
   caption?: ReactNode;
   source?: ReactNode;
+  /** Shown below the caption: a table view of the chart, notes on method. */
+  footer?: ReactNode;
   className?: string;
   children: ReactNode;
 };
@@ -31,6 +33,7 @@ export default function Figure({
   title,
   caption,
   source,
+  footer,
   className,
   children,
 }: FigureProps): ReactNode {
@@ -44,6 +47,7 @@ export default function Figure({
           {source && <span className="figure__source">Sumber: {source}</span>}
         </figcaption>
       )}
+      {footer && <div className="figure__footer">{footer}</div>}
     </figure>
   );
 }

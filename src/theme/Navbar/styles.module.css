@@ -38,14 +38,12 @@
   height: 2.25rem;
 }
 
+/* Outlined artwork from scripts/wordmark.py. Its box runs from ascender to
+   descender, which puts the x-height band level with the centre of the mark. */
 .wordmark {
-  font-family: var(--font-serif);
-  font-size: 1.625rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1;
-  /* Newsreader sits high on its line; nudge it to centre on the mark. */
-  padding-top: 0.12em;
+  display: block;
+  width: auto;
+  height: 1.75rem;
 }
 
 .nav {
@@ -86,7 +84,7 @@
   }
 
   .wordmark {
-    font-size: 1.375rem;
+    height: 1.5rem;
   }
 
   .optional {
