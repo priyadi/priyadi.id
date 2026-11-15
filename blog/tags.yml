@@ -1,10 +1,10 @@
 # Topics of the blog. The first tag of a post is its main topic: it is shown
 # as the label above the headline, on listing pages and on the post itself.
 
-iklim:
-  label: Iklim
-  permalink: /iklim
-  description: Perubahan iklim, penyebabnya, dan dampaknya.
+lingkungan:
+  label: Lingkungan
+  permalink: /lingkungan
+  description: Lingkungan hidup, perubahan iklim, dan dampaknya.
 
 politik:
   label: Politik
@@ -16,11 +16,6 @@ agama:
   permalink: /agama
   description: Agama dan praktik keagamaan.
 
-sains:
-  label: Sains
-  permalink: /sains
-  description: Sains, dan cara berpikir ilmiah dalam keseharian.
-
 sejarah:
   label: Sejarah
   permalink: /sejarah
@@ -31,20 +26,10 @@ bahasa:
   permalink: /bahasa
   description: Bahasa, istilah, dan asal-usulnya.
 
-teknologi:
-  label: Teknologi
-  permalink: /teknologi
-  description: Teknologi dan industri di sekitarnya.
-
-ai:
-  label: AI
-  permalink: /ai
-  description: Kecerdasan buatan dan dampaknya.
-
-keamanan:
-  label: Keamanan
-  permalink: /keamanan
-  description: Keamanan informasi.
+teknologi-informasi:
+  label: Teknologi Informasi
+  permalink: /teknologi-informasi
+  description: Perangkat lunak, internet, keamanan informasi, dan kecerdasan buatan.
 
 keuangan:
   label: Keuangan
@@ -55,6 +40,11 @@ energi:
   label: Energi
   permalink: /energi
   description: Energi, bahan bakar, dan kendaraan listrik.
+
+sanggahan:
+  label: Sanggahan
+  permalink: /sanggahan
+  description: Meluruskan klaim, mitos, dan misinformasi.
 
 meta:
   label: Blog ini

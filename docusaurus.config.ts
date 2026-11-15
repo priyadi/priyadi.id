@@ -14,7 +14,7 @@ const config: Config = {
   // `code`.
   // FILLER: replace with one or two sentences on who writes here and on what.
   tagline:
-    'Narablog lawas dari tahun 2000-an. Melakukan apa saja yang bisa dilakukan. Membaca apa saja yang bisa dibaca. Menulis apa saja yang bisa ditulis. Memikirkan apa saja yang bisa dipikirkan.',
+    'Narablog lawas dari tahun 2000-an, mulai lagi menulis dengan format baru di tahun 2025. Melakukan apa saja yang bisa dilakukan. Membaca apa saja yang bisa dibaca. Menulis apa saja yang bisa ditulis. Memikirkan apa saja yang bisa dipikirkan.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

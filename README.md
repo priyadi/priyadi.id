@@ -36,7 +36,7 @@ it with a `# Heading`.
 Every post has `tags` in its front matter, taken from `blog/tags.yml`:
 
 ```yaml
-tags: [iklim, agama]
+tags: [lingkungan, agama]
 ```
 
 The first tag is the main topic of the post. It is shown as the label above

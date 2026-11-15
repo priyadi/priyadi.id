@@ -1,7 +1,7 @@
 ---
 title: '#KaburAjaDulu dan Perubahan Iklim'
 authors: priyadi
-tags: [iklim, politik]
+tags: [lingkungan, politik]
 description: '#KaburAjaDulu dari sudut pandang perubahan iklim'
 image: ./socialcard.png
 socialcard:
