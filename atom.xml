@@ -128,9 +128,9 @@ Bumi.</p>]]></content>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="AI" term="AI"/>
+        <category label="Teknologi Informasi" term="Teknologi Informasi"/>
         <category label="Energi" term="Energi"/>
-        <category label="Iklim" term="Iklim"/>
+        <category label="Lingkungan" term="Lingkungan"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[El-Sayed dan Mamdani Adalah Ahok-nya Amerika Serikat]]></title>
@@ -397,8 +397,7 @@ untuk memastikan bahwa celah keamanan PHP2Shell telah berhasil ditutup.</p>]]></
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Keamanan" term="Keamanan"/>
-        <category label="Teknologi" term="Teknologi"/>
+        <category label="Teknologi Informasi" term="Teknologi Informasi"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Mendapatkan Data BI-Checking/SLIK Pihak Ketiga Melalui idebku]]></title>
@@ -477,7 +476,7 @@ iDebku</a>.</p>]]></content>
             <uri>https://priyadi.id</uri>
         </author>
         <category label="Keuangan" term="Keuangan"/>
-        <category label="Keamanan" term="Keamanan"/>
+        <category label="Teknologi Informasi" term="Teknologi Informasi"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Ibadah Kurban dan Perubahan Iklim]]></title>
@@ -597,7 +596,7 @@ niatnya adalah untuk ibadah.</p>]]></content>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Iklim" term="Iklim"/>
+        <category label="Lingkungan" term="Lingkungan"/>
         <category label="Agama" term="Agama"/>
     </entry>
     <entry>
@@ -674,7 +673,6 @@ untuk mengisi daya dengan SPKLU CCS-2 <em>fast charging</em> sampai penuh.</p>]]
             <uri>https://priyadi.id</uri>
         </author>
         <category label="Energi" term="Energi"/>
-        <category label="Teknologi" term="Teknologi"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Kriteria Awal Bulan Hijriah]]></title>
@@ -769,7 +767,6 @@ kegiatan kerja.</p>]]></content>
             <uri>https://priyadi.id</uri>
         </author>
         <category label="Agama" term="Agama"/>
-        <category label="Sains" term="Sains"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Berkat AI, Semua Orang Juga Bisa Merasakan Punya Bawahan Penjilat]]></title>
@@ -860,8 +857,7 @@ dijilat.</p>]]></content>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="AI" term="AI"/>
-        <category label="Teknologi" term="Teknologi"/>
+        <category label="Teknologi Informasi" term="Teknologi Informasi"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Penebangan Hutan Bukan Penyebab Banjir Sumatera November 2025]]></title>
@@ -982,8 +978,7 @@ penduduknya akan terpaksa pindah ke daerah lain yang lebih aman.</p>]]></content
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Iklim" term="Iklim"/>
-        <category label="Sains" term="Sains"/>
+        <category label="Lingkungan" term="Lingkungan"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Bahan Bakar Ajaib dan Produk Sejenisnya]]></title>
@@ -1117,8 +1112,8 @@ kemampuannya.</p>]]></content>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Sains" term="Sains"/>
         <category label="Energi" term="Energi"/>
+        <category label="Sanggahan" term="Sanggahan"/>
     </entry>
     <entry>
         <title type="html"><![CDATA["Pahlawan" dan "Jasa"-nya]]></title>
@@ -1467,7 +1462,6 @@ tersebut, dan mereka akan melakukan resistensi.</p>
             <uri>https://priyadi.id</uri>
         </author>
         <category label="Agama" term="Agama"/>
-        <category label="Sains" term="Sains"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Duduk Bersila]]></title>
@@ -1576,7 +1570,7 @@ pada kita, saat ini kita masih menyebut mereka dengan sebutan 'Inggris'.</p>]]><
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Keamanan" term="Keamanan"/>
+        <category label="Teknologi Informasi" term="Teknologi Informasi"/>
         <category label="Keuangan" term="Keuangan"/>
     </entry>
     <entry>
@@ -1734,7 +1728,7 @@ sekarang adalah batas negara.</p>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Iklim" term="Iklim"/>
+        <category label="Lingkungan" term="Lingkungan"/>
         <category label="Politik" term="Politik"/>
     </entry>
     <entry>
@@ -1916,6 +1910,7 @@ diinvestasikan ke Kecilin.</p>]]></content>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
         </author>
-        <category label="Teknologi" term="Teknologi"/>
+        <category label="Teknologi Informasi" term="Teknologi Informasi"/>
+        <category label="Sanggahan" term="Sanggahan"/>
     </entry>
 </feed>
