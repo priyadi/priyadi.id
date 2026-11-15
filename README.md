@@ -79,7 +79,9 @@ socialcard:
 ```
 
 `make socialcards` (also part of `make`) then writes `socialcard.png` next to
-every such post. Commit it with the post.
+every such post. Commit it with the post. A card is only redrawn when the post,
+an image beside it, or the drawing code is newer than the card; `make -B
+socialcards` redraws them all, and `make -j` draws them in parallel.
 
 Every card has the masthead, the date, the headline, the description if the
 post has one, and the hill of the logo. The variant decides what fills the
@@ -111,10 +113,11 @@ penalise cards that carry them, which is why the cards are drawn this way.
 An SVG figure that takes its colours from CSS variables comes out wrong; use a
 PNG of it instead.
 
-To try a design without touching the posts, write the cards elsewhere:
+The script draws one card at a time. To try a design without touching the
+post, write the card elsewhere:
 
 ```
-node scripts/socialcards.mjs --out /tmp/cards [blog/2026-05/26-some-post ...]
+node scripts/socialcards.mjs blog/2026-05/26-some-post /tmp/card.png
 ```
 
 A post without the block is left alone, so it can use any image as its card,

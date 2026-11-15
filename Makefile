@@ -30,10 +30,27 @@ diagrams: $(PUML_LIGHT_SVG) $(PUML_DARK_SVG)
 	$(PLANTUML) -pipe -tsvg -darkmode -SbackgroundColor=transparent < $< > $@
 
 # Draws socialcard.png for every post with a `socialcard` block in its front
-# matter (see README).
+# matter (see README). A card is drawn again only when it is older than its
+# post, an image beside the post (where a `figure` comes from) or the drawing
+# code, so `make -B socialcards` redraws them all.
+SOCIALCARD_POSTS := $(shell awk ' \
+	FNR == 1 { fm = ($$0 == "---"); next } \
+	fm && /^---$$/ { nextfile } \
+	fm && /^socialcard:/ { print FILENAME; nextfile }' \
+	$(wildcard blog/*/*/index.md blog/*/*/index.mdx))
+SOCIALCARDS := $(patsubst %/,%/socialcard.png,$(dir $(SOCIALCARD_POSTS)))
+SOCIALCARD_CODE := scripts/socialcards.mjs src/lib/inlineMarkdown.ts \
+	src/theme/Navbar/Wordmark.tsx $(wildcard scripts/socialcard-fonts/*.ttf)
+SOCIALCARD_IMAGES = $(filter-out $*/socialcard.%,$(wildcard \
+	$(addprefix $*/*.,png jpg jpeg webp gif svg)))
+
 .PHONY: socialcards
-socialcards:
-	node scripts/socialcards.mjs
+socialcards: $(SOCIALCARDS)
+
+.SECONDEXPANSION:
+$(SOCIALCARDS): %/socialcard.png: $$(wildcard $$*/index.md $$*/index.mdx) \
+		$$(SOCIALCARD_IMAGES) $(SOCIALCARD_CODE)
+	node scripts/socialcards.mjs $*
 
 # A card drawn by hand in Inkscape, for a post without that block. Not part of
 # `make`; ask for the file:

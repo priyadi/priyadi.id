@@ -2,14 +2,15 @@
 /**
  * Draw the social card of a post from its front matter.
  *
- *     node scripts/socialcards.mjs [--out DIR] [POST_DIR...]
+ *     node scripts/socialcards.mjs POST_DIR [OUTPUT]
  *
- * Without POST_DIR, draws every post under blog/ that has a `socialcard`
- * block. The card is written next to the post as socialcard.png, which the
- * post's `image` should point to. With --out, cards go to DIR instead, as
- * <yyyy-mm>-<dd-slug>.png, to try a design without touching the posts.
+ * The card is written next to the post as socialcard.png, which the post's
+ * `image` should point to, or to OUTPUT, to try a design without touching the
+ * post. `make socialcards` runs this for every post that has a `socialcard`
+ * block and whose card is older than the post, its figure or this script.
  *
- * A post without the block is left alone, so it can keep a card made by hand.
+ * A post without the block is an error here, and `make` leaves it alone, so
+ * it can keep a card made by hand.
  *
  * Every card has the masthead, the date, the headline and the hill of the
  * site's logo. What fills the right-hand side is up to the post:
@@ -624,59 +625,32 @@ function readPost(dir) {
   };
 }
 
-function allPostDirs() {
-  const blog = path.join(ROOT, 'blog');
-  return fs
-    .readdirSync(blog, {withFileTypes: true})
-    .filter((entry) => entry.isDirectory())
-    .flatMap((month) =>
-      fs
-        .readdirSync(path.join(blog, month.name), {withFileTypes: true})
-        .filter((entry) => entry.isDirectory())
-        .map((entry) => path.join(blog, month.name, entry.name)),
-    )
-    .sort();
-}
-
 async function main() {
   const args = process.argv.slice(2);
-  let out = null;
-  const dirs = [];
-  for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--out') out = path.resolve(args[++i]);
-    else dirs.push(path.resolve(args[i]));
+  if (args.length < 1 || args.length > 2) {
+    throw new Error('usage: node scripts/socialcards.mjs POST_DIR [OUTPUT]');
   }
-
-  const named = dirs.length > 0;
-  const posts = [];
-  for (const dir of named ? dirs : allPostDirs()) {
-    const post = readPost(dir);
-    if (post) posts.push(post);
-    else if (named) {
-      throw new Error(
-        `${path.relative(ROOT, dir)}: no post with a \`socialcard\` block`,
-      );
-    }
-  }
-
-  if (out) fs.mkdirSync(out, {recursive: true});
-  for (const post of posts) {
-    let png;
-    try {
-      png = await drawCard(post);
-    } catch (error) {
-      error.message = `${path.relative(ROOT, post.dir)}: ${error.message}`;
-      throw error;
-    }
-    const target = out
-      ? path.join(out, `${post.slug}.png`)
-      : path.join(post.dir, 'socialcard.png');
-    fs.writeFileSync(target, png);
-    console.log(
-      `${path.relative(ROOT, target)}  ${Math.round(png.length / 1024)} KB`,
+  const dir = path.resolve(args[0]);
+  const post = readPost(dir);
+  if (!post) {
+    throw new Error(
+      `${path.relative(ROOT, dir)}: no post with a \`socialcard\` block`,
     );
   }
-  if (posts.length === 0) console.log('No post has a `socialcard` block.');
+
+  let png;
+  try {
+    png = await drawCard(post);
+  } catch (error) {
+    error.message = `${path.relative(ROOT, post.dir)}: ${error.message}`;
+    throw error;
+  }
+  const target = args[1]
+    ? path.resolve(args[1])
+    : path.join(post.dir, 'socialcard.png');
+  fs.mkdirSync(path.dirname(target), {recursive: true});
+  fs.writeFileSync(target, png);
+  console.log(`${path.relative(ROOT, target)}  ${Math.round(png.length / 1024)} KB`);
 }
 
 main().catch((error) => {
