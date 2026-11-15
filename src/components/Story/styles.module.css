@@ -196,6 +196,12 @@
     aspect-ratio: 16 / 9;
   }
 
+  /* With an image each, three summaries would run the column well past the
+     lead beside it. */
+  .side.wideTop .summary {
+    display: none;
+  }
+
   .side.wideNone .media {
     display: none;
   }

@@ -62,9 +62,9 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          // The front page lays out 1 lead + 3 side stories + 4 cards, then
+          // The front page lays out 1 lead + 2 side stories + 4 cards, then
           // lists the rest.
-          postsPerPage: 14,
+          postsPerPage: 13,
           blogSidebarCount: 0,
           beforeDefaultRemarkPlugins: [postCard],
           // Strips inline markdown from titles and descriptions in metadata;

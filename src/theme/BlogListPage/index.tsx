@@ -17,7 +17,7 @@ import styles from './styles.module.css';
 
 // How the first page is laid out. Change postsPerPage in docusaurus.config.ts
 // along with these.
-const SIDE_COUNT = 3;
+const SIDE_COUNT = 2;
 const CARD_COUNT = 4;
 
 function Metadata({metadata}: Props): ReactNode {
@@ -64,14 +64,14 @@ function FrontPage({items}: Pick<Props, 'items'>): ReactNode {
         {lead && <Story content={lead.content} variant="lead" />}
         {side.length > 0 && (
           <div className={styles.side}>
-            {side.map(({content}, index) => (
+            {side.map(({content}) => (
               <Story
                 key={content.metadata.permalink}
                 content={content}
                 variant="side"
-                // Beside the lead, the first one carries the image of the
-                // column. Below a lead without an image, none do.
-                wideMedia={!stacked && index === 0 ? 'top' : 'none'}
+                // Beside the lead, each has its image above the text. Below a
+                // lead without an image, none do.
+                wideMedia={stacked ? 'none' : 'top'}
               />
             ))}
           </div>
