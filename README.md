@@ -127,6 +127,26 @@ The fonts in `scripts/socialcard-fonts/` are fixed instances of the site's
 variable fonts, made by `scripts/socialcard-fonts.py`. Run it again only when
 the card needs another weight.
 
+### Plain text for Facebook
+
+Facebook ranks posts with links lower, so a post can be shared as its text
+instead. `make posttexts` (also part of `make`) writes `index.txt` next to
+every post, ready to paste. It is not committed; `make` writes it again when
+the post changes.
+
+The title comes first, paragraphs are joined into single lines, and markdown
+marks are dropped. Links keep their text but not their address. Images,
+figures and components without content (charts, calculators, tools) are left
+out, and the script names those components, so the text around them can be
+checked. Footnotes become [1], [2]… and are listed with their addresses after
+a line at the end, to be cut out into the first comment.
+
+To see the text of one post without writing the file:
+
+```
+node scripts/posttexts.mjs blog/2026-05/26-some-post -
+```
+
 ### Orbital AI Datacenter article
 
 `src/components/OrbitalDatacenter` holds the components of the article built

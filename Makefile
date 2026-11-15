@@ -6,7 +6,7 @@ PUML=$(wildcard *.puml */*.puml */*/*.puml */*/*/*.puml */*/*/*/*.puml)
 PUML_LIGHT_SVG=$(patsubst %.puml, %.light.svg, $(PUML))
 PUML_DARK_SVG=$(patsubst %.puml, %.dark.svg, $(PUML))
 
-all: diagrams socialcards
+all: diagrams socialcards posttexts
 
 .PHONY: start
 start:
@@ -61,3 +61,15 @@ $(SOCIALCARDS): %/socialcard.png: $$(wildcard $$*/index.md $$*/index.mdx) \
 
 %/socialcard.jpeg: %/socialcard.png
 	$(MAGICK) $< -quality 88 $@
+
+# Writes index.txt next to every post: the post as plain text, to paste into
+# Facebook instead of a link (see README).
+POSTTEXTS := $(patsubst %/,%/index.txt,$(dir \
+	$(wildcard blog/*/*/index.md blog/*/*/index.mdx)))
+
+.PHONY: posttexts
+posttexts: $(POSTTEXTS)
+
+$(POSTTEXTS): %/index.txt: $$(wildcard $$*/index.md $$*/index.mdx) \
+		scripts/posttexts.mjs
+	node scripts/posttexts.mjs $*
