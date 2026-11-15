@@ -4,7 +4,10 @@ authors: priyadi
 description: '#KaburAjaDulu dari sudut pandang perubahan iklim'
 image: ./socialcard.png
 socialcard:
-  variant: pattern
+  variant: figure
+  image: ./sealevelrise.svg
+  fit: cover
+  position: right center
 ---
 
 `#KaburAjaDulu` adalah tagar yang populer, berisi ajakan bagi anak muda untuk

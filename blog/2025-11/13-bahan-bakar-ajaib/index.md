@@ -1,5 +1,6 @@
 ---
 title: Bahan Bakar Ajaib dan Produk Sejenisnya
+description: Ciri-ciri yang hampir selalu ada pada bahan bakar ajaib dan produk sejenisnya, dari klaim bombastis sampai bumbu nasionalisme dan agama.
 authors: priyadi
 image: ./socialcard.png
 socialcard:

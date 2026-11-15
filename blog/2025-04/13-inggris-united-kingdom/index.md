@@ -1,9 +1,11 @@
 ---
 title: Penyebutan Inggris di Bahasa Indonesia
+description: Kita mengenal orang Inggris sebelum mengenal negaranya. Sebutan itu bertahan walau negaranya berganti nama.
 authors: priyadi
 image: ./socialcard.png
 socialcard:
-  variant: pattern
+  variant: figure
+  image: ./bbc.png
 ---
 
 Teori saya mengapa Indonesia menggunakan istilah 'Inggris' untuk menyebut

@@ -1,10 +1,11 @@
 ---
 title: Christopher Farrel & Kecilin
-description: Investigasi di balik kisah tragis Christopher Farrel & Kecilin
+description: Investigasi di balik berita tragis Christopher Farrel & Kecilin
 authors: priyadi
 image: ./socialcard.png
 socialcard:
-  variant: pattern
+  variant: figure
+  image: ./kecilin-demo.jpeg
 ---
 
 Dari berita diketahui bahwa Christopher Farrel, pendiri *startup*

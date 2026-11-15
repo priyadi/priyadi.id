@@ -1,5 +1,6 @@
 ---
 title: Duduk Bersila
+description: 'Pesan untuk guru agama: jangan hukum siswa yang tidak tertib duduk bersila. Bisa jadi tubuh mereka memang tidak tahan.'
 authors: priyadi
 image: ./socialcard.png
 socialcard:

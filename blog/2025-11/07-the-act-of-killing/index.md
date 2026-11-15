@@ -1,5 +1,6 @@
 ---
-title: "The Act of Killing"
+title: "*\"The Act of Killing\"*"
+description: 'Penawar propaganda film "Pengkhianatan G30S/PKI": para pelaku kekejaman sendiri yang bercerita dengan bangga.'
 authors: priyadi
 image: ./socialcard.png
 socialcard:

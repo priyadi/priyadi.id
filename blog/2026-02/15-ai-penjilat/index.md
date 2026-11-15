@@ -2,8 +2,10 @@
 title: Berkat AI, Semua Orang Juga Bisa Merasakan Punya Bawahan Penjilat
 authors: priyadi
 image: ./socialcard.png
+description: Bawahan penjilat bukan lagi monopoli pejabat
 socialcard:
-  variant: pattern
+  variant: figure
+  image: ./penjilat.jpeg
 ---
 
 Model AI dibuat untuk melayani pengguna. Dia akan berusaha melakukan apa pun

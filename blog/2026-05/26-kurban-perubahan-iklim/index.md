@@ -1,5 +1,6 @@
 ---
 title: Ibadah Kurban dan Perubahan Iklim
+description: Dampak ibadah kurban terhadap perubahan iklim, dan perlunya berpikir lagi soal ini.
 authors: priyadi
 image: ./socialcard.png
 socialcard:
