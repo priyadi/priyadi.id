@@ -140,6 +140,12 @@ function Article({children}: {children: ReactNode}): ReactNode {
         </div>
         <article>
           <header className={clsx('columns', styles.header)}>
+            {/* The first tag of a post is its main topic. */}
+            {tags[0] && (
+              <p className={styles.kicker}>
+                <Link to={tags[0].permalink}>{tags[0].label}</Link>
+              </p>
+            )}
             <h1 className={styles.headline}>
               <PostTitle permalink={permalink} title={title} />
             </h1>

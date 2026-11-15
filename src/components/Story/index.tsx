@@ -26,6 +26,12 @@ type Props = {
   variant: StoryVariant;
   /** Heading element for the headline; depends on the page outline. */
   headingAs?: 'h2' | 'h3';
+  /**
+   * For the `side` variant on wide screens, where it sits in a narrow column
+   * beside the lead: `top` puts the image above the text instead of beside
+   * it, `none` leaves the image out. Narrow screens keep the thumbnail.
+   */
+  wideMedia?: 'top' | 'none';
 };
 
 export function getPostCard(content: PropBlogPostContent): PostCard {
@@ -47,12 +53,15 @@ export default function Story({
   content,
   variant,
   headingAs: Heading = 'h2',
+  wideMedia,
 }: Props): ReactNode {
   const {metadata, frontMatter} = content;
   const card = getPostCard(content);
   const formatDate = usePostDate();
   const {cover: coverOptions} = frontMatter as {cover?: CoverOptions};
   const whole = coverOptions?.fit === 'contain';
+  // The first tag of a post is its main topic.
+  const topic = metadata.tags[0];
   // The description may carry inline markdown; the excerpt is plain text.
   const summary = frontMatter.description ? (
     <InlineMarkdown>{frontMatter.description}</InlineMarkdown>
@@ -66,6 +75,8 @@ export default function Story({
         styles.story,
         styles[variant],
         !card.cover && styles.textOnly,
+        wideMedia === 'top' && styles.wideTop,
+        wideMedia === 'none' && styles.wideNone,
       )}>
       {card.cover && (
         <div className={clsx(styles.media, whole && styles.contain)}>
@@ -81,6 +92,11 @@ export default function Story({
         </div>
       )}
       <div className={styles.text}>
+        {topic && (
+          <Link to={topic.permalink} className={styles.kicker}>
+            {topic.label}
+          </Link>
+        )}
         <Heading className={styles.headline}>
           <Link to={metadata.permalink}>
             <PostTitle permalink={metadata.permalink} title={metadata.title} />

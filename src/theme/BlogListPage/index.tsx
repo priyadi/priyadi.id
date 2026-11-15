@@ -11,6 +11,7 @@ import BlogListPaginator from '@theme/BlogListPaginator';
 import SearchMetadata from '@theme/SearchMetadata';
 import BlogListPageStructuredData from '@theme/BlogListPage/StructuredData';
 import type {Props} from '@theme/BlogListPage';
+import InlineMarkdown from '@site/src/components/InlineMarkdown';
 import Story, {getPostCard} from '@site/src/components/Story';
 import styles from './styles.module.css';
 
@@ -36,7 +37,7 @@ function Metadata({metadata}: Props): ReactNode {
 
 function FrontPage({items}: Pick<Props, 'items'>): ReactNode {
   const {
-    siteConfig: {title: siteTitle},
+    siteConfig: {title: siteTitle, tagline},
   } = useDocusaurusContext();
   const [lead, ...others] = items;
   const side = others.slice(0, SIDE_COUNT);
@@ -49,17 +50,28 @@ function FrontPage({items}: Pick<Props, 'items'>): ReactNode {
   return (
     <>
       <h1 className="sr-only">{siteTitle}</h1>
+      {/* What this site is, for a first visit: `tagline` in the site config. */}
+      {tagline && (
+        <div className={styles.intro}>
+          <p>
+            <InlineMarkdown>{tagline}</InlineMarkdown>
+          </p>
+        </div>
+      )}
       <section
         className={clsx(styles.top, stacked && styles.stacked)}
         aria-label="Tulisan terbaru">
         {lead && <Story content={lead.content} variant="lead" />}
         {side.length > 0 && (
           <div className={styles.side}>
-            {side.map(({content}) => (
+            {side.map(({content}, index) => (
               <Story
                 key={content.metadata.permalink}
                 content={content}
                 variant="side"
+                // Beside the lead, the first one carries the image of the
+                // column. Below a lead without an image, none do.
+                wideMedia={!stacked && index === 0 ? 'top' : 'none'}
               />
             ))}
           </div>
@@ -79,14 +91,16 @@ function FrontPage({items}: Pick<Props, 'items'>): ReactNode {
       {rest.length > 0 && (
         <section className={styles.river}>
           <h2 className={styles.sectionTitle}>Sebelumnya</h2>
-          {rest.map(({content}) => (
-            <Story
-              key={content.metadata.permalink}
-              content={content}
-              variant="row"
-              headingAs="h3"
-            />
-          ))}
+          <div className="story-list">
+            {rest.map(({content}) => (
+              <Story
+                key={content.metadata.permalink}
+                content={content}
+                variant="row"
+                headingAs="h3"
+              />
+            ))}
+          </div>
         </section>
       )}
     </>
@@ -99,13 +113,15 @@ function LaterPage({items, metadata}: Props): ReactNode {
       <h1 className={styles.sectionTitle}>
         Semua tulisan, halaman {metadata.page} dari {metadata.totalPages}
       </h1>
-      {items.map(({content}) => (
-        <Story
-          key={content.metadata.permalink}
-          content={content}
-          variant="row"
-        />
-      ))}
+      <div className="story-list">
+        {items.map(({content}) => (
+          <Story
+            key={content.metadata.permalink}
+            content={content}
+            variant="row"
+          />
+        ))}
+      </div>
     </section>
   );
 }

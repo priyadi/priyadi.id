@@ -2,6 +2,7 @@
 title: Kriteria Awal Bulan Hijriah
 description: Batas negara adalah kriteria *arbitrary* dan seharusnya tidak digunakan.
 authors: priyadi
+tags: [agama, sains]
 image: ./socialcard.png
 socialcard:
   variant: pattern

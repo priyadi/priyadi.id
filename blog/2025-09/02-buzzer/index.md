@@ -2,6 +2,7 @@
 title: Istilah *'Buzzer'* di Politik Adalah Buatan Lokal, Bukan Istilah Bahasa Inggris
 description: Penutur asli bahasa Inggris tidak mengenal arti politiknya, jadi gunakan istilah lain saat menulis dalam bahasa Inggris.
 authors: priyadi
+tags: [bahasa, politik]
 image: ./socialcard.png
 socialcard:
   variant: pattern

@@ -2,6 +2,7 @@
 title: "*\"The Act of Killing\"*"
 description: 'Penawar propaganda film "Pengkhianatan G30S/PKI": para pelaku kekejaman sendiri yang bercerita dengan bangga.'
 authors: priyadi
+tags: [sejarah, politik]
 image: ./socialcard.png
 socialcard:
   variant: pattern

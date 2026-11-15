@@ -1,6 +1,7 @@
 ---
 title: Ada Berapa Kredensial Yang Perlu Diingat Nasabah BCA?
 authors: priyadi
+tags: [keamanan, keuangan]
 description: Yang harus diingat oleh nasabah BCA
 image: ./socialcard.png
 socialcard:

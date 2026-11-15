@@ -1,19 +1,62 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+# Topics of the blog. The first tag of a post is its main topic: it is shown
+# as the label above the headline, on listing pages and on the post itself.
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+iklim:
+  label: Iklim
+  permalink: /iklim
+  description: Perubahan iklim, penyebabnya, dan dampaknya.
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+politik:
+  label: Politik
+  permalink: /politik
+  description: Politik, negara, dan kebijakan publik.
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+agama:
+  label: Agama
+  permalink: /agama
+  description: Agama dan praktik keagamaan.
+
+sains:
+  label: Sains
+  permalink: /sains
+  description: Sains, dan cara berpikir ilmiah dalam keseharian.
+
+sejarah:
+  label: Sejarah
+  permalink: /sejarah
+  description: Sejarah dan cara kita mengingatnya.
+
+bahasa:
+  label: Bahasa
+  permalink: /bahasa
+  description: Bahasa, istilah, dan asal-usulnya.
+
+teknologi:
+  label: Teknologi
+  permalink: /teknologi
+  description: Teknologi dan industri di sekitarnya.
+
+ai:
+  label: AI
+  permalink: /ai
+  description: Kecerdasan buatan dan dampaknya.
+
+keamanan:
+  label: Keamanan
+  permalink: /keamanan
+  description: Keamanan informasi.
+
+keuangan:
+  label: Keuangan
+  permalink: /keuangan
+  description: Perbankan dan keuangan pribadi.
+
+energi:
+  label: Energi
+  permalink: /energi
+  description: Energi, bahan bakar, dan kendaraan listrik.
+
+meta:
+  label: Blog ini
+  permalink: /meta
+  description: Tentang blog ini.

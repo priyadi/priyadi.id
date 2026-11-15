@@ -2,6 +2,7 @@
 title: Penyebutan Inggris di Bahasa Indonesia
 description: Kita mengenal orang Inggris sebelum mengenal negaranya. Sebutan itu bertahan walau negaranya berganti nama.
 authors: priyadi
+tags: [bahasa, sejarah]
 image: ./socialcard.png
 socialcard:
   variant: figure
@@ -70,10 +71,11 @@ mereka, sesuai dengan kebiasaan lokal.
 
 ## Kasus United Kingdom
 
-<figure>
-![United Kingdom](./uk.png)
-<figcaption>United Kingdom</figcaption>
-</figure>
+<Figure title="United Kingdom">
+
+![Bagan pembentukan United Kingdom dari kerajaan-kerajaan pendahulunya](./uk.png)
+
+</Figure>
 
 
 

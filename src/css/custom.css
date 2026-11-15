@@ -139,6 +139,20 @@ h4 {
   padding: 2rem var(--gutter) 5rem;
 }
 
+/* A running list of stories (the `row` variant of Story): one column, and
+   two on a wide screen, so that text and thumbnail stay close together. */
+.story-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 62rem) {
+  .story-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 4rem;
+  }
+}
+
 /* ---------------------------------------------------------------------------
  * Column grid, used by articles
  *
@@ -206,6 +220,13 @@ h4 {
 
 .prose.markdown > * + * {
   margin-top: 1.4em;
+}
+
+/* Standalone pages (src/pages/*.md) open with their own h1. */
+.prose.markdown > h1 {
+  font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
 }
 
 .prose.markdown > h2 {

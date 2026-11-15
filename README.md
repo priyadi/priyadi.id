@@ -14,12 +14,37 @@ in:
 
 - `src/css/custom.css`: colours, type and the article column grid
 - `src/theme/`: masthead (`Navbar`), footer, front page (`BlogListPage`),
-  article page (`BlogPostPage`), archive
+  article page (`BlogPostPage`), archive, standalone pages (`MDXPage`)
 - `src/components/Story`: a post as it appears on listing pages
 - `src/remark/postCard.ts`: takes each post's first image and first paragraph
   (above `<!-- truncate -->`) for use on listing pages. A post without an
   image there is listed as text only. `description` in the front matter
   replaces the paragraph, and is also shown under the headline of the post.
+
+### Introduction on the front page
+
+The sentence at the top of the front page is `tagline` in
+`docusaurus.config.ts`. It takes the same marks as a post's `description`:
+`*emphasis*`, `**strong**` and `` `code` ``, but no links. Without a tagline
+the front page starts with the newest post.
+
+Any Markdown file in `src/pages/` becomes a page set like an article; start
+it with a `# Heading`.
+
+### Topics
+
+Every post has `tags` in its front matter, taken from `blog/tags.yml`:
+
+```yaml
+tags: [iklim, agama]
+```
+
+The first tag is the main topic of the post. It is shown as the label above
+the headline, on listing pages and on the post itself, and leads to the page
+of that topic. Put the most fitting tag first, and keep to two or three.
+
+A new topic needs an entry in `blog/tags.yml` first; a tag that is not listed
+there gives a warning during the build.
 
 ### Image of a post on listing pages
 
@@ -59,6 +84,64 @@ For a plain Markdown image, add `#wide` or `#full` to the path:
 ```
 
 To make a whole post full width, wrap its content in `<FullWidth>`.
+
+A chart, map or diagram goes in a `<Figure>` rather than in the text as a bare
+image, in `.md` posts too. The title says what it shows, and the source goes
+in `source`, not in the picture and not in a footnote. Leave a blank line
+around the image:
+
+```mdx
+<Figure
+  title="Emisi gas rumah kaca per 100 gram protein"
+  caption="Sumber protein hewani dan nabati, dalam kg CO₂eq."
+  source={<a href="https://…">Poore & Nemecek (2018), Science</a>}>
+
+![Diagram batang emisi per sumber protein](./emisi.svg)
+
+</Figure>
+```
+
+Illustrations and screenshots can stay plain images.
+
+### Images in dark mode
+
+The site opens in dark mode by default, so every image has to work on the
+dark page (`#17121a`) as well as on white. Check a new post in both modes
+with the toggle in the masthead. What goes wrong, and what to do:
+
+- **A white background** (a chart exported as PNG or JPEG, an illustration on
+  white) glares on the dark page. For an illustration, use a background that
+  is part of the picture, a scene or a mid-tone colour, instead of plain
+  white. For a chart or diagram, make two files as below.
+- **A transparent background with dark text or lines** disappears on the dark
+  page. Do not publish a transparent PNG or SVG as a single file, unless
+  everything in it is legible on both white and `#17121a`.
+- **An SVG that switches on `prefers-color-scheme`** follows the reader's
+  system, not the toggle of the site, so it can come out dark-on-dark or
+  light-on-light. Give it fixed colours and make two files.
+
+Two files, one for each mode, with the mode at the end of the path:
+
+```md
+![Diagram](./diagram.light.svg#gh-light-mode-only)
+![Diagram](./diagram.dark.svg#gh-dark-mode-only)
+```
+
+Only the one for the current mode is shown. Both can sit together in one
+`<Figure>`. For the dark file use `#17121a` or a transparent background, text
+in `#efe9ea`, and rules in `#382e3c`; for the light one white or transparent,
+text in `#201a1f`, rules in `#e2dce0`. PlantUML diagrams get both files from
+`make diagrams` (see the `Makefile`).
+
+Such a pair is never used as the image of the post on listing pages. If the
+post should have one there, put another image above `<!-- truncate -->`.
+
+A chart drawn by a component, not an image, needs none of this: it reads the
+colours of the current mode, see below.
+
+For an image from someone else that cannot be redrawn, such as a chart from
+another site with a white background, there is no second file to make. It is
+shown as it is; prefer a redrawn version when the chart matters to the post.
 
 ### Colours in charts
 

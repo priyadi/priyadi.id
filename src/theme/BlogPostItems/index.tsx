@@ -4,7 +4,7 @@ import Story from '@site/src/components/Story';
 
 export default function BlogPostItems({items}: Props): ReactNode {
   return (
-    <>
+    <div className="story-list">
       {items.map(({content}) => (
         <Story
           key={content.metadata.permalink}
@@ -12,6 +12,6 @@ export default function BlogPostItems({items}: Props): ReactNode {
           variant="row"
         />
       ))}
-    </>
+    </div>
   );
 }

@@ -2,6 +2,7 @@
 title: Christopher Farrel & Kecilin
 description: Investigasi di balik berita tragis Christopher Farrel & Kecilin
 authors: priyadi
+tags: [teknologi]
 image: ./socialcard.png
 socialcard:
   variant: figure

@@ -2,6 +2,7 @@
 title: Ibadah Kurban dan Perubahan Iklim
 description: Dampak ibadah kurban terhadap perubahan iklim, dan perlunya berpikir lagi soal ini.
 authors: priyadi
+tags: [iklim, agama]
 image: ./socialcard.png
 socialcard:
   variant: stat
@@ -33,7 +34,14 @@ besar daripada CO<sub>2</sub>. Oleh karena itu, emisi metana dari peternakan
 hewan merupakan kontributor
 signifikan terhadap perubahan iklim.
 
-![Emisi metana dari peternakan](./emisi_grk_per_protein_svg_id.svg)
+<Figure
+  title="Emisi gas rumah kaca per 100 gram protein"
+  caption="Sumber protein hewani dan nabati, dalam kg CO₂eq."
+  source={<a href="https://pubmed.ncbi.nlm.nih.gov/29853680/">Poore & Nemecek (2018), Science</a>}>
+
+![Diagram batang emisi gas rumah kaca per 100 gram protein untuk berbagai sumber protein](./emisi_grk_per_protein_svg_id.svg)
+
+</Figure>
 
 100 gram protein yang berasal dari daging sapi menghasilkan [efek gas rumah kaca
 yang setara dengan sekitar 50 kg
@@ -51,7 +59,13 @@ Dibandingkan dengan emisi gas rumah kaca secara keseluruhan, sektor peternakan
 menyumbang sekitar 14,5% dari total emisi global, dengan sebagian besar berasal
 dari metana yang dihasilkan oleh hewan pemamah biak.
 
+<Figure
+  title="Emisi gas rumah kaca global dari produksi pangan"
+  source="Our World in Data, Hannah Ritchie (2022), dari data Poore & Nemecek (2018)">
+
 ![Perbandingan emisi gas rumah kaca](./ghg.png)
+
+</Figure>
 
 ## Kurban dan Efeknya Terhadap Konsumsi Daging Secara Keseluruhan
 

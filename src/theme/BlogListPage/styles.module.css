@@ -1,3 +1,20 @@
+/* A sentence on what the site is, above the newest post. */
+.intro {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.intro p {
+  max-width: 46rem;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+  text-wrap: pretty;
+}
+
 .top {
   display: grid;
   gap: 2rem;
@@ -40,6 +57,21 @@
 /* The page with only the running list starts at the top of the frame. */
 .river:first-child {
   margin-top: 0;
+}
+
+/* On a phone the cards are compact rows, like the stories around them. */
+@media (max-width: 40rem) {
+  .cards {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top-color: var(--c-rule);
+  }
+
+  .cards > * + * {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-rule);
+  }
 }
 
 @media (max-width: 61.9375rem) {

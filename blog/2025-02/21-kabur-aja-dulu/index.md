@@ -1,6 +1,7 @@
 ---
 title: '#KaburAjaDulu dan Perubahan Iklim'
 authors: priyadi
+tags: [iklim, politik]
 description: '#KaburAjaDulu dari sudut pandang perubahan iklim'
 image: ./socialcard.png
 socialcard:
@@ -32,10 +33,13 @@ permukaan laut bisa diatasi di semua lokasi. Akan ada di antara kita yang mau
 tidak mau memang harus mengungsi, baik ke daerah lain di Indonesia, atau ke luar
 negeri.
 
-<figure>
-![](./sealevelrise.svg)
-<figcaption>Proyeksi kenaikan permukaan laut. [^4]</figcaption>
-</figure>
+<Figure
+  title="Proyeksi kenaikan permukaan laut"
+  source={<a href="https://commons.wikimedia.org/wiki/File:Sea_level_history_and_projections.svg">Wikimedia Commons</a>}>
+
+![Grafik riwayat dan proyeksi kenaikan permukaan laut](./sealevelrise.svg)
+
+</Figure>
 
 Perubahan iklim akan memaksa manusia melakukan migrasi menjauhi khatulistiwa,
 menjauhi garis pantai, pulau kecil, dan daerah kering. Hutan juga perlu
@@ -180,10 +184,13 @@ dalam melakukan `#KaburAjaDulu`.
 
 ## Leluhur Kita Juga Melakukan `#KaburAjaDulu`
 
-<figure>
-![](./early-migrations.svg)
-<figcaption>Rute `#KaburAjaDulu` manusia jaman dulu. [^5]</figcaption>
-</figure>
+<Figure
+  title={<>Rute <code>#KaburAjaDulu</code> manusia jaman dulu</>}
+  source={<a href="https://commons.wikimedia.org/wiki/File:Early_migrations_mercator.svg">Wikimedia Commons</a>}>
+
+![Peta rute migrasi awal manusia](./early-migrations.svg)
+
+</Figure>
 
 Leluhur kita dulu juga melakukan `#KaburAjaDulu`. Itu sebabnya kita bisa ada di
 sini sekarang. Mereka meninggalkan Afrika, dan menyebar ke seluruh dunia, baik
@@ -198,5 +205,3 @@ sekarang adalah batas negara.
 [^1]: [Hannah Ritchie (2024) - How will climate change affect crop yields in the future?](https://ourworldindata.org/will-climate-change-affect-crop-yields-future)
 [^2]: [Rebecca Lindsey - Climate Change: Global Sea Level](https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level)
 [^3]: [Gaia Vince - Where We’ll End Up Living as the Planet Burns](https://time.com/6209432/climate-change-where-we-will-live/)
-[^4]: [Wikimedia Commons - File:Sea level history and projections.svg](https://commons.wikimedia.org/wiki/File:Sea_level_history_and_projections.svg)
-[^5]: [Wikimedia Commons - File:Early migrations mercator.svg](https://commons.wikimedia.org/wiki/File:Early_migrations_mercator.svg)

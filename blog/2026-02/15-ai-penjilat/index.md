@@ -1,6 +1,7 @@
 ---
 title: Berkat AI, Semua Orang Juga Bisa Merasakan Punya Bawahan Penjilat
 authors: priyadi
+tags: [ai, teknologi]
 image: ./socialcard.png
 description: Bawahan penjilat bukan lagi monopoli pejabat
 socialcard:

@@ -10,7 +10,11 @@ import inlineMarkdownPlugin, {
 
 const config: Config = {
   title: 'priyadi.id',
-  // tagline: 'Dinosaurs are cool',
+  // Shown at the top of the front page. May use *emphasis*, **strong** and
+  // `code`.
+  // FILLER: replace with one or two sentences on who writes here and on what.
+  tagline:
+    'Narablog lawas dari tahun 2000-an. Membaca apa saja yang bisa dibaca. Menulis apa saja yang bisa ditulis.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
