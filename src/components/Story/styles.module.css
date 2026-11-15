@@ -193,13 +193,13 @@
 
   .side.wideTop .media {
     width: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
   }
 
-  /* With an image each, three summaries would run the column well past the
-     lead beside it. */
-  .side.wideTop .summary {
-    display: none;
+  /* Beside the side stories, a taller lead image keeps the two columns about
+     the same height. */
+  .lead:not(.textOnly) .media {
+    aspect-ratio: 3 / 2;
   }
 
   .side.wideNone .media {
