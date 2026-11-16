@@ -17,7 +17,7 @@ import styles from './styles.module.css';
 
 // How the first page is laid out. Change postsPerPage in docusaurus.config.ts
 // along with these.
-const SIDE_COUNT = 2;
+const SIDE_COUNT = 3;
 const CARD_COUNT = 4;
 
 function Metadata({metadata}: Props): ReactNode {
@@ -50,18 +50,27 @@ function FrontPage({items}: Pick<Props, 'items'>): ReactNode {
   return (
     <>
       <h1 className="sr-only">{siteTitle}</h1>
-      {/* What this site is, for a first visit: `tagline` in the site config. */}
-      {tagline && (
-        <div className={styles.intro}>
-          <p>
-            <InlineMarkdown>{tagline}</InlineMarkdown>
-          </p>
-        </div>
-      )}
       <section
         className={clsx(styles.top, stacked && styles.stacked)}
         aria-label="Tulisan terbaru">
-        {lead && <Story content={lead.content} variant="lead" />}
+        {/* What this site is, for a first visit: `tagline` in the site
+            config. On wide screens it sits above the lead, beside the top of
+            the side stories. */}
+        {tagline && (
+          <div className={styles.intro}>
+            <p>
+              <InlineMarkdown>{tagline}</InlineMarkdown>
+            </p>
+          </div>
+        )}
+        {lead && (
+          <Story
+            content={lead.content}
+            variant="lead"
+            // Beside three side stories the lead needs more text to match.
+            filler={!stacked && side.length > 0}
+          />
+        )}
         {side.length > 0 && (
           <div className={styles.side}>
             {side.map(({content}) => (

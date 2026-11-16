@@ -32,6 +32,12 @@ type Props = {
    * it, `none` leaves the image out. Narrow screens keep the thumbnail.
    */
   wideMedia?: 'top' | 'none';
+  /**
+   * For the `lead` variant beside the side stories: on wide screens, adds the
+   * first paragraph of the post under the summary, so that the lead column is
+   * about as tall as the side column.
+   */
+  filler?: boolean;
 };
 
 export function getPostCard(content: PropBlogPostContent): PostCard {
@@ -54,6 +60,7 @@ export default function Story({
   variant,
   headingAs: Heading = 'h2',
   wideMedia,
+  filler,
 }: Props): ReactNode {
   const {metadata, frontMatter} = content;
   const card = getPostCard(content);
@@ -62,12 +69,11 @@ export default function Story({
   const whole = coverOptions?.fit === 'contain';
   // The first tag of a post is its main topic.
   const topic = metadata.tags[0];
-  // The description may carry inline markdown; the excerpt is plain text.
-  const summary = frontMatter.description ? (
-    <InlineMarkdown>{frontMatter.description}</InlineMarkdown>
-  ) : (
-    card.excerpt
-  );
+  // Both may carry inline markdown.
+  const summary = frontMatter.description || card.excerpt;
+  // Without a description the summary already is the first paragraph.
+  const excerpt =
+    filler && frontMatter.description ? card.excerpt : undefined;
 
   return (
     <article
@@ -77,6 +83,7 @@ export default function Story({
         !card.cover && styles.textOnly,
         wideMedia === 'top' && styles.wideTop,
         wideMedia === 'none' && styles.wideNone,
+        filler && styles.filler,
       )}>
       {card.cover && (
         <div className={clsx(styles.media, whole && styles.contain)}>
@@ -102,7 +109,16 @@ export default function Story({
             <PostTitle permalink={metadata.permalink} title={metadata.title} />
           </Link>
         </Heading>
-        {summary && <p className={styles.summary}>{summary}</p>}
+        {summary && (
+          <p className={styles.summary}>
+            <InlineMarkdown>{summary}</InlineMarkdown>
+          </p>
+        )}
+        {excerpt && (
+          <p className={styles.excerpt}>
+            <InlineMarkdown>{excerpt}</InlineMarkdown>
+          </p>
+        )}
         <time className={styles.date} dateTime={metadata.date}>
           {formatDate(metadata.date)}
         </time>

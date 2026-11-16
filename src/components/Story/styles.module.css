@@ -120,10 +120,17 @@
 }
 
 .lead .summary {
-  margin-top: 0.8rem;
-  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  margin-top: 1rem;
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  line-height: 1.4;
   -webkit-line-clamp: 4;
   line-clamp: 4;
+}
+
+/* The first paragraph of the lead, as filler beside the side stories. Only
+   on wide screens: see the media query below. */
+.excerpt {
+  display: none;
 }
 
 .lead.textOnly .text {
@@ -204,6 +211,25 @@
 
   .side.wideNone .media {
     display: none;
+  }
+
+  .lead.filler .excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
+    overflow: hidden;
+    margin: 1rem 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+    line-height: 1.5;
+    color: var(--c-ink-soft);
+  }
+
+  /* Without a description the summary is the first paragraph: let it run. */
+  .lead.filler .summary {
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
   }
 }
 

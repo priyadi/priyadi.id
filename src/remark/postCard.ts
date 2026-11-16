@@ -3,7 +3,9 @@
  * listing pages. It adds `export const card = {excerpt, cover, coverAlt}` to
  * every blog post module:
  *
- * - `excerpt`: the first paragraph of text, as plain text
+ * - `excerpt`: the first paragraph of text, in the inline markdown of
+ *   src/lib/inlineMarkdown.ts: emphasis, strong and code are kept, links and
+ *   everything else become their text
  * - `cover`: the first image of the post, resolved through webpack
  *
  * Listing pages load the truncated version of a post, so both are taken from
@@ -38,6 +40,35 @@ function text(node: Node): string {
   }
   return (node.children ?? []).map(text).join('');
 }
+
+const escape = (value: string) => value.replace(/[\\*_`]/g, '\\$&');
+
+/** Wraps in a mark, keeping whitespace at either end outside of it. */
+function mark(marker: string, inner: string): string {
+  const [, before, core, after] = /^(\s*)(.*?)(\s*)$/s.exec(inner)!;
+  return core ? `${before}${marker}${core}${marker}${after}` : inner;
+}
+
+/** Like `text`, but as inline markdown. */
+function markdown(node: Node): string {
+  switch (node.type) {
+    case 'text':
+      return escape(node.value ?? '');
+    case 'inlineCode': {
+      const value = node.value ?? '';
+      return value.includes('`') ? escape(value) : `\`${value}\``;
+    }
+    case 'emphasis':
+      return mark('*', children(node));
+    case 'strong':
+      return mark('**', children(node));
+  }
+  // Links and the like become their text; images and footnote references,
+  // which have no children, nothing.
+  return node.type === 'image' ? '' : children(node);
+}
+
+const children = (node: Node) => (node.children ?? []).map(markdown).join('');
 
 function findImage(node: Node): Node | undefined {
   if (node.type === 'image') {
@@ -82,7 +113,7 @@ export default function postCard() {
         cover = findImage(node);
       }
       if (!excerpt && node.type === 'paragraph') {
-        excerpt = text(node).replace(/\s+/g, ' ').trim();
+        excerpt = markdown(node).replace(/\s+/g, ' ').trim();
       }
       if (cover && excerpt) {
         break;

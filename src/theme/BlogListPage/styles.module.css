@@ -1,6 +1,6 @@
-/* A sentence on what the site is, above the newest post. */
+/* A sentence on what the site is, above the newest post. Spaced from it by
+   the gap of .top. */
 .intro {
-  margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--c-rule);
 }
@@ -93,6 +93,22 @@
     border-left: 1px solid var(--c-rule);
   }
 
+  /* The intro and the lead share the left column; the side stories run down
+     the right of both. Extra height goes below the lead, not between the
+     two. */
+  .top:not(.stacked) {
+    grid-template-rows: auto 1fr;
+  }
+
+  .top:not(.stacked) .intro {
+    margin-bottom: 2rem;
+  }
+
+  .top:not(.stacked) .side {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
   .cards {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -103,7 +119,7 @@
   }
 
   .stacked .side {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     margin-left: 0;
     padding: 2rem 0 0;
