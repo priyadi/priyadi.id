@@ -263,7 +263,7 @@ export function RadiatorFigure(): ReactNode {
       title="Luas radiator, menurut suhu kerja cip"
       caption={({first, last}) => (
         <>
-          Daya yang dipancarkan naik dengan pangkat empat suhu, jadi cip yang
+          Daya yang dipancarkan naik dengan pangkat empat suhu, jadi perangkat yang
           boleh lebih panas memperkecil radiator: dari {first.yText} pada{' '}
           {first.xText} menjadi {last.yText} pada {last.xText}. Klik grafik
           untuk memakai suhu di titik itu.
