@@ -1,9 +1,19 @@
 import React from "react";
 import Giscus from "@giscus/react";
 import { useColorMode } from "@docusaurus/theme-common";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 
 export default function Comments() {
   const { colorMode } = useColorMode();
+  const { siteConfig } = useDocusaurusContext();
+  const isBrowser = useIsBrowser();
+
+  // giscus loads the theme into its iframe, so it needs an absolute URL. The
+  // page's own origin lets the dev server serve it too; see static/giscus.
+  const themePath = useBaseUrl(`/giscus/${colorMode}.css`);
+  const origin = isBrowser ? window.location.origin : siteConfig.url;
 
   return (
     <div>
@@ -18,7 +28,7 @@ export default function Comments() {
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
-        theme={colorMode}
+        theme={origin + themePath}
         lang="id"
         loading="eager"
       />
