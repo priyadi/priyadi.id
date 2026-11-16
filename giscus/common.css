@@ -1,0 +1,229 @@
+/**
+ * priyadi.id: giscus comments, shared by light.css and dark.css.
+ *
+ * giscus runs in an iframe on giscus.app, so nothing from src/css/custom.css
+ * reaches it. This file repeats the parts that matter: the fonts (copied
+ * from @fontsource-variable into ./fonts, Latin subset only), the type
+ * scale, and the small radii. The colours live in light.css and dark.css.
+ *
+ * giscus loads this before its own stylesheet, so the rules below start with
+ * `main` to outrank the ones they replace.
+ */
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(fonts/inter-latin-wght-normal.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(fonts/inter-latin-wght-italic.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Newsreader Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(fonts/newsreader-latin-wght-normal.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Newsreader Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(fonts/newsreader-latin-wght-italic.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url(fonts/jetbrains-mono-latin-wght-normal.woff2)
+    format('woff2-variations');
+}
+
+/* giscus sets these on `html`; `:root` outranks it. */
+:root {
+  --font-serif: 'Newsreader Variable', 'Iowan Old Style', 'Palatino Linotype',
+    Georgia, serif;
+  --font-family-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-family-monospace: 'JetBrains Mono Variable', SFMono-Regular, Menlo,
+    Consolas, 'Liberation Mono', monospace;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent-muted);
+}
+
+/* ---------------------------------------------------------------------------
+ * Radii: the site keeps corners nearly square. Reaction pills stay round.
+ * ------------------------------------------------------------------------ */
+
+#__next main .rounded,
+#__next main .rounded-md,
+#__next main .rounded-xl,
+main .BtnGroup,
+main .BtnGroup-item,
+main .Box,
+main .flash,
+main .rounded-1,
+main .rounded-2,
+main .gsc-pagination-button,
+main .gsc-comment-box:not(.gsc-comment-box-is-reply),
+main .gsc-comment-box-write,
+main .gsc-reactions-popover {
+  border-radius: 4px;
+}
+
+main .gsc-comment-content,
+main .gsc-comment-box-tabs {
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+}
+
+main .gsc-replies,
+main .gsc-reply-box {
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+}
+
+main .btn,
+main .markdown pre,
+main .markdown .highlight pre,
+main .markdown code:not(pre > code) {
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons: flat, like the search box in the masthead.
+ * ------------------------------------------------------------------------ */
+
+main .btn,
+main .btn-primary {
+  box-shadow: none;
+  font-weight: 550;
+}
+
+main .btn:focus-visible,
+main .gsc-social-reaction-summary-item:focus-visible,
+main .gsc-reactions-button:focus-visible,
+main a:focus-visible {
+  outline: 2px solid var(--color-accent-fg);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Headings: the comment and reaction counts read like the site's headings.
+ * ------------------------------------------------------------------------ */
+
+main .gsc-reactions-count,
+main .gsc-comments-count,
+main .gsc-comments-count-separator {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+}
+
+/* ---------------------------------------------------------------------------
+ * Comments: names in ink, bodies set like the article.
+ * ------------------------------------------------------------------------ */
+
+main .gsc-comment-author a,
+main .gsc-reply-author a {
+  color: var(--color-fg-default);
+}
+
+main .gsc-comment-author a:hover,
+main .gsc-reply-author a:hover {
+  color: var(--color-accent-fg);
+}
+
+main .markdown {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+main .markdown a {
+  color: inherit;
+  text-decoration-color: var(--color-accent-fg);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+main .markdown a:hover {
+  color: var(--color-accent-fg);
+}
+
+main .markdown :is(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+}
+
+main .markdown :is(h1, h2) {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+main .markdown blockquote {
+  border-inline-start: 2px solid var(--color-fg-default);
+  padding-inline: 1em 0;
+}
+
+main .markdown code:not(pre > code),
+main .markdown tt {
+  font-size: 0.8em;
+}
+
+main .markdown pre,
+main .markdown .highlight pre {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+main .markdown table {
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+main .markdown hr {
+  height: 1px;
+  background-color: var(--color-border-default);
+  border: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Comment box
+ * ------------------------------------------------------------------------ */
+
+main .gsc-comment-box-textarea {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+main .gsc-comment-box-textarea::placeholder {
+  color: var(--color-fg-muted);
+}
+
+/* As in the masthead search box: a thin ink edge instead of a blue halo. */
+main .gsc-comment-box-write:focus-within {
+  border-color: var(--color-fg-default);
+  box-shadow: 0 0 0 1px var(--color-fg-default);
+}

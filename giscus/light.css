@@ -1,0 +1,58 @@
+/**
+ * priyadi.id: giscus theme, light mode. Starts from giscus's own light theme
+ * (for everything not overridden here, such as code highlighting) and swaps
+ * in the palette from src/css/custom.css.
+ */
+
+@import url('https://giscus.app/themes/light.css');
+@import url('common.css');
+
+main {
+  /* --c-paper #ffffff, --c-surface #f6f3f5, --c-ink #201a1f,
+     --c-ink-soft #625a63, --c-rule #e2dce0, --c-accent #b3261a */
+  --color-fg-default: #201a1f;
+  --color-fg-muted: #625a63;
+  --color-fg-subtle: #625a63;
+  --color-canvas-default: #ffffff;
+  --color-canvas-overlay: #ffffff;
+  --color-canvas-inset: #f6f3f5;
+  --color-canvas-subtle: #f6f3f5;
+  --color-border-default: #e2dce0;
+  --color-border-muted: #e2dce0;
+  --color-neutral-muted: #201a1f12;
+
+  --color-accent-fg: #b3261a;
+  --color-accent-emphasis: #b3261a;
+  --color-accent-muted: #b3261a38;
+  --color-accent-subtle: #fbeeec;
+  --color-danger-fg: #b3261a;
+
+  --color-btn-text: #201a1f;
+  --color-btn-bg: #ffffff;
+  --color-btn-border: #e2dce0;
+  --color-btn-hover-bg: #f6f3f5;
+  --color-btn-hover-border: #e2dce0;
+  --color-btn-active-bg: #ede8eb;
+  --color-btn-active-border: #e2dce0;
+  --color-btn-selected-bg: #f6f3f5;
+
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #201a1f;
+  --color-btn-primary-border: #201a1f;
+  --color-btn-primary-hover-bg: #b3261a;
+  --color-btn-primary-hover-border: #b3261a;
+  --color-btn-primary-selected-bg: #982016;
+  --color-btn-primary-selected-shadow: none;
+  --color-btn-primary-disabled-text: #ffffffcc;
+  --color-btn-primary-disabled-bg: #a29ba1;
+  --color-btn-primary-disabled-border: #a29ba1;
+
+  --color-action-list-item-default-hover-bg: #f6f3f5;
+  --color-segmented-control-bg: #f6f3f5;
+  --color-segmented-control-button-bg: #ffffff;
+  --color-segmented-control-button-selected-border: #e2dce0;
+  --color-primer-shadow-inset: none;
+
+  --color-scale-gray-1: #f6f3f5;
+  --color-scale-blue-1: #f6dad6;
+}
