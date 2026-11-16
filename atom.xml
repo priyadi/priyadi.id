@@ -90,16 +90,23 @@ digunakannya.</p>
 <p>Model ini menyederhanakan banyak hal. Berikut adalah hal-hal tidak masuk hitungan, dan
 hampir semuanya akan memberatkan orbit:</p>
 <ul>
-<li class="">pengerasan terhadap radiasi dan galat akibat partikel berenergi tinggi,
+<li class=""><a href="https://en.wikipedia.org/wiki/Radiation_hardening" target="_blank" rel="noopener noreferrer" class="">pengerasan terhadap radiasi</a>
+dan <a href="https://en.wikipedia.org/wiki/Single-event_upset" target="_blank" rel="noopener noreferrer" class="">galat</a> akibat
+<a href="https://id.wikipedia.org/wiki/Sinar_kosmik" target="_blank" rel="noopener noreferrer" class="">partikel berenergi tinggi</a>,
 termasuk massa perisainya;</li>
-<li class="">perlindungan terhadap mikrometeoroid dan sampah antariksa;</li>
-<li class="">dinamika struktur bentang berukuran kilometer persegi;</li>
+<li class="">perlindungan terhadap
+<a href="https://id.wikipedia.org/wiki/Mikrometeoroid" target="_blank" rel="noopener noreferrer" class="">mikrometeoroid</a> dan
+<a href="https://id.wikipedia.org/wiki/Sampah_antariksa" target="_blank" rel="noopener noreferrer" class="">sampah antariksa</a>;</li>
+<li class=""><a href="https://en.wikipedia.org/wiki/Structural_dynamics" target="_blank" rel="noopener noreferrer" class="">dinamika struktur</a>
+bentang berukuran kilometer persegi;</li>
 <li class="">bayangan panel surya yang jatuh ke radiator;</li>
-<li class="">lebar pita sambungan data ke Bumi;</li>
+<li class=""><a href="https://id.wikipedia.org/wiki/Lebar_pita" target="_blank" rel="noopener noreferrer" class="">lebar pita</a> sambungan data ke Bumi;</li>
 <li class="">servis atau perbaikan di orbit: perangkat yang rusak dianggap hangus dan
 diganti, tidak pernah diperbaiki;</li>
-<li class="">berkurangnya muatan roket untuk orbit yang lebih tinggi atau lebih miring;</li>
-<li class="">risiko tabrakan dan manuver menghindarinya;</li>
+<li class="">berkurangnya muatan roket untuk orbit yang lebih tinggi atau
+dengan <a href="https://id.wikipedia.org/wiki/Inklinasi" target="_blank" rel="noopener noreferrer" class="">inklinasi</a> yang lebih besar;</li>
+<li class="">risiko tabrakan dan
+<a href="https://en.wikipedia.org/wiki/Collision_avoidance_%28spacecraft%29" target="_blank" rel="noopener noreferrer" class="">manuver penghindaran</a>;</li>
 <li class="">pembuangan stasiun di akhir masa pakainya.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="semua-asumsi">Semua asumsi<a href="https://priyadi.id/2026/11/14/datacenter-ai-di-orbit/#semua-asumsi" class="hash-link" aria-label="Taut langsung ke Semua asumsi" title="Taut langsung ke Semua asumsi" translate="no">​</a></h2>
