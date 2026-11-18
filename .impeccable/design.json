@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T15:59:00.874Z",
+  "title": "Design System: priyadi.id",
+  "extensions": {
+    "colorMeta": {
+      "ember-red": {
+        "role": "primary",
+        "displayName": "Ember Red",
+        "canonical": "oklch(50.1% 0.179 29.7)",
+        "tonalRamp": [
+          "#1a0302",
+          "#4e0000",
+          "#860000",
+          "#ac1d12",
+          "#d64a3a",
+          "#ff715e",
+          "#ffae9e",
+          "#ffe4dd"
+        ]
+      },
+      "afterglow-coral": {
+        "role": "primary",
+        "displayName": "Afterglow Coral",
+        "canonical": "oklch(76.5% 0.145 40.3)",
+        "tonalRamp": [
+          "#170602",
+          "#460c00",
+          "#791100",
+          "#9d3808",
+          "#c65d35",
+          "#ef825a",
+          "#ffb69d",
+          "#ffe7dc"
+        ]
+      },
+      "sunset-amber": {
+        "role": "tertiary",
+        "displayName": "Sunset Amber",
+        "canonical": "oklch(76.6% 0.144 56.8)",
+        "tonalRamp": [
+          "#160700",
+          "#431200",
+          "#741f00",
+          "#974100",
+          "#be6505",
+          "#e78a3e",
+          "#f9bc8f",
+          "#ffe9d8"
+        ]
+      },
+      "sunset-flame": {
+        "role": "tertiary",
+        "displayName": "Sunset Flame",
+        "canonical": "oklch(68.4% 0.178 33.4)",
+        "tonalRamp": [
+          "#1a0401",
+          "#4d0000",
+          "#850000",
+          "#ab2000",
+          "#d54c2f",
+          "#ff7355",
+          "#ffaf9a",
+          "#ffe4db"
+        ]
+      },
+      "sunset-rose": {
+        "role": "tertiary",
+        "displayName": "Sunset Rose",
+        "canonical": "oklch(60.8% 0.179 23.4)",
+        "tonalRamp": [
+          "#1a0303",
+          "#4e0005",
+          "#860004",
+          "#ac1927",
+          "#d6474a",
+          "#ff6f6d",
+          "#ffaca7",
+          "#ffe4e0"
+        ]
+      },
+      "sunset-mauve": {
+        "role": "tertiary",
+        "displayName": "Sunset Mauve",
+        "canonical": "oklch(48.9% 0.116 1.1)",
+        "tonalRamp": [
+          "#15060a",
+          "#3f1122",
+          "#6d1d3c",
+          "#903d5a",
+          "#b7617c",
+          "#e085a0",
+          "#f4b7c7",
+          "#ffe7ed"
+        ]
+      },
+      "sunset-plum": {
+        "role": "tertiary",
+        "displayName": "Sunset Plum",
+        "canonical": "oklch(35.6% 0.067 319.2)",
+        "tonalRamp": [
+          "#0e0910",
+          "#2d1d31",
+          "#4f3456",
+          "#6e5176",
+          "#92749a",
+          "#b798bf",
+          "#d7c2dd",
+          "#f4ebf6"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Newsprint White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "paper-dusk": {
+        "role": "neutral",
+        "displayName": "Dusk Plum-Black",
+        "canonical": "oklch(19.2% 0.018 312.7)",
+        "tonalRamp": [
+          "#0c0b0c",
+          "#262228",
+          "#433d47",
+          "#615b65",
+          "#847d88",
+          "#a8a2ad",
+          "#cdc8d0",
+          "#efeef1"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Mauve Mist",
+        "canonical": "oklch(96.7% 0.004 337.4)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252324",
+          "#413f40",
+          "#5f5d5e",
+          "#827f81",
+          "#a6a4a5",
+          "#cccacb",
+          "#efeeef"
+        ]
+      },
+      "surface-dusk": {
+        "role": "neutral",
+        "displayName": "Twilight Surface",
+        "canonical": "oklch(23.1% 0.023 313.1)",
+        "tonalRamp": [
+          "#0c0a0d",
+          "#272229",
+          "#443c49",
+          "#625a67",
+          "#857c8a",
+          "#aaa1af",
+          "#cec8d2",
+          "#f0edf1"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Plum-Black Ink",
+        "canonical": "oklch(22.7% 0.013 331.6)",
+        "tonalRamp": [
+          "#0c0b0c",
+          "#272326",
+          "#443d43",
+          "#625b61",
+          "#857d84",
+          "#aaa2a8",
+          "#cec9cd",
+          "#f0eeef"
+        ]
+      },
+      "ink-dusk": {
+        "role": "neutral",
+        "displayName": "Moonlit Ink",
+        "canonical": "oklch(93.9% 0.007 5.6)",
+        "tonalRamp": [
+          "#0c0b0b",
+          "#262324",
+          "#433e3f",
+          "#615c5d",
+          "#847f7f",
+          "#a8a3a4",
+          "#cdc9ca",
+          "#efeeee"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(47.8% 0.017 322.4)",
+        "tonalRamp": [
+          "#0c0b0c",
+          "#272227",
+          "#443d45",
+          "#625a63",
+          "#857d86",
+          "#aaa1ab",
+          "#cec8cf",
+          "#f0edf0"
+        ]
+      },
+      "ink-soft-dusk": {
+        "role": "neutral",
+        "displayName": "Dusk Grey",
+        "canonical": "oklch(72.1% 0.018 325.8)",
+        "tonalRamp": [
+          "#0c0a0c",
+          "#272227",
+          "#453d45",
+          "#635a63",
+          "#867d86",
+          "#aba1ab",
+          "#cfc8cf",
+          "#f0edf0"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(90.0% 0.008 337.5)",
+        "tonalRamp": [
+          "#0c0b0b",
+          "#262325",
+          "#433e41",
+          "#615c5f",
+          "#847e82",
+          "#a8a3a6",
+          "#cdc9cc",
+          "#efeeef"
+        ]
+      },
+      "rule-dusk": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "oklch(31.8% 0.028 316.3)",
+        "tonalRamp": [
+          "#0c0a0d",
+          "#27212a",
+          "#463b4a",
+          "#645968",
+          "#877b8c",
+          "#aca0b1",
+          "#cfc7d3",
+          "#f0edf2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Post and page headlines; the lead story at a smaller clamp."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "h2 inside article prose."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Story headlines in listings; previous/next links."
+      },
+      "dek": {
+        "displayName": "Dek",
+        "purpose": "Description under a post headline and the lead summary, in Faded Ink."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Article prose in a 42.5rem column; 1.1875rem below 48rem."
+      },
+      "body-compact": {
+        "displayName": "Body compact",
+        "purpose": "Story summaries, clamped to three lines."
+      },
+      "figure-title": {
+        "displayName": "Figure title",
+        "purpose": "Title above a chart, map or diagram."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Bylines, nav, tables, admonitions, controls."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Kicker (main topic) in the accent, sentence case."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Figure captions and source lines."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Code blocks; inline code at 0.85em."
+      }
+    },
+    "shadows": [
+      {
+        "name": "tooltip-lift",
+        "value": "0 2px 10px rgb(0 0 0 / 0.14)",
+        "purpose": "Chart tooltips and popovers floating over content. Nothing else."
+      }
+    ],
+    "gradients": [
+      {
+        "name": "sunset",
+        "value": "linear-gradient(90deg, #f7994e, #f3674a 30%, #d94a4c 58%, #93405c 82%, #4b3052)",
+        "purpose": "The 4px horizon line atop the masthead, the logo, social cards. Once per page."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "36rem"
+      },
+      {
+        "name": "phone",
+        "value": "40rem"
+      },
+      {
+        "name": "prose",
+        "value": "48rem"
+      },
+      {
+        "name": "wide",
+        "value": "62rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "masthead",
+      "description": "Sunset horizon line, then the paper band with brand, nav and tools over an ink rule.",
+      "html": "<header class=\"ds-masthead\"><div class=\"ds-horizon\"></div><div class=\"ds-masthead-inner\"><a class=\"ds-brand\" href=\"#\">priyadi<span>.id</span></a><nav class=\"ds-nav\"><a href=\"#\" class=\"ds-current\">Arsip</a><a href=\"#\">RSS</a></nav></div></header>",
+      "css": ".ds-masthead { background: var(--c-paper, #ffffff); border-bottom: 1px solid var(--c-ink, #201a1f); font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); } .ds-horizon { height: 4px; background: linear-gradient(90deg, #f7994e, #f3674a 30%, #d94a4c 58%, #93405c 82%, #4b3052); } .ds-masthead-inner { display: flex; align-items: center; gap: 1.75rem; min-height: 4.25rem; padding-inline: 1.5rem; } .ds-brand { margin-right: auto; color: var(--c-ink, #201a1f); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.03em; text-decoration: none; } .ds-brand span { color: var(--c-accent, #b3261a); font-weight: 400; } .ds-nav { display: flex; gap: 1.5rem; font-size: 0.9375rem; font-weight: 500; } .ds-nav a { color: var(--c-ink, #201a1f); padding-block: 0.25rem; border-bottom: 2px solid transparent; text-decoration: none; } .ds-nav a:hover, .ds-nav a.ds-current { border-bottom-color: var(--c-accent, #b3261a); } .ds-nav a:focus-visible { outline: 2px solid var(--c-accent, #b3261a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Hairline Button",
+      "kind": "button",
+      "refersTo": "button-hairline",
+      "description": "The only button style: transparent, hairline border that darkens to ink on hover.",
+      "html": "<button class=\"ds-btn-hairline\" type=\"button\">Atur ulang</button>",
+      "css": ".ds-btn-hairline { padding: 0.3rem 0.65rem; border: 1px solid var(--c-rule, #e2dce0); border-radius: 2px; background: none; color: var(--c-ink, #201a1f); font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); font-size: 0.875rem; line-height: 1.3; cursor: pointer; } .ds-btn-hairline:hover { border-color: var(--c-ink, #201a1f); } .ds-btn-hairline:focus-visible { outline: 2px solid var(--c-accent, #b3261a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Hairline Select",
+      "kind": "input",
+      "refersTo": "select-hairline",
+      "description": "Labelled select in an explainer's scenario bar.",
+      "html": "<label class=\"ds-field\"><span>Skenario</span><select class=\"ds-select\"><option>Optimis</option><option>Moderat</option></select></label>",
+      "css": ".ds-field { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); font-size: 0.875rem; font-weight: 600; color: var(--c-ink, #201a1f); } .ds-select { padding: 0.35rem 0.5rem; border: 1px solid var(--c-rule, #e2dce0); border-radius: 2px; background: var(--c-paper, #ffffff); color: var(--c-ink, #201a1f); font: inherit; font-weight: 400; } .ds-select:hover { border-color: var(--c-ink, #201a1f); } .ds-select:focus-visible { outline: 2px solid var(--c-accent, #b3261a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "Masthead search; border turns ink on focus.",
+      "html": "<input class=\"ds-search\" type=\"search\" placeholder=\"Cari\" />",
+      "css": ".ds-search { width: 11rem; height: 2.125rem; padding-inline: 0.6rem; border: 1px solid var(--c-rule, #e2dce0); border-radius: 2px; background: transparent; color: var(--c-ink, #201a1f); font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); font-size: 0.875rem; } .ds-search::placeholder { color: var(--c-ink-soft, #625a63); } .ds-search:focus { border-color: var(--c-ink, #201a1f); outline: none; }"
+    },
+    {
+      "name": "Instrument Slider",
+      "kind": "input",
+      "description": "Range input with label, tabular readout and a note; the explainer control.",
+      "html": "<div class=\"ds-slider\"><div class=\"ds-slider-head\"><label for=\"ds-s\">Biaya peluncuran</label><output>$1.500/kg</output></div><input id=\"ds-s\" type=\"range\" min=\"0\" max=\"100\" value=\"40\" /><p>Harga per kilogram ke orbit rendah.</p></div>",
+      "css": ".ds-slider { font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); font-size: 0.875rem; color: var(--c-ink, #201a1f); max-width: 22rem; } .ds-slider-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; } .ds-slider-head output { font-weight: 650; font-variant-numeric: tabular-nums; } .ds-slider input { width: 100%; margin: 0.4rem 0 0.2rem; accent-color: var(--c-ink, #201a1f); } .ds-slider input:focus-visible { outline: 2px solid var(--c-accent, #b3261a); outline-offset: 2px; } .ds-slider p { margin: 0; font-size: 0.8125rem; color: var(--c-ink-soft, #625a63); }"
+    },
+    {
+      "name": "Story Row",
+      "kind": "card",
+      "refersTo": "story-row",
+      "description": "A post in the running list: kicker, serif headline, clamped summary, date, thumbnail right, soft rule above.",
+      "html": "<article class=\"ds-story\"><div><a class=\"ds-kicker\" href=\"#\">Lingkungan</a><h3 class=\"ds-story-headline\"><a href=\"#\">Kurban dan perubahan iklim</a></h3><p class=\"ds-story-summary\">Berapa emisi dari satu ekor sapi, dan apa artinya dibanding sumber protein lain.</p><span class=\"ds-story-date\">26 Mei 2026</span></div><div class=\"ds-story-media\"></div></article>",
+      "css": ".ds-story { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.9rem 1.25rem; padding-block: 1.5rem; border-top: 1px solid var(--c-rule, #e2dce0); max-width: 36rem; font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); } .ds-kicker { display: block; margin-bottom: 0.3rem; font-size: 0.8125rem; font-weight: 650; line-height: 1.3; color: var(--c-accent, #b3261a); text-decoration: none; } .ds-kicker:hover { text-decoration: underline; } .ds-story-headline { margin: 0; font-family: var(--font-serif, 'Newsreader Variable', Georgia, serif); font-size: 1.375rem; font-weight: 600; line-height: 1.16; } .ds-story-headline a { color: var(--c-ink, #201a1f); text-decoration: none; } .ds-story-headline a:hover, .ds-story-headline a:focus-visible { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.14em; } .ds-story-summary { margin: 0.5rem 0 0; font-family: var(--font-serif, 'Newsreader Variable', Georgia, serif); font-size: 1.0625rem; line-height: 1.45; color: var(--c-ink-soft, #625a63); } .ds-story-date { display: block; margin-top: 0.6rem; font-size: 0.8125rem; color: var(--c-ink-soft, #625a63); } .ds-story-media { width: 9rem; aspect-ratio: 3 / 2; background: linear-gradient(160deg, #f7994e, #d94a4c 55%, #4b3052); }"
+    },
+    {
+      "name": "Figure",
+      "kind": "custom",
+      "refersTo": "figure",
+      "description": "Signature component: sans title, the chart, caption and source line beneath.",
+      "html": "<figure class=\"ds-figure\"><p class=\"ds-figure-title\">Emisi per 100 gram protein</p><div class=\"ds-figure-bars\"><div><span>Sapi</span><i style=\"width:92%\"></i><b>49,9</b></div><div><span>Ayam</span><i style=\"width:18%\"></i><b>5,7</b></div><div><span>Tahu</span><i style=\"width:7%\"></i><b>2,0</b></div></div><figcaption class=\"ds-figure-caption\">Dalam kg CO₂eq.<span class=\"ds-figure-source\">Sumber: Poore &amp; Nemecek (2018), Science</span></figcaption></figure>",
+      "css": ".ds-figure { margin: 0; max-width: 34rem; font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); color: var(--c-ink, #201a1f); } .ds-figure-title { margin: 0 0 0.75rem; font-size: 1.0625rem; font-weight: 650; line-height: 1.3; } .ds-figure-bars div { display: grid; grid-template-columns: 4rem 1fr 3rem; align-items: center; gap: 0.5rem; padding-block: 0.25rem; font-size: 0.875rem; } .ds-figure-bars i { display: block; height: 0.9rem; background: var(--c-accent, #b3261a); border-radius: 0 4px 4px 0; } .ds-figure-bars b { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; } .ds-figure-caption { margin-top: 0.7rem; font-size: 0.875rem; line-height: 1.45; color: var(--c-ink-soft, #625a63); } .ds-figure-source { display: block; margin-top: 0.2rem; font-size: 0.8125rem; }"
+    },
+    {
+      "name": "Data Table",
+      "kind": "custom",
+      "description": "Tables read as data: ink rule under the head, soft rules between rows, tabular figures.",
+      "html": "<table class=\"ds-table\"><thead><tr><th>Lapisan</th><th>Tarif</th><th>Penghasilan</th></tr></thead><tbody><tr><td>Pertama</td><td>5%</td><td>60.000.000</td></tr><tr><td>Kedua</td><td>15%</td><td>190.000.000</td></tr><tr><td>Ketiga</td><td>25%</td><td>250.000.000</td></tr></tbody></table>",
+      "css": ".ds-table { border-collapse: collapse; font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); font-size: 0.9375rem; line-height: 1.5; color: var(--c-ink, #201a1f); font-variant-numeric: tabular-nums lining-nums; } .ds-table th, .ds-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--c-rule, #e2dce0); text-align: left; } .ds-table th { font-weight: 600; vertical-align: bottom; } .ds-table thead tr { border-bottom: 1.5px solid var(--c-ink, #201a1f); } .ds-table thead th { border-bottom: 1.5px solid var(--c-ink, #201a1f); } .ds-table :is(th, td):first-child { padding-left: 0; } .ds-table td:not(:first-child) { text-align: right; }"
+    },
+    {
+      "name": "Chart Tooltip",
+      "kind": "custom",
+      "refersTo": "tooltip",
+      "description": "The one element allowed a shadow: floats over chart data.",
+      "html": "<div class=\"ds-tooltip\"><p class=\"ds-tooltip-title\">Tahun 2030</p><p>Orbit: <b>$4,2 M</b></p><p>Darat: <b>$1,9 M</b></p></div>",
+      "css": ".ds-tooltip { display: inline-block; padding: 0.5rem 0.65rem; border: 1px solid var(--c-rule, #e2dce0); border-radius: 3px; background: var(--c-paper, #ffffff); color: var(--c-ink, #201a1f); box-shadow: 0 2px 10px rgb(0 0 0 / 0.14); font-family: var(--font-sans, 'Inter Variable', system-ui, sans-serif); font-size: 0.8125rem; line-height: 1.4; } .ds-tooltip p { margin: 0; } .ds-tooltip-title { margin-bottom: 0.2rem !important; color: var(--c-ink-soft, #625a63); } .ds-tooltip b { font-variant-numeric: tabular-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Evidence Desk",
+    "overview": "priyadi.id is set like the desk of a serious newspaper where every claim arrives with its chart and its source. Serif headlines and serif prose carry the argument; a sans-serif voice handles everything that frames it: topics, bylines, captions, tables, controls. Structure comes from hairline rules, not boxes or shadows. The page should feel sober and authoritative enough to be cited in an argument, and still unmistakably one person's desk: warm, personal, signed.\n\nThe warmth comes from a single source, the logo's sunset sky, running from amber down to dusk plum. Light mode is white newsprint with plum-black ink; dark mode, the default, is the dusk end of the same sky. The sunset appears whole only as the thin horizon line across the top of every page; elsewhere it survives as one accent colour per mode, used for marks rather than surfaces.\n\nData is a first-class citizen. Numbers set in tabular figures, tables read as data rather than grids of cells, charts draw from the same colour tokens as the page and switch mode with it, and interactive explainers behave like instruments: labelled, precise, with numeric readouts. There is no decorative motion system; the page holds still and lets the reader work.",
+    "keyCharacteristics": [
+      "Serif for what is read, sans for what frames it.",
+      "Hairline rules in two weights of meaning: soft rule for separation, ink for structure.",
+      "Flat everywhere; the only shadow belongs to floating tooltips.",
+      "One accent per mode, used as thin marks: kicker text, link underlines, focus rings, the `.id` of the wordmark.",
+      "Light and dark are equal citizens, and dark is the default.",
+      "Controls are hairline-bordered instruments with 2px corners and no fill."
+    ],
+    "rules": [
+      {
+        "name": "The Ember Thread Rule",
+        "body": "The accent is a thread, never a field. It appears as text colour, a 1–2px underline, an outline, or a small tint; it never fills a button, a panel or a background.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Horizon Rule",
+        "body": "The full sunset gradient appears once per page, as the 4px line at the top. Do not repeat it as a divider, a button fill, a heading treatment or a chart palette.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dusk Default Rule",
+        "body": "Dark mode is the default, not an afterthought. Every new colour, image and chart is checked on `paper-dusk` first, then on `paper`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Scoped Chart Colour Rule",
+        "body": "A chart's categorical colours are defined per article as scoped CSS variables with a light and a dark value each (e.g. `--c-orbit`, `--c-ground`), each with one meaning throughout that article, and checked for colour-vision separation and contrast against both papers.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Reads, Sans Frames Rule",
+        "body": "Anything the reader reads as argument (headlines, deks, prose, summaries) is serif. Anything that labels, locates or measures it (kickers, bylines, captions, tables, figure titles, controls, nav) is sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Every number that may be compared (table cells, chart ticks, slider outputs, verdicts) uses `font-variant-numeric: tabular-nums`; tables add `lining-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "No uppercase labels and no letter-spaced eyebrows. Kickers, admonition titles and section titles are sentence case at normal tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Hairlines Rule",
+        "body": "A soft rule (1px `rule`) separates items within a group: stories, byline, table rows, side column. An ink rule (1px `ink`, 1.5px under a table head) marks structure: the bottom of the masthead, the top of the footer, section titles, the card row, previous/next links. If a line is doing structural work, it is ink; otherwise it is soft.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat Desk Rule",
+        "body": "No shadow on cards, panels, controls, images or the masthead. If something needs to stand apart, give it a rule or the surface tone, not a lift.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reference `--c-paper`, `--c-surface`, `--c-ink`, `--c-ink-soft`, `--c-rule`, `--c-accent` and `--font-*` in components and charts, so they follow the colour mode.",
+      "**Do** check every new piece on dusk paper first, then on white (The Dusk Default Rule).",
+      "**Do** put charts, maps and diagrams in a `<Figure>` with a title that says what it shows and the source in `source`.",
+      "**Do** make two image files (`.light` / `.dark`, with the `#gh-light-mode-only` / `#gh-dark-mode-only` suffix) for any chart or diagram exported as an image; dark files use `#17121a` or transparent, text `#efe9ea`, rules `#382e3c`.",
+      "**Do** use tabular figures for every number that can be compared.",
+      "**Do** separate with hairlines, choosing soft or ink by whether the line is structural (The Two Hairlines Rule).",
+      "**Do** build interactive controls as hairline instruments: 2px corners, `rule` border that darkens to `ink` on hover, labelled, with a numeric readout.",
+      "**Do** design every interactive figure for a phone first."
+    ],
+    "donts": [
+      "**Don't** fill buttons, panels or backgrounds with the accent or the sunset gradient (The Ember Thread Rule, The One Horizon Rule).",
+      "**Don't** put shadows on anything that rests on the page; only floating tooltips get `0 2px 10px rgb(0 0 0 / 0.14)`.",
+      "**Don't** use uppercase or letter-spaced labels.",
+      "**Don't** publish a transparent image with dark lines as a single file, or an SVG that switches on `prefers-color-scheme`: it follows the OS, not the site's toggle.",
+      "**Don't** set prose in sans or interface furniture in serif.",
+      "**Don't** use Infima's stock emphasis fills, 8px corners or dashed drop zones for a tool; `DkimVerifier` shows the hairline version: one verdict line with a drawn icon, facts in a ruled list, detail behind a disclosure.",
+      "**Don't** use AI-generated illustrations in social cards."
+    ]
+  }
+}
