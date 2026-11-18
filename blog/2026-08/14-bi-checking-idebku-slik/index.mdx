@@ -5,7 +5,10 @@ authors: priyadi
 tags: [keuangan, teknologi-informasi]
 image: ./socialcard.png
 socialcard:
-  variant: pattern
+  variant: figure
+  image: ./rantai-kepercayaan.png
+cover:
+  fit: contain
 ---
 
 import DkimVerifier from '@site/src/components/DkimVerifier';
@@ -14,7 +17,13 @@ Untuk mendapatkan data BI-checking/SLIK untuk diri kita pribadi, kita dapat
 melakukannya melalui situs [idebku](https://idebku.ojk.go.id/). Yang dibutuhkan
 adalah KTP dan beberapa foto *selfie*.
 
-![Kredit Macet](./kredit-macet.jpeg)
+<Figure
+  title="Rantai kepercayaan email hasil BI-checking"
+  caption="OJK menandatangani email hasilnya. Tanda tangan itu ikut terbawa ketika email diteruskan sebagai lampiran, lalu dicocokkan dengan kunci publik OJK di DNS.">
+
+![Diagram alur: OJK menandatangani email hasil iDeb dengan kunci privatnya dan menerbitkan kunci publiknya di DNS. Email dikirim ke pihak ketiga, yang meneruskannya kepada kita sebagai lampiran. Pemeriksa di peramban mencocokkan tanda tangan dengan kunci publik dari DNS, dan hasilnya: asli dan tidak diubah.](./rantai-kepercayaan.png)
+
+</Figure>
 
 Tetapi terkadang kita membutuhkan BI-checking bukan untuk diri kita, tetapi
 untuk pihak ketiga. Misalnya untuk calon rekanan atau karyawan yang akan
@@ -40,9 +49,9 @@ OJK mengirimkan hasilnya melalui email ke email milik pihak ketiga tersebut.
 
 :::note Mengapa tidak dikirim langsung kepada kita saja?
 
-Secara hukum, seharusnya OJK menghendaki data hanya dikirim ke pemohon. Jika
-email bukan milik pemohon bisa dianggap sebagai pengambilan data secara tidak
-sah.
+Secara hukum, OJK semestinya hanya mengirim data kepada pemohon sendiri. Jika
+dikirim ke email yang bukan milik pemohon, hal itu bisa dianggap sebagai
+pengambilan data secara tidak sah.
 
 Selain itu bisa saja datanya diperlukan untuk kepentingan lain, atau ada
 beberapa pihak yang membutuhkan datanya. Dan pihak OJK tidak akan suka
@@ -58,10 +67,13 @@ penting agar email yang kita terima mempertahankan *header-header* yang
 diperlukan untuk menilai keasliannya. Jika email di-*forward* seperti biasa,
 maka tidak akan menyertakan informasi yang kita butuhkan.
 
-* Mozilla Thunderbird: klik kanan di email, 'Forward and Redirect', 'As attachment'.
-* Microsoft Outlook: Respond, more, Forward as Attachment
-* Apple Mail: Message, Forward as Attachment
-* Gmail: Download Message, lalu lampirkan berkasnya di email baru.
+* Mozilla Thunderbird: klik kanan pada email, lalu *Forward and Redirect* › *As
+  Attachment*.
+* Microsoft Outlook: *Home* › *Respond* › *More* › *Forward as Attachment*, atau
+  tekan Ctrl+Alt+F.
+* Apple Mail: *Message* › *Forward as Attachment*.
+* Gmail: menu ⋮ pada email › *Download message*, lalu lampirkan berkas `.eml`
+  itu di email baru.
 
 ## Verifikasi keaslian melalui DKIM
 
@@ -81,27 +93,27 @@ tanda tangan yang sah membuktikan dua hal sekaligus:
 2. Isi dan *header* yang ditandatangani tidak berubah sedikit pun sejak
    dikirim. Satu karakter saja diubah, verifikasinya akan gagal.
 
-Alat di bawah ini memverifikasi tanda tangan DKIM sebuah berkas `.eml`. Unggah
-email yang Anda terima; jika di dalamnya terdapat email yang dilampirkan, email
-tersebut ikut diperiksa secara terpisah.
+Alat di bawah ini memeriksa tanda tangan DKIM sebuah berkas `.eml`. Pilih
+email yang diteruskan kepada Anda; email OJK yang terlampir di dalamnya akan
+ikut dibuka dan diperiksa. Email itu asli bila tanda tangannya sah dan
+**domain penanda tangannya** (`d=`) adalah `ojk.go.id`. Alat ini memeriksa
+keduanya dan menuliskan hasilnya di baris paling atas.
 
-<DkimVerifier expectedDomains={['ojk.go.id']} />
-
-:::note
-
-Verifikasi berjalan sepenuhnya di peramban yang anda gunakan. Isi email tidak
-pernah dikirim ke server mana pun, termasuk ke situs ini.
-
-:::
-
-Yang perlu Anda perhatikan pada hasilnya adalah hasilnya harus berstatus sah,
-dan **domain penanda tangan** (`d=`) harus `ojk.go.id`.
+<DkimVerifier
+  expectedDomains={['ojk.go.id']}
+  afterPass={
+    <p>
+      Selanjutnya, buka tautan dokumen SLIK di email ini, lalu pastikan NIK di
+      dokumen itu sama dengan NIK di KTP orang yang Anda periksa.
+    </p>
+  }
+/>
 
 ## Verifikasi data BI-checking
 
-Email yang dikirimkan oleh OJK akan berisi taut ke satu atau lebih dokumen SLIK.
-Yang harus dipastikan di dokumen tersebut adalah pihak yang memang ingin anda
-ketahui. Pastikan NIK-nya sama dengan NIK yang tertera di KTP.
+Email yang dikirimkan oleh OJK berisi tautan ke satu atau lebih dokumen SLIK.
+Pastikan dokumen itu memang milik orang yang ingin Anda ketahui: NIK-nya harus
+sama dengan NIK yang tertera di KTP.
 
 Mengenai bagaimana cara membaca dokumen iDeb, bisa dipelajari di [halaman informasi
 iDebku](https://idebku.ojk.go.id/Public/Informasi).

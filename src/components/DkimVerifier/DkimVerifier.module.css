@@ -1,168 +1,354 @@
+/*
+ * DKIM verifier: an instrument in the article, set like the scenario bar of
+ * the orbital datacenter piece. Hairlines, no fills, sans throughout.
+ *
+ * Two colours with one meaning each: --dkim-pass for a genuine message, the
+ * site accent for one that is not. Each comes with its own icon.
+ */
 .verifier {
-  margin: 24px 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  --dkim-pass: #2c7a4b;
+
+  margin-block: 0;
+  padding-block: 1rem 1.25rem;
+  border-top: 1px solid var(--c-ink);
+  border-bottom: 1px solid var(--c-rule);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
+:global(html[data-theme='dark']) .verifier {
+  --dkim-pass: #7fca9b;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.privacy {
+  margin: 0.3rem 0 1rem;
+  max-width: 38rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * File picker
+ * ------------------------------------------------------------------------ */
+
 .dropzone {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 32px 16px;
-  border: 2px dashed var(--ifm-color-emphasis-400);
-  border-radius: 8px;
-  background-color: var(--ifm-color-emphasis-100);
-  cursor: pointer;
-  text-align: center;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  transition:
+    border-color 0.15s ease-out,
+    background-color 0.15s ease-out;
 }
 
 .dropzone:hover,
-.dropzone:focus-visible,
 .dragging {
-  border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-color-emphasis-200);
+  border-color: var(--c-ink);
+}
+
+.dragging {
+  background-color: var(--c-surface);
+}
+
+.dropzone:has(.pick:focus-visible) {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+.fileIcon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--c-ink-soft);
+}
+
+.pickText {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  align-items: baseline;
+}
+
+/* The button covers the whole frame, so a tap anywhere opens the picker. */
+.pick {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--c-ink);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.pick::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.pick:focus-visible {
+  outline: none;
+}
+
+/* Dragging a file only makes sense with a mouse. */
+.dropHint {
+  display: none;
+  color: var(--c-ink-soft);
+}
+
+@media (pointer: fine) {
+  .dropHint {
+    display: inline;
+  }
 }
 
 .fileInput {
   display: none;
 }
 
-.hint {
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.85rem;
-}
-
-.privacy {
-  margin: 8px 0 0;
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
 .status {
-  margin: 16px 0 0;
-  font-weight: 500;
+  margin: 1rem 0 0;
+  color: var(--c-ink-soft);
 }
 
-.statusError {
-  color: var(--ifm-color-danger);
+/* ---------------------------------------------------------------------------
+ * Result
+ * ------------------------------------------------------------------------ */
+
+.result {
+  margin-top: 1.25rem;
 }
 
-.message {
-  margin-top: 24px;
-  padding: 16px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
-  background-color: var(--ifm-color-emphasis-100);
+.fileLine {
+  margin: 0 0 0.4rem;
+  font-size: 0.8125rem;
+  color: var(--c-ink-soft);
   overflow-wrap: anywhere;
 }
 
-.messageTitle {
-  margin: 0 0 12px;
-  font-size: 1rem;
+.verdictBlock + .verdictBlock {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--c-rule);
 }
 
-.summary {
+.verdict {
   display: grid;
-  grid-template-columns: minmax(0, 12em) minmax(0, 1fr);
-  gap: 2px 16px;
-  margin: 0;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  column-gap: 0.7rem;
+  margin-top: 0.6rem;
 }
 
-@media (max-width: 640px) {
-  .summary {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-  }
+.verdictIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.05rem;
+}
 
-  .term {
-    margin-top: 8px;
-  }
+.pass {
+  color: var(--dkim-pass);
+}
+
+.fail {
+  color: var(--c-accent);
+}
+
+.unknown {
+  color: var(--c-ink-soft);
+}
+
+.verdictText {
+  color: var(--c-ink);
+}
+
+.headline {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.explain {
+  margin: 0.35rem 0 0;
+  max-width: 38rem;
+  text-wrap: pretty;
+}
+
+.cautions {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.cautions li + li {
+  margin-top: 0.25rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.3rem 1rem;
+  margin: 0.9rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--c-rule);
+  font-variant-numeric: tabular-nums;
+}
+
+.facts dd {
+  overflow-wrap: anywhere;
+}
+
+.next {
+  margin-top: 0.9rem;
+}
+
+.next > :first-child {
+  margin-top: 0;
+}
+
+.next > :last-child {
+  margin-bottom: 0;
+}
+
+.button {
+  margin-top: 0.9rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  background: none;
+  color: var(--c-ink);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--c-ink);
+}
+
+.forwarder {
+  margin: 1rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--c-rule);
+  font-size: 0.875rem;
+  color: var(--c-ink-soft);
+  overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------------------
+ * Technical details
+ * ------------------------------------------------------------------------ */
+
+.technical {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--c-rule);
+  font-size: 0.875rem;
+}
+
+.technical > summary {
+  width: fit-content;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.candidate {
+  padding-block: 0.9rem 0.25rem;
+}
+
+.candidate + .candidate {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--c-rule);
+}
+
+.candidateLabel {
+  margin: 0;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.muted {
+  font-weight: 400;
+  color: var(--c-ink-soft);
+}
+
+.signature {
+  margin-top: 0.9rem;
+}
+
+.sigLine {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.sigLine > span {
+  color: var(--c-ink);
+}
+
+.sigIcon {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1rem;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: minmax(0, 14em) minmax(0, 1fr);
+  gap: 0.2rem 1rem;
+  margin: 0.6rem 0 0;
+  font-variant-numeric: tabular-nums;
 }
 
 .term {
   margin: 0;
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.85rem;
+  color: var(--c-ink-soft);
 }
 
 .definition {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .mono {
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.85em;
-}
-
-.signature {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.signature:first-of-type {
-  border-top: none;
-  padding-top: 0;
-}
-
-.verdict {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin: 0 0 12px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.verdictIcon {
-  font-size: 1.1em;
-  line-height: 1;
-}
-
-.verdictPass {
-  background-color: var(--ifm-color-success-contrast-background);
-  color: var(--ifm-color-success-contrast-foreground);
-}
-
-.verdictFail {
-  background-color: var(--ifm-color-danger-contrast-background);
-  color: var(--ifm-color-danger-contrast-foreground);
-}
-
-.verdictError {
-  background-color: var(--ifm-color-warning-contrast-background);
-  color: var(--ifm-color-warning-contrast-foreground);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
 }
 
 .warning {
-  margin: 12px 0 0;
-  padding: 8px 12px;
-  border-left: 3px solid var(--ifm-color-warning);
-  background-color: var(--ifm-color-warning-contrast-background);
-  color: var(--ifm-color-warning-contrast-foreground);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  margin: 0.5rem 0 0;
+  max-width: 38rem;
 }
 
-.details {
-  margin-top: 12px;
-  font-size: 0.85rem;
+.warning::before {
+  content: 'Catatan: ';
+  font-weight: 600;
 }
 
-.details summary {
-  cursor: pointer;
-  color: var(--ifm-color-emphasis-700);
-}
+@media (max-width: 36rem) {
+  .facts,
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+  }
 
-.details p {
-  margin: 8px 0 0;
-}
-
-.record {
-  overflow-wrap: anywhere;
+  .facts dd,
+  .fields dd {
+    margin-bottom: 0.45rem;
+  }
 }

@@ -189,7 +189,7 @@ function splitMultipart(body: string, boundary: string): string[] {
   return parts;
 }
 
-function looksLikeMessage(source: string): boolean {
+export function looksLikeMessage(source: string): boolean {
   // A bare minimum sanity check: a header block with at least one field.
   return /^[!-9;-~]+[ \t]*:/.test(normalizeEol(source).trimStart());
 }
@@ -355,12 +355,27 @@ interface DohAnswer {
   data: string;
 }
 
+/**
+ * Thrown when the public key cannot be fetched. `message` is for the reader;
+ * `detail` says what went wrong, for the technical details.
+ */
+export class KeyLookupError extends Error {
+  readonly detail: string;
+
+  constructor(message: string, detail: string) {
+    super(message);
+    this.name = 'KeyLookupError';
+    this.detail = detail;
+  }
+}
+
 export async function fetchDkimRecord(
   domain: string,
   selector: string,
 ): Promise<string> {
   const name = `${selector}._domainkey.${domain}`;
   let lastError = '';
+  let answered = false;
 
   for (const endpoint of DOH_ENDPOINTS) {
     try {
@@ -373,6 +388,7 @@ export async function fetchDkimRecord(
         continue;
       }
       const json = (await response.json()) as { Answer?: DohAnswer[] };
+      answered = true;
       const records = (json.Answer ?? [])
         .filter((answer) => answer.type === 16)
         .map((answer) => joinTxtStrings(answer.data));
@@ -383,7 +399,15 @@ export async function fetchDkimRecord(
       lastError = `${endpoint} tidak dapat dihubungi (${String(error)})`;
     }
   }
-  throw new Error(`Gagal mengambil kunci publik: ${lastError}`);
+  throw answered
+    ? new KeyLookupError(
+        `Kunci publik ${domain} tidak ditemukan di DNS. Pengirim mungkin sudah menggantinya, dan email yang ditandatangani dengan kunci lama tidak bisa lagi diperiksa.`,
+        lastError,
+      )
+    : new KeyLookupError(
+        `Kunci publik ${domain} tidak dapat diambil. Periksa koneksi internet, lalu coba lagi.`,
+        lastError,
+      );
 }
 
 /** DNS TXT values arrive as one or more quoted strings that must be joined. */
@@ -492,6 +516,10 @@ export interface SignatureResult {
   expiresAt?: Date;
   warnings: string[];
   record?: string;
+  /** Octets of the body covered by the signature, from the `l=` tag. */
+  bodyLength?: number;
+  /** What went wrong, in technical terms, when `status` is `error`. */
+  detail?: string;
 }
 
 export interface MessageSummary {
@@ -511,7 +539,7 @@ async function sha256(data: Uint8Array): Promise<Uint8Array> {
   return new Uint8Array(digest);
 }
 
-function domainOf(address: string | undefined): string | undefined {
+export function domainOf(address: string | undefined): string | undefined {
   if (!address) return undefined;
   const match = address.match(/@([A-Za-z0-9.\-_]+)/g);
   if (!match) return undefined;
@@ -667,6 +695,7 @@ async function verifySignature(
     }
   }
   if (tags.l !== undefined) {
+    if (/^\d+$/.test(tags.l)) result.bodyLength = Number(tags.l);
     warnings.push(
       `Hanya ${tags.l} oktet pertama dari badan email yang ditandatangani (tag l=), sisanya dapat diubah.`,
     );
@@ -714,12 +743,16 @@ async function verifySignature(
     return {
       ...result,
       status: 'error',
-      summary: error instanceof Error ? error.message : String(error),
+      summary:
+        error instanceof Error
+          ? error.message
+          : `Kunci publik ${domain} tidak dapat diambil.`,
+      detail: error instanceof KeyLookupError ? error.detail : String(error),
     };
   }
   result.record = record;
   const keyTags = parseTagList(record);
-  if (!keyTags.p) {
+  if (keyTags.p === undefined) {
     return {
       ...result,
       status: 'error',
@@ -753,7 +786,8 @@ async function verifySignature(
     return {
       ...result,
       status: 'error',
-      summary: `Kunci publik tidak dapat dibaca (${String(error)})`,
+      summary: `Kunci publik ${domain} tidak dapat dibaca.`,
+      detail: String(error),
     };
   }
 
