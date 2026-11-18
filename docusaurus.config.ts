@@ -15,7 +15,7 @@ const config: Config = {
   // FILLER (draft): rewrite in your own words before publishing. Drawn only
   // from PRODUCT.md: who writes, on what, and what sets the posts apart.
   tagline:
-    'Tulisan Priyadi, narablog sejak 2000-an, tentang politik, lingkungan, agama, sejarah, bahasa, teknologi, energi, dan keuangan. Setiap klaim disertai data dan sumbernya. Sebagian meluruskan misinformasi, sebagian lagi berisi alat yang bisa Anda coba sendiri.',
+    'Tulisan Priyadi, narablog dari tahun 2000-an. Kembali menulis di tahun 2025 dengan format baru. Berprofesi di bidang teknologi informasi. Gemar menulis untuk meluruskan hoax, hasutan, dan misinformasi. Merasa bahwa menulis demi SciComm adalah sebuah tantangan. Dosa terbesarnya adalah jejak karbon tinggi akibat penggunaan AI.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
