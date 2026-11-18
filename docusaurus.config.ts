@@ -12,9 +12,10 @@ const config: Config = {
   title: 'priyadi.id',
   // Shown at the top of the front page. May use *emphasis*, **strong** and
   // `code`.
-  // FILLER: replace with one or two sentences on who writes here and on what.
+  // FILLER (draft): rewrite in your own words before publishing. Drawn only
+  // from PRODUCT.md: who writes, on what, and what sets the posts apart.
   tagline:
-    'Narablog lawas dari tahun 2000-an, mulai lagi menulis dengan format baru di tahun 2025. Melakukan apa saja yang bisa dilakukan. Membaca apa saja yang bisa dibaca. Menulis apa saja yang bisa ditulis. Memikirkan apa saja yang bisa dipikirkan.',
+    'Tulisan Priyadi, narablog sejak 2000-an, tentang politik, lingkungan, agama, sejarah, bahasa, teknologi, energi, dan keuangan. Setiap klaim disertai data dan sumbernya. Sebagian meluruskan misinformasi, sebagian lagi berisi alat yang bisa Anda coba sendiri.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -52,6 +53,11 @@ const config: Config = {
         docs: false,
         blog: {
           routeBasePath: '/',
+          // Title of the later pages of the list and of the feeds; the
+          // description is also what a shared link to the front page shows.
+          blogTitle: 'Semua tulisan',
+          blogDescription:
+            'Esai berbahasa Indonesia tentang politik, lingkungan, agama, sejarah, bahasa, teknologi informasi, energi, dan keuangan, dengan data dan sumbernya.',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -62,8 +68,8 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          // The front page lays out 1 lead + 3 side stories + 4 cards, then
-          // lists the rest.
+          // The front page lays out 1 lead + 2 side stories + 3 cards, then
+          // lists the rest in two columns: keep the rest an even number.
           postsPerPage: 14,
           blogSidebarCount: 0,
           beforeDefaultRemarkPlugins: [postCard],

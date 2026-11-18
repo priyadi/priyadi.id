@@ -21,7 +21,10 @@ export default function Navbar(): ReactNode {
           <Wordmark className={styles.wordmark} title={navbar.title ?? ''} />
         </Link>
         <nav className={styles.nav} aria-label="Navigasi utama">
-          <Link to="/archive" activeClassName={styles.current}>
+          <Link to="/tags" isNavLink activeClassName={styles.current}>
+            Topik
+          </Link>
+          <Link to="/archive" isNavLink activeClassName={styles.current}>
             Arsip
           </Link>
           <a href={rssUrl} className={styles.optional}>

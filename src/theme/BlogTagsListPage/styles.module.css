@@ -1,0 +1,99 @@
+.header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-ink);
+}
+
+.title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+/* Two columns from 48rem, like the running list on the front page. */
+.list {
+  display: grid;
+  column-gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The whole entry is the link target. */
+.item {
+  position: relative;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--c-rule);
+}
+
+/* The first entry sits under the rule of the header or section title. */
+.item:first-child {
+  border-top-color: transparent;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.16;
+}
+
+.name a {
+  color: var(--c-ink);
+}
+
+.name a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.item:hover .name a,
+.name a:hover {
+  color: var(--c-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.description {
+  max-width: 34rem;
+  margin: 0.4rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+  text-wrap: pretty;
+}
+
+.count {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--c-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.formats {
+  margin-top: 2.5rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  padding-block: 0.7rem;
+  border-top: 1px solid var(--c-ink);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+@media (min-width: 48rem) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .item:nth-child(2) {
+    border-top-color: transparent;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "theme.colorToggle.ariaLabel": {
+    "message": "Ganti tampilan: terang, gelap, atau ikut perangkat (sekarang {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "ikut perangkat",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "gelap",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "terang",
+    "description": "The name for the light color mode"
+  }
+}

@@ -6,7 +6,8 @@
  * - `excerpt`: the first paragraph of text, in the inline markdown of
  *   src/lib/inlineMarkdown.ts: emphasis, strong and code are kept, links and
  *   everything else become their text
- * - `cover`: the first image of the post, resolved through webpack
+ * - `cover`: the first image of the post, resolved through webpack, or
+ *   `cover.image` in the front matter when the listing should show another
  *
  * Listing pages load the truncated version of a post, so both are taken from
  * the part above the `<!-- truncate -->` marker.
@@ -100,10 +101,17 @@ const property = (key: string, value: unknown) => ({
   computed: false,
 });
 
+type File = {data?: {frontMatter?: {cover?: {image?: unknown}}}};
+
 export default function postCard() {
-  return (tree: Node) => {
+  return (tree: Node, file: File) => {
     let excerpt = '';
-    let cover: Node | undefined;
+    // An image chosen for listing pages wins over the first one in the post.
+    const image = file.data?.frontMatter?.cover?.image;
+    let cover: Node | undefined =
+      typeof image === 'string' && image
+        ? {type: 'image', url: image, alt: ''}
+        : undefined;
 
     for (const node of tree.children ?? []) {
       if (SKIPPED.has(node.type)) {

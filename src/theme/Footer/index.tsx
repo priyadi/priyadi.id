@@ -15,6 +15,9 @@ export default function Footer(): ReactNode {
         <p className={styles.copyright}>{footer?.copyright}</p>
         <ul className={styles.links}>
           <li>
+            <Link to="/tags">Topik</Link>
+          </li>
+          <li>
             <Link to="/archive">Arsip</Link>
           </li>
           <li>

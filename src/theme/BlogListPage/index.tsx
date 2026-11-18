@@ -17,15 +17,15 @@ import styles from './styles.module.css';
 
 // How the first page is laid out. Change postsPerPage in docusaurus.config.ts
 // along with these.
-const SIDE_COUNT = 3;
-const CARD_COUNT = 4;
+const SIDE_COUNT = 2;
+const CARD_COUNT = 3;
 
 function Metadata({metadata}: Props): ReactNode {
   const {
     siteConfig: {title: siteTitle},
   } = useDocusaurusContext();
-  const {blogDescription, blogTitle, permalink} = metadata;
-  const title = permalink === '/' ? siteTitle : blogTitle;
+  const {blogDescription, blogTitle, page} = metadata;
+  const title = page === 1 ? siteTitle : `${blogTitle}, halaman ${page}`;
 
   return (
     <>
@@ -67,8 +67,9 @@ function FrontPage({items}: Pick<Props, 'items'>): ReactNode {
           <Story
             content={lead.content}
             variant="lead"
-            // Beside three side stories the lead needs more text to match.
-            filler={!stacked && side.length > 0}
+            // Beside the side stories: headline first, then an image that
+            // fills the height of the column.
+            split={!stacked && side.length > 0}
           />
         )}
         {side.length > 0 && (

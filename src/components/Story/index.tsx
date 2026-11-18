@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import {useDateTimeFormat} from '@docusaurus/theme-common/internal';
 import type {PropBlogPostContent} from '@docusaurus/plugin-content-blog';
 import InlineMarkdown, {PostTitle} from '@site/src/components/InlineMarkdown';
+import Kicker from '@site/src/components/Kicker';
 import styles from './styles.module.css';
 
 /** Added to each post module by src/remark/postCard.ts. */
@@ -33,11 +34,11 @@ type Props = {
    */
   wideMedia?: 'top' | 'none';
   /**
-   * For the `lead` variant beside the side stories: on wide screens, adds the
-   * first paragraph of the post under the summary, so that the lead column is
-   * about as tall as the side column.
+   * For the `lead` variant beside the side stories: on wide screens the
+   * headline comes first and the image below it takes the height the side
+   * column leaves, so that the two columns end together.
    */
-  filler?: boolean;
+  split?: boolean;
 };
 
 export function getPostCard(content: PropBlogPostContent): PostCard {
@@ -60,20 +61,15 @@ export default function Story({
   variant,
   headingAs: Heading = 'h2',
   wideMedia,
-  filler,
+  split,
 }: Props): ReactNode {
   const {metadata, frontMatter} = content;
   const card = getPostCard(content);
   const formatDate = usePostDate();
   const {cover: coverOptions} = frontMatter as {cover?: CoverOptions};
   const whole = coverOptions?.fit === 'contain';
-  // The first tag of a post is its main topic.
-  const topic = metadata.tags[0];
-  // Both may carry inline markdown.
+  // May carry inline markdown.
   const summary = frontMatter.description || card.excerpt;
-  // Without a description the summary already is the first paragraph.
-  const excerpt =
-    filler && frontMatter.description ? card.excerpt : undefined;
 
   return (
     <article
@@ -83,7 +79,7 @@ export default function Story({
         !card.cover && styles.textOnly,
         wideMedia === 'top' && styles.wideTop,
         wideMedia === 'none' && styles.wideNone,
-        filler && styles.filler,
+        split && styles.split,
       )}>
       {card.cover && (
         <div className={clsx(styles.media, whole && styles.contain)}>
@@ -99,11 +95,7 @@ export default function Story({
         </div>
       )}
       <div className={styles.text}>
-        {topic && (
-          <Link to={topic.permalink} className={styles.kicker}>
-            {topic.label}
-          </Link>
-        )}
+        <Kicker tags={metadata.tags} className={styles.kicker} />
         <Heading className={styles.headline}>
           <Link to={metadata.permalink}>
             <PostTitle permalink={metadata.permalink} title={metadata.title} />
@@ -112,11 +104,6 @@ export default function Story({
         {summary && (
           <p className={styles.summary}>
             <InlineMarkdown>{summary}</InlineMarkdown>
-          </p>
-        )}
-        {excerpt && (
-          <p className={styles.excerpt}>
-            <InlineMarkdown>{excerpt}</InlineMarkdown>
           </p>
         )}
         <time className={styles.date} dateTime={metadata.date}>

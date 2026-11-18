@@ -30,3 +30,20 @@
 .links a {
   color: var(--c-ink);
 }
+
+/* To a finger each link is about 44px tall; the rows of links close up to
+   keep the same spacing between the words. */
+@media (pointer: coarse) {
+  .links {
+    row-gap: 0;
+  }
+
+  .links a {
+    display: inline-block;
+    padding-block: 0.8125rem;
+  }
+
+  .inner {
+    padding-top: 1rem;
+  }
+}

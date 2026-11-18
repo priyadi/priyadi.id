@@ -18,6 +18,7 @@ import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
 import ContentVisibility from '@theme/ContentVisibility';
 import EditThisPage from '@theme/EditThisPage';
 import TagsListInline from '@theme/TagsListInline';
+import Kicker from '@site/src/components/Kicker';
 import type {Props} from '@theme/BlogPostPage';
 import Comments from '@site/src/components/Comments';
 import Disclosure from '@site/src/components/Disclosure';
@@ -141,11 +142,7 @@ function Article({children}: {children: ReactNode}): ReactNode {
         <article>
           <header className={clsx('columns', styles.header)}>
             {/* The first tag of a post is its main topic. */}
-            {tags[0] && (
-              <p className={styles.kicker}>
-                <Link to={tags[0].permalink}>{tags[0].label}</Link>
-              </p>
-            )}
+            <Kicker tags={tags} className={styles.kicker} />
             <h1 className={styles.headline}>
               <PostTitle permalink={permalink} title={title} />
             </h1>

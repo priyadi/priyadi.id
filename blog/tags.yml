@@ -41,10 +41,19 @@ energi:
   permalink: /energi
   description: Energi, bahan bakar, dan kendaraan listrik.
 
+# Kinds of post rather than topics. Put them after the main topic; the label
+# above the headline then names them too ("Energi · Sanggahan"). The list is
+# FORMAT_TAGS in src/components/Kicker.
+
 sanggahan:
   label: Sanggahan
   permalink: /sanggahan
   description: Meluruskan klaim, mitos, dan misinformasi.
+
+interaktif:
+  label: Interaktif
+  permalink: /interaktif
+  description: Tulisan dengan alat yang bisa Anda coba sendiri, dengan angka atau berkas Anda.
 
 meta:
   label: Blog ini

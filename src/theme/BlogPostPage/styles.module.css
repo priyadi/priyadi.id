@@ -9,12 +9,6 @@
 .kicker {
   margin: 0 0 0.6rem;
   font-size: 0.875rem;
-  font-weight: 650;
-  line-height: 1.3;
-}
-
-.kicker a {
-  color: var(--c-accent);
 }
 
 .headline {

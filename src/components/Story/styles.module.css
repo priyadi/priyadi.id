@@ -43,22 +43,11 @@
   filter: blur(1.5rem);
 }
 
-/* The main topic of the post, above the headline. It sits over the link
-   that covers the story, so that it leads to the topic instead. */
+/* The main topic of the post, above the headline: see src/components/Kicker.
+   The gap below keeps its links clear of the headline to a finger. */
 .kicker {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: fit-content;
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.45rem;
   font-size: 0.8125rem;
-  font-weight: 650;
-  line-height: 1.3;
-  color: var(--c-accent);
-}
-
-.kicker:hover {
-  color: var(--c-accent);
 }
 
 .headline {
@@ -99,6 +88,7 @@
   font-size: 1.0625rem;
   line-height: 1.45;
   color: var(--c-ink-soft);
+  text-wrap: pretty;
 }
 
 .date {
@@ -120,17 +110,12 @@
 }
 
 .lead .summary {
+  max-width: 38rem;
   margin-top: 1rem;
   font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
   line-height: 1.4;
   -webkit-line-clamp: 4;
   line-clamp: 4;
-}
-
-/* The first paragraph of the lead, as filler beside the side stories. Only
-   on wide screens: see the media query below. */
-.excerpt {
-  display: none;
 }
 
 .lead.textOnly .text {
@@ -200,34 +185,36 @@
 
   .side.wideTop .media {
     width: auto;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 3 / 2;
   }
 
-  /* Beside the side stories, a taller lead image keeps the two columns about
-     the same height. */
-  .lead:not(.textOnly) .media {
-    aspect-ratio: 3 / 2;
+  /* Beside the side stories the lead runs headline first, so that it is in
+     the first screen, then the image. The image takes whatever height the
+     side column leaves, so that the two columns end together. */
+  .lead.split:not(.textOnly) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0;
+  }
+
+  .lead.split:not(.textOnly) .text {
+    display: contents;
+  }
+
+  .lead.split:not(.textOnly) .media {
+    order: 1;
+    flex: 1 0 0;
+    min-height: 22rem;
+    margin-top: 1.5rem;
+    aspect-ratio: auto;
   }
 
   .side.wideNone .media {
     display: none;
   }
 
-  .lead.filler .excerpt {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8;
-    line-clamp: 8;
-    overflow: hidden;
-    margin: 1rem 0 0;
-    font-family: var(--font-serif);
-    font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
-    line-height: 1.5;
-    color: var(--c-ink-soft);
-  }
-
   /* Without a description the summary is the first paragraph: let it run. */
-  .lead.filler .summary {
+  .lead.split .summary {
     -webkit-line-clamp: 8;
     line-clamp: 8;
   }

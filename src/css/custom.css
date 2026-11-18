@@ -466,7 +466,8 @@ html[data-theme='dark'] .theme-admonition.alert--secondary {
 
 @media (max-width: 40rem) {
   .navbar__search-input {
-    width: 2.125rem;
+    width: 2.75rem;
+    height: 2.75rem;
     padding-right: 0;
     border-color: transparent;
     cursor: pointer;

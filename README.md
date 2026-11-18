@@ -46,6 +46,20 @@ of that topic. Put the most fitting tag first, and keep to two or three.
 A new topic needs an entry in `blog/tags.yml` first; a tag that is not listed
 there gives a warning during the build.
 
+Two tags name a kind of post rather than a topic: `sanggahan` for a post that
+corrects a claim, myth or piece of misinformation, and `interaktif` for a post
+with a tool readers can use themselves. Put them after the topics:
+
+```yaml
+tags: [energi, sanggahan]
+tags: [keuangan, teknologi-informasi, interaktif]
+```
+
+The label above the headline then names them after the main topic, in grey
+("Energi · Sanggahan"), and each has its own page. `/tags` lists the topics,
+then these. A new kind of post goes in `FORMAT_TAGS` in
+`src/components/Kicker` as well as in `blog/tags.yml`.
+
 ### Image of a post on listing pages
 
 Listing pages crop the image to the frame it sits in, keeping the centre. For
@@ -59,6 +73,15 @@ cover:
 
 The image is then shown whole in the centre of the frame, and a blurred copy
 of it fills the rest.
+
+When the first image of the post does not make a good picture at thumbnail
+size (a screenshot of text, a detailed diagram), give listing pages another
+one, such as a chart from the post or a photo:
+
+```yaml
+cover:
+  image: ./sampul.png
+```
 
 ### Width of content in a post
 

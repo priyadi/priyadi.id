@@ -11,6 +11,7 @@ import BlogListPaginator from '@theme/BlogListPaginator';
 import BlogPostItems from '@theme/BlogPostItems';
 import SearchMetadata from '@theme/SearchMetadata';
 import Unlisted from '@theme/ContentVisibility/Unlisted';
+import {isFormatTag} from '@site/src/components/Kicker';
 import type {Props} from '@theme/BlogTagsPostsPage';
 import styles from './styles.module.css';
 
@@ -36,7 +37,9 @@ export default function BlogTagsPostsPage({
         {tag.unlisted && <Unlisted />}
         <header className={styles.header}>
           <p className={styles.kicker}>
-            <Link to={tag.allTagsPath}>Topik</Link>
+            <Link to={tag.allTagsPath}>
+              {isFormatTag(tag) ? 'Jenis tulisan' : 'Topik'}
+            </Link>
           </p>
           <h1 className={styles.title}>{tag.label}</h1>
           {tag.description && (

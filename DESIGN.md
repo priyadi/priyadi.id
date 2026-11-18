@@ -304,8 +304,12 @@ deliberate pause in the text.
 
 **The front page.** An intro sentence, then the lead story and a side column
 of stories in a 2 : 1 split divided by a vertical hairline (from 62rem), then
-a row of four image cards under an ink rule, then the running list in two
-columns. Below 62rem everything stacks with hairlines between.
+a row of three image cards under an ink rule, then the running list in two
+columns. In the split the lead runs headline first, then its image, which
+takes the height the side column leaves (at least 22rem), so the two columns
+end together. The side column holds two stories, each with a 3:2 image above
+the text. Below 62rem everything stacks with hairlines between, the lead
+image above its headline.
 
 **Phones.** Below 40rem every story except the lead becomes a compact row:
 the headline on the left, a 6.5rem 4:3 thumbnail on the right, no summary.
@@ -376,8 +380,8 @@ Instrument-like: a hairline outline, no fill, the label in ink.
 ### Navigation (Masthead)
 
 The 4px sunset horizon, then a paper band with an ink rule beneath it: logo
-mark (36px) and outlined wordmark on the left, then `Arsip` and `RSS` in
-15px medium sans, then search and the colour-mode toggle. Nav links carry a
+mark (36px) and outlined wordmark on the left, then `Topik`, `Arsip` and
+`RSS` in 15px medium sans, then search and the colour-mode toggle. Nav links carry a
 2px transparent bottom border that becomes the accent on hover or when
 current; they are never underlined. The footer mirrors it with an ink rule
 on top and Faded Ink text.
@@ -385,15 +389,19 @@ on top and Faded Ink text.
 ### Kicker
 
 The post's main topic above its headline: sans 650, sentence case, in the
-accent, linking to the topic page. On listing pages it sits above the
-stretched link that makes the whole story clickable, so it leads to the topic
-instead.
+accent, linking to the topic page. When the post is also a kind of post
+(`sanggahan`, `interaktif`), the kind follows after a middle dot in Faded
+Ink, linking to its own page: "Energi · Sanggahan". On listing pages it sits
+above the stretched link that makes the whole story clickable, so its links
+lead to their pages instead; each reaches at least 24px tall to a finger
+without taking more room in the layout.
 
 ### Story
 
 A post as it appears on listing pages, in four variants: **lead** (large
-display headline, dek, 16:9 or 3:2 image), **side** (beside the lead, small
-thumbnail or none), **card** (image on top, in a grid of four), and **row**
+display headline, dek, and an image that fills its column beside the side
+stories, 16:9 above the headline when stacked), **side** (beside the lead, small
+thumbnail or none), **card** (image on top, in a row of three), and **row**
 (the running list, thumbnail on the right, soft rule above). The whole story
 is one link target via a stretched `::after`; hover underlines the headline
 in ink (1px, 0.14em offset). Summaries clamp to three lines (eight when a
