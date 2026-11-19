@@ -1,6 +1,8 @@
 /*
  * DKIM verifier: an instrument in the article, set like the scenario bar of
- * the orbital datacenter piece. Hairlines, no fills, sans throughout.
+ * the orbital datacenter piece. It breaks out to the wide measure between
+ * two ink rules, so it reads as something to use rather than one more
+ * figure. Hairlines, no fills, sans throughout.
  *
  * Two colours with one meaning each: --dkim-pass for a genuine message, the
  * site accent for one that is not. Each comes with its own icon.
@@ -8,10 +10,9 @@
 .verifier {
   --dkim-pass: #2c7a4b;
 
-  margin-block: 0;
-  padding-block: 1rem 1.25rem;
+  padding-block: 1.25rem 1.5rem;
   border-top: 1px solid var(--c-ink);
-  border-bottom: 1px solid var(--c-rule);
+  border-bottom: 1px solid var(--c-ink);
   font-family: var(--font-sans);
   font-size: 0.9375rem;
   line-height: 1.5;
@@ -22,18 +23,10 @@
 }
 
 .title {
-  margin: 0;
-  font-size: 0.9375rem;
+  margin: 0 0 0.85rem;
+  font-size: 1.0625rem;
   font-weight: 650;
   line-height: 1.3;
-}
-
-.privacy {
-  margin: 0.3rem 0 1rem;
-  max-width: 38rem;
-  font-size: 0.875rem;
-  line-height: 1.45;
-  color: var(--c-ink-soft);
 }
 
 /* ---------------------------------------------------------------------------
@@ -44,20 +37,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--c-rule);
+  gap: 1rem;
+  padding: 1.25rem 1.25rem;
+  border: 1px solid var(--c-ink);
   border-radius: 2px;
-  transition:
-    border-color 0.15s ease-out,
-    background-color 0.15s ease-out;
+  transition: background-color 0.15s ease-out;
 }
 
 .dropzone:hover,
-.dragging {
-  border-color: var(--c-ink);
-}
-
 .dragging {
   background-color: var(--c-surface);
 }
@@ -69,16 +56,15 @@
 
 .fileIcon {
   flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--c-ink-soft);
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--c-ink);
 }
 
 .pickText {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  align-items: baseline;
+  flex-direction: column;
+  row-gap: 0.15rem;
 }
 
 /* The button covers the whole frame, so a tap anywhere opens the picker. */
@@ -88,7 +74,10 @@
   background: none;
   color: var(--c-ink);
   font: inherit;
+  font-size: 1.0625rem;
   font-weight: 650;
+  line-height: 1.3;
+  text-align: left;
   cursor: pointer;
 }
 
@@ -102,15 +91,27 @@
   outline: none;
 }
 
-/* Dragging a file only makes sense with a mouse. */
+/* Dragging a file only makes sense with a mouse; on a touch screen the
+   reader needs to know where the picker looks instead. */
+.dropHint,
+.touchHint {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--c-ink-soft);
+  text-wrap: pretty;
+}
+
 .dropHint {
   display: none;
-  color: var(--c-ink-soft);
 }
 
 @media (pointer: fine) {
   .dropHint {
     display: inline;
+  }
+
+  .touchHint {
+    display: none;
   }
 }
 
@@ -118,18 +119,44 @@
   display: none;
 }
 
-.status {
-  margin: 1rem 0 0;
+.privacy {
+  margin: 0.75rem 0 0;
+  max-width: 62ch;
+  font-size: 0.875rem;
+  line-height: 1.45;
   color: var(--c-ink-soft);
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------------------
+ * Output: an empty readout at rest, the verdict once a file is checked
+ * ------------------------------------------------------------------------ */
+
+.output {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-rule);
+}
+
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
+  margin: 0;
+}
+
+.readoutTerm {
+  font-weight: 650;
+}
+
+.readoutValue {
+  color: var(--c-ink-soft);
+  overflow-wrap: anywhere;
 }
 
 /* ---------------------------------------------------------------------------
  * Result
  * ------------------------------------------------------------------------ */
-
-.result {
-  margin-top: 1.25rem;
-}
 
 .fileLine {
   margin: 0 0 0.4rem;

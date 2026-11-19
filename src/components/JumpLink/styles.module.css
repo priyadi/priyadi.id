@@ -1,0 +1,27 @@
+/*
+ * A sans line that frames the prose rather than continuing it: the lead in
+ * Faded Ink, the link in ink with the prose link's accent underline.
+ */
+.jump {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.lead {
+  color: var(--c-ink-soft);
+}
+
+.link {
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.icon {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  margin-left: 0.2em;
+  vertical-align: -0.12em;
+}

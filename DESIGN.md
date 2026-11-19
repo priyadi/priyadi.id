@@ -431,6 +431,17 @@ values at 650, and a hairline reset button. When pinned it becomes fixed to
 the top of the viewport with an ink rule beneath, the only sticky element in
 the system.
 
+### Tool Frame (instrument pattern)
+
+A tool the reader feeds their own input (`DkimVerifier`) breaks out to the
+wide measure between two ink rules, so it reads as something to use and not
+as one more figure. Inside: the tool's name in `figure-title`, the input
+target outlined in ink at rest (the surface tone on hover or drag), a privacy
+or scope note in Faded Ink, then a soft rule and an output area that shows an
+empty readout ("Hasil  belum ada …") until there is a result. The section that
+holds it gets an explicit heading id (`## … {#pemeriksa}`), and when the post
+is long, a `JumpLink` near the top points to it.
+
 ### Byline
 
 Between soft rules: a 44px round avatar, the author's name in ink at 650,

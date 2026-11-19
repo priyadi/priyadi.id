@@ -12,10 +12,17 @@ cover:
 ---
 
 import DkimVerifier from '@site/src/components/DkimVerifier';
+import JumpLink from '@site/src/components/JumpLink';
 
 Untuk mendapatkan data BI-checking/SLIK untuk diri kita pribadi, kita dapat
 melakukannya melalui situs [idebku](https://idebku.ojk.go.id/). Yang dibutuhkan
 adalah KTP dan beberapa foto *selfie*.
+
+<JumpLink
+  to="#pemeriksa"
+  lead="Sudah menerima email hasil BI-checking yang diteruskan sebagai lampiran?"
+  label="Langsung ke pemeriksa"
+/>
 
 <Figure
   title="Rantai kepercayaan email hasil BI-checking"
@@ -35,9 +42,12 @@ Untuk kebutuhan seperti ini, prosedur resminya adalah dengan menggunakan surat
 kuasa dan datang langsung ke kantor OJK. Tetapi ini merepotkan dan memakan
 waktu. Selain itu belum tentu ada kantor OJK yang lokasinya dekat dengan kita.
 
-Alternatif yang lebih mudah adalah kita minta pihak ketiga untuk melakukan
-BI-checking sendiri melalui idebku, lalu kita cek keasliannya melalui
-kriptografi. Dengan demikian kita tahu bahwa data yang kita terima memang benar berasal dari OJK, dan tidak dimanipulasi oleh pihak ketiga.
+Alternatif yang lebih mudah adalah kita minta pihak ketiga yang dimaksud untuk
+melakukan BI-checking secara mandiri melalui idebku, lalu kita cek keasliannya
+melalui kriptografi. Dengan demikian kita tahu bahwa data yang kita terima
+memang benar berasal dari OJK, tidak dimanipulasi oleh pihak ketiga, termasuk
+oleh pihak ketiga itu sendiri yang menerima langsung emailnya. Alat pemeriksanya
+disertakan di tulisan ini dan berjalan langsung di peramban.
 
 <!-- truncate -->
 
@@ -61,11 +71,12 @@ berkali-kali dimintai pengecekan untuk orang yang sama.
 
 ## Teruskan hasilnya sebagai lampiran
 
-Setelah itu, kita minta yang bersangkutan untuk meneruskan email ke kita sebagai
-lampiran (*forward as attachment*), bukan *forward* seperti biasa. Hal ini
-penting agar email yang kita terima mempertahankan *header-header* yang
-diperlukan untuk menilai keasliannya. Jika email di-*forward* seperti biasa,
-maka tidak akan menyertakan informasi yang kita butuhkan.
+Setelah itu, kita minta yang bersangkutan untuk meneruskan email dari OJK
+tersebut ke kita sebagai lampiran (*forward as attachment*), bukan *forward*
+seperti biasa. Hal ini penting agar email yang kita terima mempertahankan
+*header-header* yang diperlukan untuk menilai keasliannya. Jika email
+di-*forward* seperti biasa, maka tidak akan menyertakan informasi yang kita
+butuhkan.
 
 * Mozilla Thunderbird: klik kanan pada email, lalu *Forward and Redirect* › *As
   Attachment*.
@@ -75,31 +86,22 @@ maka tidak akan menyertakan informasi yang kita butuhkan.
 * Gmail: menu ⋮ pada email › *Download message*, lalu lampirkan berkas `.eml`
   itu di email baru.
 
-## Verifikasi keaslian melalui DKIM
+Aplikasi email di ponsel umumnya tidak menyediakan pilihan meneruskan sebagai
+lampiran, jadi langkah ini sebaiknya dilakukan di komputer. Sebaliknya, bila
+Anda menerima email terusan itu di ponsel, simpan dulu lampiran `.eml`-nya ke
+penyimpanan ponsel, misalnya ke folder Unduhan atau aplikasi File, lalu pilih
+berkas itu di pemeriksa.
 
-Saat ini mayoritas email yang beredar ditandatangani menggunakan
-[DKIM](https://datatracker.ietf.org/doc/html/rfc6376) (*DomainKeys Identified
-Mail*). Sebelum email dikirim, server pengirim menghitung *hash* dari isi email
-beserta sejumlah *header* penting seperti `From`, `Subject`, dan `Date`, lalu
-menandatanganinya dengan kunci privat milik domain tersebut. Hasil tanda
-tangannya diletakkan pada *header* `DKIM-Signature`.
+## Periksa keaslian email dari OJK {#pemeriksa}
 
-Kunci publik pasangannya diterbitkan oleh pemilik domain di DNS. Untuk email
-dari OJK, kuncinya dapat dilihat siapa saja dengan mengambil *record* TXT pada
-`<selektor>._domainkey.ojk.go.id`. Karena kunci privatnya hanya dipegang OJK,
-tanda tangan yang sah membuktikan dua hal sekaligus:
-
-1. Email itu memang dikirim oleh server yang menguasai domain `ojk.go.id`.
-2. Isi dan *header* yang ditandatangani tidak berubah sedikit pun sejak
-   dikirim. Satu karakter saja diubah, verifikasinya akan gagal.
-
-Alat di bawah ini memeriksa tanda tangan DKIM sebuah berkas `.eml`. Pilih
-email yang diteruskan kepada Anda; email OJK yang terlampir di dalamnya akan
-ikut dibuka dan diperiksa. Email itu asli bila tanda tangannya sah dan
-**domain penanda tangannya** (`d=`) adalah `ojk.go.id`. Alat ini memeriksa
-keduanya dan menuliskan hasilnya di baris paling atas.
+Alat pemeriksa di bawah ini membuka email, lalu memeriksa tanda tangan DKIM yang
+terlampir di dalamnya. Email itu asli bila tanda tangan DKIM-nya sah dan
+**domain penanda tangannya** (`d=`) adalah `ojk.go.id`. Keduanya diperiksa
+sekaligus. Cara kerjanya dijelaskan di [bagian akhir tulisan
+ini](#cara-kerja-dkim).
 
 <DkimVerifier
+  title="Pemeriksa email OJK"
   expectedDomains={['ojk.go.id']}
   afterPass={
     <p>
@@ -117,3 +119,21 @@ sama dengan NIK yang tertera di KTP.
 
 Mengenai bagaimana cara membaca dokumen iDeb, bisa dipelajari di [halaman informasi
 iDebku](https://idebku.ojk.go.id/Public/Informasi).
+
+## Bagaimana DKIM Bekerja {#cara-kerja-dkim}
+
+Saat ini mayoritas email yang beredar ditandatangani menggunakan
+[DKIM](https://datatracker.ietf.org/doc/html/rfc6376) (*DomainKeys Identified
+Mail*). Sebelum email dikirim, server pengirim menghitung *hash* dari isi email
+beserta sejumlah *header* penting seperti `From`, `Subject`, dan `Date`, lalu
+menandatanganinya dengan kunci privat milik domain tersebut. Hasil tanda
+tangannya diletakkan pada *header* `DKIM-Signature`.
+
+Kunci publik pasangannya diterbitkan oleh pemilik domain di DNS. Untuk email
+dari OJK, kuncinya dapat dilihat siapa saja dengan mengambil *record* TXT pada
+`<selektor>._domainkey.ojk.go.id`. Karena kunci privatnya hanya dipegang OJK,
+tanda tangan yang sah membuktikan dua hal sekaligus:
+
+1. Email itu memang dikirim oleh server yang menguasai domain `ojk.go.id`.
+2. Isi email dan *header* yang ditandatangani tidak berubah sedikit pun sejak
+   dikirim. Satu karakter saja diubah, verifikasinya akan gagal.

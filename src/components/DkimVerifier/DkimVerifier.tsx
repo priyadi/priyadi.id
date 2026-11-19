@@ -1,4 +1,5 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useId, useRef, useState } from 'react';
+import clsx from 'clsx';
 import styles from './DkimVerifier.module.css';
 import {
   bytesToBinaryString,
@@ -37,12 +38,16 @@ export interface DkimVerifierProps {
   expectedDomains?: string[];
   /** Shown under a verdict that the message is genuine: what to do next. */
   afterPass?: React.ReactNode;
+  /** The instrument's name, shown at its top. */
+  title?: string;
 }
 
 export default function DkimVerifier({
   expectedDomains,
   afterPass,
+  title = 'Pemeriksa tanda tangan DKIM',
 }: DkimVerifierProps): React.ReactNode {
+  const titleId = useId();
   const [state, setState] = useState<State>({ phase: 'idle' });
   const [dragging, setDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -101,12 +106,12 @@ export default function DkimVerifier({
       : [];
 
   return (
-    <div className={styles.verifier}>
-      <p className={styles.title}>Pemeriksa tanda tangan DKIM</p>
-      <p className={styles.privacy}>
-        Pemeriksaan berjalan di peramban Anda. Isi email tidak dikirim ke mana
-        pun, termasuk ke situs ini. Yang diambil dari internet hanya kunci
-        publik pengirim, lewat DNS Google atau Cloudflare.
+    <section
+      className={clsx('bleed-wide', styles.verifier)}
+      aria-labelledby={titleId}
+    >
+      <p id={titleId} className={styles.title}>
+        {title}
       </p>
 
       <div
@@ -129,9 +134,13 @@ export default function DkimVerifier({
             className={styles.pick}
             onClick={() => inputRef.current?.click()}
           >
-            Pilih berkas .eml
+            Pilih email .eml untuk diperiksa
           </button>
           <span className={styles.dropHint}>atau seret berkasnya ke sini</span>
+          <span className={styles.touchHint}>
+            Di ponsel, simpan dulu lampiran .eml ke penyimpanan, lalu pilih dari
+            sana.
+          </span>
         </span>
         <input
           ref={inputRef}
@@ -147,6 +156,12 @@ export default function DkimVerifier({
         />
       </div>
 
+      <p className={styles.privacy}>
+        Pemeriksaan berjalan di peramban Anda. Isi email tidak dikirim ke mana
+        pun, termasuk ke situs ini. Yang diambil dari internet hanya kunci
+        publik pengirim, lewat DNS Google atau Cloudflare.
+      </p>
+
       <p className="sr-only" aria-live="polite">
         {state.phase === 'working'
           ? `Memeriksa ${state.filename}`
@@ -157,79 +172,89 @@ export default function DkimVerifier({
               : ''}
       </p>
 
-      {state.phase === 'working' && (
-        <p className={styles.status}>Memeriksa {state.filename}…</p>
-      )}
+      <div className={styles.output}>
+        {(state.phase === 'idle' || state.phase === 'working') && (
+          <p className={styles.readout}>
+            <span className={styles.readoutTerm}>Hasil</span>
+            <span className={styles.readoutValue}>
+              {state.phase === 'idle'
+                ? 'belum ada email yang diperiksa'
+                : `memeriksa ${state.filename}…`}
+            </span>
+          </p>
+        )}
 
-      {state.phase === 'error' && (
-        <div className={styles.result}>
-          <p className={styles.fileLine}>Hasil untuk {state.filename}</p>
-          <Verdict
-            tone="unknown"
-            headline="Berkas tidak dapat dibaca"
-            body={<p className={styles.explain}>{state.message}</p>}
-          />
-        </div>
-      )}
+        {state.phase === 'error' && (
+          <div>
+            <p className={styles.fileLine}>Hasil untuk {state.filename}</p>
+            <Verdict
+              tone="unknown"
+              headline="Berkas tidak dapat dibaca"
+              body={<p className={styles.explain}>{state.message}</p>}
+            />
+          </div>
+        )}
 
-      {state.phase === 'done' && (
-        <div className={styles.result}>
-          <p className={styles.fileLine}>Hasil untuk {state.filename}</p>
-          {state.note && <p className={styles.fileLine}>{state.note}</p>}
+        {state.phase === 'done' && (
+          <div>
+            <p className={styles.fileLine}>Hasil untuk {state.filename}</p>
+            {state.note && <p className={styles.fileLine}>{state.note}</p>}
 
-          {verdicts.map((verdict, index) => (
-            <div key={index} className={styles.verdictBlock}>
-              <Verdict
-                tone={verdict.tone}
-                headline={verdict.headline}
-                body={
-                  <>
-                    {verdict.body}
-                    {verdict.message && (
-                      <MessageFacts report={verdict.message.report} />
-                    )}
-                    {verdict.tone === 'pass' && afterPass && (
-                      <div className={styles.next}>{afterPass}</div>
-                    )}
-                    {verdict.retry && (
-                      <button
-                        type="button"
-                        className={styles.button}
-                        onClick={retry}
-                      >
-                        Periksa lagi
-                      </button>
-                    )}
-                  </>
-                }
-              />
-            </div>
-          ))}
-
-          {forwarders(state.results, verdicts).map(({ report }, index) => (
-            <p key={index} className={styles.forwarder}>
-              Email penerus dari {report.summary.from ?? 'pengirim tak dikenal'}{' '}
-              tidak perlu diperiksa. Yang menentukan adalah email{' '}
-              {domainList(expectedDomains) ?? 'terlampir'} di dalamnya.
-            </p>
-          ))}
-
-          {state.results.length > 0 && (
-            <details className={styles.technical}>
-              <summary>Rincian teknis</summary>
-              {state.results.map((result, index) => (
-                <CandidateDetails
-                  key={index}
-                  result={result}
-                  relevant={verdicts.some((v) => v.message === result)}
-                  expectedDomains={expectedDomains}
+            {verdicts.map((verdict, index) => (
+              <div key={index} className={styles.verdictBlock}>
+                <Verdict
+                  tone={verdict.tone}
+                  headline={verdict.headline}
+                  body={
+                    <>
+                      {verdict.body}
+                      {verdict.message && (
+                        <MessageFacts report={verdict.message.report} />
+                      )}
+                      {verdict.tone === 'pass' && afterPass && (
+                        <div className={styles.next}>{afterPass}</div>
+                      )}
+                      {verdict.retry && (
+                        <button
+                          type="button"
+                          className={styles.button}
+                          onClick={retry}
+                        >
+                          Periksa lagi
+                        </button>
+                      )}
+                    </>
+                  }
                 />
-              ))}
-            </details>
-          )}
-        </div>
-      )}
-    </div>
+              </div>
+            ))}
+
+            {forwarders(state.results, verdicts).map(({ report }, index) => (
+              <p key={index} className={styles.forwarder}>
+                Email penerus dari{' '}
+                {report.summary.from ?? 'pengirim tak dikenal'} tidak perlu
+                diperiksa. Yang menentukan adalah email{' '}
+                {domainList(expectedDomains) ?? 'terlampir'} di dalamnya.
+              </p>
+            ))}
+
+            {state.results.length > 0 && (
+              <details className={styles.technical}>
+                <summary>Rincian teknis</summary>
+                {state.results.map((result, index) => (
+                  <CandidateDetails
+                    key={index}
+                    result={result}
+                    relevant={verdicts.some((v) => v.message === result)}
+                    expectedDomains={expectedDomains}
+                  />
+                ))}
+              </details>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
@@ -284,7 +309,9 @@ function judge(
     return [
       {
         tone: 'unknown',
-        headline: pdf ? 'Ini berkas PDF, bukan email' : 'Berkas ini bukan email',
+        headline: pdf
+          ? 'Ini berkas PDF, bukan email'
+          : 'Berkas ini bukan email',
         body: (
           <p className={styles.explain}>
             {pdf
@@ -325,15 +352,14 @@ function judge(
               Berkas ini adalah email dari{' '}
               {first.report.summary.from ?? 'pengirim lain'}, dan tidak ada
               email lain yang terlampir di dalamnya. Jika email {named}{' '}
-              diteruskan dengan cara biasa, bukan sebagai lampiran, header
-              yang dibutuhkan untuk pemeriksaan ikut hilang. Minta email itu
+              diteruskan dengan cara biasa, bukan sebagai lampiran, header yang
+              dibutuhkan untuk pemeriksaan ikut hilang. Minta email itu
               diteruskan lagi sebagai lampiran.
             </p>
           ) : (
             <p className={styles.explain}>
-              Ada {attached} email terlampir, tetapi tidak satu pun berasal
-              dari {named}. Pastikan yang dilampirkan adalah email yang
-              dimaksud.
+              Ada {attached} email terlampir, tetapi tidak satu pun berasal dari{' '}
+              {named}. Pastikan yang dilampirkan adalah email yang dimaksud.
             </p>
           ),
       },
@@ -399,8 +425,8 @@ function judge(
           headline: `Email ini sudah diubah setelah dikirim oleh ${failed.domain}`,
           body: (
             <p className={styles.explain}>
-              {failed.summary}. Bisa jadi isinya dipalsukan, bisa juga email
-              itu rusak saat diteruskan atau disimpan. Minta email aslinya
+              {failed.summary}. Bisa jadi isinya dipalsukan, bisa juga email itu
+              rusak saat diteruskan atau disimpan. Minta email aslinya
               diteruskan lagi sebagai lampiran, lalu periksa ulang.
             </p>
           ),
@@ -445,9 +471,7 @@ function forwarders(
   if (judged.length === 0 || judged.every((r) => r.candidate.depth === 0)) {
     return [];
   }
-  return results.filter(
-    (r) => r.candidate.depth === 0 && !judged.includes(r),
-  );
+  return results.filter((r) => r.candidate.depth === 0 && !judged.includes(r));
 }
 
 function Verdict({
@@ -585,7 +609,11 @@ function SignatureDetails({
       </p>
 
       <dl className={styles.fields}>
-        <Field label="Domain penanda tangan (d=)" value={signature.domain} mono />
+        <Field
+          label="Domain penanda tangan (d=)"
+          value={signature.domain}
+          mono
+        />
         <Field label="Selektor (s=)" value={signature.selector} mono />
         <Field label="Algoritma (a=)" value={signature.algorithm} mono />
         <Field
@@ -724,8 +752,9 @@ function FileIcon({ className }: { className?: string }) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M3.75 6.5h16.5v11H3.75z" />
-      <path d="m4 7 8 6 8-6" />
+      <path d="M13.75 3.25H6.5a1.5 1.5 0 0 0-1.5 1.5v14.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z" />
+      <path d="M13.75 3.25V8.5H19" />
+      <path d="M12 17.25v-5.5m-2.5 2.5L12 11.75l2.5 2.5" />
     </svg>
   );
 }

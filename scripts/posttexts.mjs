@@ -74,7 +74,8 @@ function script(text, table) {
 
 /**
  * Parse like Docusaurus does: MDX with GFM and directives, HTML comments
- * allowed, and `:::note Title` read as `:::note[Title]`.
+ * allowed, `:::note Title` read as `:::note[Title]`, and `{#id}` after a
+ * heading dropped.
  */
 function parse(source) {
   let inFence = null;
@@ -86,7 +87,10 @@ function parse(source) {
       return line;
     }
     if (inFence) return line;
-    return line.replace(/^(\s*:::\s*)([a-z]+)\s+([^[{\s].*)$/, '$1$2[$3]');
+    return line
+      .replace(/^(\s*:::\s*)([a-z]+)\s+([^[{\s].*)$/, '$1$2[$3]')
+      // A heading's explicit id, `## Title {#id}`, which Docusaurus reads.
+      .replace(/^(#{1,6}\s.*?)\s*\{#[\w-]+\}\s*$/, '$1');
   });
   let text = lines.join('\n');
   // Comments, outside fenced code. Good enough for prose.

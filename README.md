@@ -245,7 +245,11 @@ marks are dropped. Links keep their text but not their address. Images,
 figures and components without content (charts, calculators, tools) are left
 out, and the script names those components, so the text around them can be
 checked. Footnotes become [1], [2]… and are listed with their addresses after
-a line at the end, to be cut out into the first comment.
+a line at the end, to be cut out into the first comment. A heading's explicit
+id (`## Title {#id}`) is dropped.
+
+Since a tool is left out, the text that introduces it should still make sense
+without it: "the checker that comes with this post", not "the tool below".
 
 To see the text of one post without writing the file:
 
