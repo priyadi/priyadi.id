@@ -419,6 +419,7 @@ untuk memastikan bahwa celah keamanan PHP2Shell telah berhasil ditutup.</p>]]></
         <content type="html"><![CDATA[<p>Untuk mendapatkan data BI-checking/SLIK untuk diri kita pribadi, kita dapat
 melakukannya melalui situs <a href="https://idebku.ojk.go.id/" target="_blank" rel="noopener noreferrer" class="">idebku</a>. Yang dibutuhkan
 adalah KTP dan beberapa foto <em>selfie</em>.</p>
+<p class="jump_jYtU"><span class="lead_WhRn">Sudah menerima email hasil BI-checking yang diteruskan sebagai lampiran?</span> <a class="link_jMrx" href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#pemeriksa">Langsung ke pemeriksa<svg class="icon_z5rB" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"></path></svg></a></p>
 <figure class="figure"><p class="figure__title">Rantai kepercayaan email hasil BI-checking</p><div class="figure__content"><p><img decoding="async" loading="lazy" alt="Diagram alur: OJK menandatangani email hasil iDeb dengan kunci privatnya dan menerbitkan kunci publiknya di DNS. Email dikirim ke pihak ketiga, yang meneruskannya kepada kita sebagai lampiran. Pemeriksa di peramban mencocokkan tanda tangan dengan kunci publik dari DNS, dan hasilnya: asli dan tidak diubah." src="https://priyadi.id/assets/images/rantai-kepercayaan-ac8b53725e60e418a7e985c6031c5722.png" width="2400" height="1350" class="img_ev3q"></p></div><figcaption class="figure__caption">OJK menandatangani email hasilnya. Tanda tangan itu ikut terbawa ketika email diteruskan sebagai lampiran, lalu dicocokkan dengan kunci publik OJK di DNS.</figcaption></figure>
 <p>Tetapi terkadang kita membutuhkan BI-checking bukan untuk diri kita, tetapi
 untuk pihak ketiga. Misalnya untuk calon rekanan atau karyawan yang akan
@@ -428,9 +429,12 @@ akan semakin besar risiko yang kita hadapi.</p>
 <p>Untuk kebutuhan seperti ini, prosedur resminya adalah dengan menggunakan surat
 kuasa dan datang langsung ke kantor OJK. Tetapi ini merepotkan dan memakan
 waktu. Selain itu belum tentu ada kantor OJK yang lokasinya dekat dengan kita.</p>
-<p>Alternatif yang lebih mudah adalah kita minta pihak ketiga untuk melakukan
-BI-checking sendiri melalui idebku, lalu kita cek keasliannya melalui
-kriptografi. Dengan demikian kita tahu bahwa data yang kita terima memang benar berasal dari OJK, dan tidak dimanipulasi oleh pihak ketiga.</p>
+<p>Alternatif yang lebih mudah adalah kita minta pihak ketiga yang dimaksud untuk
+melakukan BI-checking secara mandiri melalui idebku, lalu kita cek keasliannya
+melalui kriptografi. Dengan demikian kita tahu bahwa data yang kita terima
+memang benar berasal dari OJK, tidak dimanipulasi oleh pihak ketiga, termasuk
+oleh pihak ketiga itu sendiri yang menerima langsung emailnya. Alat pemeriksanya
+disertakan di tulisan ini dan berjalan langsung di peramban.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="melakukan-bi-checking-seperti-biasa">Melakukan <em>BI-checking</em> seperti biasa<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#melakukan-bi-checking-seperti-biasa" class="hash-link" aria-label="Taut langsung ke melakukan-bi-checking-seperti-biasa" title="Taut langsung ke melakukan-bi-checking-seperti-biasa" translate="no">​</a></h2>
 <p>Untuk melakukannya, kita minta pihak ketiga tersebut untuk melakukan checking
 secara mandiri melalui idebku seperti biasa. Biasanya, dalam satu hari kerja,
@@ -441,11 +445,12 @@ pengambilan data secara tidak sah.</p><p>Selain itu bisa saja datanya diperlukan
 beberapa pihak yang membutuhkan datanya. Dan pihak OJK tidak akan suka
 berkali-kali dimintai pengecekan untuk orang yang sama.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="teruskan-hasilnya-sebagai-lampiran">Teruskan hasilnya sebagai lampiran<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#teruskan-hasilnya-sebagai-lampiran" class="hash-link" aria-label="Taut langsung ke Teruskan hasilnya sebagai lampiran" title="Taut langsung ke Teruskan hasilnya sebagai lampiran" translate="no">​</a></h2>
-<p>Setelah itu, kita minta yang bersangkutan untuk meneruskan email ke kita sebagai
-lampiran (<em>forward as attachment</em>), bukan <em>forward</em> seperti biasa. Hal ini
-penting agar email yang kita terima mempertahankan <em>header-header</em> yang
-diperlukan untuk menilai keasliannya. Jika email di-<em>forward</em> seperti biasa,
-maka tidak akan menyertakan informasi yang kita butuhkan.</p>
+<p>Setelah itu, kita minta yang bersangkutan untuk meneruskan email dari OJK
+tersebut ke kita sebagai lampiran (<em>forward as attachment</em>), bukan <em>forward</em>
+seperti biasa. Hal ini penting agar email yang kita terima mempertahankan
+<em>header-header</em> yang diperlukan untuk menilai keasliannya. Jika email
+di-<em>forward</em> seperti biasa, maka tidak akan menyertakan informasi yang kita
+butuhkan.</p>
 <ul>
 <li class="">Mozilla Thunderbird: klik kanan pada email, lalu <em>Forward and Redirect</em> › <em>As
 Attachment</em>.</li>
@@ -455,7 +460,25 @@ tekan Ctrl+Alt+F.</li>
 <li class="">Gmail: menu ⋮ pada email › <em>Download message</em>, lalu lampirkan berkas <code>.eml</code>
 itu di email baru.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verifikasi-keaslian-melalui-dkim">Verifikasi keaslian melalui DKIM<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#verifikasi-keaslian-melalui-dkim" class="hash-link" aria-label="Taut langsung ke Verifikasi keaslian melalui DKIM" title="Taut langsung ke Verifikasi keaslian melalui DKIM" translate="no">​</a></h2>
+<p>Aplikasi email di ponsel umumnya tidak menyediakan pilihan meneruskan sebagai
+lampiran, jadi langkah ini sebaiknya dilakukan di komputer. Sebaliknya, bila
+Anda menerima email terusan itu di ponsel, simpan dulu lampiran <code>.eml</code>-nya ke
+penyimpanan ponsel, misalnya ke folder Unduhan atau aplikasi File, lalu pilih
+berkas itu di pemeriksa.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pemeriksa">Periksa keaslian email dari OJK<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#pemeriksa" class="hash-link" aria-label="Taut langsung ke Periksa keaslian email dari OJK" title="Taut langsung ke Periksa keaslian email dari OJK" translate="no">​</a></h2>
+<p>Alat pemeriksa di bawah ini membuka email, lalu memeriksa tanda tangan DKIM yang
+terlampir di dalamnya. Email itu asli bila tanda tangan DKIM-nya sah dan
+<strong>domain penanda tangannya</strong> (<code>d=</code>) adalah <code>ojk.go.id</code>. Keduanya diperiksa
+sekaligus. Cara kerjanya dijelaskan di <a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#cara-kerja-dkim" class="">bagian akhir tulisan
+ini</a>.</p>
+<section class="bleed-wide verifier_R6wa" aria-labelledby="_R_vldeh_"><p id="_R_vldeh_" class="title_Q1AA">Pemeriksa email OJK</p><div class="dropzone_JRqI"><svg class="fileIcon_tItd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.75 3.25H6.5a1.5 1.5 0 0 0-1.5 1.5v14.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V8.5z"></path><path d="M13.75 3.25V8.5H19"></path><path d="M12 17.25v-5.5m-2.5 2.5L12 11.75l2.5 2.5"></path></svg><span class="pickText_sJ7h"><button type="button" class="pick_ZqHk">Pilih email .eml untuk diperiksa</button><span class="dropHint_FR3N">atau seret berkasnya ke sini</span><span class="touchHint_XVsT">Di ponsel, simpan dulu lampiran .eml ke penyimpanan, lalu pilih dari sana.</span></span><input type="file" accept=".eml,message/rfc822" class="fileInput_aq17" tabindex="-1" aria-hidden="true"></div><p class="privacy_i2dQ">Pemeriksaan berjalan di peramban Anda. Isi email tidak dikirim ke mana pun, termasuk ke situs ini. Yang diambil dari internet hanya kunci publik pengirim, lewat DNS Google atau Cloudflare.</p><p class="sr-only" aria-live="polite"></p><div class="output_z6Vi"><p class="readout_VdHf"><span class="readoutTerm_GGLq">Hasil</span><span class="readoutValue_EFTg">belum ada email yang diperiksa</span></p></div></section>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verifikasi-data-bi-checking">Verifikasi data BI-checking<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#verifikasi-data-bi-checking" class="hash-link" aria-label="Taut langsung ke Verifikasi data BI-checking" title="Taut langsung ke Verifikasi data BI-checking" translate="no">​</a></h2>
+<p>Email yang dikirimkan oleh OJK berisi tautan ke satu atau lebih dokumen SLIK.
+Pastikan dokumen itu memang milik orang yang ingin Anda ketahui: NIK-nya harus
+sama dengan NIK yang tertera di KTP.</p>
+<p>Mengenai bagaimana cara membaca dokumen iDeb, bisa dipelajari di <a href="https://idebku.ojk.go.id/Public/Informasi" target="_blank" rel="noopener noreferrer" class="">halaman informasi
+iDebku</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cara-kerja-dkim">Bagaimana DKIM Bekerja<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#cara-kerja-dkim" class="hash-link" aria-label="Taut langsung ke Bagaimana DKIM Bekerja" title="Taut langsung ke Bagaimana DKIM Bekerja" translate="no">​</a></h2>
 <p>Saat ini mayoritas email yang beredar ditandatangani menggunakan
 <a href="https://datatracker.ietf.org/doc/html/rfc6376" target="_blank" rel="noopener noreferrer" class="">DKIM</a> (<em>DomainKeys Identified
 Mail</em>). Sebelum email dikirim, server pengirim menghitung <em>hash</em> dari isi email
@@ -468,21 +491,9 @@ dari OJK, kuncinya dapat dilihat siapa saja dengan mengambil <em>record</em> TXT
 tanda tangan yang sah membuktikan dua hal sekaligus:</p>
 <ol>
 <li class="">Email itu memang dikirim oleh server yang menguasai domain <code>ojk.go.id</code>.</li>
-<li class="">Isi dan <em>header</em> yang ditandatangani tidak berubah sedikit pun sejak
+<li class="">Isi email dan <em>header</em> yang ditandatangani tidak berubah sedikit pun sejak
 dikirim. Satu karakter saja diubah, verifikasinya akan gagal.</li>
-</ol>
-<p>Alat di bawah ini memeriksa tanda tangan DKIM sebuah berkas <code>.eml</code>. Pilih
-email yang diteruskan kepada Anda; email OJK yang terlampir di dalamnya akan
-ikut dibuka dan diperiksa. Email itu asli bila tanda tangannya sah dan
-<strong>domain penanda tangannya</strong> (<code>d=</code>) adalah <code>ojk.go.id</code>. Alat ini memeriksa
-keduanya dan menuliskan hasilnya di baris paling atas.</p>
-<div class="verifier_R6wa"><p class="title_Q1AA">Pemeriksa tanda tangan DKIM</p><p class="privacy_i2dQ">Pemeriksaan berjalan di peramban Anda. Isi email tidak dikirim ke mana pun, termasuk ke situs ini. Yang diambil dari internet hanya kunci publik pengirim, lewat DNS Google atau Cloudflare.</p><div class="dropzone_JRqI"><svg class="fileIcon_tItd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.75 6.5h16.5v11H3.75z"></path><path d="m4 7 8 6 8-6"></path></svg><span class="pickText_sJ7h"><button type="button" class="pick_ZqHk">Pilih berkas .eml</button><span class="dropHint_FR3N">atau seret berkasnya ke sini</span></span><input type="file" accept=".eml,message/rfc822" class="fileInput_aq17" tabindex="-1" aria-hidden="true"></div><p class="sr-only" aria-live="polite"></p></div>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verifikasi-data-bi-checking">Verifikasi data BI-checking<a href="https://priyadi.id/2026/08/14/bi-checking-idebku-slik/#verifikasi-data-bi-checking" class="hash-link" aria-label="Taut langsung ke Verifikasi data BI-checking" title="Taut langsung ke Verifikasi data BI-checking" translate="no">​</a></h2>
-<p>Email yang dikirimkan oleh OJK berisi tautan ke satu atau lebih dokumen SLIK.
-Pastikan dokumen itu memang milik orang yang ingin Anda ketahui: NIK-nya harus
-sama dengan NIK yang tertera di KTP.</p>
-<p>Mengenai bagaimana cara membaca dokumen iDeb, bisa dipelajari di <a href="https://idebku.ojk.go.id/Public/Informasi" target="_blank" rel="noopener noreferrer" class="">halaman informasi
-iDebku</a>.</p>]]></content>
+</ol>]]></content>
         <author>
             <name>Priyadi Iman Nurcahyo</name>
             <uri>https://priyadi.id</uri>
