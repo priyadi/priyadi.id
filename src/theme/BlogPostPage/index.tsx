@@ -1,4 +1,4 @@
-import React, {type ReactNode} from 'react';
+import React, {type ReactNode, useMemo, useRef} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {
@@ -24,10 +24,13 @@ import Comments from '@site/src/components/Comments';
 import Disclosure from '@site/src/components/Disclosure';
 import InlineMarkdown, {PostTitle} from '@site/src/components/InlineMarkdown';
 import {usePostDate} from '@site/src/components/Story';
+import FloatingToc from './FloatingToc';
 import styles from './styles.module.css';
 
 // A table of contents is offered once a post has this many headings.
 const TOC_MIN_HEADINGS = 3;
+// It stays in view while reading once there are this many.
+const FLOATING_TOC_MIN_HEADINGS = 5;
 
 function Byline(): ReactNode {
   const {metadata, assets} = useBlogPost();
@@ -66,21 +69,29 @@ function Byline(): ReactNode {
   );
 }
 
-function TableOfContents(): ReactNode {
+/** The headings the table of contents lists, none if it is not shown. */
+function useHeadings() {
   const {toc, frontMatter} = useBlogPost();
   const {tableOfContents} = useThemeConfig();
   const minLevel =
     frontMatter.toc_min_heading_level ?? tableOfContents.minHeadingLevel;
   const maxLevel =
     frontMatter.toc_max_heading_level ?? tableOfContents.maxHeadingLevel;
-  const headings = toc.filter(
-    ({level}) => level >= minLevel && level <= maxLevel,
-  );
+  const hide = frontMatter.hide_table_of_contents;
+  // One array for the life of the page: the floating list measures by it.
+  const headings = useMemo(() => {
+    const listed = toc.filter(
+      ({level}) => level >= minLevel && level <= maxLevel,
+    );
+    return hide || listed.length < TOC_MIN_HEADINGS ? [] : listed;
+  }, [toc, minLevel, maxLevel, hide]);
+  return {minLevel, headings};
+}
 
-  if (
-    frontMatter.hide_table_of_contents ||
-    headings.length < TOC_MIN_HEADINGS
-  ) {
+function TableOfContents(): ReactNode {
+  const {headings, minLevel} = useHeadings();
+
+  if (headings.length === 0) {
     return null;
   }
 
@@ -132,6 +143,8 @@ function Article({children}: {children: ReactNode}): ReactNode {
   const {title, permalink, tags, editUrl} = metadata;
   const {description} = frontMatter;
   const {comments = true} = frontMatter as {comments?: boolean};
+  const {headings, minLevel} = useHeadings();
+  const header = useRef<HTMLElement>(null);
 
   return (
     <Layout>
@@ -140,7 +153,7 @@ function Article({children}: {children: ReactNode}): ReactNode {
           <ContentVisibility metadata={metadata} />
         </div>
         <article>
-          <header className={clsx('columns', styles.header)}>
+          <header ref={header} className={clsx('columns', styles.header)}>
             {/* The first tag of a post is its main topic. */}
             <Kicker tags={tags} className={styles.kicker} />
             <h1 className={styles.headline}>
@@ -160,6 +173,13 @@ function Article({children}: {children: ReactNode}): ReactNode {
             className={clsx('columns', 'markdown', 'prose')}>
             <MDXContent>{children}</MDXContent>
           </div>
+          {headings.length >= FLOATING_TOC_MIN_HEADINGS && (
+            <FloatingToc
+              headings={headings}
+              minLevel={minLevel}
+              start={header}
+            />
+          )}
           {(tags.length > 0 || editUrl) && (
             <footer className={clsx('columns', styles.footer)}>
               {tags.length > 0 && <TagsListInline tags={tags} />}

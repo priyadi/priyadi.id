@@ -1,0 +1,172 @@
+/*
+ * The table of contents kept in view while a post is read. On most screens a
+ * button in the lower left corner that opens the list above it; where the
+ * margin beside the wide column has room, the whole list, as a margin note.
+ * The top of the window belongs to the bars some articles pin there.
+ */
+
+.toc {
+  position: fixed;
+  left: var(--gutter);
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  z-index: 25;
+  max-width: calc(100vw - 2 * var(--gutter));
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.35;
+  opacity: 0;
+  translate: 0 0.5rem;
+  visibility: hidden;
+  transition:
+    opacity 150ms ease-out,
+    translate 150ms ease-out,
+    visibility 0s linear 150ms;
+}
+
+.shown {
+  opacity: 1;
+  translate: 0 0;
+  visibility: visible;
+  transition:
+    opacity 150ms ease-out,
+    translate 150ms ease-out;
+}
+
+.title {
+  display: none;
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--c-ink);
+}
+
+/* Floats over the text, so it takes the one shadow the system allows. */
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: min(26rem, 100%);
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--c-ink);
+  border-radius: 2px;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.14);
+}
+
+.icon {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+}
+
+.buttonLabel {
+  flex: none;
+  font-weight: 650;
+}
+
+.buttonCurrent {
+  min-width: 0;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--c-rule);
+  color: var(--c-ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.5rem);
+  width: min(22rem, calc(100vw - 2 * var(--gutter)));
+  max-height: min(60vh, 30rem);
+  margin: 0;
+  padding: 0.4rem 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  background: var(--c-paper);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.14);
+}
+
+.open .list {
+  display: block;
+}
+
+.list li {
+  margin: 0;
+}
+
+.list a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  border-left: 2px solid transparent;
+  color: var(--c-ink-soft);
+  text-decoration: none;
+}
+
+.list a:hover {
+  color: var(--c-ink);
+}
+
+.list a[aria-current] {
+  border-left-color: var(--c-ink);
+  color: var(--c-ink);
+  font-weight: 650;
+}
+
+/* Room in the margin: the whole list beside the text, as a margin note. */
+@media (min-width: 96rem) {
+  .toc {
+    top: 50%;
+    bottom: auto;
+    left: 1.5rem;
+    width: min(16rem, calc((100vw - var(--w-wide)) / 2 - 3.5rem));
+    transform: translateY(-50%);
+  }
+
+  .title {
+    display: block;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .list {
+    display: block;
+    position: static;
+    width: auto;
+    max-height: calc(70vh - 2rem);
+    padding: 0;
+    border: 0;
+    border-left: 1px solid var(--c-rule);
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .list a {
+    margin-left: -1px;
+    padding: 0.3rem 0 0.3rem 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc,
+  .shown {
+    transition: none;
+  }
+}
+
+@media print {
+  .toc {
+    display: none;
+  }
+}

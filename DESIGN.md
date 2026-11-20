@@ -330,7 +330,8 @@ them from the data beneath.
 ### Shadow Vocabulary
 
 - **Tooltip lift** (`box-shadow: 0 2px 10px rgb(0 0 0 / 0.14)`): chart
-  tooltips and other popovers that float over content. Nothing else.
+  tooltips and other popovers that float over content, including the
+  floating table of contents. Nothing else.
 
 ### Named Rules
 
@@ -428,8 +429,20 @@ tabular lining figures throughout.
 The control strip of an interactive explainer: paper band between soft rules,
 a labelled select, the live verdicts as sans term/value pairs with tabular
 values at 650, and a hairline reset button. When pinned it becomes fixed to
-the top of the viewport with an ink rule beneath, the only sticky element in
-the system.
+the top of the viewport with an ink rule beneath. The top of the viewport
+belongs to it; the only other element that stays in view is the floating
+table of contents, at the bottom.
+
+### Floating Table of Contents
+
+A post with five or more headings keeps its table of contents in view once
+the one in the header has scrolled away, until the end of the article. On
+most screens it is a hairline button in the lower left corner, ink border on
+paper, naming the section being read after a soft rule; it opens the list
+above it. Both float over the text, so both take the tooltip lift. From 96rem
+the margin beside the wide column has room, and it becomes a margin note
+instead: a label at 650 over the list on a soft rule, flat, with the current
+section in ink at 650 on a 2px ink rule.
 
 ### Tool Frame (instrument pattern)
 
