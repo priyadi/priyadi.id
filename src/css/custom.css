@@ -100,6 +100,15 @@ html {
   text-size-adjust: 100%;
 }
 
+/* Links within a page, such as the table of contents, scroll to where they
+   point rather than jump. Moves to another page stay instant: see
+   src/clientModules/instantPageScroll.ts. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

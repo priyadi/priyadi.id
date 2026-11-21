@@ -116,6 +116,8 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
+  clientModules: [require.resolve('./src/clientModules/instantPageScroll.ts')],
+
   plugins: [require.resolve('docusaurus-lunr-search'), inlineMarkdownPlugin]
 };
 

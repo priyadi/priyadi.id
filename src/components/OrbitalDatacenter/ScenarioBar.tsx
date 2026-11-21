@@ -66,6 +66,24 @@ export default function ScenarioBar(): ReactNode {
     }
   }, [pinned, edited]);
 
+  // Every heading comes after the bar, so wherever a link leads, the bar is
+  // pinned over the top of the window: links stop below it.
+  useEffect(() => {
+    const bar = slotRef.current?.firstElementChild;
+    const root = document.documentElement;
+    if (!bar) {
+      return undefined;
+    }
+    const observer = new ResizeObserver(() => {
+      root.style.scrollPaddingTop = `${bar.getBoundingClientRect().height}px`;
+    });
+    observer.observe(bar);
+    return () => {
+      observer.disconnect();
+      root.style.scrollPaddingTop = '';
+    };
+  }, []);
+
   return (
     <div
       ref={slotRef}
