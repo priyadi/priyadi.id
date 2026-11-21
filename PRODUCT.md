@@ -47,9 +47,9 @@ Three things together set it apart from other Indonesian opinion writing:
 
 ## Operating Context
 
-- Posts are shared on Facebook as plain text (`make posttexts`), because
-  Facebook ranks posts with links lower, and on Bluesky and elsewhere with a
-  social card drawn from the front matter (`make socialcards`).
+- Posts are shared on Facebook as plain text (the `posttext` skill),
+  because Facebook ranks posts with links lower, and on Bluesky and elsewhere
+  with a social card drawn from the front matter (`make socialcards`).
 - Readers comment through Giscus and search through lunr.
 - Each post has a main topic (the first tag, from `blog/tags.yml`), shown above
   the headline and linking to that topic's page.

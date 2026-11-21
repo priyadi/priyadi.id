@@ -5,8 +5,8 @@
  *     node scripts/posttexts.mjs POST_DIR [OUTPUT]
  *
  * The text is written next to the post as index.txt, or to OUTPUT (`-` for
- * standard output). `make posttexts` runs this for every post whose text is
- * older than the post or this script.
+ * standard output). The posttext skill (.claude/skills/posttext) starts
+ * from this and fixes what a script cannot.
  *
  * Facebook shows text as it is: no markdown, and every line break is kept. So
  * paragraphs are joined into single lines, and:

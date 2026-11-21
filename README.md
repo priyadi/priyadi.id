@@ -233,25 +233,32 @@ The fonts in `scripts/socialcard-fonts/` are fixed instances of the site's
 variable fonts, made by `scripts/socialcard-fonts.py`. Run it again only when
 the card needs another weight.
 
-### Plain text for Facebook
+### Plain text for social media
 
 Facebook ranks posts with links lower, so a post can be shared as its text
-instead. `make posttexts` (also part of `make`) writes `index.txt` next to
-every post, ready to paste. It is not committed; `make` writes it again when
-the post changes.
+instead, there or on any platform that takes plain text. Ask Claude Code for it
+with `/posttext` (the skill is in `.claude/skills/posttext`), naming the
+platform if it is not Facebook. It writes `index.txt` next to the post, ready
+to paste. The file is not committed.
 
-The title comes first, paragraphs are joined into single lines, and markdown
+The skill starts from `scripts/posttexts.mjs`, which does the mechanical part:
+the title comes first, paragraphs are joined into single lines, and markdown
 marks are dropped. Links keep their text but not their address. Images,
 figures and components without content (charts, calculators, tools) are left
-out, and the script names those components, so the text around them can be
-checked. Footnotes become [1], [2]… and are listed with their addresses after
-a line at the end, to be cut out into the first comment. A heading's explicit
-id (`## Title {#id}`) is dropped.
+out, and the script names those components. Footnotes become [1], [2]… and are
+listed with their addresses after a line at the end, to be cut out into the
+first comment. A heading's explicit id (`## Title {#id}`) is dropped.
+
+The skill then does what a script cannot: it writes out what live prose and
+charts would have said under the default scenario, rewrites sentences that
+point at something no longer there ("geser nilai di bawah"), and puts the
+post's address in the first comment. It reports the images to attach, with
+their alt text.
 
 Since a tool is left out, the text that introduces it should still make sense
 without it: "the checker that comes with this post", not "the tool below".
 
-To see the text of one post without writing the file:
+To see the script's text of one post:
 
 ```
 node scripts/posttexts.mjs blog/2026-05/26-some-post -
