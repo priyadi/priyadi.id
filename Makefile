@@ -39,7 +39,7 @@ SOCIALCARD_POSTS := $(shell awk ' \
 	fm && /^socialcard:/ { print FILENAME; nextfile }' \
 	$(wildcard blog/*/*/index.md blog/*/*/index.mdx))
 SOCIALCARDS := $(patsubst %/,%/socialcard.png,$(dir $(SOCIALCARD_POSTS)))
-SOCIALCARD_CODE := scripts/socialcards.mjs src/lib/inlineMarkdown.ts \
+SOCIALCARD_CODE := scripts/socialcards.mjs src/lib/inlineMarkdown.ts src/lib/postStyle.ts \
 	src/theme/Navbar/Wordmark.tsx $(wildcard scripts/socialcard-fonts/*.ttf)
 SOCIALCARD_IMAGES = $(filter-out $*/socialcard.%,$(wildcard \
 	$(addprefix $*/*.,png jpg jpeg webp gif svg)))

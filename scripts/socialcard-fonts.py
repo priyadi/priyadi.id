@@ -13,6 +13,7 @@ Requires: fontTools and the Google Fonts variable TTFs (see FONT_DIR), the
 same ones scripts/wordmark.py uses.
 """
 
+import shutil
 from pathlib import Path
 
 from fontTools.ttLib import TTFont
@@ -52,8 +53,23 @@ INSTANCES = {
 }
 
 
+# Static faces that a post's `style` can ask for (POST_FONTS in
+# src/lib/postStyle.ts), copied as they are. Pricedown is not a Google Font;
+# its web version, static/fonts/pricedown-black.woff, is a Latin subset:
+#   pyftsubset 'pricedown bl.ttf' --flavor=woff --layout-features='*' \
+#     --unicodes='U+0020-007E,U+00A0-00FF,U+2010-2027,U+2030-203A,U+20AC,U+2122,U+2212' \
+#     --output-file=static/fonts/pricedown-black.woff
+COPIES = {
+    'Pricedown-Black': Path.home() / '.local/share/fonts/gta/pricedown bl.ttf',
+}
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    for name, source in COPIES.items():
+        target = OUT / f'{name}.ttf'
+        shutil.copyfile(FONT_DIR / source, target)
+        print(f'{target.relative_to(ROOT)}  {target.stat().st_size // 1024} KB')
     for name, (source, axes) in INSTANCES.items():
         font = instantiateVariableFont(TTFont(FONT_DIR / source), axes)
         target = OUT / f'{name}.ttf'

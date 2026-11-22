@@ -13,16 +13,31 @@
 
 .headline {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.25rem);
-  font-weight: 600;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  font-weight: var(--display-weight, 600);
+  line-height: var(--display-leading, 1.06);
+  letter-spacing: var(--display-tracking, -0.02em);
+  text-transform: var(--display-case, none);
+}
+
+/* A headline painted with the gradient of the post's style. In a mode
+   without one, the gradient is plain ink. */
+.headlineFill {
+  background-image: var(
+    --headline-fill,
+    linear-gradient(var(--c-ink), var(--c-ink))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Room below the baseline, so the clip does not cut descenders. */
+  padding-bottom: 0.06em;
 }
 
 .dek {
   margin: 1rem 0 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
   line-height: 1.35;
   color: var(--c-ink-soft);

@@ -172,6 +172,45 @@ Charts can use the site's CSS variables so they follow light and dark mode:
 `--c-ink`, `--c-ink-soft`, `--c-rule`, `--c-paper`, `--c-surface`,
 `--c-accent`, and `--font-sans` for labels.
 
+### The look of a single post
+
+A post can change its own colours and type with a `style` block in its front
+matter, for a subject that calls for it. It changes the page of the post
+(masthead included) and its social card, not listing pages:
+
+```yaml
+style:
+  colors:                 # each a colour, or {light: …, dark: …}
+    accent: {light: '#c4126b', dark: '#ff4f9e'}
+    paper: {dark: '#140a1f'}
+    surface: {dark: '#211230'}
+    rule: {dark: '#3b2552'}
+    # also: ink, inkSoft
+  horizon: ['#ffb35c', '#ff6b5b', '#ff3d9a', '#9b3dff', '#2fd4e6']
+  fonts:
+    display: pricedown    # headline and headings
+    body: serif           # the text: serif (default), sans, or a face below
+  headline:
+    case: upper
+    gradient:             # paints the headline, top to bottom
+      light: ['#e4572e', '#c4126b']
+      dark: ['#ffd36e', '#ff3d9a']
+```
+
+Everything is optional. `horizon` replaces the sunset in the line across the
+top of the page, and on the card the bar and the halftone sun. The card uses
+the dark values, which there must be `#rrggbb`, and tints the hill with the
+accent.
+
+The faces a post can name are in `POST_FONTS` in `src/lib/postStyle.ts`:
+`serif`, `sans`, and `pricedown`, the lettering of Grand Theft Auto. Another
+one needs an entry there, an `@font-face` at the top of `src/css/custom.css`
+with its file in `static/fonts/` (a browser fetches it only for a page that
+uses it), and a TTF in `scripts/socialcard-fonts/` for the card.
+
+Check both modes, and keep the text readable: a colour that works for a
+headline can be too weak for a link underline or the paper behind long text.
+
 ### Social cards
 
 The card that a post shows when shared is drawn from its front matter by

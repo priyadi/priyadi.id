@@ -226,6 +226,14 @@ heading treatment or a chart palette.
 Every new colour, image and chart is checked on `paper-dusk` first, then on
 `paper`.
 
+**The Costume Rule.** A post may dress for its subject with a `style` block
+in its front matter (see README, "The look of a single post"): its own accent,
+paper, horizon, display face and a gradient headline, on its page and its
+social card. The costume swaps tokens; it keeps the structure. Hairlines,
+layout, the serif or sans of the text, and the rules above still hold with the
+new values, the headline gradient being the one licensed exception to the One
+Horizon Rule. Use it rarely, for a subject with a visual world of its own.
+
 **The Scoped Chart Colour Rule.** A chart's categorical colours are defined
 per article as scoped CSS variables with a light and a dark value each
 (e.g. `--c-orbit`, `--c-ground`), each with one meaning throughout that

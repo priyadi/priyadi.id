@@ -9,6 +9,16 @@
  * the current colour mode.
  */
 
+/* Faces a post can ask for in its `style` (src/lib/postStyle.ts). A browser
+   fetches the file only for a page that uses it. */
+@font-face {
+  font-family: 'Pricedown';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/pricedown-black.woff') format('woff');
+}
+
 :root {
   /* Palette */
   --c-paper: #ffffff;
@@ -33,6 +43,10 @@
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono Variable', SFMono-Regular, Menlo, Consolas,
     'Liberation Mono', monospace;
+  /* Headline and headings, and the text of an article. A post can set
+     these, with the --display-* that go with its face: src/lib/postStyle.ts. */
+  --font-display: var(--font-serif);
+  --font-body: var(--font-serif);
 
   /* Measures: reading column, wide breakout, page frame */
   --w-text: 42.5rem;
@@ -59,7 +73,7 @@
 
   --ifm-font-family-base: var(--font-sans);
   --ifm-font-family-monospace: var(--font-mono);
-  --ifm-heading-font-family: var(--font-serif);
+  --ifm-heading-font-family: var(--font-display);
   --ifm-font-size-base: 1rem;
   --ifm-heading-font-weight: 600;
   --ifm-heading-line-height: 1.15;
@@ -127,8 +141,12 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: -0.012em;
+  letter-spacing: var(--display-tracking, -0.012em);
   text-wrap: balance;
+}
+
+.prose.markdown > :is(h2, h3) {
+  text-transform: var(--display-case, none);
 }
 
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
@@ -210,7 +228,7 @@ h4 {
  * ------------------------------------------------------------------------ */
 
 .prose {
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: 1.1875rem;
   line-height: 1.6;
   overflow-wrap: break-word;

@@ -31,6 +31,10 @@
  *
  * `title` and `description` in the block override those of the post, and
  * `description: false` leaves it out. `kicker` adds a label before the date.
+ *
+ * A post with a `style` block (src/lib/postStyle.ts) gets its card in that
+ * style too: the dark colours, the horizon in place of the sunset, the
+ * display face, case and gradient of the headline.
  * The title and description may use the inline markdown of
  * src/lib/inlineMarkdown.ts.
  *
@@ -48,6 +52,7 @@ import {imageSize} from 'image-size';
 import {load as parseYaml} from 'js-yaml';
 import satori from 'satori';
 import {parseInline} from '../src/lib/inlineMarkdown.ts';
+import {inMode, postFont, POST_FONTS} from '../src/lib/postStyle.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const FONT_DIR = path.join(ROOT, 'scripts/socialcard-fonts');
@@ -60,8 +65,10 @@ const BODY_TOP = 132; // where the headline and the right-hand side start
 const BODY_BOTTOM = 560;
 const GAP = 48; // between the headline column and the right-hand side
 
-// The dusk end of the site palette (dark mode in src/css/custom.css).
-const C = {
+// The dusk end of the site palette (dark mode in src/css/custom.css). A post
+// with a `style` block replaces some of it: see applyStyle. One run draws one
+// card, so these are simply reassigned.
+let C = {
   paper: '#17121a',
   ink: '#efe9ea',
   soft: '#aba1ab',
@@ -69,11 +76,21 @@ const C = {
   accent: '#ff9068',
   hill: '#3a2443',
 };
-const SUNSET = ['#f7994e', '#f3674a', '#d94a4c', '#93405c', '#4b3052'];
-const SUNSET_AT = [0, 0.3, 0.58, 0.82, 1];
-const SUNSET_CSS = `linear-gradient(90deg, ${SUNSET.map(
-  (c, i) => `${c} ${SUNSET_AT[i] * 100}%`,
-).join(', ')})`;
+let SUNSET = ['#f7994e', '#f3674a', '#d94a4c', '#93405c', '#4b3052'];
+let SUNSET_AT = [0, 0.3, 0.58, 0.82, 1];
+const sunsetCss = () =>
+  `linear-gradient(90deg, ${SUNSET.map(
+    (c, i) => `${c} ${SUNSET_AT[i] * 100}%`,
+  ).join(', ')})`;
+
+// How the headline is set.
+let HEAD = {
+  fontFamily: 'Newsreader',
+  fontWeight: 600,
+  letterSpacing: '-0.014em',
+  textTransform: 'none',
+  fill: null, // a gradient, top to bottom
+};
 
 const font = (file, name, weight, style = 'normal') => ({
   name,
@@ -89,6 +106,11 @@ const FONTS = [
   font('Inter-Italic.ttf', 'Inter', 400, 'italic'),
   font('Inter-SemiBoldItalic.ttf', 'Inter', 600, 'italic'),
   font('JetBrainsMono-Medium.ttf', 'JetBrains Mono', 500),
+  // Faces that a post's `style` can ask for.
+  ...Object.values(POST_FONTS)
+    .map(({card}) => card)
+    .filter((card) => card?.file)
+    .map((card) => font(card.file, card.family, card.weight)),
 ];
 
 // resvg scans every system font unless told not to, which can take minutes.
@@ -156,22 +178,64 @@ const smooth = (lo, hi, x) => {
   return t * t * (3 - 2 * t);
 };
 
+/** a and b, two #rrggbb colours, mixed: t of b in a. */
+function mix(a, b, t) {
+  const channel = (o) => {
+    const va = parseInt(a.slice(o, o + 2), 16);
+    const vb = parseInt(b.slice(o, o + 2), 16);
+    return Math.round(va + (vb - va) * t)
+      .toString(16)
+      .padStart(2, '0');
+  };
+  return `#${channel(1)}${channel(3)}${channel(5)}`;
+}
+
+/** The post's `style` (src/lib/postStyle.ts), in its dark mode. */
+function applyStyle(style) {
+  if (!style) return;
+  const colour = (name) => {
+    const value = inMode(style.colors?.[name], 'dark');
+    if (value != null && !/^#[0-9a-f]{6}$/i.test(value)) {
+      throw new Error(`style.colors.${name}: the card needs #rrggbb, not ${value}`);
+    }
+    return value;
+  };
+  const paper = colour('paper');
+  const accent = colour('accent');
+  C = {
+    paper: paper ?? C.paper,
+    ink: colour('ink') ?? C.ink,
+    soft: colour('inkSoft') ?? C.soft,
+    rule: colour('rule') ?? C.rule,
+    accent: accent ?? C.accent,
+    // The hill is the paper with a little of the accent in it.
+    hill: paper || accent ? mix(paper ?? C.paper, accent ?? C.accent, 0.15) : C.hill,
+  };
+  if (style.horizon?.length >= 2) {
+    SUNSET = style.horizon;
+    SUNSET_AT = SUNSET.map((_, i) => i / (SUNSET.length - 1));
+  }
+  const display = postFont(style.fonts?.display);
+  if (display?.card) {
+    HEAD = {
+      ...HEAD,
+      fontFamily: display.card.family,
+      fontWeight: display.card.weight,
+      letterSpacing: `${display.tracking ?? -0.014}em`,
+    };
+  }
+  if (style.headline?.case === 'upper') HEAD.textTransform = 'uppercase';
+  const fill = inMode(style.headline?.gradient, 'dark');
+  if (fill?.length >= 2) HEAD.fill = fill;
+}
+
 /** Colour at t (0 to 1) along the sunset gradient. */
 function sunset(t) {
   const x = clamp(t);
   let i = SUNSET_AT.findIndex((stop) => stop >= x);
   i = Math.max(1, i);
   const f = (x - SUNSET_AT[i - 1]) / (SUNSET_AT[i] - SUNSET_AT[i - 1]);
-  const a = SUNSET[i - 1];
-  const b = SUNSET[i];
-  const mix = (o) => {
-    const va = parseInt(a.slice(o, o + 2), 16);
-    const vb = parseInt(b.slice(o, o + 2), 16);
-    return Math.round(va + (vb - va) * f)
-      .toString(16)
-      .padStart(2, '0');
-  };
-  return `#${mix(1)}${mix(3)}${mix(5)}`;
+  return mix(SUNSET[i - 1], SUNSET[i], f);
 }
 
 /**
@@ -468,13 +532,19 @@ async function drawCard(post) {
       {
         // Spans in a flex box would each be laid out as a column.
         ...(Array.isArray(title) && {display: 'block'}),
-        fontFamily: 'Newsreader',
-        fontWeight: 600,
+        fontFamily: HEAD.fontFamily,
+        fontWeight: HEAD.fontWeight,
         fontSize,
         lineHeight: LINE,
-        letterSpacing: '-0.014em',
+        letterSpacing: HEAD.letterSpacing,
+        textTransform: HEAD.textTransform,
         textWrap: 'balance',
         color: C.ink,
+        ...(HEAD.fill && {
+          backgroundImage: `linear-gradient(180deg, ${HEAD.fill.join(', ')})`,
+          backgroundClip: 'text',
+          color: 'transparent',
+        }),
       },
       title,
     );
@@ -534,7 +604,7 @@ async function drawCard(post) {
       top: 0,
       width: W,
       height: BAR,
-      backgroundImage: SUNSET_CSS,
+      backgroundImage: sunsetCss(),
     }),
     // Masthead
     box(
@@ -617,6 +687,7 @@ function readPost(dir) {
 
   return {
     dir,
+    style: meta.style,
     slug: `${month}-${day}`,
     title: richWords(String(card.title ?? meta.title ?? '')),
     description: description ? richWords(String(description)) : null,
@@ -640,6 +711,7 @@ async function main() {
 
   let png;
   try {
+    applyStyle(post.style);
     png = await drawCard(post);
   } catch (error) {
     error.message = `${path.relative(ROOT, post.dir)}: ${error.message}`;

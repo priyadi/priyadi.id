@@ -24,6 +24,11 @@ import Comments from '@site/src/components/Comments';
 import Disclosure from '@site/src/components/Disclosure';
 import InlineMarkdown, {PostTitle} from '@site/src/components/InlineMarkdown';
 import {usePostDate} from '@site/src/components/Story';
+import {
+  hasHeadlineGradient,
+  postStyleCss,
+  type PostStyle,
+} from '@site/src/lib/postStyle';
 import FloatingToc from './FloatingToc';
 import styles from './styles.module.css';
 
@@ -142,12 +147,20 @@ function Article({children}: {children: ReactNode}): ReactNode {
   const {metadata, frontMatter} = useBlogPost();
   const {title, permalink, tags, editUrl} = metadata;
   const {description} = frontMatter;
-  const {comments = true} = frontMatter as {comments?: boolean};
+  const {comments = true, style} = frontMatter as {
+    comments?: boolean;
+    style?: PostStyle;
+  };
+  const styleCss = useMemo(() => postStyleCss(style), [style]);
   const {headings, minLevel} = useHeadings();
   const header = useRef<HTMLElement>(null);
 
   return (
     <Layout>
+      {/* The post's own colours and type, from `style` in its front matter.
+          In the page rather than in <Head>: the static build leaves <style>
+          out of the head, and the page would flash in the site's colours. */}
+      {styleCss && <style dangerouslySetInnerHTML={{__html: styleCss}} />}
       <main className={styles.page}>
         <div className="columns">
           <ContentVisibility metadata={metadata} />
@@ -156,7 +169,11 @@ function Article({children}: {children: ReactNode}): ReactNode {
           <header ref={header} className={clsx('columns', styles.header)}>
             {/* The first tag of a post is its main topic. */}
             <Kicker tags={tags} className={styles.kicker} />
-            <h1 className={styles.headline}>
+            <h1
+              className={clsx(
+                styles.headline,
+                hasHeadlineGradient(style) && styles.headlineFill,
+              )}>
               <PostTitle permalink={permalink} title={title} />
             </h1>
             {description && (
