@@ -9,16 +9,6 @@
  * the current colour mode.
  */
 
-/* Faces a post can ask for in its `style` (src/lib/postStyle.ts). A browser
-   fetches the file only for a page that uses it. */
-@font-face {
-  font-family: 'Pricedown';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/fonts/pricedown-black.woff') format('woff');
-}
-
 :root {
   /* Palette */
   --c-paper: #ffffff;

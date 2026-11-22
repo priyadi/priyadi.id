@@ -70,6 +70,12 @@ export type PostFont = {
   /** Line height of the headline. */
   leading?: number;
   /**
+   * A face that is not one of the site's own: declared by the page of a post
+   * that uses it, not in custom.css, where the CSS minifier would drop it as
+   * unused. `src` is a file in static/fonts.
+   */
+  face?: {family: string; src: string; weight: number};
+  /**
    * The face the social card draws with, from scripts/socialcard-fonts. The
    * site's own typefaces are always loaded there.
    */
@@ -77,9 +83,9 @@ export type PostFont = {
 };
 
 /**
- * Typefaces a post can name in `fonts`. A new one needs an @font-face at the
- * top of src/css/custom.css (the file is fetched only by a page that uses
- * it) and, for the card, a TTF in scripts/socialcard-fonts.
+ * Typefaces a post can name in `fonts`. A new one needs its file in
+ * static/fonts, named in `face` (it is fetched only by a page that uses it),
+ * and, for the card, a TTF in scripts/socialcard-fonts.
  */
 export const POST_FONTS: Record<string, PostFont> = {
   serif: {
@@ -100,6 +106,7 @@ export const POST_FONTS: Record<string, PostFont> = {
     // its capitals with a tail along the baseline.
     tracking: 0,
     leading: 1,
+    face: {family: 'Pricedown', src: '/fonts/pricedown-black.woff', weight: 900},
     card: {family: 'Pricedown', file: 'Pricedown-Black.ttf', weight: 900},
   },
 };
@@ -168,6 +175,15 @@ export function outlineShadow(
   return shadows.join(', ');
 }
 
+function fontFaceCss({family, src, weight}: NonNullable<PostFont['face']>) {
+  const format = src.endsWith('.woff2') ? 'woff2' : 'woff';
+  return (
+    `@font-face { font-family: '${family}'; font-style: normal; ` +
+    `font-weight: ${weight}; font-display: swap; ` +
+    `src: url('${src}') format('${format}'); }`
+  );
+}
+
 /**
  * The CSS that gives the page of a post its style: variables on the root,
  * in each mode. Values come from the post's own front matter. `html:root`
@@ -194,6 +210,9 @@ export function postStyleCss(style: PostStyle | undefined): string {
   }
   const body = postFont(style.fonts?.body);
   if (body) base.push(`--font-body: ${body.css}`);
+  for (const font of new Set([display, body])) {
+    if (font?.face) rules.push(fontFaceCss(font.face));
+  }
   const textCase = style.headline?.case;
   if (textCase === 'upper' || textCase === 'lower') {
     base.push(`--display-case: ${textCase}case`);

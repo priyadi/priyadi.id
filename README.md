@@ -211,9 +211,11 @@ accent.
 
 The faces a post can name are in `POST_FONTS` in `src/lib/postStyle.ts`:
 `serif`, `sans`, and `pricedown`, the lettering of Grand Theft Auto. Another
-one needs an entry there, an `@font-face` at the top of `src/css/custom.css`
-with its file in `static/fonts/` (a browser fetches it only for a page that
-uses it), and a TTF in `scripts/socialcard-fonts/` for the card.
+one needs an entry there with its file in `static/fonts/`, named in `face`,
+and a TTF in `scripts/socialcard-fonts/` for the card. The page of a post that
+uses it declares the face itself, so a browser fetches the file only there.
+Not in `src/css/custom.css`: the build drops an `@font-face` that no rule in
+the stylesheets uses.
 
 Check both modes, and keep the text readable: a colour that works for a
 headline can be too weak for a link underline or the paper behind long text.
