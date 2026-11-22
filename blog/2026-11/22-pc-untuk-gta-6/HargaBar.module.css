@@ -1,0 +1,100 @@
+.chart {
+  --c-console: #2a9bb0;
+  --c-pc: #c4126b;
+
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+}
+
+html[data-theme='dark'] .chart {
+  --c-console: #2fd4e6;
+  --c-pc: #ff4f9e;
+}
+
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--c-ink-soft);
+}
+
+.legend li::before {
+  content: '';
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.4rem;
+  border-radius: 2px;
+  vertical-align: -0.05em;
+  background: var(--c-bar);
+}
+
+.console {
+  --c-bar: var(--c-console);
+}
+
+.pc {
+  --c-bar: var(--c-pc);
+}
+
+/* Undo the prose table look: this is a chart. */
+.bars {
+  display: table;
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.bars tr,
+.bars :is(th, td) {
+  border: 0;
+  background: none;
+}
+
+.bars th {
+  width: 11.5rem;
+  padding: 0.45rem 1rem 0.45rem 0;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.bars th span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: var(--c-ink-soft);
+}
+
+.bars td {
+  position: relative;
+  padding: 0.45rem 0;
+  vertical-align: middle;
+}
+
+.bar {
+  display: inline-block;
+  height: 1.4rem;
+  min-width: 2px;
+  border-radius: 2px;
+  background: var(--c-bar);
+  vertical-align: middle;
+}
+
+.value {
+  display: inline-block;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (max-width: 36rem) {
+  .bars th {
+    width: 7.5rem;
+  }
+}
