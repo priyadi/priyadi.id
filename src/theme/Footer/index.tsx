@@ -21,6 +21,9 @@ export default function Footer(): ReactNode {
             <Link to="/archive">Arsip</Link>
           </li>
           <li>
+            <Link to="/kebijakan-ai">Kebijakan AI</Link>
+          </li>
+          <li>
             <a href={rssUrl}>RSS</a>
           </li>
           <li>
