@@ -52,7 +52,7 @@ import {imageSize} from 'image-size';
 import {load as parseYaml} from 'js-yaml';
 import satori from 'satori';
 import {parseInline} from '../src/lib/inlineMarkdown.ts';
-import {inMode, postFont, POST_FONTS} from '../src/lib/postStyle.ts';
+import {inMode, OUTLINE_WIDTH, outlineShadow, postFont, POST_FONTS} from '../src/lib/postStyle.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const FONT_DIR = path.join(ROOT, 'scripts/socialcard-fonts');
@@ -90,6 +90,8 @@ let HEAD = {
   letterSpacing: '-0.014em',
   textTransform: 'none',
   fill: null, // a gradient, top to bottom
+  color: null, // a plain colour in place of the ink
+  outline: null, // colour of a rim around the letters
 };
 
 const font = (file, name, weight, style = 'normal') => ({
@@ -227,6 +229,8 @@ function applyStyle(style) {
   if (style.headline?.case === 'upper') HEAD.textTransform = 'uppercase';
   const fill = inMode(style.headline?.gradient, 'dark');
   if (fill?.length >= 2) HEAD.fill = fill;
+  HEAD.color = inMode(style.headline?.color, 'dark') ?? null;
+  HEAD.outline = inMode(style.headline?.outline, 'dark') ?? null;
 }
 
 /** Colour at t (0 to 1) along the sunset gradient. */
@@ -539,7 +543,11 @@ async function drawCard(post) {
         letterSpacing: HEAD.letterSpacing,
         textTransform: HEAD.textTransform,
         textWrap: 'balance',
-        color: C.ink,
+        color: HEAD.color ?? C.ink,
+        // In pixels: em in a shadow is not certain to be read as such here.
+        ...(HEAD.outline && {
+          textShadow: outlineShadow(HEAD.outline, OUTLINE_WIDTH * fontSize, 'px'),
+        }),
         ...(HEAD.fill && {
           backgroundImage: `linear-gradient(180deg, ${HEAD.fill.join(', ')})`,
           backgroundClip: 'text',

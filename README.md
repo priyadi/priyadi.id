@@ -190,14 +190,21 @@ style:
   fonts:
     display: pricedown    # headline and headings
     body: serif           # the text: serif (default), sans, or a face below
-  headline:
+  headline:               # the headline and the headings
     case: upper
+    color: '#ffffff'      # a plain colour, or instead a gradient:
     gradient:             # paints the headline, top to bottom
       light: ['#e4572e', '#c4126b']
       dark: ['#ffd36e', '#ff3d9a']
+    outline: '#000000'    # a rim around the letters, also on the card
+  css: |                  # raw CSS, for the page only
+    html:root .prose.markdown > h2 { font-size: 2.25em; }
 ```
 
-Everything is optional. `horizon` replaces the sunset in the line across the
+Everything is optional. `css` is added to the page as it is, only while the
+post is on screen, and the card does not see it; start a selector with
+`html:root` to outrank the site's own rules. The outline is drawn as a
+text-shadow, so it does not go with a gradient. `horizon` replaces the sunset in the line across the
 top of the page, and on the card the bar and the halftone sun. The card uses
 the dark values, which there must be `#rrggbb`, and tints the hill with the
 accent.

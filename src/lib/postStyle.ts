@@ -13,15 +13,21 @@
  *       fonts:
  *         display: pricedown          # headline and headings
  *         body: serif                 # the text
- *       headline:
+ *       headline:                     # the headline and the headings
  *         case: upper
+ *         color: '#ffffff'            # or a gradient, not both:
  *         gradient:                   # colours painted top to bottom
  *           light: ['#e4572e', '#c4126b']
  *           dark: ['#ffd36e', '#ff3d9a']
+ *         outline: '#000000'          # a rim around the letters
+ *       css: |                        # raw CSS, for the page only
+ *         .prose.markdown > h2 { font-size: 2em; }
  *
  * Everything is optional; what is left out keeps the site's own look. The
  * post page turns it into CSS variables (see postStyleCss), and
  * scripts/socialcards.mjs draws the card of the post with the dark values.
+ * `css` is added to the page as it is, after the variables, and only while
+ * the post is on screen; the card does not see it.
  *
  * Plain TypeScript without enums or other non-erasable syntax, so that
  * scripts/socialcards.mjs can import it with Node's type stripping.
@@ -44,7 +50,13 @@ export type PostStyle = {
   colors?: Partial<Record<ColorName, PerMode<string>>>;
   horizon?: string[];
   fonts?: {display?: string; body?: string};
-  headline?: {case?: 'upper' | 'none'; gradient?: PerMode<string[]>};
+  headline?: {
+    case?: 'upper' | 'none';
+    color?: PerMode<string>;
+    gradient?: PerMode<string[]>;
+    outline?: PerMode<string>;
+  };
+  css?: string;
 };
 
 /** A typeface a post can ask for by name. */
@@ -131,6 +143,29 @@ export function gradientCss(colors: string[], angle: number): string {
   return `linear-gradient(${angle}deg, ${stops.join(', ')})`;
 }
 
+/** Width of the outline of the headline and headings, in em. */
+export const OUTLINE_WIDTH = 0.06;
+
+/**
+ * An outline around text as a text-shadow: copies of the letters pushed out
+ * in sixteen directions, so that it also works on a face with no stroke of
+ * its own and keeps out of the letters. `width` takes the unit given.
+ */
+export function outlineShadow(
+  color: string,
+  width: number = OUTLINE_WIDTH,
+  unit = 'em',
+): string {
+  const shadows: string[] = [];
+  for (let i = 0; i < 16; i++) {
+    const a = (i / 16) * 2 * Math.PI;
+    const x = +(Math.cos(a) * width).toFixed(4);
+    const y = +(Math.sin(a) * width).toFixed(4);
+    shadows.push(`${x}${unit} ${y}${unit} 0 ${color}`);
+  }
+  return shadows.join(', ');
+}
+
 /**
  * The CSS that gives the page of a post its style: variables on the root,
  * in each mode. Values come from the post's own front matter. `html:root`
@@ -168,6 +203,10 @@ export function postStyleCss(style: PostStyle | undefined): string {
     }
     const accent = inMode(style.colors?.accent, mode);
     if (accent) vars.push(`--ifm-color-primary: ${accent}`);
+    const color = inMode(style.headline?.color, mode);
+    if (color) vars.push(`--ifm-heading-color: ${color}`);
+    const outline = inMode(style.headline?.outline, mode);
+    if (outline) vars.push(`--display-outline: ${outlineShadow(outline)}`);
     const gradient = inMode(style.headline?.gradient, mode);
     if (gradient?.length) {
       vars.push(`--headline-fill: ${gradientCss(gradient, 180)}`);
@@ -177,6 +216,7 @@ export function postStyleCss(style: PostStyle | undefined): string {
     }
   }
 
+  if (style.css) rules.push(style.css);
   return rules.join('\n');
 }
 

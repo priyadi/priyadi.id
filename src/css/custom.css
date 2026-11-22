@@ -143,6 +143,8 @@ h3,
 h4 {
   letter-spacing: var(--display-tracking, -0.012em);
   text-wrap: balance;
+  /* A post's style can outline them: see src/lib/postStyle.ts. */
+  text-shadow: var(--display-outline, none);
 }
 
 .prose.markdown > :is(h2, h3) {
