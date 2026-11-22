@@ -303,8 +303,8 @@ svg += `<path d="M${P.x + 14} ${P.y + 6} C${P.x - 30} ${P.y - 30} ${f(hole.x + 6
 svg += `<g transform="translate(${T.x} ${T.y}) rotate(${T.angle}) scale(${T.scale})">
   <path d="M0 14 L18 0 H118 V60 H18 L0 46Z" fill="${C.tag}" stroke="${C.black}" stroke-width="3"/>
   <circle cx="20" cy="30" r="5" fill="${C.glass}"/>
-  <text x="73" y="31" text-anchor="middle" font-family="Pricedown" font-weight="900" font-size="25" fill="${C.ink}">GTA 6</text>
-  <text x="73" y="50" text-anchor="middle" font-family="Pricedown" font-weight="900" font-size="15" fill="${C.ink}">COMPATIBLE</text>
+  <text x="73" y="31" text-anchor="middle" font-family="Pricedown" font-weight="900" font-size="25" fill="${C.ink}">gta 6</text>
+  <text x="73" y="50" text-anchor="middle" font-family="Pricedown" font-weight="900" font-size="15" fill="${C.ink}">compatible</text>
 </g>`;
 
 /* The HUD: wanted stars and the money counter, top right. */
