@@ -14,7 +14,7 @@
  *         display: pricedown          # headline and headings
  *         body: serif                 # the text
  *       headline:                     # the headline and the headings
- *         case: upper
+ *         case: upper                 # or lower
  *         color: '#ffffff'            # or a gradient, not both:
  *         gradient:                   # colours painted top to bottom
  *           light: ['#e4572e', '#c4126b']
@@ -51,7 +51,7 @@ export type PostStyle = {
   horizon?: string[];
   fonts?: {display?: string; body?: string};
   headline?: {
-    case?: 'upper' | 'none';
+    case?: 'upper' | 'lower' | 'none';
     color?: PerMode<string>;
     gradient?: PerMode<string[]>;
     outline?: PerMode<string>;
@@ -96,7 +96,9 @@ export const POST_FONTS: Record<string, PostFont> = {
   pricedown: {
     css: "'Pricedown', Impact, 'Arial Narrow Bold', sans-serif",
     weight: 900,
-    tracking: 0.01,
+    // No letter-spacing: any would make browsers drop the ligatures that join
+    // its capitals with a tail along the baseline.
+    tracking: 0,
     leading: 1,
     card: {family: 'Pricedown', file: 'Pricedown-Black.ttf', weight: 900},
   },
@@ -192,7 +194,10 @@ export function postStyleCss(style: PostStyle | undefined): string {
   }
   const body = postFont(style.fonts?.body);
   if (body) base.push(`--font-body: ${body.css}`);
-  if (style.headline?.case === 'upper') base.push('--display-case: uppercase');
+  const textCase = style.headline?.case;
+  if (textCase === 'upper' || textCase === 'lower') {
+    base.push(`--display-case: ${textCase}case`);
+  }
   if (base.length) rules.push(`html:root { ${base.join('; ')}; }`);
 
   for (const mode of ['light', 'dark'] as const) {

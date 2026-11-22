@@ -191,7 +191,7 @@ style:
     display: pricedown    # headline and headings
     body: serif           # the text: serif (default), sans, or a face below
   headline:               # the headline and the headings
-    case: upper
+    case: upper           # or lower
     color: '#ffffff'      # a plain colour, or instead a gradient:
     gradient:             # paints the headline, top to bottom
       light: ['#e4572e', '#c4126b']

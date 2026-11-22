@@ -226,7 +226,8 @@ function applyStyle(style) {
       letterSpacing: `${display.tracking ?? -0.014}em`,
     };
   }
-  if (style.headline?.case === 'upper') HEAD.textTransform = 'uppercase';
+  const textCase = {upper: 'uppercase', lower: 'lowercase'}[style.headline?.case];
+  if (textCase) HEAD.textTransform = textCase;
   const fill = inMode(style.headline?.gradient, 'dark');
   if (fill?.length >= 2) HEAD.fill = fill;
   HEAD.color = inMode(style.headline?.color, 'dark') ?? null;
