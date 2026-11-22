@@ -17,7 +17,7 @@ Menurut pemerintah, kita belum masuk Ramadan karena menurut mereka hilal harus
 terlihat di Indonesia sebelum dapat diputuskan masuk bulan Ramadan untuk wilayah
 Indonesia.
 
-![Ilustrasi pengamatan hilal](./hilal.jpeg)
+![Ilustrasi pengamatan hilal](./hilal.jpeg#wide)
 
 <!--truncate-->
 

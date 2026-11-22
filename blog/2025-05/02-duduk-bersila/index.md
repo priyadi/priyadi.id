@@ -17,7 +17,7 @@ duduk bersila dengan postur yang tertib. Jika *selonjoran*, kaki tidak dilipat,
 atau lutut dinaikkan, maka dianggap tidak sopan, dan akan ditegur atau bahkan
 mendapatkan hukuman.
 
-![Duduk Bersila](./duduk-bersila.jpeg)
+![Duduk Bersila](./duduk-bersila.jpeg#wide)
 
 <!-- truncate -->
 

@@ -13,7 +13,7 @@ socialcard:
 Mari kita bahas dampak dari ibadah kurban terhadap perubahan iklim, dan mengapa
 saya memutuskan untuk tidak lagi melakukan ibadah kurban.
 
-![Emisi metana](./ch4.jpeg)
+![Emisi metana](./ch4.jpeg#wide)
 
 <!-- truncate -->
 

@@ -16,7 +16,7 @@ atau merugikan. Tapi biasanya tidak demikian, mereka membuat model AI yang akan
 berusaha membuat pengguna puas, bagaimana pun caranya. *Guardrails* biasanya
 hanya diterapkan untuk hal-hal seperti pornografi, hak cipta, dan sebagainya.
 
-![Ilustrasi AI Penjilat](./penjilat.jpeg)
+![Ilustrasi AI Penjilat](./penjilat.jpeg#wide)
 
 :::info
 

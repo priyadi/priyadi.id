@@ -16,7 +16,7 @@ Polanya selalu sama: di awal penuh dengan euforia dan antusiasme, namun diakhiri
 dengan kekecewaan karena hasilnya sama sekali tidak sesuai dengan yang
 dijanjikan.
 
-![./bbm.jpeg](./bbm.jpeg)
+![./bbm.jpeg](./bbm.jpeg#wide)
 
 <!--truncate-->
 
