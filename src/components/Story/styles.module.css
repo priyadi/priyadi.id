@@ -62,10 +62,13 @@
   color: var(--c-ink);
 }
 
-/* The whole story is the link target, image included. */
+/* The whole story is the link target, image included. Raised, so that it
+   stays over an image that is itself positioned (`fit: contain`) and comes
+   later on screen, as in the lead beside the side stories. */
 .headline a::after {
   content: '';
   position: absolute;
+  z-index: 1;
   inset: 0;
 }
 
