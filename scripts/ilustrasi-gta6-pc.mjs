@@ -13,9 +13,10 @@
  * - pc-gta6.png, 16:9, the illustration in the post and its image on listing
  *   pages. The PC stands in the middle so that a 4:3 crop on listing pages
  *   keeps it whole; the HUD sits in the corners, where a crop may lose it.
- * - pc-gta6-socialcard.png, 4:3, the figure of the social card. The same
- *   scene cropped around the sun and the PC, with the HUD drawn larger so
- *   that it still reads at the size of a card in a feed.
+ * - pc-gta6-socialcard.png, 4:3, once the figure of the social card, kept as
+ *   an alternative to the cover collage of scripts/ilustrasi-gta6-sampul.mjs
+ *   that the card now uses. The same scene cropped around the sun and the
+ *   PC, with the HUD drawn larger so that it still reads at card size.
  *
  * MONEY is the amount on the counter: the price in the post of a PC that
  * plays it about as well as a console.
