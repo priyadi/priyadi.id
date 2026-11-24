@@ -5,7 +5,8 @@ authors: priyadi
 tags: [sejarah, politik]
 image: ./socialcard.png
 socialcard:
-  variant: pattern
+  variant: figure
+  image: ./ikan.png
 ---
 
 Selama lebih dari satu dekade, antara tahun 1984 sampai 1998, menonton film
@@ -15,6 +16,8 @@ Baru menggunakan film ini sebagai alat propaganda untuk melakukan glorifikasi
 terhadap penguasa saat itu, dan untuk menutupi kekejaman yang dilakukan oleh
 militer dan kelompok paramiliter pro-militer terhadap rakyat Indonesia yang
 terjadi pada akhir 1960-an dan awal 1970-an.
+
+![Ilustrasi: patung ikan mas raksasa dari beton yang lapuk di atas tiang-tiang di padang rumput, mulutnya terbuka ke jalan berkarpet merah tempat para penari berjajar, dengan badai datang di atas danau.](./ikan.png#wide)
 
 Walaupun sekarang kita tahu bahwa film tersebut adalah propaganda, proses
 *brainwashing* bertahun-tahun ternyata masih mempengaruhi perilaku kita sampai
