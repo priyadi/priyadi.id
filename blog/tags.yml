@@ -11,6 +11,11 @@ politik:
   permalink: /politik
   description: Politik, negara, dan kebijakan publik.
 
+sosial:
+  label: Sosial
+  permalink: /sosial
+  description: Isu sosial.
+
 agama:
   label: Agama
   permalink: /agama
