@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="id" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell | priyadi.id</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://priyadi.id/php2shell/"><meta data-rh="true" property="og:locale" content="id"><meta data-rh="true" name="docusaurus_locale" content="id"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="id"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell | priyadi.id"><meta data-rh="true" name="description" content="Penanganan masalah keamanan paling merepotkan seumur hidup saya."><meta data-rh="true" property="og:description" content="Penanganan masalah keamanan paling merepotkan seumur hidup saya."><meta data-rh="true" property="og:image" content="https://priyadi.id/assets/images/socialcard-b67dda3e696791db470a1bb281dca42f.png"><meta data-rh="true" name="twitter:image" content="https://priyadi.id/assets/images/socialcard-b67dda3e696791db470a1bb281dca42f.png"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2026-10-23T00:00:00.000Z"><meta data-rh="true" property="article:author" content="https://priyadi.id"><meta data-rh="true" property="article:tag" content="Teknologi Informasi"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://priyadi.id/php2shell/"><link data-rh="true" rel="alternate" href="https://priyadi.id/php2shell/" hreflang="id"><link data-rh="true" rel="alternate" href="https://priyadi.id/php2shell/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://priyadi.id/php2shell","mainEntityOfPage":"https://priyadi.id/php2shell","url":"https://priyadi.id/php2shell","headline":"Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell","name":"Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell","description":"Penanganan masalah keamanan paling merepotkan seumur hidup saya.","datePublished":"2026-10-23T00:00:00.000Z","author":{"@type":"Person","name":"Priyadi Iman Nurcahyo","url":"https://priyadi.id","image":"/img/priyadi.png"},"image":{"@type":"ImageObject","@id":"https://priyadi.id/assets/images/socialcard-b67dda3e696791db470a1bb281dca42f.png","url":"https://priyadi.id/assets/images/socialcard-b67dda3e696791db470a1bb281dca42f.png","contentUrl":"https://priyadi.id/assets/images/socialcard-b67dda3e696791db470a1bb281dca42f.png","caption":"title image for the blog post: Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell"},"keywords":[],"isPartOf":{"@type":"Blog","@id":"https://priyadi.id/","name":"Semua tulisan"}}</script><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="priyadi.id RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="priyadi.id Atom Feed"><link rel="stylesheet" href="/assets/css/styles.8a32b5d3.css">
+<script src="/assets/js/runtime~main.0baa7ab2.js" defer="defer"></script>
+<script src="/assets/js/main.995b8dc1.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><link rel="preload" as="image" href="/img/priyadi.png"><div role="region" aria-label="Lewati ke konten utama"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Lewati ke konten utama</a></div><header class="masthead_ikne"><div class="horizon_zLyI" aria-hidden="true"></div><div class="inner_pkbP"><a class="brand_SXL9" href="/"><img src="/img/logo.svg" alt="" width="36" height="36"><svg class="wordmark_mRPN" viewBox="9.34 -147.09 770.09 187.91" width="770" height="188" role="img" aria-label="priyadi.id"><path fill="currentColor" d="M9.34 40.82V-103.12H42.62V-89.67H43.04Q46.13 -94.91 50.51 -98.39Q54.88 -101.86 60.5 -103.62Q66.12 -105.38 72.76 -105.38Q85.86 -105.38 95.81 -98.56Q105.76 -91.75 111.4 -79.65Q117.04 -67.55 117.04 -51.71Q117.04 -35.45 111.51 -23.31Q105.98 -11.18 96 -4.46Q86.01 2.25 72.46 2.25Q65.67 2.25 60.09 0.23Q54.5 -1.78 50.26 -5.69Q46.02 -9.59 43.35 -15.33H43.01V40.82ZM63.02 -24.64Q69.26 -24.64 73.72 -27.88Q78.18 -31.13 80.6 -37.2Q83.02 -43.27 83.02 -51.71Q83.02 -60.18 80.6 -66.17Q78.18 -72.17 73.72 -75.41Q69.26 -78.66 63.02 -78.66Q56.71 -78.66 51.87 -75.32Q47.03 -71.98 44.34 -65.96Q41.64 -59.94 41.64 -51.71Q41.64 -43.5 44.34 -37.41Q47.03 -31.32 51.87 -27.98Q56.71 -24.64 63.02 -24.64ZM124.5 0V-103.12H157.1V-84.98H157.34Q160.17 -94.85 166.18 -99.17Q172.18 -103.5 182.59 -103.5Q185.28 -103.5 187.48 -103.45Q189.68 -103.41 191.7 -103.36V-75.62Q189.91 -75.7 186.01 -75.8Q182.11 -75.91 178.43 -75.91Q172.47 -75.91 167.88 -73.2Q163.29 -70.48 160.73 -65.33Q158.18 -60.17 158.18 -52.79V0ZM197.68 0V-103.12H231.35V0ZM214.44 -113.15Q206.34 -113.15 201.13 -117.97Q195.91 -122.79 195.91 -130.18Q195.91 -137.55 201.13 -142.32Q206.34 -147.09 214.4 -147.09Q222.52 -147.09 227.75 -142.33Q232.97 -137.57 232.97 -130.13Q232.97 -122.76 227.74 -117.95Q222.51 -113.15 214.44 -113.15ZM246.25 40.82V14.74H260.57Q264.09 14.74 266.13 13.76Q268.18 12.77 269.48 10.52Q270.79 8.27 272.01 4.49L273.74 -0.21L234.09 -103.12H269.28L284.5 -55.63Q287.55 -45.9 290.3 -36.07Q293.05 -26.23 295.71 -16.44H286.12Q288.64 -26.23 291.36 -36.11Q294.08 -45.98 297.19 -55.63L312.68 -103.12H347.5L302.98 14.54Q299.51 23.85 294.86 29.65Q290.22 35.45 283.86 38.13Q277.5 40.82 268.88 40.82Q263.37 40.82 257.57 40.82Q251.76 40.82 246.25 40.82ZM378.16 1.79Q367.84 1.79 359.88 -1.58Q351.92 -4.95 347.37 -11.75Q342.82 -18.54 342.82 -28.8Q342.82 -37.54 345.95 -43.44Q349.09 -49.34 354.6 -53.03Q360.11 -56.72 367.37 -58.64Q374.64 -60.56 382.8 -61.24Q392.07 -62.02 397.62 -62.96Q403.17 -63.9 405.6 -65.61Q408.03 -67.32 408.03 -70.41V-70.95Q408.03 -74.01 406.27 -76.32Q404.52 -78.62 401.32 -79.92Q398.12 -81.23 393.64 -81.23Q389.04 -81.23 385.6 -79.84Q382.16 -78.45 380.18 -75.87Q378.21 -73.29 377.82 -69.74H346.6Q347.39 -80.92 353.13 -88.89Q358.87 -96.86 369.37 -101.12Q379.88 -105.38 394.83 -105.38Q406.04 -105.38 414.72 -102.97Q423.41 -100.57 429.35 -95.93Q435.3 -91.29 438.33 -84.63Q441.36 -77.97 441.36 -69.46V0H408.48V-14.5H408.09Q405.04 -8.93 400.84 -5.32Q396.63 -1.71 391.04 0.04Q385.46 1.79 378.16 1.79ZM388.38 -20.26Q394 -20.26 398.53 -22.36Q403.06 -24.46 405.7 -28.25Q408.33 -32.03 408.33 -37.13V-46.46Q406.98 -45.88 405.13 -45.32Q403.29 -44.76 400.98 -44.25Q398.66 -43.74 395.91 -43.24Q393.16 -42.75 390.03 -42.23Q385.56 -41.53 382.09 -40.03Q378.63 -38.54 376.64 -36.14Q374.66 -33.75 374.66 -30.34Q374.66 -27.19 376.39 -24.91Q378.13 -22.63 381.2 -21.45Q384.28 -20.26 388.38 -20.26ZM493.39 2.25Q479.94 2.25 469.9 -4.46Q459.87 -11.18 454.34 -23.31Q448.81 -35.45 448.81 -51.71Q448.81 -67.55 454.45 -79.65Q460.09 -91.75 470.09 -98.56Q480.09 -105.38 493.09 -105.38Q499.83 -105.38 505.3 -103.62Q510.78 -101.86 515.13 -98.31Q519.48 -94.77 522.72 -89.23H522.84V-145.51H556.52V0H523.23V-15.92H523.11Q520.44 -9.89 516.07 -5.84Q511.7 -1.78 505.95 0.23Q500.2 2.25 493.39 2.25ZM502.83 -24.64Q509.21 -24.64 514.02 -27.98Q518.82 -31.32 521.52 -37.41Q524.21 -43.5 524.21 -51.71Q524.21 -59.94 521.52 -65.96Q518.82 -71.98 514.02 -75.32Q509.21 -78.66 502.83 -78.66Q496.69 -78.66 492.18 -75.41Q487.67 -72.17 485.25 -66.17Q482.83 -60.18 482.83 -51.71Q482.83 -43.27 485.25 -37.2Q487.67 -31.13 492.18 -27.88Q496.69 -24.64 502.83 -24.64ZM568.21 0V-103.12H601.89V0ZM584.98 -113.15Q576.88 -113.15 571.66 -117.97Q566.45 -122.79 566.45 -130.18Q566.45 -137.55 571.66 -142.32Q576.88 -147.09 584.93 -147.09Q593.06 -147.09 598.28 -142.33Q603.5 -137.57 603.5 -130.13Q603.5 -122.76 598.27 -117.95Q593.04 -113.15 584.98 -113.15Z"></path><path fill="var(--c-accent)" d="M629.38 1.5Q625.28 1.5 622.38 -1.4Q619.49 -4.3 619.49 -8.4Q619.49 -12.6 622.38 -15.45Q625.28 -18.29 629.38 -18.29Q633.58 -18.29 636.43 -15.45Q639.28 -12.6 639.28 -8.4Q639.28 -4.3 636.43 -1.4Q633.58 1.5 629.38 1.5ZM659.07 0V-103.12H671.64V0ZM665.37 -125.49Q661.61 -125.49 658.94 -128.16Q656.27 -130.83 656.27 -134.58Q656.27 -138.35 658.94 -141Q661.61 -143.65 665.34 -143.65Q669.13 -143.65 671.78 -141Q674.44 -138.34 674.44 -134.55Q674.44 -130.83 671.78 -128.16Q669.12 -125.49 665.37 -125.49ZM731.96 1.82Q718.74 1.82 708.59 -4.88Q698.43 -11.59 692.74 -23.62Q687.04 -35.64 687.04 -51.56Q687.04 -67.51 692.75 -79.54Q698.46 -91.57 708.62 -98.26Q718.78 -104.95 731.96 -104.95Q739.74 -104.95 746.58 -102.36Q753.41 -99.77 758.64 -95.02Q763.86 -90.27 766.69 -83.66H766.86V-145.51H779.42V0H767.12V-19.53H766.95Q763.76 -12.86 758.49 -8.06Q753.22 -3.26 746.48 -0.72Q739.74 1.82 731.96 1.82ZM733.65 -9.64Q744.01 -9.64 751.69 -14.81Q759.37 -19.99 763.57 -29.41Q767.77 -38.83 767.77 -51.56Q767.77 -64.36 763.57 -73.8Q759.37 -83.24 751.69 -88.4Q744.01 -93.55 733.65 -93.55Q723.89 -93.55 716.21 -88.66Q708.52 -83.76 704.13 -74.38Q699.73 -65.01 699.73 -51.56Q699.73 -38.18 704.13 -28.82Q708.52 -19.47 716.21 -14.55Q723.89 -9.64 733.65 -9.64Z"></path></svg></a><nav class="nav_FCQr" aria-label="Navigasi utama"><a href="/tags/">Topik</a><a href="/archive/">Arsip</a><a href="/rss.xml" class="optional_j5ee">RSS</a></nav><div class="tools_eJv_"><div class="navbar__search"><span aria-label="Buka kotak pencarian" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Memuat pencarian…" aria-label="Cari tulisan" class="navbar__search-input search-bar" disabled=""></div><div class="toggle_vylO"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="ikut perangkat" aria-label="Ganti tampilan: terang, gelap, atau ikut perangkat (sekarang ikut perangkat)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div></div></div></header><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><main class="page_YtqF"><div class="columns"></div><article><header class="columns header_SS_6"><p class="kicker_Ihjl kicker_okqr"><a class="topic_Rp6f" href="/tags/teknologi-informasi/">Teknologi Informasi</a></p><h1 class="headline_uYMw">Cerita Di Balik Layar Penanganan Celah Keamanan PHP2Shell</h1><p class="dek_z7xA">Penanganan masalah keamanan paling merepotkan seumur hidup saya.</p><div class="byline_haAF"><img class="avatar_Sim6" src="/img/priyadi.png" alt="" width="44" height="44"><div><p class="authors_hW1g">Oleh<!-- --> <a href="/authors/priyadi/">Priyadi Iman Nurcahyo</a></p><p class="dateline__EH7"><time datetime="2026-10-23T00:00:00.000Z">23 Oktober 2026</time><span>10<!-- --> menit baca</span></p></div></div><details class="details_lb9f disclosure_w79g toc_jJZl" data-collapsed="true"><summary>Daftar isi</summary><div><div class="collapsibleContent_i85q"><ul><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-0233-wib">Tanggal 21 Oktober 2026, 02:33 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1100-wib">Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1400-wib">Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1530-wib">Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1600-wib">Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1700-wib">Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1800-wib">Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-pukul-2100-wib">Tanggal 21 Oktober 2026, pukul 21:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-2200-wib">Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-2300-wib">Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-0000-wib">Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-0100-wib">Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-1000-wib">Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-2000-wib">Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB</a></li></ul></div></div></details></header><div id="__blog-post-container" class="columns markdown prose"><p>Pada tanggal 21 Oktober 2026, grup PHP mengumumkan adanya celah keamanan kritis
+yang dikenal dengan sebutan PHP2Shell. Celah ini memungkinkan penyerang
+menjalankan kode pada situs web yang menggunakan bahasa pemrograman PHP.</p>
+<p>Saya banyak berurusan dengan PHP. Kadang saya menjadi arsitek, kadang saya
+<em>programmer</em>, kadang saya <em>system administrator</em>, kadang <em>security auditor</em>. Jadi saya
+terlibat dengan sangat banyak aplikasi PHP, baik dari sisi pengembangan maupun
+pengelolaannya. Berikut adalah cerita di balik layar penanganan celah keamanan
+PHP2Shell pada tanggal 21 Oktober 2026 yang lalu.</p>
+<p><img decoding="async" loading="lazy" alt="Ilustrasi" src="/assets/images/ilustrasi-07600de182932281d413540259a0f3ea.jpg#wide" width="1920" height="1072" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-0233-wib">Tanggal 21 Oktober 2026, 02:33 WIB<a href="#tanggal-21-oktober-2026-0233-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, 02:33 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, 02:33 WIB" translate="no">​</a></h2>
+<p>Grup PHP mengumumkan ditemukannya celah keamanan kritis yang dikenal dengan
+sebutan PHP2Shell. Mereka menjadwalkan bahwa rilis akan dilakukan pada pukul
+21.00 WIB, pada hari itu juga (zona waktu WIB). Dengan kata lain, hanya ada
+waktu kurang lebih 18 jam untuk melakukan persiapan sebelum mereka melakukan
+rilis tersebut.</p>
+<p><img decoding="async" loading="lazy" alt="Upcoming Critical PHP Security Release" src="/assets/images/upcoming-6de8fa80765e5e345ef9f7b1c9e0c1d7.png" width="707" height="501" class="img_ev3q"></p>
+<p>Dalam dunia perangkat lunak, prosedur tersebut dinamakan &quot;pengumuman keamanan
+terkoordinasi&quot;, atau <a href="https://en.wikipedia.org/wiki/Coordinated_vulnerability_disclosure" target="_blank" rel="noopener noreferrer" class=""><em>coordinated vulnerability
+disclosure</em></a>
+(CVD). Tujuannya adalah memberikan waktu bagi pengembang, vendor, distributor,
+dan pihak terkait lainnya untuk menyiapkan perbaikan sebelum celah keamanan
+tersebut diumumkan secara publik.</p>
+<p>Biasanya CVD dijadwalkan dengan rentang waktu cukup lama, misalnya dua minggu
+atau lebih, untuk memberikan cukup waktu bagi semua pihak terkait menyiapkan
+perbaikan dan mitigasi sebelum celah keamanan diumumkan secara publik. Namun,
+untuk kasus ini, mereka hanya memberi waktu kurang dari satu hari, mungkin
+karena sifat celah keamanan ini sangat kritis dan ada potensi ada pihak yang
+akan membocorkan celah keamanan ini sebelum perbaikan tersedia.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1100-wib">Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-1100-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB" translate="no">​</a></h2>
+<p>Saya baru mendapatkan kabar tentang celah keamanan PHP2Shell ini. Waktu yang
+tersisa sebelum rilis resmi hanya sekitar 10 jam. Dari spekulasi yang beredar di
+Internet, celah keamanan ini terkait dengan fitur <em>upload progress</em>, dan
+mitigasi dapat dilakukan dengan menonaktifkan fitur <em>upload progress</em> sementara
+hingga perbaikan resmi tersedia.</p>
+<p>Dengan demikian, saya menetapkan langkah mitigasi adalah dengan menonaktifkan fitur <em>upload progress</em>
+dengan menggunakan konfigurasi sebagai berikut.</p>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockTitle_OeMC">php.ini</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">session.upload_progress.enabled = 0</span><br></div></code></pre></div></div>
+<p>Saya buat <em>script</em> untuk secara otomatis menerapkan perubahan konfigurasi tersebut
+pada semua file <code>php.ini</code> yang ada di server.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1400-wib">Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-1400-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB" translate="no">​</a></h2>
+<p>Rekan memberikan informasi bahwa rencana mitigasi yang saya rencanakan tidaklah
+cukup untuk melindungi server dari potensi eksploitasi celah keamanan PHP2Shell.</p>
+<p><img decoding="async" loading="lazy" alt="Pernyataan @Girgias@phpc.social" src="/assets/images/girgias-2c02714309b28b49cb16a801f25fec87.png" width="628" height="237" class="img_ev3q"></p>
+<p>Baiklah, artinya ini sangat serius. Jika satu-satunya jalan adalah <em>update</em>,
+maka untuk memastikan tidak ada masalah, akan ada <em>downtime</em> antara beberapa
+menit sampai dengan beberapa jam setelah pukul 21.00 WIB nanti.</p>
+<p>Dua jam ke depan dihabiskan untuk menghubungi <em>stakeholder</em> dan pihak terkait
+lainnya, membuat pengumuman, membuat daftar sistem yang akan ditangani, dan
+memastikan semua sistem tersebut dapat diakses.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Kenapa kok mendadak? Kenapa kami tidak diberi tahu dari beberapa hari lalu?</strong></em></p><p>A: Bukan saya yang membuat jadwal ini. Keputusan ini diambil oleh Grup PHP. Saya
+hanya melakukan eksekusi sesuai jadwal tersebut. Bersyukurlah bahwa jadwal yang
+diberikan sangat menyenangkan untuk orang Indonesia. Di negara lain, jadwal
+bersinggungan dengan jam sibuk mereka, dan akan terjadi gangguan yang jauh lebih
+besar.</p><p>Jika anda tidak bersedia untuk melakukan <em>update</em> sesuai jadwal yang ditentukan,
+maka saya tidak bertanggung jawab atas konsekuensi yang mungkin timbul.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1530-wib">Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-1530-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB" translate="no">​</a></h2>
+<p>Rekan mengabarkan bahwa ada eksploit yang sudah bocor ke publik. Saya coba
+eksploitnya ke beberapa sistem yang saya tangani, dan tidak berhasil. Saya
+putuskan untuk tetap melanjutkan rencana <em>update</em> sesuai jadwal yang telah
+ditentukan.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1600-wib">Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-1600-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB" translate="no">​</a></h2>
+<p>Merumuskan rencana eksekusi, garis besarnya adalah:</p>
+<ol>
+<li class="">Pada pukul 21:00 WIB, matikan semua layanan PHP.</li>
+<li class="">Lakukan <em>update</em>.</li>
+<li class="">Nyalakan kembali semua layanan PHP setelah <em>update</em> selesai.</li>
+<li class="">Verifikasi layanan sudah normal.</li>
+<li class="">Lakukan <em>scan</em> untuk memastikan celah keamanan telah diperbaiki.</li>
+</ol>
+<p>Garis besarnya sederhana, tetapi di lapangan menjadi sangat rumit, terutama
+<em>point</em> nomor 2. Untuk kasus saya:</p>
+<ul>
+<li class="">Ada beberapa arsitektur: <em>distro-native</em>, <em>shared hosting</em>, <em>container</em>.</li>
+<li class="">Ada banyak versi <em>distro</em>: EL6, EL7, EL8, EL9, EL10.</li>
+<li class="">Ada beberapa sumber paket: <em>distro</em>, pihak ketiga, dan buatan sendiri.</li>
+<li class="">Ada banyak versi PHP, mulai dari 5.2 sampai 8.6.</li>
+<li class="">PHP hanya memberi <em>update</em> untuk versi 8.2 ke atas, ada banyak kasus saya harus
+melakukan <em>backport</em> sendiri.</li>
+</ul>
+<p>Untuk RPM, saya melakukan gladi resik untuk rekompilasi dari SRPMS menjadi RPMS
+untuk memastikan semua paket dapat dikompilasi dengan sukses dan siap digunakan
+setelah <em>update</em>. Proses rekompilasi untuk satu paket membutuhkan waktu sekitar
+40 menit.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1700-wib">Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-1700-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB" translate="no">​</a></h2>
+<p>Mendapat kabar bahwa Remi Collet ternyata sedang libur sejak tanggal 16 Oktober.
+Remi adalah pengelola <a href="https://rpms.remirepo.net/" target="_blank" rel="noopener noreferrer" class="">paket RPM untuk PHP</a> yang
+sangat populer di kalangan pengguna distribusi Linux berbasis Red Hat. Paket RPM
+dari Remi saya gunakan untuk mengelola instalasi PHP di berbagai sistem yang
+saya tangani.</p>
+<p><img decoding="async" loading="lazy" alt="Remi Collet" src="/assets/images/remi-96d4eca63454ed09f0d63ec972a39e19.png" width="646" height="276" class="img_ev3q"></p>
+<p>Dengan demikian kita harus pindah ke <em>plan B</em>. Agar sistem yang menggunakan
+Remirepo tetap mendapat <em>update</em>, saya akan buat RPMnya sendiri dari SRPMS-nya.
+Semua SRPMS terkait langsung saya unduh. Lalu saya buat beberapa <em>instance</em> untuk
+untuk versi <em>distro</em> yang diperlukan, dan memastikan semua bisa melakukan
+kompilasi dari <code>src.rpm</code> menjadi RPM dengan sukses.</p>
+<p><img decoding="async" loading="lazy" alt="Infrastructure" src="/assets/images/infrastructure-61336fc8d4e30a95901ecdd65babb52e.png" width="770" height="978" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-1800-wib">Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-1800-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB" translate="no">​</a></h2>
+<p>Tidur.</p>
+<p>Ada banyak masalah terjadi karena programmer atau sistem admistrator kurang
+tidur. Dan banyak teman-teman yang meremehkan hal ini. Sebelum melakukan
+pekerjaan yang kompleks dan kritis, pastikan tubuh dan pikiran dalam kondisi
+prima.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-pukul-2100-wib">Tanggal 21 Oktober 2026, pukul 21:00 WIB<a href="#tanggal-21-oktober-2026-pukul-2100-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, pukul 21:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, pukul 21:00 WIB" translate="no">​</a></h2>
+<p>Eksekusi rencana dimulai. Semua layanan PHP dimatikan. Semua <em>container</em> yang
+menjalankan PHP dimatikan. Untuk <em>host deployment</em>, strateginya adalah mematikan
+semua <em>binary</em> PHP dengan <code>chmod 0</code>. Jika sudah ada <em>update</em>, maka <em>binary</em> akan
+otomatis memiliki izin yang sesuai setelah <em>update</em> selesai.</p>
+<p>Saya tugaskan AI untuk melakukan hal-hal berikut ini:</p>
+<ol>
+<li class="">Memantau <a href="https://hub.docker.com/_/php" target="_blank" rel="noopener noreferrer" class=""><em>image</em> resmi Docker</a>, dan melaporkan
+jika sudah ada rilis versi baru dari <em>image</em> PHP.</li>
+<li class="">Melakukan <em>backport</em> <em>patch</em> untuk semua versi PHP di bawah 8.2, mulai dari 5.2
+hingga 8.1.</li>
+<li class="">Memantau apakah RedHat sudah merilis <em>update</em> untuk PHP. Walaupun saya jarang
+menggunakan paket resmi RHEL, <em>patch</em> yang mereka rilis mungkin akan
+bermanfaat untuk tugas nomor 2.</li>
+<li class="">Melakukan kompilasi semua SRPMS yang sudah ada <em>update</em>-nya, baik yang resmi,
+dari pemaket pihak ketiga (RedHat), atau hasil <em>backport</em> oleh AI di langkah
+nomor 2. Yang disukai tentunya adalah <em>update</em> resmi, lalu <em>patch</em> dari vendor
+terkemuka seperti RedHat, <em>patch</em> pihak ketiga dari komunitas, setelah itu baru
+<em>patch</em> hasil <em>backport</em> oleh AI.</li>
+</ol>
+<p>Untuk RPM, setiap kali kompilasi berhasil, hasilnya dapat langsung di-<em>push</em> ke
+repositori, bisa langsung diterapkan untuk <em>update</em> sistem yang membutuhkan, dan
+akan langsung otomatis kembali berfungsi.</p>
+<p>Untuk <em>image container</em>, saya memutuskan untuk menunggu <em>update</em> resmi dari Docker
+Hub. Sementara itu sistem tetap <em>offline</em> sampai <em>update</em> dirilis.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-2200-wib">Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-2200-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB" translate="no">​</a></h2>
+<p>Mendapat kabar bahwa Remi ternyata berhasil melakukan <em>update</em> di tengah
+liburannya. Saat ini sedang dalam proses <em>signing</em> yang memakan waktu yang lama
+karena jumlah paket yang sangat banyak.</p>
+<p><img decoding="async" loading="lazy" alt="Remi Update" src="/assets/images/phpfremi-2ce0861e76e18fafb05c8a48be78c989.png" width="641" height="262" class="img_ev3q"></p>
+<p>Saya langsung instruksikan agen AI untuk berhenti melakukan rekompilasi untuk
+paket-paket Remi, dan beralih fokus ke paket-paket non-Remi atau paket Remi yang
+tidak lagi mendapatkan <em>update</em>.</p>
+<p>Setelah paket-paket baru dipublikasikan, masalah belum selesai. Saya masih harus
+menunggu paket selesai di-<em>push</em> ke <em>mirror</em>. Saya tugaskan AI untuk mencari <em>mirror</em>
+yang sudah mendapatkan paket-paket terbaru, lalu saya unduh manual, dan
+melakukan instalasi ke semua server secara manual, tanpa bantuan <code>dnf</code> atau
+<code>yum</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-21-oktober-2026-sekitar-pukul-2300-wib">Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB<a href="#tanggal-21-oktober-2026-sekitar-pukul-2300-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB" title="Taut langsung ke Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB" translate="no">​</a></h2>
+<p>Docker Hub baru mempublikasikan <em>update</em> untuk <em>image</em> PHP dua jam setelah
+pengumuman resmi PHP. Sekarang waktunya untuk menangani proyek dengan arsitektur
+<em>container</em>.</p>
+<p>Bagi proyek yang menggunakan <em>image</em> resmi apa adanya, yang perlu dilakukan
+hanyalah <code>docker pull</code> dan kembali menjalankan <em>container</em> dengan <em>image</em> yang sudah
+diperbarui. Tapi yang bisa begini mungkin hanya proyek yang hanya membutuhkan
+MySQL/MariaDB.</p>
+<p>Masalah terjadi untuk <em>image custom</em>: infrastruktur PECL mati, kemungkinan karena
+ada banyak orang lain di luar sana yang melakukan hal yang sama. Umumnya terjadi
+karena <em>image</em> membutuhkan ekstensi yang bukan bagian dari PHP resmi. Untuk kasus
+saya, extensi yang terkait di antaranya adalah <code>redis</code>, <code>imagick</code>, dan <code>amqp</code>.</p>
+<p>Karena PECL mati, proses pembuatan <em>image</em> tidak bisa diselesaikan. Solusi yang
+saya lakukan adalah mengambil <em>source code</em> ekstensi yang dibutuhkan secara
+langsung dari GitHub.</p>
+<p>Yang merepotkan adalah proyek yang memiliki <code>Dockerfile</code> untuk melakukan
+instalasi ekstensi, apalagi jika posisi saya hanya <em>sysadmin</em>, bukan pengembang.
+Untuk memperbaiki celah keamanan, mau tidak mau harus memodifikasi <code>Dockerfile</code>,
+yang sebenarnya adalah tanggung jawab pengembang proyek, bukan <em>sysadmin</em>.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Pengembang proyek? Jangan gunakan <code>Dockerfile</code> atau <code>Containerfile</code> untuk
+melakukan kustomisasi PHP. Buat proyek terpisah untuk membuat <em>image</em>-nya, lalu
+simpan hasilnya di <em>container registry</em>. Kemudian baru gunakan <em>image</em> tersebut di
+<code>Dockerfile</code>/<code>Containerfile</code> atau <code>compose.yaml</code>.</p><p>Jaman sekarang yang paling mudah (dan gratis) adalah menggunakan GitHub, dengan
+<em>container registry</em> di <code>ghcr.io</code>.</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Konsekuensi dari metode pengembangan DevOps adalah bahwa tanggung jawab untuk
+<em>update</em> kini berada di tangan pengembang, bukan tim infrastruktur. Ini yang
+tidak dipahami oleh banyak <em>stakeholders</em>.</p><p>Seorang <em>sysadmin</em> bisa saja melakukan <em>update</em>, tetapi akan menyentuh kode yang
+dibuat pengembang, dan belum tentu sesuai dengan prosedur yang seharusnya
+diikuti.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-0000-wib">Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB<a href="#tanggal-22-oktober-2026-sekitar-pukul-0000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB" translate="no">​</a></h2>
+<p>Semua proyek berbasis <em>container</em> yang saya termasuk pengembangnya sudah
+menggunakan <em>image</em> yang diperbaharui dan sudah kembali berjalan normal. Lama
+<em>downtime</em> akibat masalah ini adalah 2-3 jam.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-0100-wib">Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB<a href="#tanggal-22-oktober-2026-sekitar-pukul-0100-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB" translate="no">​</a></h2>
+<p>Semua server <em>shared hosting</em> dan proyek dengan arsitektur <em>distro-native</em>
+di-<em>update</em> secara bertahap sejak awal pengumuman resmi PHP. Dan semua selesai
+pada pukul 01:00 WIB.</p>
+<p>Yang tidak dapat di-<em>update</em> adalah versi PHP sangat lama yaitu 5.2 dan 5.3.
+Penggunanya saya pindahkan ke versi 5.6 atau 7.4. Jika ada hal yang tidak
+kompatibel, saya tawarkan untuk diperbaiki dengan AI. Jika mustahil untuk
+<em>upgrade</em>, misalnya karena <em>source code</em> yang dienkripsi, maka saya tawarkan untuk
+pindah ke arsitektur <em>container</em>.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Kenapa kok masih menggunakan versi PHP lama?</strong></em></p><p>A:</p><ul>
+<li class="">Untuk proyek yang saat ini aktif saya tangani semuanya sudah menggunakan versi
+PHP 8.5.</li>
+<li class="">Untuk proyek orang lain yang saya hanya <em>sysadmin</em>-nya, hal tersebut bukan
+wewenang saya. Saya hanya bisa memberikan rekomendasi, tetapi keputusan ada di
+tangan <em>stakeholder</em>.</li>
+<li class="">Ada banyak proyek PHP yang kontraknya tidak menyertakan <em>source code</em>, dan
+<em>deliverable</em>-nya adalah kode yang dienkripsi, misalnya menggunakan ionCube
+atau Zend Guard.</li>
+</ul></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-1000-wib">Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB<a href="#tanggal-22-oktober-2026-sekitar-pukul-1000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB" translate="no">​</a></h2>
+<p>Mulai ada reaksi dari berbagai pihak. Yang paling bising adalah <em>pentester</em>.
+Biasanya mereka melakukan <em>scanning</em> terhadap situs web yang diuji. Lalu jika
+<em>output</em>-nya memiliki <em>header</em> <code>X-Powered-By: PHP/8.1.34</code>, maka mereka keliru
+menyimpulkan bahwa situs web tersebut rentan terhadap celah keamanan PHP2Shell.</p>
+<p>Grup PHP merilis PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 untuk menutup celah
+keamanan PHP2Shell. Lalu mereka simpulkan bahwa versi di bawah itu pasti rentan
+terhadap celah keamanan tersebut. Benarkah? Keliru, karena kita telah melakukan
+<a href="https://en.wikipedia.org/wiki/Backporting" target="_blank" rel="noopener noreferrer" class=""><em>backport</em></a> <em>patch</em> untuk menutup
+celah keamanan tersebut pada versi PHP yang lebih lama.</p>
+<p>Solusi saya adalah hanya dengan mematikan <em>header</em> <code>X-Powered-By</code> dengan
+menggunakan konfigurasi:</p>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">expose_php = Off</span><br></div></code></pre></div></div>
+<p>Hal ini tidak akan mengubah apapun dari sisi keamanan. Tetapi jika sang &quot;ahli
+keamanan digital&quot; mengklik tombol &quot;Scan&quot; pada <em>software scanner</em> yang mereka
+gunakan, <em>software</em> tidak akan menandai situs kita sebagai rentan terhadap celah
+keamanan PHP2Shell.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>FAQ</div><div class="admonitionContent_BuS1"><p><em><strong>Q: Mengapa melakukan backport, mengapa tidak gunakan versi lebih baru saja?</strong></em></p><p>A: Menggunakan versi lebih baru tidak selalu memungkinkan. Aplikasi belum tentu
+kompatibel dengan versi terbaru, dan membutuhkan pengujian untuk memastikan
+aplikasi kompatibel sebelum kita dapat melakukan <em>upgrade</em> ke versi PHP yang lebih
+baru.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tanggal-22-oktober-2026-sekitar-pukul-2000-wib">Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB<a href="#tanggal-22-oktober-2026-sekitar-pukul-2000-wib" class="hash-link" aria-label="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" title="Taut langsung ke Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB" translate="no">​</a></h2>
+<p>Melakukan scanning terhadap situs web yang saya tangani dengan
+<a href="https://github.com/assetnote/php2shell-scanner" target="_blank" rel="noopener noreferrer" class="">php2shell-scanner</a>. Hal ini
+untuk memastikan bahwa celah keamanan PHP2Shell telah berhasil ditutup.</p></div><nav class="toc_Doc5" aria-label="Daftar isi" inert=""><p class="title_z7yS" aria-hidden="true">Daftar isi</p><ul id="_R_3ldeh_" class="list_hBku"><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-0233-wib">Tanggal 21 Oktober 2026, 02:33 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1100-wib">Tanggal 21 Oktober 2026, sekitar pukul 11:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1400-wib">Tanggal 21 Oktober 2026, sekitar pukul 14:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1530-wib">Tanggal 21 Oktober 2026, sekitar pukul 15:30 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1600-wib">Tanggal 21 Oktober 2026, sekitar pukul 16:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1700-wib">Tanggal 21 Oktober 2026, sekitar pukul 17:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-1800-wib">Tanggal 21 Oktober 2026, sekitar pukul 18:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-pukul-2100-wib">Tanggal 21 Oktober 2026, pukul 21:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-2200-wib">Tanggal 21 Oktober 2026, sekitar pukul 22:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-21-oktober-2026-sekitar-pukul-2300-wib">Tanggal 21 Oktober 2026, sekitar pukul 23:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-0000-wib">Tanggal 22 Oktober 2026, sekitar pukul 00:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-0100-wib">Tanggal 22 Oktober 2026, sekitar pukul 01:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-1000-wib">Tanggal 22 Oktober 2026, sekitar pukul 10:00 WIB</a></li><li style="padding-left:0rem"><a href="#tanggal-22-oktober-2026-sekitar-pukul-2000-wib">Tanggal 22 Oktober 2026, sekitar pukul 20:00 WIB</a></li></ul><button type="button" class="button_z_Ze" aria-expanded="false" aria-controls="_R_3ldeh_"><svg class="icon_dfqV" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4h11M2.5 8h11M2.5 12h7"></path></svg><span class="buttonLabel_J3MB">Daftar isi</span></button></nav><footer class="columns footer_DzJS"><b>Tag:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" title="Perangkat lunak, internet, keamanan informasi, dan kecerdasan buatan." class="tag_zVej tagRegular_sFm0" href="/tags/teknologi-informasi/">Teknologi Informasi</a></li></ul><div><a href="https://github.com/priyadi/priyadi.id/edit/main/blog/2026-10/23-php2shell/index.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Sunting halaman ini</a></div></footer></article><div class="columns after_rX6H"><nav class="adjacent_Gey3" aria-label="Tulisan lain"><a href="/bi-checking-idebku-slik/"><span>Tulisan sebelumnya</span>Mendapatkan Data BI-Checking/SLIK Pihak Ketiga Melalui idebku</a><a class="newer_ZP5x" href="/el-sayed-mamdani-ahok/"><span>Tulisan berikutnya</span>El-Sayed dan Mamdani Adalah Ahok-nya Amerika Serikat</a></nav><div></div></div></main></div><footer class="footer_xBL4"><div class="inner_gbZ8"><p class="copyright_g70o">Copyright © 2026 Priyadi Iman Nurcahyo</p><ul class="links_t79R"><li><a href="/tags/">Topik</a></li><li><a href="/archive/">Arsip</a></li><li><a href="/kebijakan-ai/">Kebijakan AI</a></li><li><a href="/rss.xml">RSS</a></li><li><a href="/atom.xml">Atom</a></li><li><a href="https://github.com/priyadi">GitHub</a></li><li><a href="https://bsky.app/profile/priyadi.id">Bluesky</a></li></ul></div></footer></div>
+</body>
+</html>
