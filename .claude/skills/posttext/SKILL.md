@@ -26,10 +26,10 @@ part of its name. Without one, take the post this branch changes
 ask which post. The author switches `draft/*` branches during a session, so
 check the branch and that the post exists before you start.
 
-The post's address is `https://priyadi.id/YYYY/MM/DD/slug/`, from its directory:
-`blog/2026-11/14-datacenter-ai-di-orbit` is
-`https://priyadi.id/2026/11/14/datacenter-ai-di-orbit/`. A `slug:` in the front
-matter overrides the last part.
+The post's address is `https://priyadi.id/slug/`, from its directory without
+the date: `blog/2026-11/14-datacenter-ai-di-orbit` is
+`https://priyadi.id/datacenter-ai-di-orbit/`. A `slug:` in the front matter
+replaces it.
 
 ## 2. Run the script
 
@@ -116,7 +116,7 @@ the post instead; on one with threads, it is the first reply.
 
 ———
 
-Versi interaktif, dengan angka yang bisa diubah: https://priyadi.id/2026/11/14/datacenter-ai-di-orbit/
+Versi interaktif, dengan angka yang bisa diubah: https://priyadi.id/datacenter-ai-di-orbit/
 
 [1] …
 [2] …

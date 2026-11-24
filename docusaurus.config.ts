@@ -5,6 +5,10 @@ import postCard from './src/remark/postCard';
 import inlineMarkdownPlugin, {
   processBlogPosts,
 } from './src/plugins/inlineMarkdown';
+import undatedUrlsPlugin, {
+  createRedirects,
+  undateBlogPosts,
+} from './src/plugins/undatedUrls';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -31,6 +35,8 @@ const config: Config = {
   projectName: 'priyadi.id', // Usually your repo name.
 
   onBrokenLinks: 'throw',
+  // Posts share the root with the site's pages (see src/plugins/undatedUrls).
+  onDuplicateRoutes: 'throw',
 
   markdown: {
     hooks: {
@@ -73,9 +79,11 @@ const config: Config = {
           postsPerPage: 14,
           blogSidebarCount: 0,
           beforeDefaultRemarkPlugins: [postCard],
-          // Strips inline markdown from titles and descriptions in metadata;
-          // see src/plugins/inlineMarkdown.ts.
-          processBlogPosts,
+          // Strips inline markdown from titles and descriptions in metadata
+          // (see src/plugins/inlineMarkdown.ts) and drops the date from the
+          // permalinks (see src/plugins/undatedUrls.ts).
+          processBlogPosts: async ({blogPosts}) =>
+            undateBlogPosts(await processBlogPosts({blogPosts})),
         },
         theme: {
           customCss: [
@@ -118,7 +126,13 @@ const config: Config = {
 
   clientModules: [require.resolve('./src/clientModules/instantPageScroll.ts')],
 
-  plugins: [require.resolve('docusaurus-lunr-search'), inlineMarkdownPlugin]
+  plugins: [
+    require.resolve('docusaurus-lunr-search'),
+    inlineMarkdownPlugin,
+    undatedUrlsPlugin,
+    // A redirect page at the old, dated address of each post.
+    ['@docusaurus/plugin-client-redirects', {createRedirects}],
+  ],
 };
 
 export default config;
