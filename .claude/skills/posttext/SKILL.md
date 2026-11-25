@@ -28,8 +28,8 @@ check the branch and that the post exists before you start.
 
 The post's address is `https://priyadi.id/slug/`, from its directory without
 the date: `blog/2026-11/14-datacenter-ai-di-orbit` is
-`https://priyadi.id/datacenter-ai-di-orbit/`. A `slug:` in the front matter
-replaces it.
+`https://priyadi.id/datacenter-ai-di-orbit/`. A `permalink:` or `slug:` in
+the front matter replaces it.
 
 ## 2. Run the script
 

@@ -12,8 +12,9 @@
  * A post without the block is an error here, and `make` leaves it alone, so
  * it can keep a card made by hand.
  *
- * Every card has the masthead, the date, the headline and the hill of the
- * site's logo. What fills the right-hand side is up to the post:
+ * Every card has the masthead (the wordmark with the post's address after it),
+ * the date, the headline and the hill of the site's logo. What fills the
+ * right-hand side is up to the post:
  *
  *     socialcard:
  *       variant: pattern      # default: a halftone sunset, unique per post
@@ -342,12 +343,13 @@ function wordmark() {
   if (paths.length !== 2) {
     throw new Error('Wordmark.tsx no longer has the two paths expected here');
   }
-  const [, , width, height] = viewBox.split(' ').map(Number);
+  const [, minY, width, height] = viewBox.split(' ').map(Number);
   const svg =
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}">` +
     `<path fill="${C.ink}" d="${paths[0][1]}"/>` +
     `<path fill="${C.accent}" d="${paths[1][1]}"/></svg>`;
-  return {uri: svgUri(svg), ratio: width / height};
+  // The glyphs sit on y = 0.
+  return {uri: svgUri(svg), ratio: width / height, baseline: -minY / height};
 }
 
 /**
@@ -589,8 +591,56 @@ async function drawCard(post) {
     }
   }
 
+  // Masthead: the wordmark, the post's path after it, so that a reader can
+  // type in the address, and the date. The path is set smaller and lighter
+  // than the wordmark, on its baseline, and shrinks to stay on one line.
   const mark = wordmark();
   const markH = 34;
+  const INTER_BASELINE = 0.863; // from the top of a line of Inter, line-height 1
+  const masthead = (pathSize) =>
+    box(
+      {width: W - 2 * MARGIN, alignItems: 'flex-start'},
+      image(mark.uri, {
+        width: Math.round(markH * mark.ratio),
+        height: markH,
+        flexShrink: 0,
+      }),
+      box(
+        {
+          display: 'block',
+          flexShrink: 1,
+          minWidth: 0,
+          marginTop: markH * mark.baseline - pathSize * INTER_BASELINE,
+          marginLeft: 5,
+          marginRight: 40,
+          fontFamily: 'Inter',
+          fontWeight: 400,
+          fontSize: pathSize,
+          lineHeight: 1,
+          wordBreak: 'break-all',
+          color: C.soft,
+        },
+        `/${post.permalink}`,
+      ),
+      box(
+        {
+          flexShrink: 0,
+          marginLeft: 'auto',
+          height: markH,
+          alignItems: 'center',
+          fontFamily: 'JetBrains Mono',
+          fontWeight: 500,
+          fontSize: 19,
+          letterSpacing: '0.09em',
+          color: C.soft,
+        },
+        [card.kicker, post.date].filter(Boolean).join('  ·  ').toUpperCase(),
+      ),
+    );
+  let pathSize;
+  for (pathSize of [24, 22, 20, 18]) {
+    if ((await heightOf(masthead(pathSize), W - 2 * MARGIN)) <= markH) break;
+  }
 
   const tree = box(
     {
@@ -615,28 +665,9 @@ async function drawCard(post) {
       height: BAR,
       backgroundImage: sunsetCss(),
     }),
-    // Masthead
     box(
-      {
-        position: 'absolute',
-        left: MARGIN,
-        top: 52,
-        width: W - 2 * MARGIN,
-        height: markH,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      },
-      image(mark.uri, {width: Math.round(markH * mark.ratio), height: markH}),
-      box(
-        {
-          fontFamily: 'JetBrains Mono',
-          fontWeight: 500,
-          fontSize: 19,
-          letterSpacing: '0.09em',
-          color: C.soft,
-        },
-        [card.kicker, post.date].filter(Boolean).join('  ·  ').toUpperCase(),
-      ),
+      {position: 'absolute', left: MARGIN, top: 52, height: markH},
+      masthead(pathSize),
     ),
     // Body
     box(
@@ -691,6 +722,16 @@ function readPost(dir) {
     ? new Date(meta.date)
     : fromPath && new Date(Date.UTC(+fromPath[1], fromPath[2] - 1, +fromPath[3]));
 
+  // The address of the post, as src/plugins/undatedUrls.ts makes it: the
+  // front matter `slug` or `permalink`, or else the folder name without its
+  // date.
+  const chosen = meta.slug ?? meta.permalink;
+  const permalink = chosen
+    ? String(chosen).replace(/^\/+|\/+$/g, '')
+    : fromPath
+      ? day.replace(/^\d{1,2}-?/, '')
+      : `${month}/${day}`;
+
   const description =
     card.description === false ? null : card.description ?? meta.description;
 
@@ -698,6 +739,7 @@ function readPost(dir) {
     dir,
     style: meta.style,
     slug: `${month}-${day}`,
+    permalink,
     title: richWords(String(card.title ?? meta.title ?? '')),
     description: description ? richWords(String(description)) : null,
     date: date ? MONTHS.format(date) : null,

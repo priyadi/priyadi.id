@@ -1,6 +1,7 @@
 ---
 title: Negara Adalah Alat Politik, Bukan Tujuan Akhir Itu Sendiri
 description: Simbol negara hanyalah alat. Yang penting adalah kebebasan, keadilan, dan persamaan hak yang seharusnya diwakilinya.
+permalink: negara-alat-politik
 authors: priyadi
 tags: [politik]
 image: ./socialcard.png

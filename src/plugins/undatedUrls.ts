@@ -5,11 +5,15 @@
  *
  * - `undateBlogPosts` (part of the blog's `processBlogPosts`) drops the date
  *   from each permalink. A post with a `slug` in its front matter keeps it.
+ * - A `permalink` in the front matter (`permalink: banjir-sumatera`) gives a
+ *   post a shorter address than its folder name, without moving the folder:
+ *   the folder still makes the dated path, so the comments stay attached.
  * - The plugin publishes each post's dated path by its new permalink, for the
  *   comments: their GitHub Discussions are named after the dated path (see
  *   src/components/Comments).
  * - `createRedirects` (an option of @docusaurus/plugin-client-redirects) gives
- *   each post a redirect page at its dated path.
+ *   each post a redirect page at its dated path and, for a post with a
+ *   `permalink`, at the address its folder name would give it.
  *
  * A post's `id` is the path Docusaurus made of its folder (or its front matter
  * `slug`), before `undateBlogPosts` changes the permalink. It is the old
@@ -34,6 +38,22 @@ const DATE_SEGMENTS = /\/\d{4}\/\d{1,2}\/\d{1,2}\//;
 
 const withoutTrailingSlash = (path: string) => path.replace(/\/+$/, '');
 
+/** The `permalink` of a post's front matter, as `/name/`, if it has one. */
+function chosenPermalink(post: BlogPost): string | undefined {
+  const name = post.metadata.frontMatter.permalink;
+  if (name == null) {
+    return undefined;
+  }
+  const trimmed = String(name).replace(/^\/+|\/+$/g, '');
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(trimmed)) {
+    throw new Error(
+      `${post.metadata.source}: front matter \`permalink: ${name}\` should be ` +
+        'one lowercase name of letters, digits and hyphens',
+    );
+  }
+  return `/${trimmed}/`;
+}
+
 export function undateBlogPosts(blogPosts: BlogPost[]): BlogPost[] {
   return blogPosts.map((post) => {
     if (post.metadata.frontMatter.slug) {
@@ -43,19 +63,21 @@ export function undateBlogPosts(blogPosts: BlogPost[]): BlogPost[] {
       ...post,
       metadata: {
         ...post.metadata,
-        permalink: post.metadata.permalink.replace(DATE_SEGMENTS, '/'),
+        permalink:
+          chosenPermalink(post) ??
+          post.metadata.permalink.replace(DATE_SEGMENTS, '/'),
       },
     };
   });
 }
 
-// Dated permalink by permalink, without trailing slashes. Filled once the
-// content is loaded, read after the build by `createRedirects`.
-const datedPermalinks = new Map<string, string>();
+// Earlier addresses of a post by its permalink, without trailing slashes.
+// Filled once the content is loaded, read after the build by
+// `createRedirects`.
+const oldPermalinks = new Map<string, string[]>();
 
 export function createRedirects(existingPath: string): string[] | undefined {
-  const dated = datedPermalinks.get(withoutTrailingSlash(existingPath));
-  return dated ? [dated] : undefined;
+  return oldPermalinks.get(withoutTrailingSlash(existingPath));
 }
 
 export default function undatedUrlsPlugin(): Plugin {
@@ -66,13 +88,17 @@ export default function undatedUrlsPlugin(): Plugin {
         | BlogContent
         | undefined;
       const datedPaths: Record<string, string> = {};
-      datedPermalinks.clear();
+      oldPermalinks.clear();
       for (const {id, metadata} of blog?.blogPosts ?? []) {
         const permalink = withoutTrailingSlash(metadata.permalink);
         const dated = withoutTrailingSlash(id);
         datedPaths[metadata.permalink] = `${dated.replace(/^\//, '')}/`;
-        if (dated !== permalink) {
-          datedPermalinks.set(permalink, dated);
+        // The dated path, and the undated one when `permalink` replaced it.
+        const old = [dated, dated.replace(DATE_SEGMENTS, '/')].filter(
+          (path, i, all) => path !== permalink && all.indexOf(path) === i,
+        );
+        if (old.length > 0) {
+          oldPermalinks.set(permalink, old);
         }
       }
       actions.setGlobalData({datedPaths} satisfies UndatedUrlsData);

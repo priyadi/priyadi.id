@@ -1,6 +1,7 @@
 ---
 title: Menilai Pemuka Agama Melalui Teori Evolusi
 description: 'Heuristika sederhana untuk menilai pemuka agama: apakah mereka menolak, menghindari, atau menerima teori evolusi.'
+permalink: pemuka-agama
 authors: priyadi
 tags: [agama]
 image: ./socialcard.png
